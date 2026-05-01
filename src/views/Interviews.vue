@@ -38,7 +38,7 @@ const loadInterview = async (id) => {
   error.value = null
 
   try {
-    const response = await fetch(`/interviews/${id}.md`)
+    const response = await fetch(`${import.meta.env.BASE_URL}interviews/${id}.md`.replace(/\/+/g, '/'))
     if (!response.ok) throw new Error('Interview not found')
     const text = await response.text()
     interviewContent.value = marked.parse(text)
@@ -83,7 +83,7 @@ watch(() => route.params.id, (newId) => {
             <h3>{{ interview.title }}</h3>
             <p class="meta">By {{ interview.author }} &bull; {{ interview.date }}</p>
           </div>
-          <router-link :to="`/interviews/${interview.id}`" class="read-more">Read Interview</router-link>
+          <router-link :to="'/interviews/' + interview.id" class="read-more">Read Interview</router-link>
         </div>
       </div>
     </div>

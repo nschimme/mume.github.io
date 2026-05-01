@@ -8,10 +8,8 @@ const route = useRoute()
 const navbarRef = ref(null)
 const gandalfRef = ref(null)
 
-const lastUpdated = new Date().toLocaleDateString('en-US', {
-  month: 'long',
-  year: 'numeric'
-})
+const lastUpdated = 'May 2024'
+const baseUrl = import.meta.env.BASE_URL
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -66,7 +64,7 @@ onUnmounted(() => {
         </ul>
       </li>
       <li>
-        <a href="https://mume.org/play/">Play<img alt="Play" height="16" width="16" style="padding-left:4px; vertical-align:-10%;" src="/favicon.ico"></a>
+        <a href="https://mume.org/play/">Play<img alt="Play" height="16" width="16" style="padding-left:4px; vertical-align:-10%;" :src="`${baseUrl}favicon.ico`.replace(/\/+/g, '/')"></a>
       </li>
       <li class="has_children">
         <router-link to="/" :class="{ current: route.path === '/' }">Community<span class="caret down"></span></router-link>
