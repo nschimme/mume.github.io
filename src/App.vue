@@ -16,10 +16,10 @@ const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
 }
 
-let prevScrollpos = window.pageYOffset
+let prevScrollpos = window.scrollY
 
 const handleScroll = () => {
-  const currentScrollPos = window.pageYOffset
+  const currentScrollPos = window.scrollY
   const width = (window.innerWidth > 0) ? window.innerWidth : screen.width
   const navbar = navbarRef.value
   const gandalf = gandalfRef.value
