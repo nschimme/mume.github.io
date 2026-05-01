@@ -1,14 +1,5 @@
-Projects
-=======
+# Vue 3 + Vite
 
-MMapper
--------
-[MMapper is a mud mapper especially written for the mud MUME](https://mume.github.io/MMapper/)
+This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-PowTTY
--------
-[PowTTY is a MUD telnet client for PC/Windows, based on both PuTTY (telnet/ssh), and unix-based " powwow " (pure MUD)](http://www.elvenrunes.com/powtty/)
-
-Powwow
--------
-[powwow is a client program, which replaces telnet for the lazy mudder who wants some (only some?) extra features](https://www.hoopajoo.net/projects/powwow.html)
+Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).

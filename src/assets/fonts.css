@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('/Fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
+       url('/Fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+       url('/Fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kelt';
+  src: url('/Fonts/kelt.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/Fonts/Merriweather-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
