@@ -48,8 +48,9 @@ jobs:
       - name: Build
         run: |
           export VITE_LAST_UPDATED=$(git log -1 --format=%cd --date=format:'%B %Y')
-          npm run docs:build
-          mv docs/.vitepress/dist dist
+          export VITE_HOSTNAME="https://$(cat CNAME)"
+          npm run build
+          cp CNAME dist/CNAME
         env:
           VITE_BASE: ${{ steps.pages.outputs.base_path }}/
 

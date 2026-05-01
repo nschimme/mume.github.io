@@ -132,8 +132,8 @@ onUnmounted(() => {
         </p>
         <aside>
           MUME&rsquo;s logo is based on John Howe&rsquo;s
-          &ldquo;<a href="https://mume.org/Images/gandalf.jpg">Gandalf</a>&rdquo; and
-          &ldquo;<a href="https://mume.org/Images/horsemannight.jpg">Horseman in the Night</a>&rdquo; by
+          &ldquo;<a :href="withBase('/assets/images/gandalf.jpg')">Gandalf</a>&rdquo; and
+          &ldquo;<a :href="withBase('/assets/images/horsemannight.jpg')">Horseman in the Night</a>&rdquo; by
           Renea, Vair&euml;, and Manw&euml;.
         </aside>
       </div>

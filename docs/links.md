@@ -20,7 +20,7 @@ title: Community Links
     <div class="banner-code">
       <h3>Use this banner on your site</h3>
       <p>Help spread the word about MUME. Copy the code below to link to us:</p>
-      <code>&lt;a href="https://mume.org"&gt;&lt;img src="https://mume.org/Images/mume_banner.gif" alt="MUME"&gt;&lt;/a&gt;</code>
+      <code>&lt;a href="https://mume.org"&gt;&lt;img src="/assets/images/mume_banner.gif" alt="MUME"&gt;&lt;/a&gt;</code>
     </div>
   </div>
 

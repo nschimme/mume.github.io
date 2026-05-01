@@ -5,8 +5,9 @@ export default defineConfig({
   description: "Explore the MUME community: official Discord, ElvenRunes, open-source mapping tools like MMapper, and player-developed clients for Multi-Users in Middle-earth.",
   cleanUrls: true,
   base: process.env.VITE_BASE || '/',
+  outDir: '../dist',
   sitemap: {
-    hostname: 'https://docs.mume.org'
+    hostname: process.env.VITE_HOSTNAME || 'https://docs.mume.org'
   },
   head: [
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
