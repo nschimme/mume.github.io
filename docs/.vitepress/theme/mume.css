@@ -1,14 +1,14 @@
 /* MUME Style Sheet, Manwe */
 
 /* Import FontAwesome */
-@import "../fonts/font-awesome.min.css";
+@import "/fonts/font-awesome.min.css";
 
 @font-face {
     font-family: "Kelt";
     font-style: normal;
     font-weight: normal;
     src: local("Kelt Normal"), local("KeltNormal"),
-         url("../fonts/kelt.woff2") format('woff2');
+         url("/fonts/kelt.woff2") format('woff2');
     font-display: swap;
 }
 
@@ -17,7 +17,7 @@
     font-style: italic;
     font-weight: normal;
     src: local("Kelt Italic"), local("KeltItalic"),
-         url("../fonts/kelt-italic.woff2") format('woff2');
+         url("/fonts/kelt-italic.woff2") format('woff2');
     font-display: swap;
 }
 
@@ -26,7 +26,7 @@
     font-style: normal;
     font-weight: bold;
     src: local("Kelt Bold"), local("KeltBold"),
-         url("../fonts/kelt-bold.woff2") format('woff2');
+         url("/fonts/kelt-bold.woff2") format('woff2');
     font-display: swap;
 }
 
@@ -35,7 +35,7 @@
     font-style: normal;
     font-weight: normal;
     src: local("Merriweather Regular"), local("Merriweather-Regular"),
-         url("../fonts/Merriweather-Regular.woff2") format('woff2');
+         url("/fonts/Merriweather-Regular.woff2") format('woff2');
     font-display: swap;
 }
 
@@ -44,7 +44,7 @@
     font-style: italic;
     font-weight: normal;
     src: local("Merriweather Italic"), local("Merriweather-Italic"),
-         url("../fonts/Merriweather-Italic.woff2") format('woff2');
+         url("/fonts/Merriweather-Italic.woff2") format('woff2');
     font-display: swap;
 }
 
@@ -53,7 +53,7 @@
     font-style: normal;
     font-weight: bold;
     src: local("Merriweather Bold"), local("Merriweather-Bold"),
-         url("../fonts/Merriweather-Bold.woff2") format('woff2');
+         url("/fonts/Merriweather-Bold.woff2") format('woff2');
     font-display: swap;
 }
 
