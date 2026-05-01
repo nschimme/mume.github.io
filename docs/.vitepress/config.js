@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: "MUME Community",
-  description: "Explore the MUME community: official Discord, ElvenRunes, open-source mapping tools like MMapper, and player-developed clients for Multi-Users in Middle-earth.",
+  description: "Explore the MUME community: official Discord, Elvenrunes, open-source mapping tools like MMapper, and player-developed clients for Multi-Users in Middle-earth.",
   cleanUrls: true,
   base: process.env.VITE_BASE || '/',
   outDir: '../dist',

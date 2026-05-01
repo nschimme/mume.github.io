@@ -2,6 +2,8 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useData, useRoute, withBase } from 'vitepress'
 import gandalfImg from './gandalf_200.jpg'
+import footerGandalf from '../../assets/images/gandalf.jpg'
+import footerHorseman from '../../assets/images/horsemannight.jpg'
 import './mume.css'
 
 const { site, page, frontmatter } = useData()
@@ -132,8 +134,8 @@ onUnmounted(() => {
         </p>
         <aside>
           MUME&rsquo;s logo is based on John Howe&rsquo;s
-          &ldquo;<a :href="withBase('/assets/images/gandalf.jpg')">Gandalf</a>&rdquo; and
-          &ldquo;<a :href="withBase('/assets/images/horsemannight.jpg')">Horseman in the Night</a>&rdquo; by
+          &ldquo;<a :href="footerGandalf">Gandalf</a>&rdquo; and
+          &ldquo;<a :href="footerHorseman">Horseman in the Night</a>&rdquo; by
           Renea, Vair&euml;, and Manw&euml;.
         </aside>
       </div>

@@ -23,7 +23,7 @@ layout: home
   <h1>MUME Community Projects</h1>
 
   <div class="card">
-    <img src="/assets/images/mume_logo.jpg" alt="MMapper Logo">
+    <img src="./assets/images/mume_logo.jpg" alt="MMapper Logo">
     <div>
       <h3>MMapper</h3>
       <p>
@@ -35,7 +35,7 @@ layout: home
   </div>
 
   <div class="card">
-    <img src="/assets/images/boromir-horn.png" alt="Powwow Logo">
+    <img src="./assets/images/boromir-horn.png" alt="Powwow Logo">
     <div>
       <h3>Powwow</h3>
       <p>
@@ -46,7 +46,7 @@ layout: home
   </div>
 
   <div class="card">
-    <img src="/assets/images/shield-gondor.png" alt="PowTTY Logo">
+    <img src="./assets/images/shield-gondor.png" alt="PowTTY Logo">
     <div>
       <h3>PowTTY</h3>
       <p>
@@ -60,24 +60,24 @@ layout: home
 
   <h2>Stay Connected</h2>
   <div class="card">
-    <img src="/assets/images/doors-of-durin.png" alt="Community Links">
+    <img src="./assets/images/doors-of-durin.png" alt="Community Links">
     <div>
       <h3>Community Resources</h3>
       <p>
-        Join our Discord server to chat with other players, find help, and stay up-to-date with the latest MUME news. Check out ElvenRunes for logs, stories, and more.
+        Join our Discord server to chat with other players, find help, and stay up-to-date with the latest MUME news. Check out Elvenrunes for logs, stories, and more.
       </p>
-      <a href="/links">Browse Links</a>
+      [Browse Links](./links)
     </div>
   </div>
 
   <div class="card">
-    <img src="/assets/images/fellowship_bw.jpg" alt="Interviews">
+    <img src="./assets/images/fellowship_bw.jpg" alt="Interviews">
     <div>
       <h3>Player Interviews</h3>
       <p>
         Read interviews with legendary MUME players and developers. Learn about the history of the game and the people who made it what it is today.
       </p>
-      <a href="/interviews">Read Interviews</a>
+      [Read Interviews](./interviews)
     </div>
   </div>
 </div>
