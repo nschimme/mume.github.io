@@ -6,19 +6,19 @@ import fellowshipBwImg from '../assets/images/fellowship_bw.jpg'
 
 const route = useRoute()
 const interviews = [
-  { id: 'motm', title: 'Mud of the Month (1998)', author: 'The Mud Connector', date: 'April 1998' },
-  { id: 'genka', title: 'Interview with Genka', author: 'Vardamir', date: 'March 2003' },
-  { id: 'timodeus', title: 'Interview with Timodeus', author: 'Vardamir', date: 'April 2003' },
-  { id: 'azazello', title: 'Interview with Azazello', author: 'Vardamir', date: 'May 2003' },
-  { id: 'woland', title: 'Interview with Woland', author: 'Vardamir', date: 'June 2003' },
-  { id: 'ypsilon', title: 'Interview with Ypsilon', author: 'Vardamir', date: 'July 2003' },
-  { id: 'salazar', title: 'Interview with Salazar', author: 'Vardamir', date: 'August 2003' },
-  { id: 'dragoth', title: 'Interview with Dragoth', author: 'Vardamir', date: 'September 2003' },
-  { id: 'tan', title: 'Interview with Tan', author: 'Vardamir', date: 'October 2003' },
-  { id: 'stolb', title: 'Interview with Stolb', author: 'Vardamir', date: 'November 2003' },
-  { id: 'staub', title: 'Interview with Staub', author: 'Vardamir', date: 'December 2003' },
-  { id: 'norsu', title: 'Interview with Norsu', author: 'Vardamir', date: 'January 2004' },
-  { id: 'vardamir', title: 'Interview with Vardamir', author: 'MUME Community', date: 'February 2004' }
+  { id: 'motm', title: 'Mud of the Month', author: 'The Mud Connector', date: 'April 1998' },
+  { id: 'azazello', title: 'Interview with Azazello', author: 'Antti', date: 'October 2010' },
+  { id: 'dragoth', title: 'Interview with Dragoth', author: 'Antti', date: 'October 2010' },
+  { id: 'genka', title: 'Interview with Genka', author: 'Antti', date: 'July 2013' },
+  { id: 'norsu', title: 'Interview with Norsu', author: 'Antti', date: 'November 2010' },
+  { id: 'salazar', title: 'Interview with Salazar', author: 'Antti', date: 'October 2010' },
+  { id: 'staub', title: 'Interview with Staub', author: 'Antti', date: 'October 2010' },
+  { id: 'stolb', title: 'Interview with Stolb', author: 'Antti', date: 'October 2010' },
+  { id: 'tan', title: 'Interview with Tan', author: 'Antti', date: 'November 2012' },
+  { id: 'timodeus', title: 'Interview with Timodeus', author: 'Antti', date: 'November 2011' },
+  { id: 'vardamir', title: 'Interview with Vardamir', author: 'Antti', date: 'October 2020' },
+  { id: 'woland', title: 'Interview with Woland', author: 'Antti', date: 'October 2010' },
+  { id: 'ypsilon', title: 'Interview with Ypsilon', author: 'Antti', date: 'October 2010' }
 ]
 
 const currentInterview = ref(null)
