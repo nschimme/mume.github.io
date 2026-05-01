@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import NotFound from '../views/NotFound.vue'
 
 const routes = [
   {
@@ -9,15 +8,28 @@ const routes = [
     component: Home
   },
   {
+    path: '/links',
+    name: 'Links',
+    component: () => import('../views/Links.vue')
+  },
+  {
+    path: '/interviews',
+    name: 'Interviews',
+    component: () => import('../views/Interviews.vue')
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component: NotFound
+    component: () => import('../views/NotFound.vue')
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior() {
+    return { top: 0 }
+  }
 })
 
 export default router

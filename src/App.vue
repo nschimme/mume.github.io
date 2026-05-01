@@ -52,10 +52,10 @@ onUnmounted(() => {
   <nav id="navbar" ref="navbarRef" role="navigation" aria-label="Main">
     <ul>
       <li>
-        <router-link to="/" :class="{ current: route.path === '/' }">
+        <a href="https://mume.org/">
           <i class="fa fa-home" aria-hidden="true" title="Home"></i>
           <span class="sr-only">Home</span>
-        </router-link>
+        </a>
       </li>
       <li class="has_children">
         <a href="https://mume.org/about/">About<span class="caret down"></span></a>
@@ -68,12 +68,12 @@ onUnmounted(() => {
         <a href="https://mume.org/play/">Play<img alt="Play" height="16" width="16" style="padding-left:4px; vertical-align:-10%;" src="/favicon.ico"></a>
       </li>
       <li class="has_children">
-        <a href="https://mume.org/community/">Community<span class="caret down"></span></a>
+        <router-link to="/" :class="{ current: route.path === '/' }">Community<span class="caret down"></span></router-link>
         <ul>
           <li><a href="https://discord.gg/XkZN55am9a" target="_blank" rel="noopener">Discord <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
           <li><a href="http://www.elvenrunes.com" target="_blank" rel="noopener">Elvenrunes <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-          <li><a href="https://mume.org/community/links">Links</a></li>
-          <li><a href="https://mume.org/community/interviews">Interviews</a></li>
+          <li><router-link to="/links">Links</router-link></li>
+          <li><router-link to="/interviews">Interviews</router-link></li>
           <li><a href="https://mume.org/wiki/">Wiki</a></li>
         </ul>
       </li>
