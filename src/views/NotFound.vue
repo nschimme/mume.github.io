@@ -1,28 +1,41 @@
-<template>
-  <article role="main">
-    <div role="banner">
-      <h1>404 - Page Not Found</h1>
-    </div>
+<script setup>
+import balrogImg from '../assets/images/balrog.png'
+</script>
 
-    <section>
-      <div class="card">
-        <img src="/Images/balrog.png" alt="Balrog" width="160" height="93">
-        <div>
-          <h3>The path is blocked...</h3>
-          <p>The page you are looking for does not exist. It may have been moved or deleted.</p>
-          <p>
-            <router-link to="/">Return to the Community Home</router-link>
-          </p>
-        </div>
-      </div>
-    </section>
-  </article>
+<template>
+  <div class="not-found">
+    <h1>404 - Fly, you fools!</h1>
+    <div class="center-img">
+      <img :src="balrogImg" alt="Balrog">
+    </div>
+    <p>You have wandered into the shadow. The page you are looking for does not exist.</p>
+    <router-link to="/" class="back-home">Return to the Light</router-link>
+  </div>
 </template>
 
-<script setup>
-import { onMounted } from 'vue'
-
-onMounted(() => {
-  document.title = '404 - Page Not Found'
-})
-</script>
+<style scoped>
+.not-found {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.center-img {
+  margin: 2rem 0;
+}
+.center-img img {
+  max-width: 200px;
+  height: auto;
+}
+h1 {
+  color: #cc9933;
+}
+.back-home {
+  display: inline-block;
+  margin-top: 2rem;
+  background: #cc9933;
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+</style>

@@ -1,180 +1,164 @@
-<template>
-  <article role="main">
-    <div role="banner">
-      <h1>
-        <img
-          alt="MUME Interviews"
-          class="center"
-          style="max-width:600px; width:100%; height:auto;"
-          width="600"
-          height="265"
-          src="/Images/fellowship_bw.jpg"
-        >
-      </h1>
-    </div>
-
-    <div v-if="selectedInterview" class="interview-detail">
-      <button @click="selectedInterview = null" class="back-button">
-        <i class="fa fa-arrow-left"></i> Back to list
-      </button>
-      <div v-html="renderedMarkdown" class="markdown-body"></div>
-    </div>
-
-    <div v-else>
-      <section>
-        <h2 class="h1">MUME Interviews</h2>
-        <p>This section is devoted to the legends of MUME—those who have reached the ultimate plateau of Level 100, and the staff who keep the world turning.</p>
-      </section>
-
-      <section>
-        <h2 class="h1">Level 100 Character Interviews</h2>
-        <div class="card-grid">
-          <div
-            v-for="interview in level100"
-            :key="interview.id"
-            class="card mini clickable"
-            @click="loadInterview(interview)"
-          >
-            <div>
-              <h3>{{ interview.name }}</h3>
-              <p>{{ interview.description }}</p>
-              <span class="read-more">Read Interview <i class="fa fa-chevron-right"></i></span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="h1">Well-known Players & Staff</h2>
-        <div class="card-grid">
-          <div class="card mini clickable" @click="loadInterview({id: 'timodeus', name: 'Timodeus'})">
-            <div>
-              <h3>Timodeus</h3>
-              <p>The friendly Hobbit-Dragon (Vala Architect)</p>
-              <span class="read-more">Read Interview <i class="fa fa-chevron-right"></i></span>
-            </div>
-          </div>
-          <div class="card mini clickable" @click="loadInterview({id: 'motm', name: 'Mud Connector Interview'})">
-            <div>
-              <h3>Mud Connector Interview</h3>
-              <p>Historical interview from 1998 (Mud of the Month)</p>
-              <span class="read-more">Read Interview <i class="fa fa-chevron-right"></i></span>
-            </div>
-          </div>
-        </div>
-        <div class="card" style="margin-top: 1rem;">
-          <div>
-            <h3>External Resources</h3>
-            <ul>
-              <li><a href="http://www.roguelikeradio.com/2017/11/episode-141-muds.html" target="_blank" rel="noopener">Roguelike Radio Podcast</a> - Feat. Pier Donini (MUME developer).</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </div>
-  </article>
-</template>
-
 <script setup>
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import { marked } from 'marked'
+import fellowshipBwImg from '../assets/images/fellowship_bw.jpg'
 
-const level100 = [
-  { id: 'norsu', name: 'Norsu', description: 'Tarkhnarb Champion' },
-  { id: 'azazello', name: 'Azazello', description: 'Tarkhnarb Rider' },
-  { id: 'ypsilon', name: 'Ypsilon', description: 'Noldorin Quickblade' },
-  { id: 'woland', name: 'Woland', description: 'Black Númenórean Wanderer' },
-  { id: 'stolb', name: 'Stolb', description: 'Tarkhnarb Weaponsmaster' },
-  { id: 'staub', name: 'Staub', description: 'Dwarven Veteran' },
-  { id: 'vardamir', name: 'Vardamir', description: 'Black Númenórean Scholar' },
-  { id: 'salazar', name: 'Salazár', description: 'Dúnadan Hero' },
-  { id: 'dragoth', name: 'Dragóth', description: 'Tarkhnarb Soldier' },
-  { id: 'tan', name: 'Tan', description: 'Hill Troll Warrior' },
-  { id: 'genka', name: 'Genka', description: 'Dwarven Hero' }
+const route = useRoute()
+const interviews = [
+  { id: 'motm', title: 'Mud of the Month (1998)', author: 'The Mud Connector', date: 'April 1998' },
+  { id: 'genka', title: 'Interview with Genka', author: 'Vardamir', date: 'March 2003' },
+  { id: 'timodeus', title: 'Interview with Timodeus', author: 'Vardamir', date: 'April 2003' },
+  { id: 'azazello', title: 'Interview with Azazello', author: 'Vardamir', date: 'May 2003' },
+  { id: 'woland', title: 'Interview with Woland', author: 'Vardamir', date: 'June 2003' },
+  { id: 'ypsilon', title: 'Interview with Ypsilon', author: 'Vardamir', date: 'July 2003' },
+  { id: 'salazar', title: 'Interview with Salazar', author: 'Vardamir', date: 'August 2003' },
+  { id: 'dragoth', title: 'Interview with Dragoth', author: 'Vardamir', date: 'September 2003' },
+  { id: 'tan', title: 'Interview with Tan', author: 'Vardamir', date: 'October 2003' },
+  { id: 'stolb', title: 'Interview with Stolb', author: 'Vardamir', date: 'November 2003' },
+  { id: 'staub', title: 'Interview with Staub', author: 'Vardamir', date: 'December 2003' },
+  { id: 'norsu', title: 'Interview with Norsu', author: 'Vardamir', date: 'January 2004' },
+  { id: 'vardamir', title: 'Interview with Vardamir', author: 'MUME Community', date: 'February 2004' }
 ]
 
-const selectedInterview = ref(null)
-const markdownContent = ref('')
+const currentInterview = ref(null)
+const interviewContent = ref('')
+const isLoading = ref(false)
+const error = ref(null)
 
-const renderedMarkdown = computed(() => {
-  return marked.parse(markdownContent.value)
-})
+const loadInterview = async (id) => {
+  const interview = interviews.find(i => i.id === id)
+  if (!interview) {
+    currentInterview.value = null
+    return
+  }
 
-const loadInterview = async (interview) => {
+  currentInterview.value = interview
+  isLoading.value = true
+  error.value = null
+
   try {
-    const response = await fetch(`/interviews/${interview.id}.md`)
-    if (response.ok) {
-      markdownContent.value = await response.text()
-      selectedInterview.value = interview
-      window.scrollTo(0, 0)
-    } else {
-      // Fallback for missing MD files
-      markdownContent.value = `# ${interview.name}\n\nInterview content coming soon!`
-      selectedInterview.value = interview
-    }
-  } catch (e) {
-    console.error(e)
+    const response = await fetch(`/interviews/${id}.md`)
+    if (!response.ok) throw new Error('Interview not found')
+    const text = await response.text()
+    interviewContent.value = marked.parse(text)
+  } catch (err) {
+    error.value = err.message
+  } finally {
+    isLoading.value = false
   }
 }
 
 onMounted(() => {
-  document.title = 'MUME Interviews - Legends of Middle-earth'
+  if (route.params.id) {
+    loadInterview(route.params.id)
+  }
+})
+
+watch(() => route.params.id, (newId) => {
+  if (newId) {
+    loadInterview(newId)
+  } else {
+    currentInterview.value = null
+  }
 })
 </script>
 
+<template>
+  <div class="interviews">
+    <div class="center-img">
+      <img :src="fellowshipBwImg" alt="The Fellowship" class="banner-img">
+    </div>
+
+    <div v-if="!currentInterview">
+      <h1>Player Interviews</h1>
+      <p class="intro">
+        A collection of interviews with players and developers from the MUME community,
+        sharing their experiences and history within Middle-earth.
+      </p>
+
+      <div class="interviews-list">
+        <div v-for="interview in interviews" :key="interview.id" class="card interview-card">
+          <div class="interview-info">
+            <h3>{{ interview.title }}</h3>
+            <p class="meta">By {{ interview.author }} &bull; {{ interview.date }}</p>
+          </div>
+          <router-link :to="`/interviews/${interview.id}`" class="read-more">Read Interview</router-link>
+        </div>
+      </div>
+    </div>
+
+    <div v-else class="interview-detail">
+      <router-link to="/interviews" class="back-link">&larr; Back to Interviews</router-link>
+
+      <div v-if="isLoading" class="loading">Loading interview...</div>
+      <div v-else-if="error" class="error">Error: {{ error }}</div>
+      <div v-else class="content-rendered sml" v-html="interviewContent"></div>
+
+      <div class="separator"></div>
+      <router-link to="/interviews" class="back-link">&larr; Back to Interviews</router-link>
+    </div>
+  </div>
+</template>
+
 <style scoped>
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
+.interviews {
+  padding: 1rem;
 }
-.card.mini {
-  margin-bottom: 0;
+.center-img {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.banner-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.intro {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.interviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.interview-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1.5rem;
-  transition: transform 0.2s, background-color 0.2s;
 }
-.clickable {
-  cursor: pointer;
-}
-.clickable:hover {
-  background-color: #1a1a1a;
-  transform: translateY(-2px);
+.meta {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
 }
 .read-more {
-  color: #b8860b;
-  font-size: 0.9rem;
+  background: #cc9933;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
   font-weight: bold;
 }
-
-.back-button {
-  background: none;
-  border: 1px solid #b8860b;
-  color: #b8860b;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-family: "Kelt", serif;
-  margin-bottom: 2rem;
-  transition: all 0.2s;
+.read-more:hover {
+  background: #e4ba3c;
 }
-.back-button:hover {
-  background: #b8860b;
-  color: white;
+.interview-detail {
+  max-width: 800px;
+  margin: 0 auto;
 }
-
-.markdown-body {
-  color: #ccc;
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #cc9933;
+}
+.content-rendered {
   line-height: 1.6;
 }
-.markdown-body :deep(h1) {
-  color: #b8860b;
-  font-family: "Kelt", serif;
-}
-.markdown-body :deep(h2), .markdown-body :deep(h3) {
-  color: silver;
-}
-.markdown-body :deep(code) {
-  background: #222;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
+.loading, .error {
+  text-align: center;
+  padding: 3rem;
 }
 </style>

@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import gandalfImg from './assets/icons/gandalf_200.jpg'
 
 const isMenuOpen = ref(false)
 const route = useRoute()
@@ -106,7 +107,7 @@ onUnmounted(() => {
     </ul>
   </nav>
 
-  <img id="gandalf" ref="gandalfRef" src="/Icons/gandalf_200.jpg" alt="Gandalf" width="45" height="45">
+  <img id="gandalf" ref="gandalfRef" :src="gandalfImg" alt="Gandalf" width="45" height="45">
 
   <div class="content">
     <router-view />
