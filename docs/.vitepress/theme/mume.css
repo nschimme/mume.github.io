@@ -1079,3 +1079,44 @@ a:hover {
 h1, h2 {
   text-align: center;
 }
+
+/* Community Links Table */
+.links-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 2.5rem;
+  font-size: 0.95rem;
+}
+
+.links-table th, .links-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+.links-table th {
+  background-color: #1a1a1a;
+  color: goldenrod;
+  font-family: 'Kelt', serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.links-table tr:hover {
+  background-color: #111;
+}
+
+.links-table td:first-child {
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+@media (max-width: 650px) {
+  .links-table td:first-child {
+    white-space: normal;
+  }
+}
