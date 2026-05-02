@@ -93,7 +93,7 @@ onUnmounted(() => {
             <li><a :href="withBase('/opensource')" :class="{ current: isActive('/opensource') }">Open Source</a></li>
             <li><a :href="withBase('/links')" :class="{ current: isActive('/links') }">Links</a></li>
             <li><a :href="withBase('/interviews')" :class="{ current: isActive('/interviews') }">Interviews</a></li>
-            <li><a href="https://docs.mume.org/wiki/">Wiki</a></li>
+            <li><a href="https://docs.mume.org/wiki/" target="_self" rel="external">Wiki</a></li>
           </ul>
         </li>
         <li class="has_children">

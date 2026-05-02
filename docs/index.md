@@ -49,7 +49,7 @@ You can trust us to stick to you through thick and thin&mdash;to the bitter end.
 <p>
 The official Wiki contains tips, hints, and all sorts of useful information for newcomers and veterans alike.
 </p>
-<a href="https://docs.mume.org/wiki/" class="read-more">Visit the Wiki <i class="fa fa-external-link" aria-hidden="true"></i></a>
+<a href="https://docs.mume.org/wiki/" target="_self" rel="external" class="read-more">Visit the Wiki <i class="fa fa-external-link" aria-hidden="true"></i></a>
 </div>
 </div>
 </section>
