@@ -15,7 +15,7 @@ title: Player Interviews
 
   <div class="separator"></div>
 
-  <div class="interviews-grid">
+  <div class="interviews-list">
     <a href="./motm" class="card interview-card">
       <div class="interview-info">
         <h3>Mud of the Month</h3>
