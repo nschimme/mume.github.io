@@ -73,7 +73,7 @@ onUnmounted(() => {
           <a href="https://mume.org/play/">Play<img alt="Play" height="16" width="16" style="padding-left:4px; vertical-align:-10%;" :src="withBase('/favicon.ico')"></a>
         </li>
         <li class="has_children">
-          <a :href="withBase('/')" :class="{ current: vpRoute.path === withBase('/') || vpRoute.path === withBase('/index.html') }">Community<span class="caret down"></span></a>
+          <a :href="withBase('/')" :class="{ current: vpRoute.path === '/' || vpRoute.path === '/index.html' }">Community<span class="caret down"></span></a>
           <ul>
             <li><a href="https://discord.gg/XkZN55am9a" target="_blank" rel="noopener">Discord <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
             <li><a href="http://www.elvenrunes.com" target="_blank" rel="noopener">Elvenrunes <i class="fa fa-external-link" aria-hidden="true"></i></a></li>

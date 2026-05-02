@@ -66,7 +66,7 @@ layout: home
       <p>
         Join our Discord server to chat with other players, find help, and stay up-to-date with the latest MUME news. Check out Elvenrunes for logs, stories, and more.
       </p>
-      [Browse Links](./links)
+      <a href="./links">Browse Links</a>
     </div>
   </div>
 
@@ -77,7 +77,7 @@ layout: home
       <p>
         Read interviews with legendary MUME players and developers. Learn about the history of the game and the people who made it what it is today.
       </p>
-      [Read Interviews](./interviews)
+      <a href="./interviews">Read Interviews</a>
     </div>
   </div>
 </div>

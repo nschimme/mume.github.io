@@ -48,9 +48,13 @@ jobs:
       - name: Build
         run: |
           export VITE_LAST_UPDATED=$(git log -1 --format=%cd --date=format:'%B %Y')
-          export VITE_HOSTNAME="https://$(cat CNAME)"
+          if [ -f CNAME ]; then
+            export VITE_HOSTNAME="https://$(cat CNAME)"
+          else
+            export VITE_HOSTNAME="https://docs.mume.org"
+          fi
           npm run build
-          cp CNAME dist/CNAME
+          if [ -f CNAME ]; then cp CNAME dist/CNAME; fi
         env:
           VITE_BASE: ${{ steps.pages.outputs.base_path }}/
 

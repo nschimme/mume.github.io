@@ -19,91 +19,91 @@ title: Player Interviews
         <h3>Mud of the Month</h3>
         <p class="meta">By The Mud Connector &bull; April 1998</p>
       </div>
-      [Read Interview](./motm)
+      <a href="./motm" class="read-more">Read Interview</a>
     </div>
     <div class="card interview-card">
       <div class="interview-info">
         <h3>Interview with Azazello</h3>
         <p class="meta">By Antti &bull; October 2010</p>
       </div>
-      [Read Interview](./azazello)
+      <a href="./azazello" class="read-more">Read Interview</a>
     </div>
     <div class="card interview-card">
       <div class="interview-info">
         <h3>Interview with Dragoth</h3>
         <p class="meta">By Antti &bull; October 2010</p>
       </div>
-      [Read Interview](./dragoth)
+      <a href="./dragoth" class="read-more">Read Interview</a>
     </div>
     <div class="card interview-card">
       <div class="interview-info">
         <h3>Interview with Genka</h3>
         <p class="meta">By Antti &bull; July 2013</p>
       </div>
-      [Read Interview](./genka)
+      <a href="./genka" class="read-more">Read Interview</a>
     </div>
     <div class="card interview-card">
       <div class="interview-info">
         <h3>Interview with Norsu</h3>
         <p class="meta">By Antti &bull; November 2010</p>
       </div>
-      [Read Interview](./norsu)
+      <a href="./norsu" class="read-more">Read Interview</a>
     </div>
     <div class="card interview-card">
       <div class="interview-info">
         <h3>Interview with Salazar</h3>
         <p class="meta">By Antti &bull; October 2010</p>
       </div>
-      [Read Interview](./salazar)
+      <a href="./salazar" class="read-more">Read Interview</a>
     </div>
     <div class="card interview-card">
       <div class="interview-info">
         <h3>Interview with Staub</h3>
         <p class="meta">By Antti &bull; October 2010</p>
       </div>
-      [Read Interview](./staub)
+      <a href="./staub" class="read-more">Read Interview</a>
     </div>
     <div class="card interview-card">
       <div class="interview-info">
         <h3>Interview with Stolb</h3>
         <p class="meta">By Antti &bull; October 2010</p>
       </div>
-      [Read Interview](./stolb)
+      <a href="./stolb" class="read-more">Read Interview</a>
     </div>
     <div class="card interview-card">
       <div class="interview-info">
         <h3>Interview with Tan</h3>
         <p class="meta">By Antti &bull; November 2012</p>
       </div>
-      [Read Interview](./tan)
+      <a href="./tan" class="read-more">Read Interview</a>
     </div>
     <div class="card interview-card">
       <div class="interview-info">
         <h3>Interview with Timodeus</h3>
         <p class="meta">By Antti &bull; November 2011</p>
       </div>
-      [Read Interview](./timodeus)
+      <a href="./timodeus" class="read-more">Read Interview</a>
     </div>
     <div class="card interview-card">
       <div class="interview-info">
         <h3>Interview with Vardamir</h3>
         <p class="meta">By Antti &bull; October 2020</p>
       </div>
-      [Read Interview](./vardamir)
+      <a href="./vardamir" class="read-more">Read Interview</a>
     </div>
     <div class="card interview-card">
       <div class="interview-info">
         <h3>Interview with Woland</h3>
         <p class="meta">By Antti &bull; October 2010</p>
       </div>
-      [Read Interview](./woland)
+      <a href="./woland" class="read-more">Read Interview</a>
     </div>
     <div class="card interview-card">
       <div class="interview-info">
         <h3>Interview with Ypsilon</h3>
         <p class="meta">By Antti &bull; October 2010</p>
       </div>
-      [Read Interview](./ypsilon)
+      <a href="./ypsilon" class="read-more">Read Interview</a>
     </div>
   </div>
 </div>
