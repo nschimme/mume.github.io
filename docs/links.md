@@ -29,10 +29,10 @@ title: Community Links
 <section>
 <h2>Tolkien Resources</h2>
 <ul>
-<li><a href="http://tolkiengateway.net/wiki/MUME" target="_blank" rel="noopener">Tolkien Gateway</a> &ndash; Detailed information about MUME and the legendarium.</li>
-<li><a href="http://www.glyphweb.com/arda/" target="_blank" rel="noopener">The Encyclopedia of Arda</a> &ndash; An illustrated encyclopedia of Tolkien's world.</li>
+<li><a href="https://tolkiengateway.net/wiki/MUME" target="_blank" rel="noopener">Tolkien Gateway</a> &ndash; Detailed information about MUME and the legendarium.</li>
+<li><a href="https://www.encyclopedia-of-arda.com/" target="_blank" rel="noopener">The Encyclopedia of Arda</a> &ndash; An illustrated encyclopedia of Tolkien's world.</li>
 <li><a href="http://www.uib.no/people/hnohf/" target="_blank" rel="noopener">Ardalambion</a> &ndash; Of the tongues of Arda.</li>
-<li><a href="http://www.tolkienonline.com/" target="_blank" rel="noopener">Tolkien online</a></li>
+<li><a href="http://www.tolkienonline.com/" target="_blank" rel="noopener">Tolkien Online</a></li>
 <li><a href="http://tolkien.cro.net/" target="_blank" rel="noopener">The Grey Havens</a></li>
 <li><a href="http://theonering.net/" target="_blank" rel="noopener">TheOneRing.net</a></li>
 <li><a href="https://en.wikipedia.org/wiki/MUME" target="_blank" rel="noopener">Wikipedia: MUME</a></li>

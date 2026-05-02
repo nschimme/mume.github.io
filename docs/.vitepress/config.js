@@ -22,7 +22,7 @@ export default defineConfig({
         text: 'Community',
         items: [
           { text: 'Discord', link: 'https://discord.gg/XkZN55am9a' },
-          { text: 'Elvenrunes', link: 'http://www.elvenrunes.com' },
+          { text: 'Elvenrunes', link: 'https://elvenrunes.com' },
           { text: 'Open Source', link: '/opensource' },
           { text: 'Links', link: '/links' },
           { text: 'Interviews', link: '/interviews/' },

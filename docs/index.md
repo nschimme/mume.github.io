@@ -30,7 +30,7 @@ You can trust us to stick to you through thick and thin&mdash;to the bitter end.
 <iframe src="https://discord.com/widget?id=497457567392333824&theme=dark" width="100%" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 </div>
 <div class="center-img" style="margin-top: 1rem;">
-<a href="https://discord.gg/XkZN55am9a" target="_blank" rel="noopener" class="read-more">Join Discord</a>
+<a href="https://discord.gg/XkZN55am9a" target="_blank" rel="noopener" class="read-more">Join Discord <i class="fa fa-external-link" aria-hidden="true"></i></a>
 </div>
 </section>
 
@@ -45,7 +45,7 @@ You can trust us to stick to you through thick and thin&mdash;to the bitter end.
 <p>
 The official Wiki contains tips, hints, and all sorts of useful information for newcomers and veterans alike.
 </p>
-<a href="https://mume.org/wiki/" class="read-more">Visit the Wiki</a>
+<a href="https://mume.org/wiki/" class="read-more">Visit the Wiki <i class="fa fa-external-link" aria-hidden="true"></i></a>
 </div>
 </div>
 </section>
@@ -61,7 +61,7 @@ The official Wiki contains tips, hints, and all sorts of useful information for 
 Check out the community YouTube channel for combat logs, guides, and Middle-earth highlights.
 </p>
 <div class="center-img">
-<a href="https://www.youtube.com/user/Radagastthe1st" target="_blank" rel="noopener" class="read-more">Watch on YouTube</a>
+<a href="https://www.youtube.com/user/Radagastthe1st" target="_blank" rel="noopener" class="read-more">Watch on YouTube <i class="fa fa-external-link" aria-hidden="true"></i></a>
 </div>
 </section>
 
@@ -76,7 +76,7 @@ Check out the community YouTube channel for combat logs, guides, and Middle-eart
 <p>
 A long-standing pillar of the community, Elvenrunes features combat logs, forums, and character discussions.
 </p>
-<a href="http://www.elvenrunes.com" target="_blank" rel="noopener" class="read-more">Visit Elvenrunes</a>
+<a href="https://elvenrunes.com" target="_blank" rel="noopener" class="read-more">Visit Elvenrunes <i class="fa fa-external-link" aria-hidden="true"></i></a>
 </div>
 </div>
 </section>
