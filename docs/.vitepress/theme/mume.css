@@ -511,7 +511,7 @@ footer {
         margin-bottom: 0.5em;
     }
     .content .playnow {
-        background-image: url(../images/play-now-banner@2x.jpg);
+        background-image: url(../../assets/images/play-now-banner@2x.jpg);
     }
 
     /* Undo extra padding on Navbar Anchors */
