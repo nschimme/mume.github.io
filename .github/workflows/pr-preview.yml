@@ -1,0 +1,88 @@
+name: PR Preview
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Determine Base URL Prefix
+        id: base_url
+        run: |
+          if [ -f CNAME ]; then
+            echo "prefix=/" >> $GITHUB_OUTPUT
+            echo "host=$(cat CNAME)" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event.repository.name }}" = "${{ github.repository_owner }}.github.io" ]; then
+            echo "prefix=/" >> $GITHUB_OUTPUT
+            echo "host=${{ github.repository_owner }}.github.io" >> $GITHUB_OUTPUT
+          else
+            echo "prefix=/${{ github.event.repository.name }}/" >> $GITHUB_OUTPUT
+            echo "host=${{ github.repository_owner }}.github.io" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Setup environment
+        run: ./scripts/ci-env.sh
+        env:
+          PREVIEW_HOST: ${{ steps.base_url.outputs.host }}
+          PREVIEW_PREFIX: ${{ steps.base_url.outputs.prefix }}pr-${{ github.event.number }}/
+
+      - name: Build preview
+        run: npm run build
+        env:
+          VITE_BASE: ${{ steps.base_url.outputs.prefix }}pr-${{ github.event.number }}/
+
+      - name: Package build
+        run: |
+          cd dist
+          zip -r ../pr-${{ github.event.number }}.zip .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-${{ github.event.number }}
+          path: pr-${{ github.event.number }}.zip
+          retention-days: 30
+
+      - name: Comment build status
+        uses: actions/github-script@v7
+        env:
+          PREVIEW_URL: https://${{ steps.base_url.outputs.host }}${{ steps.base_url.outputs.prefix }}pr-${{ github.event.number }}/
+        with:
+          script: |
+            const pr = context.payload.number
+            const owner = context.repo.owner
+            const repo = context.repo.repo
+            const url = process.env.PREVIEW_URL
+            const body = `### Build ready\n\nThe build for this PR has been completed successfully. A live preview will be available at: ${url}`
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner, repo, issue_number: pr,
+            })
+            const existing = comments.find(c =>
+              c.user.login === 'github-actions[bot]' && c.body.includes('Build ready')
+            )
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body })
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number: pr, body })
+            }

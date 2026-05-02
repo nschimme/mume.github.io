@@ -1,14 +1,47 @@
-Projects
-=======
+# MUME Community Website
 
-MMapper
--------
-[MMapper is a mud mapper especially written for the mud MUME](https://mume.github.io/MMapper/)
+This repository contains the source code for [docs.mume.org](https://docs.mume.org), focusing on the MUME Community page and associated resources (Links, Interviews, etc.).
 
-PowTTY
--------
-[PowTTY is a MUD telnet client for PC/Windows, based on both PuTTY (telnet/ssh), and unix-based " powwow " (pure MUD)](http://www.elvenrunes.com/powtty/)
+The site is built with **VitePress** and designed to match the style and layout of the main [mume.org](https://mume.org) website.
 
-Powwow
--------
-[powwow is a client program, which replaces telnet for the lazy mudder who wants some (only some?) extra features](https://www.hoopajoo.net/projects/powwow.html)
+## Features
+
+- **VitePress**: Fast, Vue-powered static site generator.
+- **MUME Styling**: Integrated CSS and assets to maintain visual consistency with the MUME ecosystem.
+- **Player Interviews**: Interviews are stored as Markdown files in `docs/interviews/` and rendered using VitePress's file-based routing.
+- **Custom Theme**: A custom VitePress theme located in `docs/.vitepress/theme/` implements the MUME look and feel.
+
+## Development
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (Latest LTS recommended)
+- [npm](https://www.npmjs.com/)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run docs:dev
+```
+
+### Build
+
+```bash
+# Build for production
+npm run docs:build
+
+# Preview production build locally
+npm run docs:preview
+```
+
+## Deployment
+
+The site is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the `master` branch.
+
+## Contributing
+
+Interviews and content can be updated by modifying the Markdown files in the `docs/` directory. For theme or functionality changes, please refer to the `docs/.vitepress/theme/` directory.
