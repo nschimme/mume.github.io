@@ -5,9 +5,7 @@ RUN apk upgrade --no-cache
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-# npm install resolves platform-specific optional deps for Linux that a
-# macOS-generated package-lock.json omits (e.g. Vite's @emnapi/core).
-RUN npm install
+RUN npm ci
 
 COPY . .
 

@@ -13,46 +13,39 @@ The site is built with **VitePress** and designed to match the style and layout 
 
 ## Development
 
-### Prerequisites
+> **Use Docker.** All development should be done via Docker to keep the environment consistent with CI.
 
-- [Node.js](https://nodejs.org/) (Latest LTS recommended)
-- [npm](https://www.npmjs.com/)
-
-### Setup
+### Dev server (live reload)
 
 ```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run docs:dev
+docker compose up dev
 ```
 
-### Build
+The site will be available at [http://localhost:5173](http://localhost:5173).
+
+### Production build
 
 ```bash
-# Build for production
-npm run docs:build
-
-# Preview production build locally
-npm run docs:preview
-```
-
-## Docker
-
-Build and serve the production site in a container (mirrors the nginx setup used in deployment):
-
-```bash
-docker compose up --build
+docker compose up --build community
 ```
 
 The site will be available at [http://localhost:4174](http://localhost:4174).
 
-To pass a custom base path (e.g. for a subdirectory deployment):
+To pass a custom base path:
 
 ```bash
-docker compose build --build-arg VITE_BASE=/community/
-docker compose up
+docker compose build --build-arg VITE_BASE=/community/ community
+docker compose up community
+```
+
+### Updating dependencies
+
+Always update packages inside the container so the lock file stays CI-compatible:
+
+```bash
+docker run --rm -v "$(pwd):/app" -w /app node:22 npm install <package>
+git add package.json package-lock.json
+git commit -m "chore: update dependencies"
 ```
 
 ## Deployment
