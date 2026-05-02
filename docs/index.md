@@ -30,7 +30,7 @@ layout: home
         A graphical mapper for MUME. It helps you navigate the vast world of Middle-earth by providing a real-time map of your surroundings.
         Available for Windows, Linux, and macOS.
       </p>
-      <a href="https://github.com/mume-mud/mmapper" target="_blank" rel="noopener">View on GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
+      <a href="https://github.com/mume/mmapper" target="_blank" rel="noopener">View on GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
     </div>
   </div>
 
@@ -41,7 +41,7 @@ layout: home
       <p>
         A powerful, extensible client for MUME. It features a robust scripting engine, customizable UI, and built-in support for many MUME-specific features.
       </p>
-      <a href="https://github.com/mume-mud/powwow" target="_blank" rel="noopener">View on GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
+      <a href="https://github.com/mume/powwow" target="_blank" rel="noopener">View on GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
     </div>
   </div>
 
@@ -52,7 +52,7 @@ layout: home
       <p>
         A terminal-based client for MUME, optimized for speed and reliability. It's a great choice for players who prefer a traditional MUDding experience.
       </p>
-      <a href="https://github.com/mume-mud/powtty" target="_blank" rel="noopener">View on GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
+      <a href="https://github.com/mume/powtty" target="_blank" rel="noopener">View on GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
     </div>
   </div>
 
