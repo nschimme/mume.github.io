@@ -23,8 +23,10 @@ Update `docs/links.md` to add or modify community resources.
 
 ## Build and Verification
 
-- Always verify changes locally using `npm run docs:dev`.
-- Run `npm run docs:build` to ensure the production build is successful.
+- Use Docker for all development — do not run `npm install` directly.
+- Dev server with live reload: `docker compose up dev` (available at `http://localhost:5173`).
+- Production build: `docker compose up --build community` (available at `http://localhost:4174`).
+- Update packages inside the container: `docker run --rm -v "$(pwd):/app" -w /app node:22 npm install <package>`, then commit `package.json` and `package-lock.json`.
 - When modifying the UI, perform visual verification (e.g., using Playwright) to ensure style parity with `mume.org` is maintained.
 
 ## Deployment

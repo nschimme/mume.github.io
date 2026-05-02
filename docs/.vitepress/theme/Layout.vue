@@ -1,7 +1,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useData, useRoute, withBase } from 'vitepress'
-import gandalfImg from './gandalf_200.jpg'
+import gandalfImg from './gandalf_90.gif'
+import gandalfImg2x from './gandalf_90@2x.gif'
 import footerGandalf from '../../assets/images/gandalf.jpg'
 import footerHorseman from '../../assets/images/horsemannight.jpg'
 import './mume.css'
@@ -15,10 +16,6 @@ const gandalfRef = ref(null)
 
 const lastUpdated = __LAST_UPDATED__
 
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
-}
-
 let prevScrollpos = 0
 
 const handleScroll = () => {
@@ -27,7 +24,7 @@ const handleScroll = () => {
   const navbar = navbarRef.value
   const gandalf = gandalfRef.value
 
-  if (prevScrollpos > currentScrollPos || prevScrollpos < 10 || width <= 650) {
+  if (prevScrollpos > currentScrollPos || currentScrollPos < 10 || width <= 650) {
     if (navbar) navbar.style.top = "0"
     if (gandalf) gandalf.style.top = (width <= 650) ? "10px" : "22px"
   } else {
@@ -49,10 +46,10 @@ onUnmounted(() => {
 
 <template>
   <div class="theme-container">
-    <label class="toggle" for="toggle" @click="toggleMenu">
+    <label class="toggle" for="toggle">
       <i class="fa fa-bars" aria-hidden="true"></i> <span>Menu</span>
     </label>
-    <input class="toggle" id="toggle" type="checkbox" :checked="isMenuOpen" @change="isMenuOpen = $event.target.checked"/>
+    <input class="toggle" id="toggle" type="checkbox" v-model="isMenuOpen"/>
 
     <nav id="navbar" ref="navbarRef" role="navigation" aria-label="Main">
       <ul>
@@ -112,7 +109,7 @@ onUnmounted(() => {
       </ul>
     </nav>
 
-    <img id="gandalf" ref="gandalfRef" :src="gandalfImg" alt="Gandalf" width="45" height="45">
+    <img id="gandalf" ref="gandalfRef" :src="gandalfImg" :srcset="`${gandalfImg} 1x, ${gandalfImg2x} 2x`" alt="Gandalf" width="90" height="90">
 
     <div class="content">
       <div v-if="page.isNotFound" class="not-found">

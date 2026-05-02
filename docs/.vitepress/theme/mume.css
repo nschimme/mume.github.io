@@ -159,6 +159,7 @@ label.toggle {
     font-weight: 900;
     font-size: 2em;
     padding: 0.625rem 1.25rem; /* 10 px 20 px */
+    z-index: 110;
 }
 
 /* Navbar MUME Gandalf Logo */
@@ -166,8 +167,10 @@ label.toggle {
   position: fixed;
   top: 22px; /* 1.313rem; */
   right: calc(50% + 31.25rem); /* 500 px */
-  z-index: 100;
+  z-index: 120;
   transition: top 0.3s;
+  width: 90px;
+  height: 90px;
 }
 
 /* Navbar links */
