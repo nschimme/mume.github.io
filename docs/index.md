@@ -3,6 +3,10 @@ layout: home
 ---
 
 <div class="home">
+<div class="center-img">
+<img src="./assets/images/fellowship_bw.jpg" alt="The Fellowship" class="banner-img">
+</div>
+
 <div class="quote">
 <i class="fa fa-quote-left" aria-hidden="true"></i>
 You can trust us to stick to you through thick and thin&mdash;to the bitter end. You cannot trust us to let you face trouble alone, and go off without a word. We are your friends.
