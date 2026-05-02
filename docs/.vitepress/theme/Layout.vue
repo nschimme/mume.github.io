@@ -15,10 +15,6 @@ const gandalfRef = ref(null)
 
 const lastUpdated = __LAST_UPDATED__
 
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
-}
-
 let prevScrollpos = 0
 
 const handleScroll = () => {
@@ -27,9 +23,9 @@ const handleScroll = () => {
   const navbar = navbarRef.value
   const gandalf = gandalfRef.value
 
-  if (prevScrollpos > currentScrollPos || prevScrollpos < 10 || width <= 650) {
+  if (prevScrollpos > currentScrollPos || currentScrollPos < 10 || width <= 650) {
     if (navbar) navbar.style.top = "0"
-    if (gandalf) gandalf.style.top = (width <= 650) ? "10px" : "22px"
+    if (gandalf) gandalf.style.top = (width <= 650) ? "10px" : "32px"
   } else {
     if (navbar) navbar.style.top = "-70px"
     if (gandalf) gandalf.style.top = "-86px"
@@ -49,10 +45,10 @@ onUnmounted(() => {
 
 <template>
   <div class="theme-container">
-    <label class="toggle" for="toggle" @click="toggleMenu">
+    <label class="toggle" for="toggle">
       <i class="fa fa-bars" aria-hidden="true"></i> <span>Menu</span>
     </label>
-    <input class="toggle" id="toggle" type="checkbox" :checked="isMenuOpen" @change="isMenuOpen = $event.target.checked"/>
+    <input class="toggle" id="toggle" type="checkbox" v-model="isMenuOpen"/>
 
     <nav id="navbar" ref="navbarRef" role="navigation" aria-label="Main">
       <ul>
@@ -112,7 +108,9 @@ onUnmounted(() => {
       </ul>
     </nav>
 
-    <img id="gandalf" ref="gandalfRef" :src="gandalfImg" alt="Gandalf" width="45" height="45">
+    <a id="gandalf" ref="gandalfRef" href="https://mume.org/">
+      <img :src="gandalfImg" alt="Gandalf" width="45" height="45">
+    </a>
 
     <div class="content">
       <div v-if="page.isNotFound" class="not-found">
