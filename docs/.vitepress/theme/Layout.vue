@@ -10,6 +10,22 @@ import './mume.css'
 const { site, page, frontmatter } = useData()
 const vpRoute = useRoute()
 
+const isActive = (path, exact = false) => {
+  const target = withBase(path)
+  const current = vpRoute.path
+
+  if (exact) {
+    return current === target || (target === '/' && (current === '/' || current === '/index.html'))
+  }
+
+  if (target === '/') return current === '/' || current === '/index.html'
+
+  const normalizedTarget = target.endsWith('/') ? target : target + '/'
+  const normalizedCurrent = current.endsWith('/') ? current : current + '/'
+
+  return normalizedCurrent.startsWith(normalizedTarget)
+}
+
 const isMenuOpen = ref(false)
 const navbarRef = ref(null)
 const gandalfRef = ref(null)
@@ -70,14 +86,14 @@ onUnmounted(() => {
           <a href="https://mume.org/play/">Play<img alt="Play" height="16" width="16" style="padding-left:4px; vertical-align:-10%;" :src="withBase('/favicon.ico')"></a>
         </li>
         <li class="has_children">
-          <a :href="withBase('/')" :class="{ current: vpRoute.path === '/' || vpRoute.path === '/index.html' || vpRoute.path.startsWith(withBase('/opensource')) || vpRoute.path.startsWith(withBase('/links')) || vpRoute.path.startsWith(withBase('/interviews')) }">Community<span class="caret down"></span></a>
+          <a :href="withBase('/')" :class="{ current: isActive('/', true) }">Community<span class="caret down"></span></a>
           <ul>
             <li><a href="https://discord.gg/XkZN55am9a" target="_blank" rel="noopener">Discord <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
             <li><a href="https://elvenrunes.com" target="_blank" rel="noopener">Elvenrunes <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-            <li><a :href="withBase('/opensource')" :class="{ current: vpRoute.path.startsWith(withBase('/opensource')) }">Open Source</a></li>
-            <li><a :href="withBase('/links')" :class="{ current: vpRoute.path.startsWith(withBase('/links')) }">Links</a></li>
-            <li><a :href="withBase('/interviews')" :class="{ current: vpRoute.path.startsWith(withBase('/interviews')) }">Interviews</a></li>
-            <li><a href="https://mume.org/wiki/">Wiki</a></li>
+            <li><a :href="withBase('/opensource')" :class="{ current: isActive('/opensource') }">Open Source</a></li>
+            <li><a :href="withBase('/links')" :class="{ current: isActive('/links') }">Links</a></li>
+            <li><a :href="withBase('/interviews')" :class="{ current: isActive('/interviews') }">Interviews</a></li>
+            <li><a href="https://docs.mume.org/wiki/">Wiki</a></li>
           </ul>
         </li>
         <li class="has_children">

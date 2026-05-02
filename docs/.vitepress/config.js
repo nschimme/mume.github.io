@@ -26,7 +26,7 @@ export default defineConfig({
           { text: 'Open Source', link: '/opensource' },
           { text: 'Links', link: '/links' },
           { text: 'Interviews', link: '/interviews/' },
-          { text: 'Wiki', link: 'https://mume.org/wiki/' }
+          { text: 'Wiki', link: 'https://docs.mume.org/wiki/' }
         ]
       }
     ]
