@@ -261,6 +261,7 @@ border-top-color: goldenrod;
     margin: 0 auto;
     max-width: 56.25rem; /* 900 px */
     padding-top: 4.375rem; /* 70 px */
+    min-height: calc(100vh - 70px - 145px); /* Full height minus navbar and footer */
 }
 
 /* Play Now button */
@@ -983,17 +984,37 @@ a:hover {
   padding: 1.5rem;
 }
 
-.interviews-list {
-  display: flex;
-  flex-direction: column;
+.interviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
 .interview-card {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 1.5rem;
+  transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+  height: 100%;
+  box-sizing: border-box;
+  text-decoration: none !important;
+}
+
+.interview-card:hover {
+  background-color: #1a1d25;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(204, 153, 51, 0.2);
+  border-color: #cc9933;
+}
+
+.interview-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #cc9933;
+  font-family: "Kelt", serif;
+  font-size: 1.3rem;
+  line-height: 1.2;
 }
 
 .meta {
@@ -1004,11 +1025,12 @@ a:hover {
 
 .read-more {
   background: #cc9933;
-  color: #000;
+  color: #000 !important;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
+  margin-top: 1rem;
 }
 
 .read-more:hover {
