@@ -109,7 +109,7 @@ onUnmounted(() => {
     </nav>
 
     <a id="gandalf" ref="gandalfRef" href="https://mume.org/">
-      <img :src="gandalfImg" alt="Gandalf" width="45" height="45">
+      <img :src="gandalfImg" alt="MUME homepage" width="45" height="45">
     </a>
 
     <div class="content">
