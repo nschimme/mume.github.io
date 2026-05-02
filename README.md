@@ -2,14 +2,14 @@
 
 This repository contains the source code for [docs.mume.org](https://docs.mume.org), focusing on the MUME Community page and associated resources (Links, Interviews, etc.).
 
-The site is built to exactly match the style and layout of the main [mume.org](https://mume.org) website.
+The site is built with **VitePress** and designed to match the style and layout of the main [mume.org](https://mume.org) website.
 
 ## Features
 
-- **Vite + Vue 3**: Modern, fast development and build pipeline.
+- **VitePress**: Fast, Vue-powered static site generator.
 - **MUME Styling**: Integrated CSS and assets to maintain visual consistency with the MUME ecosystem.
-- **Dynamic Interviews**: Player interviews are stored as Markdown files in `public/interviews/` and rendered dynamically.
-- **SPA on GitHub Pages**: Configured with custom 404 handling for smooth client-side routing.
+- **Player Interviews**: Interviews are stored as Markdown files in `docs/interviews/` and rendered using VitePress's file-based routing.
+- **Custom Theme**: A custom VitePress theme located in `docs/.vitepress/theme/` implements the MUME look and feel.
 
 ## Development
 
@@ -25,23 +25,23 @@ The site is built to exactly match the style and layout of the main [mume.org](h
 npm install
 
 # Start development server
-npm run dev
+npm run docs:dev
 ```
 
 ### Build
 
 ```bash
 # Build for production
-npm run build
+npm run docs:build
 
 # Preview production build locally
-npm run preview
+npm run docs:preview
 ```
 
 ## Deployment
 
-The site is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the `main` branch.
+The site is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the `master` branch.
 
 ## Contributing
 
-Interviews and content can be updated by modifying the Markdown files in the `public/interviews/` directory. For style or functionality changes, please refer to the `src/` directory.
+Interviews and content can be updated by modifying the Markdown files in the `docs/` directory. For theme or functionality changes, please refer to the `docs/.vitepress/theme/` directory.
