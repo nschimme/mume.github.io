@@ -9,6 +9,10 @@ title: Community Links
 
   <h1>Related Links</h1>
 
+  <div class="intro links-intro">
+    <p>Explore a collection of external resources related to Tolkien's legendarium, MUD databases, and the history of MUME.</p>
+  </div>
+
   <h2>Link us back!</h2>
   <div class="card banner-card">
     <div class="banner-container">
@@ -23,51 +27,23 @@ title: Community Links
 
   <div class="links-grid">
 <section>
-<h2>Other MUME Web Pages</h2>
+<h2>Tolkien Resources</h2>
 <ul>
-<li><a href="https://discord.gg/XkZN55am9a" target="_blank" rel="noopener">MUME Discord</a> &ndash; Join our Discord chat room run by MUME players.</li>
-<li><a href="http://www.elvenrunes.com" target="_blank" rel="noopener">Elvenrunes</a> &ndash; Gossip, logs, discussions, tales, generators, and the community.</li>
-<li><a href="http://axel.trocha.com/mume/" target="_blank" rel="noopener">Axel's MUME Page</a> &ndash; Warlords history, powwow scripts, logs.</li>
-<li><a href="http://hoopajoo.net/projects/powwow.html" target="_blank" rel="noopener">Powwow</a> &ndash; Unix MUD client originally written by Cosmos. Supports MUME’s remote editing protocol.</li>
-<li><a href="http://www.elvenrunes.com/powtty" target="_blank" rel="noopener">PowTTY client</a> &ndash; Loden's Windows port of powwow.</li>
-<li><a href="https://groups.google.com/u/0/g/mume-announcements" target="_blank" rel="noopener">MUME Announcements Google Group</a> &ndash; Google Group that will send an e-mail upon an update in the Game News RSS feed.</li>
-</ul>
-</section>
-
-<section>
-<h2>Tolkien links</h2>
-<ul>
+<li><a href="http://tolkiengateway.net/wiki/MUME" target="_blank" rel="noopener">Tolkien Gateway</a> &ndash; Detailed information about MUME and the legendarium.</li>
+<li><a href="http://www.glyphweb.com/arda/" target="_blank" rel="noopener">The Encyclopedia of Arda</a> &ndash; An illustrated encyclopedia of Tolkien's world.</li>
+<li><a href="http://www.uib.no/people/hnohf/" target="_blank" rel="noopener">Ardalambion</a> &ndash; Of the tongues of Arda.</li>
 <li><a href="http://www.tolkienonline.com/" target="_blank" rel="noopener">Tolkien online</a></li>
 <li><a href="http://tolkien.cro.net/" target="_blank" rel="noopener">The Grey Havens</a></li>
-<li><a href="http://www.thelordoftherings.com/" target="_blank" rel="noopener">thelordoftherings.com</a></li>
-<li><a href="http://www.glyphweb.com/arda/" target="_blank" rel="noopener">The Encyclopedia of Arda</a></li>
-<li><a href="http://tolkiengateway.net/wiki/MUME" target="_blank" rel="noopener">Tolkien Gateway</a></li>
-<li><a href="http://www.uib.no/people/hnohf/" target="_blank" rel="noopener">Ardalambion</a></li>
-<li><a href="http://www.lordoftherings.net/index.html" target="_blank" rel="noopener">The Lord of the Rings movie</a></li>
 <li><a href="http://theonering.net/" target="_blank" rel="noopener">TheOneRing.net</a></li>
-<li><a href="https://en.wikipedia.org/wiki/MUME" target="_blank" rel="noopener">Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/MUME" target="_blank" rel="noopener">Wikipedia: MUME</a></li>
 </ul>
 </section>
 
 <section>
-<h2>Tolkien humour</h2>
-<ul>
-<li><a href="http://flyingmoose.org/tolksarc/tolksarc.htm" target="_blank" rel="noopener">The Tolkien Sarcasm Page</a></li>
-<li><a href="http://www.userfriendly.org/cartoons/archives/99oct/19991018.html" target="_blank" rel="noopener">User Friendly - Lord of the Pings</a></li>
-</ul>
-</section>
-
-<section>
-<h2>MUD</h2>
+<h2>MUD Databases</h2>
 <ul>
 <li><a href="https://www.mudconnect.com/reviews/muds/MUME.html" target="_blank" rel="noopener">The Mud Connector</a></li>
 <li><a href="https://www.topmudsites.com/forums/muddisplay.php?mudid=MUME" target="_blank" rel="noopener">The Top Mud Sites</a></li>
-</ul>
-</section>
-
-<section>
-<h2>Databases</h2>
-<ul>
 <li><a href="http://mudstats.com/World/MUME-MultiUsersInMiddleEarth" target="_blank" rel="noopener">Mud Stats</a></li>
 <li><a href="https://grapevine.haus/games/MUME" target="_blank" rel="noopener">Grapevine</a></li>
 <li><a href="https://mudhalla.net/mudlist/mud/mume.org_4242.html" target="_blank" rel="noopener">Mudhalla</a></li>
@@ -76,13 +52,27 @@ title: Community Links
 </section>
 
 <section>
-<h2>Submit your link</h2>
-<p>To have your web site listed here you must:</p>
+<h2>Tolkien Humour</h2>
 <ul>
-<li>Have a site that contains some relevant information.</li>
-<li>Have a site that does not contain MUME-restricted information (maps, mobiles or object data, etc).</li>
-<li>Register by contacting us in game!</li>
+<li><a href="http://flyingmoose.org/tolksarc/tolksarc.htm" target="_blank" rel="noopener">The Tolkien Sarcasm Page</a></li>
+<li><a href="http://www.userfriendly.org/cartoons/archives/99oct/19991018.html" target="_blank" rel="noopener">User Friendly - Lord of the Pings</a></li>
 </ul>
+</section>
+
+<section>
+<h2>Announcements</h2>
+<ul>
+<li><a href="https://groups.google.com/u/0/g/mume-announcements" target="_blank" rel="noopener">MUME Announcements Google Group</a> &ndash; Stay updated with the latest Game News via email.</li>
+</ul>
+</section>
+
+<section>
+<h2>Submit your link</h2>
+<p>To have your website listed here, it must contain relevant information and not reveal MUME-restricted data (maps, mobiles, or object data).</p>
+<p>This site is community-maintained! You can submit new links or updates by contributing to our repository on GitHub.</p>
+<div class="center-img" style="margin-top: 1rem;">
+  <a href="https://github.com/mume/mume.github.io" target="_blank" rel="noopener" class="read-more">Contribute on GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
+</div>
 </section>
   </div>
 </div>

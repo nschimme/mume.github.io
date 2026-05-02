@@ -77,6 +77,7 @@ onUnmounted(() => {
           <ul>
             <li><a href="https://discord.gg/XkZN55am9a" target="_blank" rel="noopener">Discord <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
             <li><a href="http://www.elvenrunes.com" target="_blank" rel="noopener">Elvenrunes <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+            <li><a :href="withBase('/opensource')">Open Source</a></li>
             <li><a :href="withBase('/links')">Links</a></li>
             <li><a :href="withBase('/interviews')">Interviews</a></li>
             <li><a href="https://mume.org/wiki/">Wiki</a></li>
