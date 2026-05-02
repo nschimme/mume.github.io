@@ -1,7 +1,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useData, useRoute, withBase } from 'vitepress'
-import gandalfImg from './gandalf_200.jpg'
+import gandalfImg from './gandalf_90.gif'
+import gandalfImg2x from './gandalf_90@2x.gif'
 import footerGandalf from '../../assets/images/gandalf.jpg'
 import footerHorseman from '../../assets/images/horsemannight.jpg'
 import './mume.css'
@@ -25,7 +26,7 @@ const handleScroll = () => {
 
   if (prevScrollpos > currentScrollPos || currentScrollPos < 10 || width <= 650) {
     if (navbar) navbar.style.top = "0"
-    if (gandalf) gandalf.style.top = (width <= 650) ? "10px" : "32px"
+    if (gandalf) gandalf.style.top = (width <= 650) ? "10px" : "22px"
   } else {
     if (navbar) navbar.style.top = "-70px"
     if (gandalf) gandalf.style.top = "-86px"
@@ -108,9 +109,7 @@ onUnmounted(() => {
       </ul>
     </nav>
 
-    <a id="gandalf" ref="gandalfRef" href="https://mume.org/">
-      <img :src="gandalfImg" alt="MUME homepage" width="45" height="45">
-    </a>
+    <img id="gandalf" ref="gandalfRef" :src="gandalfImg" :srcset="`${gandalfImg} 1x, ${gandalfImg2x} 2x`" alt="Gandalf" width="90" height="90">
 
     <div class="content">
       <div v-if="page.isNotFound" class="not-found">

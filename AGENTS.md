@@ -25,6 +25,7 @@ Update `docs/links.md` to add or modify community resources.
 
 - Always verify changes locally using `npm run docs:dev`.
 - Run `npm run docs:build` to ensure the production build is successful.
+- Use `docker compose up --build` to verify the production build in an nginx container (available at `http://localhost:4174`).
 - When modifying the UI, perform visual verification (e.g., using Playwright) to ensure style parity with `mume.org` is maintained.
 
 ## Deployment

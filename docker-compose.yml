@@ -1,0 +1,8 @@
+services:
+  community:
+    build:
+      context: .
+      args:
+        VITE_BASE: /
+    ports:
+      - "4174:80"

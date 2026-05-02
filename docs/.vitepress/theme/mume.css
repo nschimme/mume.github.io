@@ -165,10 +165,12 @@ label.toggle {
 /* Navbar MUME Gandalf Logo */
 #gandalf {
   position: fixed;
-  top: 32px; /* 1.313rem; */
+  top: 22px; /* 1.313rem; */
   right: calc(50% + 31.25rem); /* 500 px */
   z-index: 120;
   transition: top 0.3s;
+  width: 90px;
+  height: 90px;
 }
 
 /* Navbar links */
