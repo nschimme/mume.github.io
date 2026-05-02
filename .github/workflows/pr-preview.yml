@@ -40,15 +40,14 @@ jobs:
             echo "host=${{ github.repository_owner }}.github.io" >> $GITHUB_OUTPUT
           fi
 
+      - name: Setup environment
+        run: ./scripts/ci-env.sh
+        env:
+          PREVIEW_HOST: ${{ steps.base_url.outputs.host }}
+          PREVIEW_PREFIX: ${{ steps.base_url.outputs.prefix }}pr-${{ github.event.number }}/
+
       - name: Build preview
-        run: |
-          export VITE_LAST_UPDATED=$(git log -1 --format=%cd --date=format:'%B %Y')
-          if [ -f CNAME ]; then
-            export VITE_HOSTNAME="https://$(cat CNAME)"
-          else
-            export VITE_HOSTNAME="https://${{ steps.base_url.outputs.host }}${{ steps.base_url.outputs.prefix }}pr-${{ github.event.number }}/"
-          fi
-          npm run build
+        run: npm run build
         env:
           VITE_BASE: ${{ steps.base_url.outputs.prefix }}pr-${{ github.event.number }}/
 

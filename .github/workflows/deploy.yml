@@ -45,14 +45,11 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
 
+      - name: Setup environment
+        run: ./scripts/ci-env.sh
+
       - name: Build
         run: |
-          export VITE_LAST_UPDATED=$(git log -1 --format=%cd --date=format:'%B %Y')
-          if [ -f CNAME ]; then
-            export VITE_HOSTNAME="https://$(cat CNAME)"
-          else
-            export VITE_HOSTNAME="https://docs.mume.org"
-          fi
           npm run build
           if [ -f CNAME ]; then cp CNAME dist/CNAME; fi
         env:

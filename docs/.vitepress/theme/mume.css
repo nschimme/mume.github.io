@@ -924,3 +924,97 @@ a:hover {
     line-height: 44px;
   }
 }
+
+/* Shared Page Layouts */
+.home, .links, .interviews {
+  padding: 1rem;
+}
+
+.center-img {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.banner-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.intro.links-intro {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.banner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.site-banner {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.banner-code {
+  width: 100%;
+}
+
+.banner-code h3 {
+  margin-top: 0;
+}
+
+.links-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.resource-card {
+  padding: 1.5rem;
+}
+
+.interviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.interview-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+}
+
+.read-more {
+  background: #cc9933;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.read-more:hover {
+  background: #e4ba3c;
+}
+
+h1, h2 {
+  text-align: center;
+}

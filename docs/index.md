@@ -81,9 +81,3 @@ layout: home
     </div>
   </div>
 </div>
-
-<style scoped>
-.home {
-  padding: 1rem;
-}
-</style>

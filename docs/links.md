@@ -8,7 +8,7 @@ title: Community Links
   </div>
 
   <h1>Related Links</h1>
-  <p class="intro">
+  <p class="intro links-intro">
     A collection of resources, communities, and Tolkien-related websites curated by the MUME community.
   </p>
 
@@ -64,52 +64,3 @@ title: Community Links
     </section>
   </div>
 </div>
-
-<style scoped>
-.links {
-  padding: 1rem;
-}
-.center-img {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.banner-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-.intro {
-  text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-.banner-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.5rem;
-  margin-bottom: 3rem;
-}
-.site-banner {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-}
-.banner-code {
-  width: 100%;
-}
-.banner-code h3 {
-  margin-top: 0;
-}
-.links-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.resource-card {
-  padding: 1.5rem;
-}
-h1, h2 {
-  text-align: center;
-}
-</style>
