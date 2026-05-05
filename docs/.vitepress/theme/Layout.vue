@@ -145,7 +145,7 @@ onUnmounted(() => {
         Do you like MUME? Tell others on
         <a href="https://www.mudconnect.com/cgi-bin/search.cgi?mode=mud_listing&mud=MUME+-+Multi+Users+In+Middle+Earth" target="_blank" rel="noopener">The Mud Connector</a>.
         <br>
-        Web site maintained by the Community and the <a href="https://mume.org/about/ainur">Valar</a> on <a href="https://github.com/mume/mume.github.io">Github</a>.
+        Web site maintained by the Community and the <a href="https://mume.org/about/ainur">Valar</a> on <a href="https://github.com/mume/mume.github.io">GitHub</a>.
         Last updated {{ lastUpdated }}.
         <br>
         MUME is hosted at <a href="https://www.heig-vd.ch" target="_blank" rel="noopener">HEIG-VD</a> (School of Engineering and Management Vaud, Switzerland).
