@@ -51,7 +51,7 @@ jobs:
       - name: Build
         run: |
           npm run build
-          if [ -f CNAME ]; then cp CNAME dist/CNAME; fi
+          if [ -f CNAME ] && [ "${{ github.repository_owner }}" = "mume" ]; then cp CNAME dist/CNAME; fi
         env:
           VITE_BASE: ${{ steps.pages.outputs.base_path }}/
 
@@ -192,7 +192,7 @@ jobs:
                 let base = `https://${owner}.github.io`;
 
                 const cnamePath = 'CNAME';
-                if (fs.existsSync(cnamePath)) {
+                if (fs.existsSync(cnamePath) && owner === 'mume') {
                   const domain = fs.readFileSync(cnamePath, 'utf8').trim();
                   if (domain) {
                     base = `https://${domain}`;
