@@ -3,8 +3,6 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { useData, useRoute, withBase } from 'vitepress'
 import gandalfImg from './gandalf_90.gif'
 import gandalfImg2x from './gandalf_90@2x.gif'
-import footerGandalf from '../../assets/images/gandalf.jpg'
-import footerHorseman from '../../assets/images/horsemannight.jpg'
 import './mume.css'
 
 const { site, page, frontmatter } = useData()
@@ -142,25 +140,15 @@ onUnmounted(() => {
 
     <footer role="contentinfo">
       <div class="footer">
-        <p>
-          <a rel="alternate" type="application/rss+xml" href="https://mume.org/Import/News/rss.xml"><i class="fa fa-rss-square" aria-hidden="true" title="RSS"></i></a>
-          Do you like MUME? Tell others on
-          <a href="https://www.mudconnect.com/cgi-bin/search.cgi?mode=mud_listing&mud=MUME+-+Multi+Users+In+Middle+Earth" target="_blank" rel="noopener">The Mud Connector</a>.
-        </p>
-        <p>
-          <a href="https://www.facebook.com/MUMEMUD/"><i class="fa fa-facebook-square" aria-hidden="true" title="Facebook"></i></a>
-          Web site maintained by Manw&euml; and the <a href="https://mume.org/about/ainur">Valar</a>.
-          Last updated {{ lastUpdated }}.
-        </p>
-        <p>
-          MUME is hosted at <a href="https://www.heig-vd.ch" target="_blank" rel="noopener">HEIG-VD</a> (School of Engineering and Management Vaud, Switzerland).
-        </p>
-        <aside>
-          MUME&rsquo;s logo is based on John Howe&rsquo;s
-          &ldquo;<a :href="footerGandalf">Gandalf</a>&rdquo; and
-          &ldquo;<a :href="footerHorseman">Horseman in the Night</a>&rdquo; by
-          Renea, Vair&euml;, and Manw&euml;.
-        </aside>
+        <a rel="alternate" type="application/rss+xml" href="https://mume.org/Import/News/rss.xml"><i class="fa fa-rss-square" aria-hidden="true" title="RSS"></i></a>
+        <a href="https://www.facebook.com/MUMEMUD/"><i class="fa fa-facebook-square" aria-hidden="true" title="Facebook"></i></a>
+        Do you like MUME? Tell others on
+        <a href="https://www.mudconnect.com/cgi-bin/search.cgi?mode=mud_listing&mud=MUME+-+Multi+Users+In+Middle+Earth" target="_blank" rel="noopener">The Mud Connector</a>.
+        <br>
+        Web site maintained by the Community and the <a href="https://mume.org/about/ainur">Valar</a> on <a href="https://github.com/mume/mume.github.io">GitHub</a>.
+        Last updated {{ lastUpdated }}.
+        <br>
+        MUME is hosted at <a href="https://www.heig-vd.ch" target="_blank" rel="noopener">HEIG-VD</a> (School of Engineering and Management Vaud, Switzerland).
       </div>
     </footer>
   </div>
