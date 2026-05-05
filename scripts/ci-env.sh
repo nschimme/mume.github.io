@@ -14,7 +14,7 @@ else
   else
     # Fallback for forks or main repo without CNAME
     OWNER="${GITHUB_REPOSITORY_OWNER:-mume}"
-    REPO=$(echo "${GITHUB_REPOSITORY:-mume/docs}" | cut -d'/' -f2)
+    REPO=$(echo "${GITHUB_REPOSITORY:-${OWNER}/docs}" | cut -d'/' -f2)
     if [ "$OWNER" = "mume" ] && [ "$REPO" = "docs" ]; then
       export VITE_HOSTNAME="https://docs.mume.org"
     elif [ "$REPO" = "$OWNER.github.io" ]; then

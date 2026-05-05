@@ -198,8 +198,10 @@ jobs:
                     base = `https://${domain}`;
                   }
                 } else {
-                  const normalizedPath = baseUrlPath.startsWith('/') ? baseUrlPath : `/${baseUrlPath}`;
-                  base = `${base}${normalizedPath}`.replace(/\/$/, '');
+                  const repo = context.repo.repo;
+                  if (repo !== `${owner}.github.io`) {
+                    base = `${base}/${repo}`;
+                  }
                 }
 
                 const url = `${base}/pr-${pr.number}/`;
