@@ -17,16 +17,48 @@ export default defineConfig({
   ],
   themeConfig: {
     nav: [
-      { text: 'Home', link: 'https://mume.org' },
+      { text: 'Home', link: '/' },
+      {
+        text: 'About',
+        items: [
+          { text: 'About MUME', link: '/about/' },
+          { text: 'Features', link: '/about/features' },
+          { text: 'History', link: '/about/history' },
+          { text: 'The Ainur', link: '/about/ainur' }
+        ]
+      },
+      { text: 'Play', link: '/play' },
       {
         text: 'Community',
         items: [
+          { text: 'Community Home', link: '/community' },
           { text: 'Discord', link: 'https://discord.gg/XkZN55am9a' },
           { text: 'Elvenrunes', link: 'https://elvenrunes.com' },
           { text: 'Open Source', link: '/opensource' },
           { text: 'Links', link: '/links' },
           { text: 'Interviews', link: '/interviews/' },
           { text: 'Wiki', link: 'https://docs.mume.org/wiki/' }
+        ]
+      },
+      {
+        text: 'News',
+        items: [
+          { text: 'Web News', link: '/news/' },
+          { text: 'War', link: 'https://mume.org/news/war' },
+          { text: 'Game News', link: 'https://mume.org/news/game/' }
+        ]
+      },
+      {
+        text: 'Resources',
+        items: [
+          { text: 'Resources', link: '/resources/' },
+          { text: 'Newcomers', link: '/resources/newcomers' },
+          { text: 'Help', link: 'https://mume.org/help/' },
+          { text: 'Rules', link: 'https://mume.org/rules/' },
+          { text: 'Dictionary', link: 'https://mume.org/dictionary/' },
+          { text: 'Boards', link: 'https://mume.org/resources/boards/' },
+          { text: 'Download', link: 'https://mume.org/download/' },
+          { text: 'Plots', link: 'https://mume.org/plots/' }
         ]
       }
     ]
