@@ -10,5 +10,8 @@
 * [**Game News**](https://mume.org/news/game/)
   Find out about the latest news from the game!
 
+* [**Web News**](./web)
+  The news from this Web-page.
+
 * [**Frequentation Plots**](https://mume.org/plots/)
   Graphs showing the number of players on each side of the war.

@@ -43,7 +43,7 @@ export default defineConfig({
       {
         text: 'News',
         items: [
-          { text: 'Web News', link: '/news/' },
+          { text: 'Web News', link: '/news/web' },
           { text: 'War', link: 'https://mume.org/news/war' },
           { text: 'Game News', link: 'https://mume.org/news/game/' }
         ]

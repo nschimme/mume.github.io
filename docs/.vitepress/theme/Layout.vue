@@ -100,7 +100,7 @@ onUnmounted(() => {
           <ul>
             <li><a href="https://mume.org/news/war">War</a></li>
             <li><a href="https://mume.org/news/game/">Game News</a></li>
-            <li><a :href="withBase('/news/')" :class="{ current: isActive('/news/', true) }">Web News</a></li>
+            <li><a :href="withBase('/news/web')" :class="{ current: isActive('/news/web') }">Web News</a></li>
           </ul>
         </li>
         <li class="has_children">

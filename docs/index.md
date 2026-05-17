@@ -20,6 +20,37 @@ MUME, Multi-Users in Middle-earth, is a multiplayer text-based online game based
 
 <div class="separator"></div>
 
+<div class="youtube-container">
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/d-Ax1MZlDoE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div class="quote">
+People think that Dark Souls was a hard game these days. Ha! You ain't seen nothing! … It was crazy in PvP … It was insane. Absolutely insane.
+<br>
+<cite>&mdash; TotalBiscuit, <a href="https://www.youtube.com/watch?v=1y9bS5cqLaM&feature=youtu.be&t=6m2s" target="_blank" rel="noopener">BBC 3 Interview</a></cite>
+</div>
+
+<div class="separator"></div>
+
+<h1>Latest News</h1>
+
+<section class="community-section">
+<div class="card">
+<img src="./assets/images/boromir-horn.png" srcset="./assets/images/boromir-horn.png 1x, ./assets/images/boromir-horn@2x.png 2x" alt="Latest News">
+<div>
+<h3>Re: Temporary Bugs Associated with Rogue AI Agent</h3>
+<p>
+Pilois, 02 Apr 2026
+</p>
+<a href="https://mume.org/news/latest" class="read-more">Read more</a>
+</div>
+</div>
+</section>
+
+<div class="separator"></div>
+
+<h1>Playable Races and Classes</h1>
+
 <div class="community-grid">
 
 <section class="community-section">
@@ -41,6 +72,22 @@ Choose from Men, Elves, Half-elves, Hobbits, and Dwarves to defend the Free Peop
 <h3>Forces of the Dark Lord</h3>
 <p>
 Choose from Orcs, Trolls, and Black Númenóreans to hunt down and ruin the weak.
+</p>
+</div>
+</div>
+</section>
+
+</div>
+
+<div class="separator"></div>
+
+<section class="community-section">
+<div class="card">
+<img src="./assets/images/mume-classes.png" srcset="./assets/images/mume-classes.png 1x, ./assets/images/mume-classes@2x.png 2x" alt="Classes">
+<div>
+<h3>Design Your Class</h3>
+<p>
+Shape your character any way you want by practicing skills or spells from any guild: Warrior, Stealthy scout, Master of magical arts, or Healer.
 </p>
 </div>
 </div>
@@ -93,5 +140,27 @@ Find adulation and glory by outwitting your opponents in a highly competitive wo
 </div>
 </section>
 
+<div class="separator"></div>
+
+<section class="community-section">
+<h2>Join the Community</h2>
+<div class="card">
+<img src="./assets/images/gandalf.jpg" alt="Join the Ainur">
+<div>
+<h3>Join the Ainur</h3>
+<p>
+Join the Istari, attain immortality, and take your place within the community to extend and enhance the game. Nerd out with Tolkien fans to expand MUME all the way to Mordor.
+</p>
+<a href="https://mume.org/about/ainur" class="read-more">Learn More <i class="fa fa-external-link" aria-hidden="true"></i></a>
 </div>
+</div>
+</section>
+
+<div class="separator"></div>
+
+<div class="playnow">
+<div class="readytoexplore">Speak, friend, and enter</div>
+<a href="./play">Mellon</a>
+</div>
+
 </div>
