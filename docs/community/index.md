@@ -4,7 +4,7 @@ layout: home
 
 <div class="home">
 <div class="center-img">
-<img src="./assets/images/fellowship_bw.jpg" alt="The Fellowship" class="banner-img">
+<img src="../assets/images/fellowship_bw.jpg" alt="The Fellowship" class="banner-img">
 </div>
 
 <div class="quote">
@@ -19,7 +19,7 @@ You can trust us to stick to you through thick and thin&mdash;to the bitter end.
 
 <div class="playnow">
 <div class="readytoexplore">Ready to explore Middle-earth?</div>
-<a href="https://mume.org/play/">Play Now</a>
+<a href="../play">Play Now</a>
 </div>
 
 <div class="separator"></div>
@@ -43,7 +43,7 @@ You can trust us to stick to you through thick and thin&mdash;to the bitter end.
 <section class="community-section">
 <h2><i class="fa fa-book" aria-hidden="true"></i> MUME Wiki</h2>
 <div class="card">
-<img src="./assets/images/doors-of-durin.png" alt="MUME Wiki">
+<img src="../assets/images/doors-of-durin.png" srcset="../assets/images/doors-of-durin.png 1x, ../assets/images/doors-of-durin@2x.png 2x" alt="MUME Wiki">
 <div>
 <h3>Knowledge Base</h3>
 <p>
@@ -74,7 +74,7 @@ Check out the community YouTube channel for combat logs, guides, and Middle-eart
 <section class="community-section">
 <h2><i class="fa fa-history" aria-hidden="true"></i> Elvenrunes</h2>
 <div class="card">
-<img src="./assets/images/mume-classes.png" alt="Elvenrunes">
+<img src="../assets/images/mume-classes.png" srcset="../assets/images/mume-classes.png 1x, ../assets/images/mume-classes@2x.png 2x" alt="Elvenrunes">
 <div>
 <h3>Combat Logs & Discussion</h3>
 <p>
@@ -90,7 +90,7 @@ A long-standing pillar of the community, Elvenrunes features combat logs, forums
 <section class="community-section">
 <h2><i class="fa fa-users" aria-hidden="true"></i> Player Interviews</h2>
 <div class="card">
-<img src="./assets/images/fellowship_bw.jpg" alt="Interviews">
+<img src="../assets/images/fellowship_bw.jpg" alt="Interviews">
 <div>
 <h3>Legends of MUME</h3>
 <p>
@@ -106,7 +106,7 @@ Read interviews with legendary players and developers. Learn about the history a
 <section class="community-section">
 <h2><i class="fa fa-code" aria-hidden="true"></i> Open Source</h2>
 <div class="card">
-<img src="./assets/images/mume_logo.jpg" alt="MMapper Logo">
+<img src="../assets/images/mume_logo.jpg" srcset="../assets/images/mume_logo.jpg 1x, ../assets/images/mume_logo@2x.jpg 2x" alt="MMapper Logo">
 <div>
 <h3>Community Projects</h3>
 <p>

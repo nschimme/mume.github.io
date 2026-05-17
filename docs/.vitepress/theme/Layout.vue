@@ -78,20 +78,20 @@ onUnmounted(() => {
           <ul>
             <li><a :href="withBase('/about/features')" :class="{ current: isActive('/about/features') }">Features</a></li>
             <li><a :href="withBase('/about/history')" :class="{ current: isActive('/about/history') }">History</a></li>
-            <li><a :href="withBase('/about/ainur')" :class="{ current: isActive('/about/ainur') }">The Ainur</a></li>
+            <li><a href="https://mume.org/about/ainur" target="_self" rel="external">The Ainur</a></li>
           </ul>
         </li>
         <li>
           <a :href="withBase('/play')" :class="{ current: isActive('/play') }">Play<img alt="Play" height="16" width="16" style="padding-left:4px; vertical-align:-10%;" :src="withBase('/favicon.ico')"></a>
         </li>
         <li class="has_children">
-          <a :href="withBase('/community')" :class="{ current: isActive('/community') }">Community<span class="caret down"></span></a>
+          <a :href="withBase('/community/')" :class="{ current: isActive('/community/') }">Community<span class="caret down"></span></a>
           <ul>
             <li><a href="https://discord.gg/XkZN55am9a" target="_blank" rel="noopener">Discord <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
             <li><a href="https://elvenrunes.com" target="_blank" rel="noopener">Elvenrunes <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-            <li><a :href="withBase('/opensource')" :class="{ current: isActive('/opensource') }">Open Source</a></li>
-            <li><a :href="withBase('/links')" :class="{ current: isActive('/links') }">Links</a></li>
-            <li><a :href="withBase('/interviews/')" :class="{ current: isActive('/interviews/') }">Interviews</a></li>
+            <li><a :href="withBase('/community/opensource')" :class="{ current: isActive('/community/opensource') }">Open Source</a></li>
+            <li><a :href="withBase('/community/links')" :class="{ current: isActive('/community/links') }">Links</a></li>
+            <li><a :href="withBase('/community/interviews/')" :class="{ current: isActive('/community/interviews/') }">Interviews</a></li>
             <li><a href="https://docs.mume.org/wiki/" target="_self" rel="external">Wiki</a></li>
           </ul>
         </li>

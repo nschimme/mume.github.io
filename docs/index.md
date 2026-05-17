@@ -4,7 +4,7 @@ layout: home
 
 <div class="home">
 <div class="center-img">
-<img src="./assets/images/mume_logo.jpg" alt="MUME Logo" class="banner-img">
+<img src="./assets/images/mume_logo.jpg" srcset="./assets/images/mume_logo.jpg 1x, ./assets/images/mume_logo@2x.jpg 2x" alt="MUME Logo" class="banner-img">
 </div>
 
 <div class="quote">
@@ -24,7 +24,7 @@ MUME, Multi-Users in Middle-earth, is a multiplayer text-based online game based
 
 <section class="community-section">
 <div class="card">
-<img src="./assets/images/shield-gondor.png" alt="Free People">
+<img src="./assets/images/shield-gondor.png" srcset="./assets/images/shield-gondor.png 1x, ./assets/images/shield-gondor@2x.png 2x" alt="Free People">
 <div>
 <h3>Armies of the West</h3>
 <p>
@@ -36,7 +36,7 @@ Choose from Men, Elves, Half-elves, Hobbits, and Dwarves to defend the Free Peop
 
 <section class="community-section">
 <div class="card">
-<img src="./assets/images/shield-mordor.png" alt="Forces of Mordor">
+<img src="./assets/images/shield-mordor.png" srcset="./assets/images/shield-mordor.png 1x, ./assets/images/shield-mordor@2x.png 2x" alt="Forces of Mordor">
 <div>
 <h3>Forces of the Dark Lord</h3>
 <p>
@@ -51,7 +51,7 @@ Choose from Orcs, Trolls, and Black Númenóreans to hunt down and ruin the weak
 <section class="community-section">
 <h2>Explore Middle-earth</h2>
 <div class="card">
-<img src="./assets/images/doors-of-durin.png" alt="Doors of Durin">
+<img src="./assets/images/doors-of-durin.png" srcset="./assets/images/doors-of-durin.png 1x, ./assets/images/doors-of-durin@2x.png 2x" alt="Doors of Durin">
 <div>
 <h3>Enter the Third Age</h3>
 <p>
@@ -67,7 +67,7 @@ Visit an astonishing number of beautifully described locations: Bree, the Shire,
 <section class="community-section">
 <h2>Slay Ancient Evils</h2>
 <div class="card">
-<img src="./assets/images/balrog.png" alt="Balrog">
+<img src="./assets/images/balrog.png" srcset="./assets/images/balrog.png 1x, ./assets/images/balrog@2x.png 2x" alt="Balrog">
 <div>
 <h3>Epic Challenges</h3>
 <p>
@@ -82,7 +82,7 @@ There are older and fouler things than Orcs in the deep places of the world. Sla
 <section class="community-section">
 <h2>Become a Warlord</h2>
 <div class="card">
-<img src="./assets/images/boromir-horn.png" alt="Boromir's Horn">
+<img src="./assets/images/boromir-horn.png" srcset="./assets/images/boromir-horn.png 1x, ./assets/images/boromir-horn@2x.png 2x" alt="Boromir's Horn">
 <div>
 <h3>Player versus Player</h3>
 <p>

@@ -24,19 +24,19 @@ export default defineConfig({
           { text: 'About MUME', link: '/about/' },
           { text: 'Features', link: '/about/features' },
           { text: 'History', link: '/about/history' },
-          { text: 'The Ainur', link: '/about/ainur' }
+          { text: 'The Ainur', link: 'https://mume.org/about/ainur', target: '_self', rel: 'external' }
         ]
       },
       { text: 'Play', link: '/play' },
       {
         text: 'Community',
         items: [
-          { text: 'Community Home', link: '/community' },
+          { text: 'Community Home', link: '/community/' },
           { text: 'Discord', link: 'https://discord.gg/XkZN55am9a' },
           { text: 'Elvenrunes', link: 'https://elvenrunes.com' },
-          { text: 'Open Source', link: '/opensource' },
-          { text: 'Links', link: '/links' },
-          { text: 'Interviews', link: '/interviews/' },
+          { text: 'Open Source', link: '/community/opensource' },
+          { text: 'Links', link: '/community/links' },
+          { text: 'Interviews', link: '/community/interviews/' },
           { text: 'Wiki', link: 'https://docs.mume.org/wiki/' }
         ]
       },

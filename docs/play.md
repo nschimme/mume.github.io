@@ -30,4 +30,4 @@ If you already have a MUD client, just connect to **mume.org** port **4242** and
 
 [**Download Mudlet**](https://www.mudlet.org/)
 
-For alternatives, check out our [open source projects](./opensource). You may also find legacy clients at our [mirror](https://mume.org/download/clients/).
+For alternatives, check out our [open source projects](./community/opensource). You may also find legacy clients at our [mirror](https://mume.org/download/clients/).
