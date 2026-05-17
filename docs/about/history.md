@@ -21,7 +21,7 @@ Anyway, our original player file was (and still is; no player wipes ever were ma
 
 A lot of water has gone under the bridge since then… Eru moved to other projects at the end of MUME II (see below for a brief chronology) while David Gay (Nada), the only one to have a real clue on programming languages in general and in C hacks in particular, was lured on MUME.
 
-As a last note we would like to [thank the Ainur](./ainur) that helped and help us to build MUME.
+As a last note we would like to [thank the Ainur](https://mume.org/about/ainur) that helped and help us to build MUME.
 
 ## Valaquenta (Account of the Valar)
 
