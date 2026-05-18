@@ -60,7 +60,8 @@ export default defineConfig({
           { text: 'Download', link: 'https://mume.org/download/' },
           { text: 'Plots', link: 'https://mume.org/plots/' }
         ]
-      }
+      },
+      { text: 'Search', link: 'https://mume.org/search', target: '_self', rel: 'external' }
     ]
   },
   vite: {
