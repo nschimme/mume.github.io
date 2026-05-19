@@ -98,8 +98,8 @@ onUnmounted(() => {
         <li class="has_children">
           <a :href="withBase('/news/')" :class="{ current: isActive('/news/') }">News<span class="caret down"></span></a>
           <ul>
-            <li><a href="https://mume.org/news/war">War</a></li>
-            <li><a href="https://mume.org/news/game/">Game News</a></li>
+            <li><a href="https://mume.org/news/war" target="_self" rel="external">War</a></li>
+            <li><a href="https://mume.org/news/game/" target="_self" rel="external">Game News</a></li>
             <li><a :href="withBase('/news/web')" :class="{ current: isActive('/news/web') }">Web News</a></li>
           </ul>
         </li>
@@ -107,16 +107,16 @@ onUnmounted(() => {
           <a :href="withBase('/resources/')" :class="{ current: isActive('/resources/') }">Resources<span class="caret down"></span></a>
           <ul>
             <li><a :href="withBase('/resources/newcomers')" :class="{ current: isActive('/resources/newcomers') }">Newcomers</a></li>
-            <li><a href="https://mume.org/help/">Help</a></li>
-            <li><a href="https://mume.org/rules/">Rules</a></li>
-            <li><a href="https://mume.org/dictionary/">Dictionary</a></li>
-            <li><a href="https://mume.org/resources/boards/">Boards</a></li>
-            <li><a href="https://mume.org/download/" rel="nofollow">Download</a></li>
-            <li><a href="https://mume.org/plots/" rel="nofollow">Plots</a></li>
+            <li><a href="https://mume.org/help/" target="_self" rel="external">Help</a></li>
+            <li><a href="https://mume.org/rules/" target="_self" rel="external">Rules</a></li>
+            <li><a href="https://mume.org/dictionary/" target="_self" rel="external">Dictionary</a></li>
+            <li><a href="https://mume.org/resources/boards/" target="_self" rel="external">Boards</a></li>
+            <li><a href="https://mume.org/download/" target="_self" rel="external">Download</a></li>
+            <li><a href="https://mume.org/plots/" target="_self" rel="external">Plots</a></li>
           </ul>
         </li>
         <li>
-          <a href="https://mume.org/search" rel="nofollow">
+          <a href="https://mume.org/search" target="_self" rel="external">
             <i class="fa fa-search" aria-hidden="true" title="Search"></i>
             <span class="sr-only">Search</span>
           </a>

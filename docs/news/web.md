@@ -29,7 +29,7 @@
 | 15 January 2000 | The News Board, announcing the game news, is now available on the web site. |
 | 11 April 1999 | MUME VII [Released](../about/m7)! Web site modifications. |
 | 2 February 1999 | Added a Java MUD Client. |
-| 23 September 1998 | Added some [frequentation plots](https://mume.org/plots/) and a [newcomers page](../resources/newcomers). |
+| 23 September 1998 | Added some [frequentation plots](https://mume.org/plots/){target="_self" rel="external"} and a [newcomers page](../resources/newcomers). |
 | 5 March 1998 | New area: Download. Updated the Links area. |
 | 18 January 1998 | MUME has left the EPFL that hosted it for 5 years and has moved to its new p300 provided by pvv.org in Norway. MUME is now open 24h/24. |
 | 1 January 1998 | MUME has left its old machine… A very temporary site will soon be available while we wait for pvv.org to provide a new homeland… Happy New Year! |

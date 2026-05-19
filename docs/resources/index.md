@@ -10,24 +10,24 @@
   <li><a href="./session">A sample MUME session</a></li>
   <li>What is <a href="../about/m8">MUME VIII?</a></li>
   <li>What was <a href="../about/m7">MUME VII?</a></li>
-  <li><a href="https://mume.org/help/">Help Files</a></li>
-  <li><a href="https://mume.org/rules/">Rules</a></li>
-  <li><a href="https://mume.org/news/war">War Status</a></li>
+  <li><a href="https://mume.org/help/" target="_self" rel="external">Help Files</a></li>
+  <li><a href="https://mume.org/rules/" target="_self" rel="external">Rules</a></li>
+  <li><a href="https://mume.org/news/war" target="_self" rel="external">War Status</a></li>
   <li><a href="../about/history">History of MUME</a></li>
-  <li><a href="https://mume.org/about/ainur">The Ainur</a></li>
-  <li><a href="https://mume.org/search">Search</a></li>
+  <li><a href="https://mume.org/about/ainur" target="_self" rel="external">The Ainur</a></li>
+  <li><a href="https://mume.org/search" target="_self" rel="external">Search</a></li>
 </ul>
 </section>
 
 <section>
 <h2>MUME Boards</h2>
 <ul>
-  <li>The Game <a href="https://mume.org/news/game/">News Board</a></li>
-  <li>The <a href="https://mume.org/resources/boards/Starter's/">Starter's Board</a></li>
-  <li><a href="https://mume.org/resources/boards/FAQ/">FAQ</a></li>
-  <li>The <a href="https://mume.org/resources/boards/Tales/">Tales Board</a> (MUME fun)</li>
-  <li><a href="https://mume.org/resources/boards/InCharacter/">Free People Chronicles</a></li>
-  <li><a href="https://mume.org/resources/boards/OrcsIncharacter/">Orkish Drumlore</a></li>
+  <li>The Game <a href="https://mume.org/news/game/" target="_self" rel="external">News Board</a></li>
+  <li>The <a href="https://mume.org/resources/boards/Starter's/" target="_self" rel="external">Starter's Board</a></li>
+  <li><a href="https://mume.org/resources/boards/FAQ/" target="_self" rel="external">FAQ</a></li>
+  <li>The <a href="https://mume.org/resources/boards/Tales/" target="_self" rel="external">Tales Board</a> (MUME fun)</li>
+  <li><a href="https://mume.org/resources/boards/InCharacter/" target="_self" rel="external">Free People Chronicles</a></li>
+  <li><a href="https://mume.org/resources/boards/OrcsIncharacter/" target="_self" rel="external">Orkish Drumlore</a></li>
 </ul>
 </section>
 
@@ -42,16 +42,16 @@
 <section>
 <h2>Middle-earth</h2>
 <ul>
-  <li><a href="https://mume.org/dictionary/">Dictionary</a></li>
+  <li><a href="https://mume.org/dictionary/" target="_self" rel="external">Dictionary</a></li>
 </ul>
 </section>
 
 <section>
 <h2>Polls</h2>
 <ul>
-  <li><a href="https://mume.org/resources/answers-00.04">April 2000</a></li>
-  <li><a href="https://mume.org/resources/answers-98.02">February 1998</a></li>
-  <li><a href="https://mume.org/resources/answers-95.09">October 1995</a></li>
+  <li><a href="./answers-00.04">April 2000</a></li>
+  <li><a href="./answers-98.02">February 1998</a></li>
+  <li><a href="./answers-95.09">October 1995</a></li>
 </ul>
 </section>
 
@@ -69,7 +69,7 @@
 <section>
 <h2>Frequentation</h2>
 <ul>
-  <li><a href="https://mume.org/plots/">Frequentation Plots</a></li>
+  <li><a href="https://mume.org/plots/" target="_self" rel="external">Frequentation Plots</a></li>
 </ul>
 </section>
 
@@ -77,9 +77,9 @@
 <h2>Misc</h2>
 <ul>
   <li><a href="../news/web">Web News</a></li>
-  <li><a href="https://mume.org/download/">Download area</a></li>
-  <li><a href="https://mume.org/resources/events">A guide to mudlle events</a></li>
-  <li><a href="https://mume.org/restricted/">Restricted area</a></li>
+  <li><a href="https://mume.org/download/" target="_self" rel="external">Download area</a></li>
+  <li><a href="./events">A guide to mudlle events</a></li>
+  <li><a href="https://mume.org/restricted/" target="_self" rel="external">Restricted area</a></li>
 </ul>
 </section>
 

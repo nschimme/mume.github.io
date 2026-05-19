@@ -44,8 +44,8 @@ export default defineConfig({
         text: 'News',
         items: [
           { text: 'Web News', link: '/news/web' },
-          { text: 'War', link: 'https://mume.org/news/war' },
-          { text: 'Game News', link: 'https://mume.org/news/game/' }
+          { text: 'War', link: 'https://mume.org/news/war', target: '_self', rel: 'external' },
+          { text: 'Game News', link: 'https://mume.org/news/game/', target: '_self', rel: 'external' }
         ]
       },
       {
@@ -53,12 +53,12 @@ export default defineConfig({
         items: [
           { text: 'Resources', link: '/resources/' },
           { text: 'Newcomers', link: '/resources/newcomers' },
-          { text: 'Help', link: 'https://mume.org/help/' },
-          { text: 'Rules', link: 'https://mume.org/rules/' },
-          { text: 'Dictionary', link: 'https://mume.org/dictionary/' },
-          { text: 'Boards', link: 'https://mume.org/resources/boards/' },
-          { text: 'Download', link: 'https://mume.org/download/' },
-          { text: 'Plots', link: 'https://mume.org/plots/' }
+          { text: 'Help', link: 'https://mume.org/help/', target: '_self', rel: 'external' },
+          { text: 'Rules', link: 'https://mume.org/rules/', target: '_self', rel: 'external' },
+          { text: 'Dictionary', link: 'https://mume.org/dictionary/', target: '_self', rel: 'external' },
+          { text: 'Boards', link: 'https://mume.org/resources/boards/', target: '_self', rel: 'external' },
+          { text: 'Download', link: 'https://mume.org/download/', target: '_self', rel: 'external' },
+          { text: 'Plots', link: 'https://mume.org/plots/', target: '_self', rel: 'external' }
         ]
       },
       { text: 'Search', link: 'https://mume.org/search', target: '_self', rel: 'external' }

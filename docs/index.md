@@ -215,7 +215,7 @@ Shape your character any way you want by practicing skills or spells from any gu
   <li>One mistype and you have lost hours of real time needed to re-gear</li>
   <li>Maintain your war points by keeping a high K/D ratio</li>
 </ul>
-<a href="https://mume.org/news/war" class="read-more">View War Status <i class="fa fa-external-link" aria-hidden="true"></i></a>
+<a href="https://mume.org/news/war" target="_self" rel="external" class="read-more">View War Status <i class="fa fa-external-link" aria-hidden="true"></i></a>
 </div>
 </div>
 </section>

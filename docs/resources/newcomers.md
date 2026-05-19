@@ -9,9 +9,9 @@ Welcome to MUME! What you find on this page is an extension of the documentation
 
 If you are new to Multi-User Dungeons (MUDs), the precursors to MMORPGs, we strongly recommend that you to read the following essential knowledge to help you navigate and survive Middle-earth.
 
-* [**Introduction to MUME's most important aspects**](https://mume.org/help/newbie) (help newcomer)
-* [**Frequently asked questions**](https://mume.org/help/faq) (help faq)
-* [**Basic commands needed to survive**](https://mume.org/help/basics) (help basic)
+* [**Introduction to MUME's most important aspects**](https://mume.org/help/newbie){target="_self" rel="external"} (help newcomer)
+* [**Frequently asked questions**](https://mume.org/help/faq){target="_self" rel="external"} (help faq)
+* [**Basic commands needed to survive**](https://mume.org/help/basics){target="_self" rel="external"} (help basic)
 
 Once you have completed reading the above subjects, then please proceed onwards to the advanced subjects.
 
@@ -19,9 +19,9 @@ Once you have completed reading the above subjects, then please proceed onwards 
 
 If you have played other MUDs before but are new to MUME, you can skip ahead to read about MUME’s unique features here:
 
-* [**More advanced commands…**](https://mume.org/help/advanced) (help advanced)
+* [**More advanced commands…**](https://mume.org/help/advanced){target="_self" rel="external"} (help advanced)
 * [**Interesting features**](../about/features) (help features)
-* [**Rules for all players to observe**](https://mume.org/rules/) (rules)
+* [**Rules for all players to observe**](https://mume.org/rules/){target="_self" rel="external"} (rules)
 
 ## Tutorials
 
