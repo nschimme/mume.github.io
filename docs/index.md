@@ -50,7 +50,7 @@ People think that Dark Souls was a hard game these days. Ha! You ain't seen noth
 <p>
 Pilois, 02 Apr 2026
 </p>
-<a href="https://mume.org/news/latest" class="read-more">Read more</a>
+<a href="https://mume.org/news/latest" target="_self" rel="external" class="read-more">Read more</a>
 </div>
 </div>
 </section>
@@ -231,7 +231,7 @@ Shape your character any way you want by practicing skills or spells from any gu
 <p>
 Join the Istari, attain immortality, and take your place within the community to extend and enhance the game. Nerd out with Tolkien fans to expand MUME all the way to Mordor.
 </p>
-<a href="https://mume.org/about/ainur" class="read-more">Learn More <i class="fa fa-external-link" aria-hidden="true"></i></a>
+<a href="https://mume.org/about/ainur" target="_self" rel="external" class="read-more">Learn More <i class="fa fa-external-link" aria-hidden="true"></i></a>
 </div>
 </div>
 </section>

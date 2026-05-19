@@ -26,14 +26,14 @@ There are three ways to join the battle for Middle-earth:
 
 The web client is the least friction option, recommended if you want to get a quick feel of the game. You get the full power of a real-time map with no installation required. Also, it should work from most corporate, library, and school networks.
 
-[**Play with MMapper Web**](https://mume.org/play/browser)
+[**Play with MMapper Web**](https://mume.org/play/browser){target="_self" rel="external"}
 
 <div class="card" style="margin-top: 1.5rem;">
-<a href="https://mume.org/play/browser">
+<a href="https://mume.org/play/browser" target="_self" rel="external">
 <img src="./assets/images/playmume.png" srcset="./assets/images/playmume.png 1x, ./assets/images/playmume@2x.png 2x" alt="Play MUME for free using the web client">
 </a>
 <div>
-<p>For incompatible or older browsers, you can also try <a href="https://mume.org/play/browser-legacy">this web client</a>.</p>
+<p>For incompatible or older browsers, you can also try <a href="https://mume.org/play/browser-legacy" target="_self" rel="external">this web client</a>.</p>
 </div>
 </div>
 
@@ -57,4 +57,4 @@ If you already have a MUD client, just connect to **mume.org** port **4242** and
 </a>
 </div>
 
-For alternatives, check out our [clients list](https://mume.org/help/clients) and [mappers page](https://mume.org/help/mappers). You may also find legacy clients at our [mirror](https://mume.org/download/clients/){target="_self" rel="external"}.
+For alternatives, check out our [clients list](https://mume.org/help/clients){target="_self" rel="external"} and [mappers page](https://mume.org/help/mappers){target="_self" rel="external"}. You may also find legacy clients at our [mirror](https://mume.org/download/clients/){target="_self" rel="external"}.
