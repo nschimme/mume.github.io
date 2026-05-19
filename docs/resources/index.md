@@ -1,5 +1,9 @@
 # Resources
 
+<div class="center-img">
+<img src="../assets/images/contents.jpg" srcset="../assets/images/contents.jpg 1x, ../assets/images/contents@2x.jpg 2x" alt="Contents" class="banner-img">
+</div>
+
 <div class="resources-container">
 
 <section>
