@@ -3,7 +3,7 @@
     <tbody>
       <tr>
         <td class="msg_body">
-          <pre class="session"><slot></slot></pre>
+          <slot></slot>
         </td>
       </tr>
     </tbody>
