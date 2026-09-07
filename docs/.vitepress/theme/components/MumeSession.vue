@@ -18,8 +18,8 @@
   color: silver;
 }
 
-.mume-session .session {
-  font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+.mume-session pre.session {
+  font-family: 'Courier New', Courier, Consolas, 'DejaVu Sans Mono', monospace;
   font-size: 0.875rem;
   background-color: #050505;
   color: #c0c0c0;
@@ -28,10 +28,9 @@
   border: 1px solid #262626;
   overflow-x: auto;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
-  line-height: 1.4;
-  margin: 1rem 0;
-  white-space: pre-wrap;
-  word-break: break-word;
+  line-height: 1.2;
+  margin: 0.5rem 0;
+  white-space: pre;
 }
 
 .mume-session .command {

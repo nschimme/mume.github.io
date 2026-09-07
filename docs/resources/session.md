@@ -35,10 +35,7 @@ Throughout this text, the default MUME colours are used, with the exception of c
 
 When you first log in to MUME, you will see this screen:
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
                               ***  Mume VIII  ***
 
                               In progress at FIRE
@@ -55,7 +52,6 @@ or ? for help. Otherwise, type your account or character name.
 
 By what name do you wish to be known?
 </pre>
-</MumeSession>
 
 
 MUME uses a system called "accounts" to keep track of which players belong
@@ -63,22 +59,15 @@ to which person.  So, if you don't have an account, you'll have to create one
 to play MUME.  Entering the new of a player that doesn't exist will tell you
 this:
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 By what name do you wish to be known? Fuor
 No character or account by that name.
 Type NEW if you have no other characters on MUME.
 </pre>
-</MumeSession>
 
 So, let's create a new account.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 By what name do you wish to be known? NEW
 
 
@@ -93,7 +82,6 @@ Violators of this rule will lose ALL of their characters.
 
 Do you have another account on MUME [Y/N/?]? n
 </pre>
-</MumeSession>
 
 MUME only allows one account per person.  So, if you already have an
 account registered to you, you would want to type <span class="command">Y</span>
@@ -102,10 +90,7 @@ here instead, and log in to your already existing account.
 We'll assume that you don't have an account already and continue to create
 a new one.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 Enter new account name: exampleaccount
 
 Now it's time to pick your account pass phrase. For your own protection, pick
@@ -118,9 +103,7 @@ OK.
 
 Congratulations! You have now created your account on MUME. You will now be
 sent directly to create your first character.
-
 </pre>
-</MumeSession>
 
 <table CELLPADDING="0" CELLSPACING="0" WIDTH="100%" BORDER="0"><tr><td><a id="character"></a><span class="header">Creating a character</span></td>
 <td VALIGN="BOTTOM" ALIGN="RIGHT">[<a href="#contents">contents</a>]</td></tr></table>
@@ -128,10 +111,7 @@ Next, we'll choose some attributes for our new character.
 The choices made by experienced players are different than those available to
 non-experienced players.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 Select a sex:
   m) Male       f) Female
 Sex? m
@@ -170,7 +150,6 @@ Your choice (? for help) &gt; b
 
 Character definition complete.
 </pre>
-</MumeSession>
 
 The choices that you make in this section can't be taken back, so take a
 couple of minutes and think about what you want the character to do.  If you
@@ -182,26 +161,18 @@ As with most games, these choices will become easier as you gain more
 experience in the world of MUME.  Different character combinations can bring
 out different aspects of the game.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 Select the character encoding that best displays "Ea" with two dots over the a:
   L) Latin-1  E&auml;
   U) UTF-8    E&#195;&curren;
   A) ASCII    Ea  (pick this if the above look bad)
 Character encoding? l
-
-
 </pre>
-</MumeSession>
 
 Text is encoded in different ways on computers and incorrectly encoded text often results in
 funny looking mojibake.   Pick the option that displays "E&auml;" correctly.
 
-<MumeSession>
-<pre class="session">
-
+<pre class="session" v-pre>
 What name do you want for your character?
 
 Here are some suggestions:
@@ -233,19 +204,14 @@ unacceptable.
 
 Note that anyone creating characters with really bad names just to be
 annoying will find themselves dealt with in the harshest manner.
-
 </pre>
-</MumeSession>
 
 Names are important on MUME.  They identify not only who you are, but help
 to contribute to the general Tolkien-ish feeling of MUME as a whole.  So, pick
 a good name!  Hit return if you want to see more name suggestions or type in a name of your own
 choosing..
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 Character name (or enter for more, or ?): Fuor
 New character Fuor created (7-bit ascii name is fuor).
 
@@ -311,7 +277,6 @@ FAQ board                 - 15 unread messages
 
 *&gt;
 </pre>
-</MumeSession>
 
 <table CELLPADDING="0" CELLSPACING="0" WIDTH="100%" BORDER="0"><tr><td><a id="starting"></a><span class="header">Starting your journey</span></td>
 <td VALIGN="BOTTOM" ALIGN="RIGHT">[<a href="#contents">contents</a>]</td></tr></table>
@@ -322,10 +287,7 @@ Peoples", both when they are new characters, and when they die in the game.
 There are several things of importance in this room.  Let's take a look around
 again.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;look
 <span class="look">Halls of Mandos</span>
 You are in the Halls of Mandos which are larger than any mortal can grasp.
@@ -340,17 +302,13 @@ A Warning Sign for new players is here.
 A large bulletin board is mounted on a wall here.
 A large fountain, made from grey stone, pours water from its centre.
 </pre>
-</MumeSession>
 
 So, in this room, we can see a torch, a piece of cheese, a warning sign,
 a bulletin board and a fountain.  But, wouldn't it be somewhat painful to have
 to type 'look' every time?  Instead, you can simply use 'l'.  Most commands
 can be abbreviated for ease of typing.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;l
 <span class="look">Halls of Mandos</span>
 You are in the Halls of Mandos which are larger than any mortal can grasp.
@@ -365,17 +323,13 @@ A Warning Sign for new players is here.
 A large bulletin board is mounted on a wall here.
 A large fountain, made from grey stone, pours water from its centre.
 </pre>
-</MumeSession>
 
 Now that we've looked at the room, let's find out some information about
 ourselves.  There are three main commands used for finding our information
 about your own character; <span class="command">stat</span>, <span class="command">
 score</span>, and <span class="command">info</span>.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;stat
 OB: 8%, DB: 24%, PB: 0%, Armour: 0%. Wimpy: 0. Mood: wimpy.
 Needed: 999 xp, 0 tp. Gold: 0. Alert: normal.
@@ -403,7 +357,6 @@ You need 999 exp. points and 0 travel points to reach the next level.
 You have 0 copper.
 You are speaking Westron.
 </pre>
-</MumeSession>
 
 The <span class="command">info</span> and
 <span class="command">score</span> commands can be abbreviated
@@ -420,10 +373,7 @@ Let's take a look at the bulletin board in the Halls of Mandos, called the
 Starter's board.  To read a message on a board, type <span class="command">read
 &lt;number&gt;</span>.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;look board
 Starter's board - 7 messages (out of 7)
 49 : Helpful Hints to New Players (Frór)
@@ -507,18 +457,13 @@ competition.  We are very serious about enforcing them.
 Petrel
 for the management
 </pre>
-</MumeSession>
 
 Sometimes, during the display of a long bit of text, you will see a line
 like this (there is one in the text above):
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *** Return: continue, b: back one page, r: redisplay, q:quit (84%) ***
 </pre>
-</MumeSession>
 
 This is the MUME pager.  It allows you to finish reading what's on your
 screen before you continue to the next screen.  Press "return" or "enter"
@@ -527,10 +472,7 @@ to get to the next screen of information.
 The text tells you to type <span class="command">rules</span> for an index to the rules of MUME.
 Let's try it.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;rules
 INDEX
 
@@ -550,14 +492,10 @@ INDEX
   |                                                                      |
    \--------------------------------------------------------------------/
 </pre>
-</MumeSession>
 
 Remember the warning sign that was in the room?  Let's look at it.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;l warning sign
 This is a complex world!  If you learn the commands and features, your
 life may be fulfilling and rewarding.  If you do not, it may be frustrating
@@ -583,16 +521,12 @@ Hobbits may begin in the Shire or in Fornost.
 Hobbits, Men, and Dwarves who shun the ways of good may also begin their
 lives in the dangerous city of Tharbad - if they dare.
 </pre>
-</MumeSession>
 
 When you see objects in a room, you can usually pick them up.  Let's pick
 up the torch and cheese, and then we'll enter the game by praying to Fornost,
 since our character is a Man.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;get torch
 You get a torch.
 
@@ -627,7 +561,6 @@ A woman is here, looking for someone to chat with.
 *&gt;
 <span class="narrate">Dian narrates '2 bns ford'</span>
 </pre>
-</MumeSession>
 
 Now, we're in Fornost.  Since we're in the real world now, we'll hear other
 players communicating with each other (and you), using methods like
@@ -641,10 +574,7 @@ wandering around.  These are also referred to as "mobs", or "mobiles".
 Sometimes they're just around for atmosphere; sometimes they serve specific
 purposes, like shopkeepers and innkeepers.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;
 A scholar leaves west.
 
@@ -657,17 +587,13 @@ A merchant has arrived from the west.
 *&gt;
 A scholar has arrived from the west.
 </pre>
-</MumeSession>
 
 While we were still in the Halls of Mandos, we picked up a torch and some
 cheese.  Typing <span class="command">inventory</span>  (or <span class="command">
 inv</span> for short) will show you what you're carrying.  So, let's hold the
 torch, and eat the cheese.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;inv
 You are carrying:
 some cheese
@@ -689,7 +615,6 @@ Nothing.
 You are using:
 &lt;held&gt;               a torch; it is lit
 </pre>
-</MumeSession>
 
 Notice that after we hold the torch and eat the cheese, Fuor's inventory is
 now empty.  However, he has the torch equipped in his hand.  The
@@ -708,10 +633,7 @@ be typed as a whole word, or can be abbreviated as <span class="command">n</span
 <span class="command">w</span>, <span class="command">u</span> or
 <span class="command">d</span>.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;
 <span class="narrate">Norgin narrates '...what whitie took pack with all my eq from top of steeply?'</span>
 
@@ -766,7 +688,6 @@ Exits: North East South West.
 *&gt;
 A merchant has arrived from the north.
 </pre>
-</MumeSession>
 
 Sometimes, it's a good idea to check which exits go where
 from the room you're currently in.  You can do this by typing
@@ -774,10 +695,7 @@ from the room you're currently in.  You can do this by typing
 them somewhere in the area, you can type <span class="command">where</span> to
 see which rooms people in the same area as you are in.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;exits
 North - Western End of Market Square
 East  - Market Square
@@ -796,7 +714,6 @@ Theowen has arrived from the north.
 *&gt;
 Theowen leaves south.
 </pre>
-</MumeSession>
 
 As it happens, Theowen is just a few rooms away from where Fuor is, and
 walks by right after the command is typed.
@@ -810,10 +727,7 @@ kit" or just "kit".  The best way to get a newbie kit is to ask politely.
 There are usually Ainur on at all times of the day.  Sometimes the Ainur are
 visible; at other times, they will appear only as "Someone".
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;pray May I have a kit, please?
 You send your prayer to the Ainur.
 
@@ -849,7 +763,6 @@ a cup
 a large sack
 a piece of raw meat
 </pre>
-</MumeSession>
 
 Now, Fuor has a whole set of basic equipment, including
 a basic sword, shield, and bow.  This is good to start off with.  Let's wear
@@ -860,10 +773,7 @@ everything in the inventory.  Removing an item is the same; type
 <span class="command">remove all</span>.  First, we'll go to a room that has a
 bit less activity, then we'll wear our equipment.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;
 A Dúnadan soldier has arrived from the east.
 
@@ -985,7 +895,6 @@ a fortune-cookie
 a cup
 a piece of raw meat
 </pre>
-</MumeSession>
 
 Obviously, <span class="command">wear all</span> didn't
 work quite the way we wanted it to.  Fuor didn't wield his sword or hold his
@@ -993,10 +902,7 @@ shield!  Remember that <span class="command">wear all</span> works
 by going through your equipment one piece at a time, so if you hold something
 in both hands, you will not be able to wield your weapon or hold your shield.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;
 <span class="narrate">Norgin narrates 'someone hold fizz's eq...I have no gold to rent :('</span>
 
@@ -1041,7 +947,6 @@ a fortune-cookie
 a cup
 a piece of raw meat
 </pre>
-</MumeSession>
 
 Sometimes, you'll want to specify where on the body you want to wear some
 items, such as a lantern or a knife.  Both of these objects can be worn on a
@@ -1053,10 +958,7 @@ Once Fuor is done wearing the rest of his equipment, he's going to put
 everything in that large sack that he's carrying.  Sacks, backpacks and
 pouches can be used to sort your inventory so that it is more organized.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;wear the lantern on belt
 You fasten a lantern on your belt.
 You light a lantern.
@@ -1081,7 +983,6 @@ That would be an interesting topological experiment.
 You are carrying:
 a large sack
 </pre>
-</MumeSession>
 
 When he tried to put everything in the sack, Fuor got the
 message "That would be an interesting topological experiment".  This happened
@@ -1096,10 +997,7 @@ commands that allow you to trim the amount of descriptive text that is sent.
 These are <span class="command">brief</span> and <span class="command">spam</span>.
 
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;w
 <span class="look">The Crown of Arnor Inn</span>
 As you enter this large rectangular room, you remember hearing good words about
@@ -1153,7 +1051,6 @@ A rugged-looking man is standing here.
 A man passes by, intent on his business.
 Exits: North East.
 </pre>
-</MumeSession>
 
 As you can see, there is a good amount of difference when these commands are
 used.  However, when these modes are turned on, you may miss important
@@ -1169,9 +1066,7 @@ and how to do basic things like swim, climb and ride a horse/pony/mule.  Your
 character starts with a number of practice session, or "points", and gains
 more as you gain levels.
 
-<MumeSession>
-<pre class="session">
-
+<pre class="session" v-pre>
 *&gt;n
 <span class="look">Market Square</span>
 There is an old street-lamp on the border of the street.
@@ -1215,16 +1110,12 @@ A man passes by, intent on his business.
 An old man is walking around, cleaning up.
 Exits: [North] East South West.
 </pre>
-</MumeSession>
 
 Sometimes, it's helpful to look at the city maps that you're given in the
 newbie kit.  Cities can be a bit large and specific places hard to find unless
 you already know your way around.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;look map
 You don't see a map.
 
@@ -1291,15 +1182,11 @@ You get a map of Fornost from a large sack.
 
      --  The map was made by Ticar of Norbury, Sorcerer of Arthedain  --
 </pre>
-</MumeSession>
 
 From the map, we can see that we need to go a few rooms west and one south
 in order to get to the Warrior guild.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;w
 <span class="look">Guild Street</span>
 There is an old street-lamp on the border of the street.
@@ -1325,15 +1212,11 @@ A weapons rack stands against the wall.
 Huor of Dor-lómin is standing here, ready to teach his arts.
 Exits: North [West] Up.
 </pre>
-</MumeSession>
 
 Ah, we've found the guild.  Huor is the Fornost warrior guildmaster.  To see
 what he can teach, type <span class="command">practice</span> in this room.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;practice
 You have 13 practice sessions left.
 Huor can teach you any of these skills:
@@ -1348,17 +1231,13 @@ rescue                0/21      0%    Easy        You could learn easily
 slashing weapons      0/29      0%    Normal      You could learn easily
 stabbing weapons      0/29      0%    Normal      You could learn easily
 </pre>
-</MumeSession>
 
 Fuor uses a backsword, a slashing weapon, so let's practice some slashing.
 Note that as your character becomes more developed, you will figure out the
 pros and cons that are associated with each weapon skill.
 The command <span class="command">practice</span> can be abbreviated as <span class="command">prac</span>.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;eq
 You are using:
 &lt;wielded&gt;            a backsword (brand new)
@@ -1401,17 +1280,13 @@ rescue                0/21      0%    Easy        You could learn easily
 slashing weapons      4/29     56%    Normal      You reached your current limit
 stabbing weapons      0/29      0%    Normal      You could learn easily
 </pre>
-</MumeSession>
 
 As your character gains levels, you will be able to practice more slashing.
 Since we have 9 practice sessions left, let's practice some other skills.
 Endurance, parry and bash are important skills for a warrior, so let's get some
 of each.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 * HP:Fine&gt;prac endurance
 You took 1 out of 58 sessions in this skill. Your knowledge is now 17%.
 
@@ -1468,7 +1343,6 @@ You thank Huor heartily.
 *&gt;bow huor
 You bow before him.
 </pre>
-</MumeSession>
 
 We have one practice session left, but don't really want any of the other
 skills here.  Don't waste this one session on something you don't need; rather,
@@ -1482,10 +1356,7 @@ character cannot use yet.
 Now that we've practiced some skills, let's go to the gate and head
 outside.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;n
 <span class="look">Guild Street</span>
 There is an old street-lamp on the border of the street.
@@ -1593,17 +1464,13 @@ You bow deeply.
 A colourful butterfly is fluttering around here.
 Exits: North East =South= West.
 </pre>
-</MumeSession>
 
 We're now outside the city.  There can be dangerous creatures lurking
 outside, so one needs to be careful.  Most of the creatures around Fornost,
 Bree, the Grey Havens and the Blue Mountains are not incredibly difficult, but
 as a new character, it is still best to be on your guard.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;
 A butterfly leaves east.
 
@@ -1631,7 +1498,6 @@ A butterfly is dead! R.I.P.
 
 |   1,  1%,  A butterfly               |                                      |
 </pre>
-</MumeSession>
 
 The butterfly is a passive creature (instead of an aggressive one).  It
 won't hit you until you try to hit it.  Fortunately, it's also very weak, so
@@ -1643,10 +1509,7 @@ travels.  The first number lists the number of times you've killed that mobile,
 and the second is a percentage of "knowledge", which affects the amount of
 experience you will gain by killing the same thing again.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;e
 <span class="look">Outside the Walls of Fornost</span>
 Exits: North East South West.
@@ -1672,7 +1535,6 @@ Needed: 831 xp, 0 tp. Gold: 0. Alert: normal.
 Affected by:
 - noquit
 </pre>
-</MumeSession>
 
 By typing <span class="command">stat</span>, not only can
 you see your vital bonuses, but you can see
@@ -1695,10 +1557,7 @@ defensive you will be during a battle.  You can change your mood by using the
 <span class="command">change mood</span> command (abbreviated
 <span class="command">cha m</span>).
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;change mood aggressive
 Ok.
 
@@ -1722,7 +1581,6 @@ Ok.
   / \
   \_/
 </pre>
-</MumeSession>
 
 Notice that the OB and PB numbers are affected by what mood you are in.  If
 you are in an aggressive mood, you will be more offensive (higher OB), but
@@ -1734,10 +1592,7 @@ Some enemies can be too difficult to face, depending on your level and what
 kind of equipment you have.  It's best to <span class="command">flee</span> when
 faced with an opponent that outmatches you.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;e
 <span class="look">Outside the Walls of Fornost</span>
 The corpse of a garden snake is lying here.
@@ -1791,7 +1646,6 @@ You are subjected to the following temporary effects:
 - panic
 - noquit
 </pre>
-</MumeSession>
 
 The boar did just under 10 damage to you.  Normally, this isn't a lot for a
 seasoned adventurer; but Fuor only has 27 hit points, so this is a considerable
@@ -1804,10 +1658,7 @@ walking into the room when you're recovering.
 However, the message "That really HURT!" can be misleading.  Take the next
 fight, for example:
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 * HP:Fine&gt;s
 <span class="look">Shaded Path</span>
 The corpse of a fallow deer is lying here.
@@ -1902,7 +1753,6 @@ You are subjected to the following temporary effects:
 - panic
 - noquit
 </pre>
-</MumeSession>
 
 The boar cub did a fair amount of damage to you, but you were able to kill
 it.  Usually, when the opponent's hit points are falling faster than yours,
@@ -1913,10 +1763,7 @@ Something to note:  When you type
 battle, you cannot see the exact number of hit points, mana or move points
 that you have. You must be out of battle to see the numbers.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 * HP:Wounded&gt;
 You feel bolder.
 
@@ -1933,9 +1780,7 @@ That really HURT!</span>
 You flee head over heels.
 <span class="look">Bend in the Road</span>
 Exits: =North= South =West=.
-
 </pre>
-</MumeSession>
 
 <table CELLPADDING="0" CELLSPACING="0" WIDTH="100%" BORDER="0"><tr><td><a id="map"></a><span class="header">Maps and scouting</span></td>
 <td VALIGN="BOTTOM" ALIGN="RIGHT">[<a href="#contents">contents</a>]</td></tr></table>
@@ -1944,10 +1789,7 @@ Ouch! That ruffian surprised Fuor, causing him to flee.
 Since fleeing is attempted in a random direction, Fuor should ensure that
 he knows where he is and where the ruffian is...
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 * HP:Bad&gt;<span class="command">map</span>
            Map of Nearby Zones
       -----------------------------
@@ -1987,19 +1829,14 @@ You stop scouting.
 
 * HP:Bad&gt;
 The coach from Tharbad rolls noisily northwards.
-
 </pre>
-</MumeSession>
 
 In the above maps, Fuor's location is displayed as an 'X'
 (Note: how the first map corresponds to the whole of Middle-Earth is displayed
 <a href="../about/">here</a>). As he is in bad shape, Fuor moves away from the
 ruffian and wisely heads back to the city of Fornost.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 * HP:Bad&gt;n
 <span class="look">Road to Fornost</span>
 A tall stag is here, grazing peacefully.
@@ -2028,7 +1865,6 @@ A hardened ranger is walking around, looking for tracks.
 A little boy is here, running around.
 Exits: North South West.
 </pre>
-</MumeSession>
 
 <table CELLPADDING="0" CELLSPACING="0" WIDTH="100%" BORDER="0"><tr><td><a id="resting"></a><span class="header">Regaining health and mobility</span></td>
 <td VALIGN="BOTTOM" ALIGN="RIGHT">[<a href="#contents">contents</a>]</td></tr></table>
@@ -2040,9 +1876,7 @@ after a battle. Even if there isn't a city close to where you're fighting, it's
 always a good idea to know where you are, and where the nearest safe place
 is.
 
-<MumeSession>
-<pre class="session">
-
+<pre class="session" v-pre>
 * HP:Bad&gt;rest
 You sit down and rest your tired bones.
 
@@ -2070,16 +1904,12 @@ You go to sleep.
 * HP:Hurt&gt;
 You are thirsty.
 </pre>
-</MumeSession>
 
 When you're hungry or thirsty, you don't regain your hit points, mana or
 move points as quickly.  So, it's good to make sure that you've eaten and drank
 at all times, or that you have food and drink on you.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 * HP:Hurt&gt;wake
 You wake, and sit up.
 
@@ -2108,14 +1938,10 @@ A cup is now empty.
 * HP:Hurt&gt;sleep
 You go to sleep.
 </pre>
-</MumeSession>
 
 Some time passes...
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 * HP:Fine&gt;score
 27/27 hit, 74/74 mana, and 114/114 moves.
 
@@ -2157,7 +1983,6 @@ Ozzy leaves south.
 The Irongate closes quietly.
 You hear a *click* in a lock.
 </pre>
-</MumeSession>
 
 In some cities, the gates are left open during the day.
 Until now, we haven't had to ask for the gates to be opened.  You do this one
@@ -2173,10 +1998,7 @@ If you want a gateguard to open a specific  gate, you can say
 For example, in the text below, <span class="command">say open portcullis</span>
 would have worked as well.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;call
 You call for the gate to be opened.
 
@@ -2237,7 +2059,6 @@ Exits: North East South.
 A fat rabbit panics, and attempts to flee.
 A fat rabbit leaves south.
 </pre>
-</MumeSession>
 
 Some mobiles will flee immediately when you try to hit them.  These are
 usually low-level creatures; chasing them is usually not worth it.
@@ -2247,10 +2068,7 @@ creature, try using the <span class="command">consider</span> command
 (abbreviation is <span class="command">con</span>).  This command suggests
 how easy or hard an opponent might be to you.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;n
 <span class="look">Edge of the Forest</span>
 A woodpecker is here, tapping on a tree.
@@ -2308,7 +2126,6 @@ You receive your share of experience.
 Congratulations! This is the first time you've killed it!
 A small fat hedgehog is dead! R.I.P.
 </pre>
-</MumeSession>
 
 Obviously, the consider command is not always perfect.  Fuor had little
 trouble with that hedgehog, even though it said he might need some luck.
@@ -2323,10 +2140,7 @@ During the last battle, Fuor gained his first level.  He is now a level
 as more hit points.  It is by gaining levels that your character will advance
 in the game and become more powerful.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 * HP:Fine&gt;info
 You are a male Eriadorian.
 You are 18 years and 1 day old.
@@ -2352,14 +2166,10 @@ You are speaking Westron.
 You are subjected to the following temporary effects:
 - noquit
 </pre>
-</MumeSession>
 
 At this point, Fuor walks around for a while...
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 * HP:Fine Move:Slow&gt;inf
 You are a male Eriadorian.
 You are 18 years and 1 day old.
@@ -2387,7 +2197,6 @@ You are subjected to the following temporary effects:
 - panic
 - noquit
 </pre>
-</MumeSession>
 
 Note that Fuor's move points are low, as he has been walking around a lot.
 As your move points get lower, the danger of not being able to get away from
@@ -2418,10 +2227,7 @@ equipment will be confiscated to cover your rent costs (because you didn't have
 enough money).  The second is the <span class="command">rent</span> command;
 this will actually close your session to the game.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;s
 <span class="look">The Crown of Arnor Inn</span>
 An old innkeeper stands here, talking to some guests.
@@ -2437,17 +2243,13 @@ You have enough money for 2 months.
 You have enough money for 2 months.
 The innkeeper stores your stuff in the safe, and helps you into your chamber.
 </pre>
-</MumeSession>
 
 <table CELLPADDING="0" CELLSPACING="0" WIDTH="100%" BORDER="0"><tr><td><a id="interacting"></a><span class="header">Interacting with players</span></td>
 <td VALIGN="BOTTOM" ALIGN="RIGHT">[<a href="#contents">contents</a>]</td></tr></table>
 
 Coming back to the game, Fuor meets a friendly player and chats with him.
 
-<MumeSession>
-<pre class="session">
-
-
+<pre class="session" v-pre>
 *&gt;<span class="command">l</span>
 <span class="look">The Crown of Arnor Inn</span>
 An old innkeeper stands here, talking to some guests.
@@ -2493,9 +2295,7 @@ A wealthy merchant is slowly strolling around here.
 A simple servant quietly walks around, performing his duties.
 A rugged-looking man is standing here.
 A woman is here, looking for someone to chat with.
-
 </pre>
-</MumeSession>
 
 And the adventure continues...
 
