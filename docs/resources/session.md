@@ -243,11 +243,11 @@ Fuor the Man, is that correct [Y/N]? y
    _ _ _/\_ _ _ _---|      | ----|   \ `  ' /                  ]I-I-II-I-I[
    ]-I-I--I-I-[  ---|      |     |    |. ` |        ~~~         \_`   '__/
     \_`   '__/      |     / \    |    | /^\|         ~~~         |~_ [],|
-     [&] `__|       ^    / ^ \   ^    | |&||                    _|______|_
+     [&amp;] `__|       ^    / ^ \   ^    | |&amp;||                    _|______|_
      |__   ,|      / \  / ^ ^`\ / \   | ===|                   &lt;=-=-==-=-=&gt;
   ___| ___ ,|__   / ^  /=_=_=_=\ ^ \  |, `_|     ~~             \__   _'_/
   I_I__I_I__I_I  (====(_________)_^___| ___|___    ~~            |.   _ |
-  \-\--|-|--/-/  | .   I  [&]__I   I_I|_I I|I_I                  |   _  |
+  \-\--|-|--/-/  | .   I  [&amp;]__I   I_I|_I I|I_I                  |   _  |
    |[] `    '|_  |_   _|`___ ._[  _\ \  | | / /                  |`    '|
   / \  [] ` .| |-| |-| |_| |_| |_| | []   [] |                   | '    |
  &lt;===&gt;      .|-=-=-=-=-=-=-=-=-=-=-|        / \                  |[]    |
@@ -271,7 +271,7 @@ in the wonderful world of Middle-Earth...
 Never forget that this mud is for role-playing, and is not part of
 the experience rat-race. We hope you'll enjoy your new life!
 
-&lt;font class=look&gt;Halls of Mandos&lt;/font&gt;
+&lt;span class="look"&gt;Halls of Mandos&lt;/span&gt;
 You are in the Halls of Mandos which are larger than any mortal can grasp.
 All mortal spirits are summoned here after their death yet the Halls never
 fill since they expand with time. The cavern walls are clad with tapestries
@@ -310,7 +310,7 @@ again.
 
 
 *&gt;look
-&lt;font class=look&gt;Halls of Mandos&lt;/font&gt;
+&lt;span class="look"&gt;Halls of Mandos&lt;/span&gt;
 You are in the Halls of Mandos which are larger than any mortal can grasp.
 All mortal spirits are summoned here after their death yet the Halls never
 fill since they expand with time. The cavern walls are clad with tapestries
@@ -578,7 +578,7 @@ Listening to them, you have the strange sensation to fade away...
 *&gt;
 Suddenly an explosion of ancient rhymes makes the space collapse around you!
 You blink, you vanish! And you are in Fornost!
-&lt;font class=look&gt;At the Well&lt;/font&gt;
+&lt;span class="look"&gt;At the Well&lt;/span&gt;
 You stand at an old well, which apparently still serves its purpose, as people
 arrive to fill their barrels, pots or waterskins. You hear laughter and singing
 through a window in house to the south, but you cannot see a thing, for the
@@ -591,7 +591,7 @@ An insolent scholar is here, pondering.
 A woman is here, looking for someone to chat with.
 
 *&gt;
-&lt;font class=say&gt;The Ainulindalë whispers to you 'Fornost is your hometown!'&lt;/font&gt;
+&lt;span class="say"&gt;The Ainulindalë whispers to you 'Fornost is your hometown!'&lt;/span&gt;
 
 *&gt;
 &lt;span class="narrate"&gt;Dian narrates '2 bns ford'&lt;/span&gt;
@@ -695,7 +695,7 @@ A scholar has arrived from the east.
 A Dúnadan soldier has arrived from the east.
 
 *&gt;west
-&lt;font class=look&gt;Market Square&lt;/font&gt;
+&lt;span class="look"&gt;Market Square&lt;/span&gt;
 You stand under a big red sign which proclaims that you are at the entrance to
 the well-known inn called 'The Crown of Arnor', or as people say around these
 parts, just 'The Crown'. Some oxcarts have been parked here, and presumably
@@ -715,7 +715,7 @@ A Dúnadan soldier puts a lantern on his belt.
 A Dúnadan soldier lights a lantern.
 
 *&gt;w
-&lt;font class=look&gt;Western End of Market Square&lt;/font&gt;
+&lt;span class="look"&gt;Western End of Market Square&lt;/span&gt;
 This is the centre of the new, rebuilt Fornost. A few short years ago this
 place was abandoned and deserted like the rest of this ancient city, but it has
 already developed a thriving trade. The inhabitants are all doing well it
@@ -780,7 +780,7 @@ You send your prayer to the Ainur.
 A scholar leaves north.
 
 *&gt;
-&lt;font class=say&gt;Someone smiles at you as you receive some basic equipment.&lt;/font&gt;
+&lt;span class="say"&gt;Someone smiles at you as you receive some basic equipment.&lt;/span&gt;
 
 *&gt;
 A little dog has arrived from the east.
@@ -828,7 +828,7 @@ A Dúnadan soldier has arrived from the east.
 A little dog leaves east.
 
 *&gt;e
-&lt;font class=look&gt;Market Square&lt;/font&gt;
+&lt;span class="look"&gt;Market Square&lt;/span&gt;
 You stand under a big red sign which proclaims that you are at the entrance to
 the well-known inn called 'The Crown of Arnor', or as people say around these
 parts, just 'The Crown'. Some oxcarts have been parked here, and presumably
@@ -840,7 +840,7 @@ A little dog is here.
 Exits: North East South West.
 
 *&gt;s
-&lt;font class=look&gt;The Crown of Arnor Inn&lt;/font&gt;
+&lt;span class="look"&gt;The Crown of Arnor Inn&lt;/span&gt;
 As you enter this large rectangular room, you remember hearing good words about
 'The Crown' on your travels, and the first impressions are not disappointing.
 The room extends further east, where food and drinks are being served. In the
@@ -861,7 +861,7 @@ A little dog has arrived from the north.
 Light gradually filters in, proclaiming a new sunrise outside.
 
 *&gt;e
-&lt;font class=look&gt;Dining Hall of The Crown&lt;/font&gt;
+&lt;span class="look"&gt;Dining Hall of The Crown&lt;/span&gt;
 This is a loud place! You hear harsh voices, shrill laughter and the high sound
 of glasses clinking. An endless stream of beer finds its way into the bellies
 of the rough men who frequent this room. The swords are removed, however, and
@@ -895,8 +895,6 @@ a loaf of bread
 a loaf of bread
 a lantern
 a map of Bree
-a quiver
-a shortbow
 a fortune-cookie
 a cup
 a large sack
@@ -1054,7 +1052,7 @@ These are <span class="command">brief</span> and <span class="command">spam</spa
 
 
 *&gt;w
-&lt;font class=look&gt;The Crown of Arnor Inn&lt;/font&gt;
+&lt;span class="look"&gt;The Crown of Arnor Inn&lt;/span&gt;
 As you enter this large rectangular room, you remember hearing good words about
 'The Crown' on your travels, and the first impressions are not disappointing.
 The room extends further east, where food and drinks are being served. In the
@@ -1072,7 +1070,7 @@ A rugged-looking man is standing here.
 Exits: North East.
 
 *&gt;n
-&lt;font class=look&gt;Market Square&lt;/font&gt;
+&lt;span class="look"&gt;Market Square&lt;/span&gt;
 You stand under a big red sign which proclaims that you are at the entrance to
 the well-known inn called 'The Crown of Arnor', or as people say around these
 parts, just 'The Crown'. Some oxcarts have been parked here, and presumably
@@ -1094,7 +1092,7 @@ Brief mode on.
 Tundur the Lamplighter has arrived from the east.
 
 *&gt;s
-&lt;font class=look&gt;The Crown of Arnor Inn&lt;/font&gt;
+&lt;span class="look"&gt;The Crown of Arnor Inn&lt;/span&gt;
 An old innkeeper stands here, talking to some guests.
 A domesticated pony, beast of burden to many, stands here.
 A sturdy pack horse is standing here.
@@ -1873,24 +1871,24 @@ he knows where he is and where the ruffian is...
 <MumeSession v-pre>
 
 
-* HP:Bad&gt;&lt;font class=command&gt;map&lt;/font&gt;
+* HP:Bad&gt;&lt;span class="command"&gt;map&lt;/span&gt;
            Map of Nearby Zones
       -----------------------------
-     |&lt;font color=white&gt;              X              &lt;/font&gt;|
-     |&lt;font color=white&gt;              *              &lt;/font&gt;|
-     |&lt;font color=white&gt;              :              &lt;/font&gt;|
-     |&lt;font color=white&gt;              :             &lt;/font&gt;&lt;font color=red&gt;W&lt;/font&gt;|
-     |&lt;font color=cyan&gt;*&lt;/font&gt;&lt;font color=white&gt;         &lt;/font&gt;&lt;font color=cyan&gt;~~&lt;/font&gt;&lt;font color=white&gt; :*%%:         &lt;/font&gt;&lt;font color=yellow&gt;**&lt;/font&gt;|
-     |&lt;font color=cyan&gt;~~&lt;/font&gt;&lt;font color=white&gt;      &lt;/font&gt;&lt;font color=cyan&gt;:::=&lt;/font&gt;&lt;font color=white&gt;**&lt;/font&gt;&lt;font color=cyan&gt;B&lt;/font&gt;&lt;font color=white&gt;:::&lt;/font&gt;&lt;font color=yellow&gt;~:::::=:~**&lt;/font&gt;|
-     |&lt;font color=white&gt; &lt;/font&gt;&lt;font color=cyan&gt;~~~~~::*:::&lt;/font&gt;&lt;font color=white&gt;*~:              &lt;/font&gt;|
-     |&lt;font color=white&gt;              :              &lt;/font&gt;|
-     |&lt;font color=white&gt;             ::              &lt;/font&gt;|
-     |&lt;font color=white&gt;             *               &lt;/font&gt;|
-     |&lt;font color=white&gt;             *               &lt;/font&gt;|
-     |&lt;font color=white&gt;             :               &lt;/font&gt;|
-     |&lt;font color=white&gt;             ::             &lt;/font&gt;&lt;font color=yellow&gt;~&lt;/font&gt;|
-     |&lt;font color=white&gt;              *~:          *&lt;/font&gt;&lt;font color=yellow&gt;^&lt;/font&gt;|
-     |&lt;font color=white&gt;                ::%::    ~~~ &lt;/font&gt;|
+     |              X              |
+     |              *              |
+     |              :              |
+     |              :             W|
+     |*         ~~ :*%%:         **|
+     |~~      :::=**B::: ~:::::=:~**|
+     | ~~~~~::*:::*~:              |
+     |              :              |
+     |             ::              |
+     |             *               |
+     |             *               |
+     |             :               |
+     |             ::             ~|
+     |              *~:          *^|
+     |                ::%::    ~~~ |
       -----------------------------
 
 * HP:Bad&gt;map room
@@ -1905,7 +1903,7 @@ he knows where he is and where the ruffian is...
 * HP:Bad&gt;scout south
 You quietly scout southwards...
 
-&lt;font class=look&gt;Shaded Path&lt;/font&gt;
+&lt;span class="look"&gt;Shaded Path&lt;/span&gt;
 A ruffian is here.
 
 You stop scouting.
@@ -1917,7 +1915,7 @@ The coach from Tharbad rolls noisily northwards.
 
 In the above maps, Fuor's location is displayed as an 'X'
 (Note: how the first map corresponds to the whole of Middle-Earth is displayed
-<a href="mume.php">here</a>.  As he is in bad shape, Fuor moves away from the
+<a href="../about/">here</a>). As he is in bad shape, Fuor moves away from the
 ruffian and wisely heads back to the city of Fornost.
 
 <MumeSession v-pre>
@@ -1950,19 +1948,19 @@ A hardened ranger is walking around, looking for tracks.
 A hardened ranger is walking around, looking for tracks.
 A little boy is here, running around.
 Exits: North South West.
-&lt;/pre&gt;&lt;/tr&gt;&lt;/td&gt;&lt;/table&gt;
+</MumeSession>
 
-&lt;table CELLPADDING="0" CELLSPACING="0" WIDTH="100%" BORDER="0"&gt;&lt;tr&gt;&lt;td&gt;&lt;a id="resting"&gt;&lt;/a&gt;&lt;span class="header"&gt;Regaining health and mobility&lt;/span&gt;&lt;/td&gt;
-&lt;td VALIGN="BOTTOM" ALIGN="RIGHT"&gt;[&lt;a href="#contents"&gt;contents&lt;/a&gt;]&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+<table CELLPADDING="0" CELLSPACING="0" WIDTH="100%" BORDER="0"><tr><td><a id="resting"></a><span class="header">Regaining health and mobility</span></td>
+<td VALIGN="BOTTOM" ALIGN="RIGHT">[<a href="#contents">contents</a>]</td></tr></table>
 
 
 Cities are almost always completely safe, and very good places to heal up (by
-&lt;font class=command&gt;rest&lt;/font&gt;ing or &lt;font class=command&gt;sleep&lt;/font&gt;ing)
+<span class="command">rest</span>ing or <span class="command">sleep</span>ing)
 after a battle. Even if there isn't a city close to where you're fighting, it's
 always a good idea to know where you are, and where the nearest safe place
 is.
 
-&lt;table ALIGN="CENTER" CELLPADDING=5  cellspacing=0  WIDTH="90%" BORDER="1"&gt;&lt;tr&gt;&lt;td class=msg_body&gt;&lt;pre class="session"&gt;
+<MumeSession v-pre>
 
 * HP:Bad&gt;rest
 You sit down and rest your tired bones.
@@ -2085,7 +2083,7 @@ In Fornost's case, the city is protected at the southern
 entrance by two gates.  This means that when you
 <span class="command">say open</span>, the  gateguards will open both gates.
 If you want a gateguard to open a specific  gate, you can say
-<span class="command">open &lt;gatename&gt</span>.
+<span class="command">open &lt;gatename&gt;</span>.
 For example, in the text below, <span class="command">say open portcullis</span>
 would have worked as well.
 
@@ -2353,46 +2351,46 @@ Coming back to the game, Fuor meets a friendly player and chats with him.
 <MumeSession v-pre>
 
 
-*&gt;&lt;font class=command&gt;l&lt;/font&gt;
-&lt;font class=look&gt;The Crown of Arnor Inn&lt;/font&gt;
+*&gt;<span class="command">l</span>
+&lt;span class="look"&gt;The Crown of Arnor Inn&lt;/span&gt;
 An old innkeeper stands here, talking to some guests.
 Ermin the Elf is standing here.
 An old man is walking around, cleaning up.
 
-*&gt;&lt;font class=command&gt;say hello&lt;/font&gt;
+*&gt;<span class="command">say hello</span>
 Ok.
 
 *&gt;
-&lt;font class=say&gt;Ermin says 'Hello!'&lt;/font&gt;
+&lt;span class="say"&gt;Ermin says 'Hello!'&lt;/span&gt;
 
-*&gt;&lt;font class=command&gt;bow ermin&lt;/font&gt;
+*&gt;<span class="command">bow ermin</span>
 You bow before him.
 
 * HP:Fine&gt;
 Ermin smiles happily.
 
-*&gt;&lt;font class=command&gt;tell ermin do you wish to adventure?&lt;/font&gt;
+*&gt;<span class="command">tell ermin do you wish to adventure?</span>
 Ok.
 
-&lt;font class=tell&gt;Ermin tells you 'sure'&lt;/font&gt;
+&lt;span class="tell"&gt;Ermin tells you 'sure'&lt;/span&gt;
 
 *&gt;
-&lt;font class=tell&gt;Ermin tells you 'follow me?'&lt;/font&gt;
+&lt;span class="tell"&gt;Ermin tells you 'follow me?'&lt;/span&gt;
 
-*&gt;&lt;font class=command&gt;follow ermin&lt;/font&gt;
+*&gt;<span class="command">follow ermin</span>
 You now follow Ermin.
 
 *&gt;
 You are now a member of Ermin's group.
 
-*&gt;&lt;font class=command&gt;group&lt;/font&gt;
+*&gt;<span class="command">group</span>
 Your group consists of:
      Ermin (Head of group)
      Fuor
 
 *&gt;
 Ermin leaves north.
-&lt;font class=look&gt;Market Square&lt;/font&gt;
+&lt;span class="look"&gt;Market Square&lt;/span&gt;
 There is an old street-lamp on the border of the street.
 A wealthy merchant is slowly strolling around here.
 A simple servant quietly walks around, performing his duties.
@@ -2405,7 +2403,7 @@ And the adventure continues...
 
 <div class="separator"></div>
 
-<a href="/resources/newcomers">Back to Newcomers Guide</a>
+<a href="./newcomers">Back to Newcomers Guide</a>
 
 
 Session example made by Alkar and Manw&euml;. Last updated on January 2022.
