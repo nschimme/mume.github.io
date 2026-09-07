@@ -50,7 +50,7 @@
 
 @font-face {
     font-family: "Merriweather";
-    font-style: normal;
+    font-style: bold;
     font-weight: bold;
     src: local("Merriweather Bold"), local("Merriweather-Bold"),
          url("../../fonts/Merriweather-Bold.woff2") format('woff2');
@@ -59,7 +59,7 @@
 
 /* Always show the scroll bar */
 html {
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
 
 body {
@@ -129,7 +129,7 @@ div.msg_thread div.arrow {
 
 .msg_list div.msg_thread a.subject {
     padding-left: 0;
-    text-indent:  0;
+    text-indent: 0;
 }
 
 /* Dropdown Navbar */
@@ -184,7 +184,7 @@ nav li a {
 
 /* Navbar Font Awesome Icons */
 nav li a i {
-    padding-top: 0.25rem; /* 4p x */
+    padding-top: 0.25rem; /* 4 px */
 }
 nav .fa.fa-external-link {
      font-size: 0.875rem; /* 14 px */
@@ -244,17 +244,17 @@ nav li:hover ul {
     border: 0.4rem solid transparent;
     margin-left: 0.125rem;
 }
-.caret.down{
+.caret.down {
     border-top-color: silver;
 }
-.caret.right{
+.caret.right {
     border-left-color: silver;
 }
 nav ul li a:hover .caret.down {
     border-top-color: goldenrod;
 }
 nav ul li a:hover .caret.right {
-border-top-color: goldenrod;
+    border-top-color: goldenrod;
 }
 
 /* Page content */
@@ -264,6 +264,9 @@ border-top-color: goldenrod;
     margin: 0 auto;
     max-width: 56.25rem; /* 900 px */
     padding-top: 4.375rem; /* 70 px */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
     min-height: calc(100vh - 70px - 145px); /* Full height minus navbar and footer */
 }
 
@@ -311,22 +314,16 @@ border-top-color: goldenrod;
     text-decoration: none;
 }
 
-.content .quote {
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
-    margin-top: 30px;
-    text-align: center;
-    font-size: 1.1em;
-    padding-left: 0;
-    border-left: 0;
-}
-.content .quote .fa {
-    padding-left: 3px;
-    padding-right: 3px;
-}
-.content .quote cite {
-    font-size: 0.9em;
+/* Quotes and Blockquotes Styling matching mume.org */
+blockquote {
+    padding-left: 1.25rem;
+    border-left: 0.25rem solid darkgoldenrod;
+    margin: 1.25rem 0;
+    color: #d1d5db;
+    font-style: italic;
+    font-family: 'Merriweather', serif;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 0 4px 4px 0;
 }
 
 .content .card {
@@ -444,7 +441,7 @@ footer {
 /* Navbar turns into a hamburger menu */
 @media only screen and (max-width: 650px) {
     .content {
-        padding-top: 0;
+        padding-top: 1rem;
     }
 
     nav {
@@ -495,7 +492,6 @@ footer {
 
     /* Shrink Gandalf into the Menu */
     #gandalf {
-        /*display: none*/
         position: absolute;
         height: 45px;
         width: 45px;
@@ -503,13 +499,11 @@ footer {
         right: calc(50% - 23px);
     }
 
-    /* Slight margin */
     body {
-      margin-left: 0.1em;
-      margin-right: 0.1em;
+      margin-left: 0;
+      margin-right: 0;
     }
 
-    /* Extra padding around Play Now pill */
     .content .playnow a {
         display: block;
         margin-top: 0.5em;
@@ -519,7 +513,6 @@ footer {
         background-image: url(../../assets/images/play-now-banner@2x.jpg);
     }
 
-    /* Undo extra padding on Navbar Anchors */
     :target::before {
         content: "";
         display: block;
@@ -527,7 +520,6 @@ footer {
         margin: 0px 0 0;
     }
 
-    /* Center card images */
     .content .card img {
         display: block;
         margin-left: auto;
@@ -548,13 +540,13 @@ footer {
 }
 
 * {
-    line-height: 150%;
+    line-height: 160%;
 }
 
 body, p, td, tr {
     color: silver;
     font-family: 'Merriweather', serif;
-    font-size: 0.875rem; /* 14 px */
+    font-size: 0.9375rem; /* 15 px */
 }
 
 p {
@@ -563,7 +555,7 @@ p {
 
 .sml p {
     margin-bottom: 0.5rem; /* 8 px */
-    margin-top:    0.5rem; /* 8 px */
+    margin-top: 0.5rem; /* 8 px */
 }
 
 dt, dd {
@@ -578,12 +570,6 @@ dd {
 
 ul, ol {
     padding-inline-start: 2em;
-}
-
-blockquote {
-    padding-left: 1em;
-    border-left: 0.2em solid silver;
-    margin: 0.5rem 0; /* 8 px */
 }
 
 .sml ul, .sml ol {
@@ -611,7 +597,7 @@ blockquote {
 }
 
 .sml dd {
-    margin-bottom: 0.5em;	/* 8 px */
+    margin-bottom: 0.5em; /* 8 px */
 }
 
 .sml th {
@@ -656,7 +642,7 @@ th.lalign, td.lalign {
 }
 th.bl, td.bl {
     border-left: 1px solid silver;
-    padding-left: 3px ! important;
+    padding-left: 3px !important;
 }
 tr.ba {
     border-top: 1px solid silver;
@@ -666,7 +652,7 @@ tr.bb {
 }
 th.br, td.br {
     border-right: 1px solid silver;
-    padding-right: 3px ! important;
+    padding-right: 3px !important;
 }
 
 pre {
@@ -698,13 +684,15 @@ code {
     font-family: 'Roboto Mono', monospace;
     font-size: 0.875rem; /* 14 px */
     background: #333333;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 3px;
 }
 
 pre code {
     padding-left: 0;
     padding-right: 0;
+    background: transparent;
 }
 
 ol.long > li, ul.long > li {
@@ -715,23 +703,23 @@ body.plain {
     background: black;
 }
 
+/* Typography and Left-Aligned Headers matching mume.org */
 h1, h2, h3, h4 {
     font-family: 'Merriweather', serif;
     background: transparent;
     font-weight: bold;
-}
-
-.sml h1, .sml h2, .sml h3, .sml h4 {
-    text-align: inherit;
+    text-align: left;
 }
 
 h1, .h1 {
     color: silver;
-    text-align: center;
+    text-align: left;
     font-style: italic;
-    font-size: 1.5rem; /* 24 px */
+    font-size: 1.75rem; /* 28 px */
     padding-top: 0.5em;
     margin: 0.5em 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.3em;
 }
 
 p.created {
@@ -761,24 +749,18 @@ p.created {
 
 h2, h3 {
     color: #74a9be;
-    /* color: #2d5ab4;
-    /* color: #4080c0; */
-    /* color: #e4ba3c; */
-    /* color: #cc9933; */
-    /* color: #004080; */
     text-align: left;
     font-style: italic;
     padding-top: 0.5em;
-    margin: 0.25em 0 0.5em;
+    margin: 0.5em 0 0.5em;
 }
 
 h2 {
-    margin-top: 0.5em;
-    font-size: 1.25rem; /* 20 px */
+    font-size: 1.35rem; /* 21.6 px */
 }
 
 h3 {
-    font-size: 1rem; /* 16 px */
+    font-size: 1.1rem; /* 17.6 px */
 }
 
 h4 {
@@ -833,7 +815,7 @@ a:hover {
 }
 
 .board_body > * {
-    padding: 0.5rem;        /* 8 px*/
+    padding: 0.5rem; /* 8 px */
 }
 
 .board_body code {
@@ -847,8 +829,8 @@ a:hover {
 }
 
 .command {
-    /* font-weight: bold; */
-    color: white; /* was #c02040 */
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .quote {
@@ -861,7 +843,7 @@ a:hover {
 }
 
 .bg_gray {
-    background: #999999; /* #808080; */
+    background: #999999;
 }
 
 .agora_small {
@@ -875,37 +857,48 @@ a:hover {
     text-align: right;
 }
 
-.narrate {
-    color: yellow;
+/* ANSI & MUD Session Colors */
+.narrate, .ansi-yellow {
+    color: #ffff00;
 }
 
-.damage {
-    color: red;
+.damage, .ansi-red {
+    color: #ff3333;
 }
 
-.say {
-    color: cyan;
+.say, .hit, .ansi-cyan {
+    color: #00ffff;
 }
 
-.hit {
-    color: cyan;
+.look, .tell, .ansi-green {
+    color: #33cc00;
 }
 
-.look {
-    color: #33cc00; /* green; */
+.ansi-magenta {
+    color: #ff00ff;
 }
 
-.tell {
-    color: #33cc00; /* green; */
+.ansi-blue {
+    color: #3399ff;
 }
 
 .explanation {
    margin-top: 1rem; /* 16px */
 }
 
-.session {
+/* Session Terminal Window Container */
+.session, .terminal-window {
     font-family: 'Roboto Mono', monospace;
     font-size: 0.875rem; /* 14 px */
+    background-color: #050505;
+    color: #c0c0c0;
+    padding: 1.25rem;
+    border-radius: 6px;
+    border: 1px solid #262626;
+    overflow-x: auto;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+    line-height: 1.4;
+    margin: 1.5rem 0;
 }
 
 @media (pointer: coarse) {
@@ -916,7 +909,6 @@ a:hover {
 
 .header {
     color: #74a9be;
-    /*color: #2d5ab4;*/
     text-align: left;
     font-style: italic;
     font-weight: bold;
@@ -924,7 +916,7 @@ a:hover {
 }
 
 .pre-wrap {
-    white-space: pre;
+    white-space: pre-wrap;
 }
 
 /* Help Files */
@@ -939,8 +931,40 @@ a:hover {
 }
 
 /* Shared Page Layouts */
-.home, .links, .interviews, .opensource {
+.home, .links, .interviews, .opensource, .about-grid, .resources-container, .news-list {
   padding: 1rem;
+}
+
+.about-grid, .resources-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.about-grid .card, .resources-container .card {
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.news-list .card {
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.news-list .date {
+  color: goldenrod;
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .center-img {
@@ -1078,10 +1102,6 @@ a:hover {
 
 .read-more:hover {
   background: #e4ba3c;
-}
-
-h1, h2 {
-  text-align: center;
 }
 
 /* Community Links Table */

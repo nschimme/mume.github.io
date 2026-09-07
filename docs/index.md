@@ -7,19 +7,15 @@ layout: home
 <img src="./assets/images/fellowship_bw.jpg" alt="The Fellowship" class="banner-img">
 </div>
 
-<div class="quote">
-<i class="fa fa-quote-left" aria-hidden="true"></i>
+<MumeQuote cite="J.R.R. Tolkien, The Fellowship of the Ring">
 You can trust us to stick to you through thick and thin&mdash;to the bitter end. You cannot trust us to let you face trouble alone, and go off without a word. We are your friends.
-<i class="fa fa-quote-right" aria-hidden="true"></i>
-<br>
-<cite>&mdash; J.R.R. Tolkien, The Fellowship of the Ring</cite>
-</div>
+</MumeQuote>
 
 <div class="separator"></div>
 
 <div class="playnow">
 <div class="readytoexplore">Ready to explore Middle-earth?</div>
-<a href="https://mume.org/play/">Play Now</a>
+<a href="./play">Play Now</a>
 </div>
 
 <div class="separator"></div>
@@ -96,7 +92,7 @@ A long-standing pillar of the community, Elvenrunes features combat logs, forums
 <p>
 Read interviews with legendary players and developers. Learn about the history and the people behind the game.
 </p>
-<a href="./interviews">Read Interviews</a>
+<a href="./community/interviews">Read Interviews</a>
 </div>
 </div>
 </section>
