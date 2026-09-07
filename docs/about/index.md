@@ -3,6 +3,10 @@ title: About MUME
 description: A short explanation on what Multi-Users in Middle-earth is.
 ---
 
+<div style="text-align: center; margin-bottom: 2rem;">
+  <img src="/assets/images/fellowship_bw.jpg" srcset="/assets/images/fellowship_bw.jpg 1x, /assets/images/fellowship_bw@2x.jpg 2x" alt="A short explanation on what Multi-Users in Middle-earth is" style="width: 100%; max-width: 654px; height: auto;" />
+</div>
+
 # About MUME
 
 > *"In online games, a lot of the influences on me come from … MUME for doing such interesting things with player conflict …"*
@@ -52,8 +56,8 @@ On November 26, 2017:
 
 Below is a snapshot of the Middle-earth outdoor areas that are available on MUME. For instance, Moria would span two squares on this grid but consists of 14 zones (1,382 accessible rooms).
 
-<div class="center-img">
-<img src="../assets/images/mume_banner.gif" alt="Map of Arda" class="banner-img">
+<div style="text-align: center; margin-bottom: 2rem;">
+  <img src="/assets/images/map_public_small.jpg" alt="Map of Arda" style="width: 100%; max-width: 790px; height: auto;" />
 </div>
 
 For the record, here is how Arda looked like in [2001](https://mume.org/Images/map_public_small_200109.jpg), [2006](http://www.elvenrunes.com/mume/building.html), and [2009](https://mume.org/Images/map_public_small_200907.jpg).
