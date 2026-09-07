@@ -8,9 +8,9 @@ description: Overview of MUME resources, guides, boards, and game documentation.
 ### Info
 - [What is MUME?](/about/)
 - [Information for Newcomers](/resources/newcomers)
-- [A sample MUME session](/resources/session-logs)
-- [What is MUME VIII?](/about/chronicles#mume-viii)
-- [What was MUME VII?](/about/chronicles#mume-vii)
+- [A sample MUME session](/resources/session)
+- [What is MUME VIII?](/about/m8)
+- [What was MUME VII?](/about/m7)
 - <a href="https://mume.org/help/" target="_self" rel="external">Help Files</a>
 - <a href="https://mume.org/rules/" target="_self" rel="external">Rules</a>
 - <a href="https://mume.org/news/war" target="_self" rel="external">War Status</a>
@@ -41,7 +41,7 @@ description: Overview of MUME resources, guides, boards, and game documentation.
 - [Roguelike Radio MUD podcast](http://www.roguelikeradio.com/2017/11/episode-141-muds.html)
 
 ### Misc
-- [Web News](/news/)
+- [Web News](/news/web)
 - <a href="https://mume.org/download/" target="_self" rel="external">Download area</a>
-- [A guide to mudlle events](/resources/event-guides)
+- [A guide to mudlle events](/resources/events)
 - <a href="https://mume.org/restricted/" target="_self" rel="external">Restricted area</a>

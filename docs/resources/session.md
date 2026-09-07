@@ -1,5 +1,5 @@
 ---
-title: Sample MUME Session
+title: A Sample MUME Session
 description: A complete walkthrough sample session of playing MUME from account creation to adventuring.
 ---
 

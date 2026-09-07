@@ -39,12 +39,12 @@ Some relevant additions to MUME’s engine:
   - Introduced the Uruk-Morruhk tribe
   - Added subrace features to most subraces
   - Added a new spell to Orc Shamans
-  - See also the [MUME IX page](./chronicles#mume-ix)
+  - See also the [MUME IX page](./m9)
 
 - **MUME VIII, January 2002**
   - A third side of the war
   - Beorning shapechangers
-  - See also the [MUME VIII page](./chronicles#mume-viii)
+  - See also the [MUME VIII page](./m8)
 
 - **MUME VII, April 1999**
   - Chosen Statistics
@@ -53,7 +53,7 @@ Some relevant additions to MUME’s engine:
   - Continuous Regeneration
   - Subraces
   - Support the ISO-8859-1 character set in addition to ASCII
-  - See also the [MUME VII page](./chronicles#mume-vii)
+  - See also the [MUME VII page](./m7)
 
 - **MUME VI, March 1996**
   - New practice system

@@ -23,8 +23,7 @@ export default defineConfig({
         items: [
           { text: 'Overview', link: '/about/' },
           { text: 'Features', link: '/about/features' },
-          { text: 'History', link: '/about/history' },
-          { text: 'Chronicles', link: '/about/chronicles' }
+          { text: 'History', link: '/about/history' }
         ]
       },
       { text: 'Play', link: '/play/' },
@@ -43,7 +42,7 @@ export default defineConfig({
       {
         text: 'News',
         items: [
-          { text: 'Web News', link: '/news/' },
+          { text: 'Web News', link: '/news/web' },
           { text: 'War', link: 'https://mume.org/news/war' },
           { text: 'Game News', link: 'https://mume.org/news/game/' }
         ]
@@ -53,8 +52,6 @@ export default defineConfig({
         items: [
           { text: 'Overview', link: '/resources/' },
           { text: 'Newcomers', link: '/resources/newcomers' },
-          { text: 'Session Logs', link: '/resources/session-logs' },
-          { text: 'Event Guides', link: '/resources/event-guides' },
           { text: 'Help', link: 'https://mume.org/help/' },
           { text: 'Rules', link: 'https://mume.org/rules/' },
           { text: 'Dictionary', link: 'https://mume.org/dictionary/' },

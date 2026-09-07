@@ -34,7 +34,7 @@ If you have not done so yet, check out the tutorials below for more survival tip
 
 ## Tutorials
 
-There are two tutorials that are available. If you prefer text over video then you can read [a complete sample MUME session](/resources/session-logs). Otherwise, watch the YouTube tutorial below.
+There are two tutorials that are available. If you prefer text over video then you can read [a complete sample MUME session](/resources/session). Otherwise, watch the YouTube tutorial below.
 
 Quick tips for watching the videos:
 - Watch in fullscreen and high quality; otherwise the text is hard to see

@@ -78,7 +78,6 @@ onUnmounted(() => {
           <ul>
             <li><a :href="withBase('/about/features')" :class="{ current: isActive('/about/features') }">Features</a></li>
             <li><a :href="withBase('/about/history')" :class="{ current: isActive('/about/history') }">History</a></li>
-            <li><a :href="withBase('/about/chronicles')" :class="{ current: isActive('/about/chronicles') }">Chronicles</a></li>
           </ul>
         </li>
         <li>
@@ -100,7 +99,7 @@ onUnmounted(() => {
           <ul>
             <li><a href="https://mume.org/news/war" target="_self" rel="external">War</a></li>
             <li><a href="https://mume.org/news/game/" target="_self" rel="external">Game News</a></li>
-            <li><a :href="withBase('/news/')" :class="{ current: isActive('/news', true) }">Web News</a></li>
+            <li><a :href="withBase('/news/web')" :class="{ current: isActive('/news/web', true) }">Web News</a></li>
           </ul>
         </li>
         <li class="has_children">
