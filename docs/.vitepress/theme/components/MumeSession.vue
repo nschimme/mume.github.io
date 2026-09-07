@@ -1,71 +1,62 @@
 <template>
-  <div class="session-terminal-window">
-    <div class="terminal-bar" v-if="title">
-      <span class="terminal-dot red"></span>
-      <span class="terminal-dot yellow"></span>
-      <span class="terminal-dot green"></span>
-      <span class="terminal-title">{{ title }}</span>
-    </div>
-    <pre class="terminal-content"><slot></slot></pre>
+  <div class="mume-session msg_body">
+    <slot></slot>
   </div>
 </template>
 
 <script setup>
-defineProps({
-  title: {
-    type: String,
-    default: 'MUME Terminal Session'
-  }
-})
 </script>
 
-<style scoped>
-.session-terminal-window {
-  background-color: #050505;
-  border: 1px solid #2d2d2d;
-  border-radius: 6px;
-  margin: 1.5rem 0;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+<style>
+.mume-session {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.25rem;
+  border: 1px solid #555555;
+  box-sizing: border-box;
+  background-color: #333333;
+  color: silver;
 }
 
-.terminal-bar {
-  background-color: #1a1a1a;
-  padding: 6px 12px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #2d2d2d;
-}
-
-.terminal-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin-right: 6px;
-  display: inline-block;
-}
-
-.terminal-dot.red { background-color: #ff5f56; }
-.terminal-dot.yellow { background-color: #ffbd2e; }
-.terminal-dot.green { background-color: #27c93f; }
-
-.terminal-title {
-  color: #888;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.8rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.terminal-content {
-  color: #c0c0c0;
-  font-family: 'Roboto Mono', monospace;
+.mume-session pre.session {
+  font-family: 'Courier New', Courier, Consolas, 'DejaVu Sans Mono', monospace;
   font-size: 0.875rem;
-  line-height: 1.45;
+  background-color: #050505;
+  color: #c0c0c0;
   padding: 1.25rem;
-  margin: 0;
+  border-radius: 6px;
+  border: 1px solid #262626;
   overflow-x: auto;
-  white-space: pre-wrap;
-  word-break: break-word;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+  line-height: 1.2;
+  margin: 0.5rem 0;
+  white-space: pre;
+}
+
+.mume-session .command {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.mume-session .narrate,
+.mume-session .ansi-yellow {
+  color: #ffff00;
+}
+
+.mume-session .damage,
+.mume-session .ansi-red {
+  color: #ff3333;
+}
+
+.mume-session .say,
+.mume-session .hit,
+.mume-session .ansi-cyan {
+  color: #00ffff;
+}
+
+.mume-session .look,
+.mume-session .tell,
+.mume-session .ansi-green {
+  color: #33cc00;
 }
 </style>
