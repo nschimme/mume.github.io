@@ -1,19 +1,13 @@
 ---
 title: MUME Building
-description: Behind the scenes of MUME building and development, mirrored from ElvenRunes.com.
+description: An overview of MUME building, roles, and development processes.
 ---
 
 # MUME Building
 
-<div style="text-align: center; margin-bottom: 2rem;">
-  <img src="/assets/images/elvenrunes/ermume2006.jpg" alt="ElvenRunes MUME Building 2006" style="max-width: 100%; height: auto; border-radius: 4px;" />
-</div>
+For those of you who do not have Immortals on MUME and for even those of you who do and are not sure how things get built, here are the details behind MUME's development including roles, structure, and projects.
 
-For those of you who do not have Immortals on MUME and for even those of you who do and are not sure how things get built, here are three sections dedicated to explaining some of the mysteries behind MUME's magic including some updates on projects under construction.
-
-***Updated: Jan 2006***
-
----
+*Last Updated: Jan 2006*
 
 ## Recent Projects
 
@@ -28,9 +22,7 @@ For those of you who do not have Immortals on MUME and for even those of you who
 
 ---
 
-<div style="text-align: center; margin: 2rem 0;">
-  <img src="/assets/images/elvenrunes/mb_who.gif" alt="Who Builds MUME?" style="max-width: 100%; height: auto;" />
-</div>
+## Who Builds MUME?
 
 ### Implementors (I)
 MUME's active Implementers are **Manwë** and **CryHavoc**. Implementors are the final authority on what happens on MUME. They decide everything from rules and punishments to what areas will be built and the effects and course of different MUME races—basically they chart the future of MUME.
@@ -52,9 +44,7 @@ Maiar are MUME's builders. Their primary function is to build rooms, write room 
 
 ---
 
-<div style="text-align: center; margin: 2rem 0;">
-  <img src="/assets/images/elvenrunes/mb_howto.gif" alt="How MUME is Built" style="max-width: 100%; height: auto;" />
-</div>
+## How MUME is Built
 
 Building on MUME is a thorough and structured process to maintain high quality and consistency with Tolkien's Middle-earth lore:
 
