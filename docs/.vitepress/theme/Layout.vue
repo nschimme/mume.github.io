@@ -68,54 +68,55 @@ onUnmounted(() => {
     <nav id="navbar" ref="navbarRef" role="navigation" aria-label="Main">
       <ul>
         <li>
-          <a href="https://mume.org/">
+          <a href="https://mume.org/" target="_self" rel="external">
             <i class="fa fa-home" aria-hidden="true" title="Home"></i>
             <span class="sr-only">Home</span>
           </a>
         </li>
         <li class="has_children">
-          <a href="https://mume.org/about/">About<span class="caret down"></span></a>
+          <a :href="withBase('/about/')" :class="{ current: isActive('/about') }">About<span class="caret down"></span></a>
           <ul>
-            <li><a href="https://mume.org/help/features">Features</a></li>
-            <li><a href="https://mume.org/about/history">History</a></li>
+            <li><a :href="withBase('/about/features')" :class="{ current: isActive('/about/features') }">Features</a></li>
+            <li><a :href="withBase('/about/history')" :class="{ current: isActive('/about/history') }">History</a></li>
+            <li><a :href="withBase('/about/chronicles')" :class="{ current: isActive('/about/chronicles') }">Chronicles</a></li>
           </ul>
         </li>
         <li>
-          <a href="https://mume.org/play/">Play<img alt="Play" height="16" width="16" style="padding-left:4px; vertical-align:-10%;" :src="withBase('/favicon.ico')"></a>
+          <a :href="withBase('/play/')" :class="{ current: isActive('/play') }">Play<img alt="Play" height="16" width="16" style="padding-left:4px; vertical-align:-10%;" :src="withBase('/favicon.ico')"></a>
         </li>
         <li class="has_children">
-          <a :href="withBase('/')" :class="{ current: isActive('/', true) }">Community<span class="caret down"></span></a>
+          <a :href="withBase('/community/')" :class="{ current: isActive('/community') }">Community<span class="caret down"></span></a>
           <ul>
             <li><a href="https://discord.gg/XkZN55am9a" target="_blank" rel="noopener">Discord <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
             <li><a href="https://elvenrunes.com" target="_blank" rel="noopener">Elvenrunes <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
             <li><a :href="withBase('/opensource')" :class="{ current: isActive('/opensource') }">Open Source</a></li>
             <li><a :href="withBase('/links')" :class="{ current: isActive('/links') }">Links</a></li>
-            <li><a :href="withBase('/interviews')" :class="{ current: isActive('/interviews') }">Interviews</a></li>
+            <li><a :href="withBase('/community/interviews/')" :class="{ current: isActive('/community/interviews') }">Interviews</a></li>
             <li><a href="https://docs.mume.org/wiki/" target="_self" rel="external">Wiki</a></li>
           </ul>
         </li>
         <li class="has_children">
-          <a href="https://mume.org/news/">News<span class="caret down"></span></a>
+          <a :href="withBase('/news/')" :class="{ current: isActive('/news') }">News<span class="caret down"></span></a>
           <ul>
-            <li><a href="https://mume.org/news/war">War</a></li>
-            <li><a href="https://mume.org/news/game/">Game News</a></li>
-            <li><a href="https://mume.org/news/web" rel="nofollow">Web News</a></li>
+            <li><a href="https://mume.org/news/war" target="_self" rel="external">War</a></li>
+            <li><a href="https://mume.org/news/game/" target="_self" rel="external">Game News</a></li>
+            <li><a :href="withBase('/news/')" :class="{ current: isActive('/news', true) }">Web News</a></li>
           </ul>
         </li>
         <li class="has_children">
-          <a href="https://mume.org/resources/">Resources<span class="caret down"></span></a>
+          <a :href="withBase('/resources/')" :class="{ current: isActive('/resources') }">Resources<span class="caret down"></span></a>
           <ul>
-            <li><a href="https://mume.org/resources/newcomers">Newcomers</a></li>
-            <li><a href="https://mume.org/help/">Help</a></li>
-            <li><a href="https://mume.org/rules/">Rules</a></li>
-            <li><a href="https://mume.org/dictionary/">Dictionary</a></li>
-            <li><a href="https://mume.org/resources/boards/">Boards</a></li>
-            <li><a href="https://mume.org/download/" rel="nofollow">Download</a></li>
-            <li><a href="https://mume.org/restricted/" rel="nofollow">Restricted</a></li>
+            <li><a :href="withBase('/resources/newcomers')" :class="{ current: isActive('/resources/newcomers') }">Newcomers</a></li>
+            <li><a href="https://mume.org/help/" target="_self" rel="external">Help</a></li>
+            <li><a href="https://mume.org/rules/" target="_self" rel="external">Rules</a></li>
+            <li><a href="https://mume.org/dictionary/" target="_self" rel="external">Dictionary</a></li>
+            <li><a href="https://mume.org/resources/boards/" target="_self" rel="external">Boards</a></li>
+            <li><a href="https://mume.org/download/" target="_self" rel="external">Download</a></li>
+            <li><a href="https://mume.org/restricted/" target="_self" rel="external">Restricted</a></li>
           </ul>
         </li>
         <li>
-          <a href="https://mume.org/search" rel="nofollow">
+          <a href="https://mume.org/search" target="_self" rel="external">
             <i class="fa fa-search" aria-hidden="true" title="Search"></i>
             <span class="sr-only">Search</span>
           </a>
@@ -123,7 +124,9 @@ onUnmounted(() => {
       </ul>
     </nav>
 
-    <img id="gandalf" ref="gandalfRef" :src="gandalfImg" :srcset="`${gandalfImg} 1x, ${gandalfImg2x} 2x`" alt="Gandalf" width="90" height="90">
+    <a :href="withBase('/')">
+      <img id="gandalf" ref="gandalfRef" :src="gandalfImg" :srcset="`${gandalfImg} 1x, ${gandalfImg2x} 2x`" alt="Gandalf" width="90" height="90">
+    </a>
 
     <div class="content">
       <div v-if="page.isNotFound" class="not-found">
@@ -145,7 +148,7 @@ onUnmounted(() => {
         Do you like MUME? Tell others on
         <a href="https://www.mudconnect.com/cgi-bin/search.cgi?mode=mud_listing&mud=MUME+-+Multi+Users+In+Middle+Earth" target="_blank" rel="noopener">The Mud Connector</a>.
         <br>
-        Web site maintained by the Community and the <a href="https://mume.org/about/ainur">Valar</a> on <a href="https://github.com/mume/mume.github.io">GitHub</a>.
+        Web site maintained by the Community and the <a href="https://mume.org/about/ainur" target="_self" rel="external">Valar</a> on <a href="https://github.com/mume/mume.github.io">GitHub</a>.
         Last updated {{ lastUpdated }}.
         <br>
         MUME is hosted at <a href="https://www.heig-vd.ch" target="_blank" rel="noopener">HEIG-VD</a> (School of Engineering and Management Vaud, Switzerland).
