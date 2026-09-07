@@ -3,8 +3,9 @@
     <i class="fa fa-quote-left" aria-hidden="true"></i>
     <slot />
     <i class="fa fa-quote-right" aria-hidden="true"></i>
-    <br v-if="cite" />
+    <br v-if="cite || $slots.cite" />
     <cite v-if="cite">&mdash; {{ cite }}</cite>
+    <cite v-else-if="$slots.cite">&mdash; <slot name="cite" /></cite>
   </div>
 </template>
 
