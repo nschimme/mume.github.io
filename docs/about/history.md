@@ -6,7 +6,7 @@ description: Detailed history of MUME development since 1991.
 # A MUME History
 
 <MumeQuote cite="J. R. R. Tolkien, The Silmarillion">
-"There was Eru, the One, who in Arda is called Ilúvatar; and he made first the Ainur, the Holy Ones, that were the offspring of his thought, and they were with him before aught else was made."
+There was Eru, the One, who in Arda is called Ilúvatar; and he made first the Ainur, the Holy Ones, that were the offspring of his thought, and they were with him before aught else was made.
 </MumeQuote>
 
 ## Ainulindalë (The Music of the Ainur)

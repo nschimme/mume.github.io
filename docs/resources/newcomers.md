@@ -6,7 +6,7 @@ description: Guides, FAQs, essential commands, and video tutorials for newcomers
 # Information for Newcomers
 
 <MumeQuote>
-"Oh yeah, have fun running around at night with no torch not being able to see a loving thing. … hardcore … Enjoy that. … Amazing game."
+Oh yeah, have fun running around at night with no torch not being able to see a loving thing. … hardcore … Enjoy that. … Amazing game.
 <template #cite>TotalBiscuit, <a href="https://forums.somethingawful.com/showthread.php?threadid=3238046#post369417316" target="_blank" rel="noopener">SA Forum Post</a></template>
 </MumeQuote>
 

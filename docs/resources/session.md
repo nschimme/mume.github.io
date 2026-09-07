@@ -271,7 +271,7 @@ in the wonderful world of Middle-Earth...
 Never forget that this mud is for role-playing, and is not part of
 the experience rat-race. We hope you'll enjoy your new life!
 
-&lt;span class="look"&gt;Halls of Mandos&lt;/span&gt;
+<span class="look">Halls of Mandos</span>
 You are in the Halls of Mandos which are larger than any mortal can grasp.
 All mortal spirits are summoned here after their death yet the Halls never
 fill since they expand with time. The cavern walls are clad with tapestries
@@ -310,7 +310,7 @@ again.
 
 
 *&gt;look
-&lt;span class="look"&gt;Halls of Mandos&lt;/span&gt;
+<span class="look">Halls of Mandos</span>
 You are in the Halls of Mandos which are larger than any mortal can grasp.
 All mortal spirits are summoned here after their death yet the Halls never
 fill since they expand with time. The cavern walls are clad with tapestries
@@ -333,7 +333,7 @@ can be abbreviated for ease of typing.
 
 
 *&gt;l
-&lt;span class="look"&gt;Halls of Mandos&lt;/span&gt;
+<span class="look">Halls of Mandos</span>
 You are in the Halls of Mandos which are larger than any mortal can grasp.
 All mortal spirits are summoned here after their death yet the Halls never
 fill since they expand with time. The cavern walls are clad with tapestries
@@ -578,7 +578,7 @@ Listening to them, you have the strange sensation to fade away...
 *&gt;
 Suddenly an explosion of ancient rhymes makes the space collapse around you!
 You blink, you vanish! And you are in Fornost!
-&lt;span class="look"&gt;At the Well&lt;/span&gt;
+<span class="look">At the Well</span>
 You stand at an old well, which apparently still serves its purpose, as people
 arrive to fill their barrels, pots or waterskins. You hear laughter and singing
 through a window in house to the south, but you cannot see a thing, for the
@@ -591,10 +591,10 @@ An insolent scholar is here, pondering.
 A woman is here, looking for someone to chat with.
 
 *&gt;
-&lt;span class="say"&gt;The Ainulindalë whispers to you 'Fornost is your hometown!'&lt;/span&gt;
+<span class="say">The Ainulindalë whispers to you 'Fornost is your hometown!'</span>
 
 *&gt;
-&lt;span class="narrate"&gt;Dian narrates '2 bns ford'&lt;/span&gt;
+<span class="narrate">Dian narrates '2 bns ford'</span>
 </MumeSession>
 
 Now, we're in Fornost.  Since we're in the real world now, we'll hear other
@@ -676,26 +676,26 @@ be typed as a whole word, or can be abbreviated as <span class="command">n</span
 
 
 *&gt;
-&lt;span class="narrate"&gt;Norgin narrates '...what whitie took pack with all my eq from top of steeply?'&lt;/span&gt;
+<span class="narrate">Norgin narrates '...what whitie took pack with all my eq from top of steeply?'</span>
 
 *&gt;
 A scholar leaves west.
 
 *&gt;
-&lt;span class="narrate"&gt;Lilmar narrates 'any spare ws or mattock or enchant etc?'&lt;/span&gt;
+<span class="narrate">Lilmar narrates 'any spare ws or mattock or enchant etc?'</span>
 
 *&gt;
-&lt;span class="narrate"&gt;Garok narrates 'on keril ford'&lt;/span&gt;
+<span class="narrate">Garok narrates 'on keril ford'</span>
 A scholar has arrived from the east.
 
 *&gt;
-&lt;span class="narrate"&gt;Istafel narrates 'lightning storm around mewlip inn'&lt;/span&gt;
+<span class="narrate">Istafel narrates 'lightning storm around mewlip inn'</span>
 
 *&gt;
 A Dúnadan soldier has arrived from the east.
 
 *&gt;west
-&lt;span class="look"&gt;Market Square&lt;/span&gt;
+<span class="look">Market Square</span>
 You stand under a big red sign which proclaims that you are at the entrance to
 the well-known inn called 'The Crown of Arnor', or as people say around these
 parts, just 'The Crown'. Some oxcarts have been parked here, and presumably
@@ -715,7 +715,7 @@ A Dúnadan soldier puts a lantern on his belt.
 A Dúnadan soldier lights a lantern.
 
 *&gt;w
-&lt;span class="look"&gt;Western End of Market Square&lt;/span&gt;
+<span class="look">Western End of Market Square</span>
 This is the centre of the new, rebuilt Fornost. A few short years ago this
 place was abandoned and deserted like the rest of this ancient city, but it has
 already developed a thriving trade. The inhabitants are all doing well it
@@ -780,7 +780,7 @@ You send your prayer to the Ainur.
 A scholar leaves north.
 
 *&gt;
-&lt;span class="say"&gt;Someone smiles at you as you receive some basic equipment.&lt;/span&gt;
+<span class="say">Someone smiles at you as you receive some basic equipment.</span>
 
 *&gt;
 A little dog has arrived from the east.
@@ -828,7 +828,7 @@ A Dúnadan soldier has arrived from the east.
 A little dog leaves east.
 
 *&gt;e
-&lt;span class="look"&gt;Market Square&lt;/span&gt;
+<span class="look">Market Square</span>
 You stand under a big red sign which proclaims that you are at the entrance to
 the well-known inn called 'The Crown of Arnor', or as people say around these
 parts, just 'The Crown'. Some oxcarts have been parked here, and presumably
@@ -840,7 +840,7 @@ A little dog is here.
 Exits: North East South West.
 
 *&gt;s
-&lt;span class="look"&gt;The Crown of Arnor Inn&lt;/span&gt;
+<span class="look">The Crown of Arnor Inn</span>
 As you enter this large rectangular room, you remember hearing good words about
 'The Crown' on your travels, and the first impressions are not disappointing.
 The room extends further east, where food and drinks are being served. In the
@@ -861,7 +861,7 @@ A little dog has arrived from the north.
 Light gradually filters in, proclaiming a new sunrise outside.
 
 *&gt;e
-&lt;span class="look"&gt;Dining Hall of The Crown&lt;/span&gt;
+<span class="look">Dining Hall of The Crown</span>
 This is a loud place! You hear harsh voices, shrill laughter and the high sound
 of glasses clinking. An endless stream of beer finds its way into the bellies
 of the rough men who frequent this room. The swords are removed, however, and
@@ -901,7 +901,7 @@ a large sack
 a piece of raw meat
 
 *&gt;
-&lt;span class="narrate"&gt;Fabian narrates 'any1 cure crit shire fast!!?'&lt;/span&gt;
+<span class="narrate">Fabian narrates 'any1 cure crit shire fast!!?'</span>
 
 *&gt;
 A townsman leaves west.
@@ -953,7 +953,7 @@ in both hands, you will not be able to wield your weapon or hold your shield.
 
 
 *&gt;
-&lt;span class="narrate"&gt;Norgin narrates 'someone hold fizz's eq...I have no gold to rent :('&lt;/span&gt;
+<span class="narrate">Norgin narrates 'someone hold fizz's eq...I have no gold to rent :('</span>
 
 *&gt;wield backsword
 You stop using a torch.
@@ -1052,7 +1052,7 @@ These are <span class="command">brief</span> and <span class="command">spam</spa
 
 
 *&gt;w
-&lt;span class="look"&gt;The Crown of Arnor Inn&lt;/span&gt;
+<span class="look">The Crown of Arnor Inn</span>
 As you enter this large rectangular room, you remember hearing good words about
 'The Crown' on your travels, and the first impressions are not disappointing.
 The room extends further east, where food and drinks are being served. In the
@@ -1070,7 +1070,7 @@ A rugged-looking man is standing here.
 Exits: North East.
 
 *&gt;n
-&lt;span class="look"&gt;Market Square&lt;/span&gt;
+<span class="look">Market Square</span>
 You stand under a big red sign which proclaims that you are at the entrance to
 the well-known inn called 'The Crown of Arnor', or as people say around these
 parts, just 'The Crown'. Some oxcarts have been parked here, and presumably
@@ -1092,7 +1092,7 @@ Brief mode on.
 Tundur the Lamplighter has arrived from the east.
 
 *&gt;s
-&lt;span class="look"&gt;The Crown of Arnor Inn&lt;/span&gt;
+<span class="look">The Crown of Arnor Inn</span>
 An old innkeeper stands here, talking to some guests.
 A domesticated pony, beast of burden to many, stands here.
 A sturdy pack horse is standing here.
@@ -1122,14 +1122,14 @@ more as you gain levels.
 <MumeSession v-pre>
 
 *&gt;n
-&lt;span class="look"&gt;Market Square&lt;/span&gt;
+<span class="look">Market Square</span>
 There is an old street-lamp on the border of the street.
 A rugged-looking man is standing here.
 Tundur the lamplighter is walking around here with a lantern in his hand.
 Exits: North East South West.
 
 *&gt;w
-&lt;span class="look"&gt;Western End of Market Square&lt;/span&gt;
+<span class="look">Western End of Market Square</span>
 There is an old street-lamp on the border of the street.
 Exits: North East South West.
 
@@ -1138,17 +1138,17 @@ You have 13 practice sessions left.
 Skill / Spell          Knowledge  Difficulty Class      Mana Casting time
 
 *&gt;n
-&lt;span class="look"&gt;Western End of Market Square&lt;/span&gt;
+<span class="look">Western End of Market Square</span>
 There is an old street-lamp on the border of the street.
 Exits: North East South West.
 
 *&gt;n
-&lt;span class="look"&gt;Western End of Market Square&lt;/span&gt;
+<span class="look">Western End of Market Square</span>
 There is an old street-lamp on the border of the street.
 Exits: North East South West.
 
 *&gt;n
-&lt;span class="look"&gt;Narrow Alley&lt;/span&gt;
+<span class="look">Narrow Alley</span>
 There is an old street-lamp on the border of the street.
 A woman is here, looking for someone to chat with.
 A cute little girl is here.
@@ -1156,7 +1156,7 @@ A citizen-mercenary is here, waiting for a job.
 Exits: North South.
 
 *&gt;n
-&lt;span class="look"&gt;Arnor Square&lt;/span&gt;
+<span class="look">Arnor Square</span>
 There is an old street-lamp on the border of the street.
 A well-crafted white fountain is here, water pouring forth from it.
 An insolent scholar is here, pondering.
@@ -1246,7 +1246,7 @@ in order to get to the Warrior guild.
 
 
 *&gt;w
-&lt;span class="look"&gt;Guild Street&lt;/span&gt;
+<span class="look">Guild Street</span>
 There is an old street-lamp on the border of the street.
 A little dog is here.
 A woman is here, looking for someone to chat with.
@@ -1254,18 +1254,18 @@ A little boy is here, running around.
 Exits: East [South] West.
 
 *&gt;w
-&lt;span class="look"&gt;Guild Street&lt;/span&gt;
+<span class="look">Guild Street</span>
 There is an old street-lamp on the border of the street.
 An old man is walking around, cleaning up.
 Exits: East West.
 
 *&gt;w
-&lt;span class="look"&gt;Guild Street&lt;/span&gt;
+<span class="look">Guild Street</span>
 There is an old street-lamp on the border of the street.
 Exits: East South West.
 
 *&gt;s
-&lt;span class="look"&gt;The Guild of Warriors&lt;/span&gt;
+<span class="look">The Guild of Warriors</span>
 A weapons rack stands against the wall.
 Huor of Dor-lómin is standing here, ready to teach his arts.
 Exits: North [West] Up.
@@ -1424,18 +1424,18 @@ outside.
 
 
 *&gt;n
-&lt;span class="look"&gt;Guild Street&lt;/span&gt;
+<span class="look">Guild Street</span>
 There is an old street-lamp on the border of the street.
 Exits: East South West.
 
 *&gt;e
-&lt;span class="look"&gt;Guild Street&lt;/span&gt;
+<span class="look">Guild Street</span>
 There is an old street-lamp on the border of the street.
 A rugged-looking man is standing here.
 Exits: East West.
 
 *&gt;e
-&lt;span class="look"&gt;Guild Street&lt;/span&gt;
+<span class="look">Guild Street</span>
 There is an old street-lamp on the border of the street.
 A woman is here, looking for someone to chat with.
 A cute little girl is here.
@@ -1444,36 +1444,36 @@ A little boy is here, running around.
 Exits: East [South] West.
 
 *&gt;e
-&lt;span class="look"&gt;Arnor Square&lt;/span&gt;
+<span class="look">Arnor Square</span>
 There is an old street-lamp on the border of the street.
 A well-crafted white fountain is here, water pouring forth from it.
 Exits: [North] East South West.
 
 *&gt;s
-&lt;span class="look"&gt;Narrow Alley&lt;/span&gt;
+<span class="look">Narrow Alley</span>
 There is an old street-lamp on the border of the street.
 Exits: North South.
 
 *&gt;s
-&lt;span class="look"&gt;Western End of Market Square&lt;/span&gt;
+<span class="look">Western End of Market Square</span>
 There is an old street-lamp on the border of the street.
 A man passes by, intent on his business.
 A woman is here, looking for someone to chat with.
 Exits: North East South West.
 
 *&gt;s
-&lt;span class="look"&gt;Western End of Market Square&lt;/span&gt;
+<span class="look">Western End of Market Square</span>
 There is an old street-lamp on the border of the street.
 An insolent scholar is here, pondering.
 Exits: North East South West.
 
 *&gt;s
-&lt;span class="look"&gt;Craftsmen's Alley&lt;/span&gt;
+<span class="look">Craftsmen's Alley</span>
 There is an old street-lamp on the border of the street.
 Exits: North South West.
 
 *&gt;w
-&lt;span class="look"&gt;Short Street&lt;/span&gt;
+<span class="look">Short Street</span>
 There is an old street-lamp on the border of the street.
 A rugged-looking man is standing here.
 A wealthy merchant is slowly strolling around here.
@@ -1481,25 +1481,25 @@ A Dúnadan soldier is here busily performing his duties.
 Exits: East West.
 
 *&gt;w
-&lt;span class="look"&gt;Short Street&lt;/span&gt;
+<span class="look">Short Street</span>
 There is an old street-lamp on the border of the street.
 Exits: North East West.
 
 *&gt;w
-&lt;span class="look"&gt;Junction on the King's Road&lt;/span&gt;
+<span class="look">Junction on the King's Road</span>
 There is an old street-lamp on the border of the street.
 An old man is walking around, cleaning up.
 Exits: North East South West.
 
 *&gt;s
-&lt;span class="look"&gt;The King's Road&lt;/span&gt;
+<span class="look">The King's Road</span>
 There is an old street-lamp on the border of the street.
 A Dúnadan soldier is here busily performing his duties.
 A Dúnadan soldier is here busily performing his duties.
 Exits: North South West.
 
 *&gt;s
-&lt;span class="look"&gt;The King's Road&lt;/span&gt;
+<span class="look">The King's Road</span>
 There is an old street-lamp on the border of the street.
 A Dúnadan soldier is here busily performing his duties.
 A rugged-looking man is standing here.
@@ -1507,7 +1507,7 @@ A little boy is here, running around.
 Exits: North East South West.
 
 *&gt;s
-&lt;span class="look"&gt;By the Gate&lt;/span&gt;
+<span class="look">By the Gate</span>
 There is an old street-lamp on the border of the street.
 A hardened ranger is walking around, looking for tracks.
 A hardened ranger is walking around, looking for tracks.
@@ -1515,7 +1515,7 @@ A Dúnadan soldier is here busily performing his duties.
 Exits: North South West.
 
 *&gt;s
-&lt;span class="look"&gt;Under the Wall, Between the Gates&lt;/span&gt;
+<span class="look">Under the Wall, Between the Gates</span>
 An experienced Dúnadan officer is standing here, keeping things under control.
 A Dúnadan gateguard is standing here.
 An experienced Dúnadan officer is standing here, keeping things under control.
@@ -1526,7 +1526,7 @@ Exits: North South.
 You bow deeply.
 
 *&gt;s
-&lt;span class="look"&gt;Before the Gates of Fornost&lt;/span&gt;
+<span class="look">Before the Gates of Fornost</span>
 A colourful butterfly is fluttering around here.
 Exits: North East =South= West.
 </MumeSession>
@@ -1543,7 +1543,7 @@ as a new character, it is still best to be on your guard.
 A butterfly leaves east.
 
 *&gt;e
-&lt;span class="look"&gt;Outside the Walls of Fornost&lt;/span&gt;
+<span class="look">Outside the Walls of Fornost</span>
 A colourful butterfly is fluttering around here.
 Exits: East South West.
 
@@ -1556,7 +1556,7 @@ continuous replacement, the butterfly does, in random sweeps.
 A butterfly is in an excellent condition.
 
 *&gt;hit butterfly
-&lt;span class="hit"&gt;You slash a butterfly's leg extremely hard and shatter it.&lt;/span&gt;
+<span class="hit">You slash a butterfly's leg extremely hard and shatter it.</span>
 You receive your share of experience.
 Congratulations! This is the first time you've killed it!
 A butterfly is dead! R.I.P.
@@ -1581,21 +1581,21 @@ experience you will gain by killing the same thing again.
 
 
 *&gt;e
-&lt;span class="look"&gt;Outside the Walls of Fornost&lt;/span&gt;
+<span class="look">Outside the Walls of Fornost</span>
 Exits: North East South West.
 
 *&gt;n
-&lt;span class="look"&gt;Small Grove of Trees&lt;/span&gt;
+<span class="look">Small Grove of Trees</span>
 A white wolf is here.
 Exits: North East South.
 
 *&gt;s
-&lt;span class="look"&gt;Outside the Walls of Fornost&lt;/span&gt;
+<span class="look">Outside the Walls of Fornost</span>
 The garden snake slithers harmlessly here.
 Exits: North East South West.
 
 *&gt;w
-&lt;span class="look"&gt;Outside the Walls of Fornost&lt;/span&gt;
+<span class="look">Outside the Walls of Fornost</span>
 The corpse of a butterfly is lying here.
 Exits: East South West.
 
@@ -1668,30 +1668,30 @@ faced with an opponent that outmatches you.
 
 
 *&gt;e
-&lt;span class="look"&gt;Outside the Walls of Fornost&lt;/span&gt;
+<span class="look">Outside the Walls of Fornost</span>
 The corpse of a garden snake is lying here.
 A fierce boar is here, grunting at you.
 Exits: North East South West.
 
 *&gt;
-&lt;span class="damage"&gt;A boar strongly hits your left arm and shatters it.
-That really HURT!&lt;/span&gt;
+<span class="damage">A boar strongly hits your left arm and shatters it.
+That really HURT!</span>
 
 * HP:Hurt a boar:Healthy&gt;flee
 You flee head over heels.
-&lt;span class="look"&gt;Light Forest&lt;/span&gt;
+<span class="look">Light Forest</span>
 Exits: North East South West.
 
 * HP:Hurt&gt;w
-&lt;span class="look"&gt;Small Path&lt;/span&gt;
+<span class="look">Small Path</span>
 Exits: North East West.
 
 * HP:Hurt&gt;w
-&lt;span class="look"&gt;Road to Fornost&lt;/span&gt;
+<span class="look">Road to Fornost</span>
 Exits: =North= East =South= West.
 
 * HP:Hurt&gt;s
-&lt;span class="look"&gt;Bend in the Road&lt;/span&gt;
+<span class="look">Bend in the Road</span>
 Exits: =North= South =West=.
 
 * HP:Hurt&gt;inf
@@ -1736,39 +1736,39 @@ fight, for example:
 
 
 * HP:Fine&gt;s
-&lt;span class="look"&gt;Shaded Path&lt;/span&gt;
+<span class="look">Shaded Path</span>
 The corpse of a fallow deer is lying here.
 The corpse of a brown fox is lying here.
 A boar cub is playing here, and exploring the wide world.
 Exits: North East South West.
 
 * HP:Fine&gt;
-&lt;span class="narrate"&gt;Gianon narrates 'anyone seen my sapphire ring lately?'&lt;/span&gt;
+<span class="narrate">Gianon narrates 'anyone seen my sapphire ring lately?'</span>
 
 * HP:Fine&gt;hit cub
-&lt;span class="hit"&gt;You slash a boar cub's body hard and shatter it.&lt;/span&gt;
+<span class="hit">You slash a boar cub's body hard and shatter it.</span>
 
 * HP:Fine a boar cub:Fine&gt;
-&lt;span class="narrate"&gt;Endrasil narrates 'crossing'&lt;/span&gt;
+<span class="narrate">Endrasil narrates 'crossing'</span>
 
 * HP:Fine a boar cub:Fine&gt;
-&lt;span class="hit"&gt;You strongly slash a boar cub's left foreleg and shatter it.&lt;/span&gt;
+<span class="hit">You strongly slash a boar cub's left foreleg and shatter it.</span>
 
 * HP:Fine a boar cub:Hurt&gt;
-&lt;span class="damage"&gt;A boar cub hits your left leg and shatters it.
-That really HURT!&lt;/span&gt;
+<span class="damage">A boar cub hits your left leg and shatters it.
+That really HURT!</span>
 
 * HP:Hurt a boar cub:Hurt&gt;
 Gianon narrates 'ew'
 
 * HP:Hurt a boar cub:Hurt&gt;
-&lt;span class="hit"&gt;You strongly slash a boar cub's right hindleg and shatter it.&lt;/span&gt;
+<span class="hit">You strongly slash a boar cub's right hindleg and shatter it.</span>
 
 * HP:Hurt a boar cub:Bad&gt;
 A sparrow has arrived from the south.
 
 * HP:Hurt a boar cub:Bad&gt;
-&lt;span class="damage"&gt;A boar cub lightly hits your left arm and shatters it.&lt;/span&gt;
+<span class="damage">A boar cub lightly hits your left arm and shatters it.</span>
 
 * HP:Wounded a boar cub:Bad&gt;
 A sparrow leaves east.
@@ -1793,11 +1793,11 @@ You can't do that while fighting.
 A tall stag has arrived from the south.
 
 * HP:Wounded a boar cub:Bad&gt;
-&lt;span class="hit"&gt;You strongly slash a boar cub's left hindleg and shatter it.&lt;/span&gt;
+<span class="hit">You strongly slash a boar cub's left hindleg and shatter it.</span>
 A boar cub is incapacitated and will slowly die, if not aided.
 
 * HP:Wounded a boar cub:Dying&gt;
-&lt;span class="hit"&gt;You slash a boar cub's body extremely hard and shatter it.&lt;/span&gt;
+<span class="hit">You slash a boar cub's body extremely hard and shatter it.</span>
 You receive your share of experience.
 Congratulations! This is the first time you've killed it!
 Your blood freezes as you hear a boar cub's death cry.
@@ -1850,13 +1850,13 @@ A tall stag leaves north.
 
 * HP:Wounded&gt;
 You suddenly notice a ruffian.
-&lt;span class="damage"&gt;A ruffian cleaves your left arm and shatters it.
-That really HURT!&lt;/span&gt;
-&lt;span class="hit"&gt;You slash a ruffian's right foot very hard.&lt;/span&gt;
+<span class="damage">A ruffian cleaves your left arm and shatters it.
+That really HURT!</span>
+<span class="hit">You slash a ruffian's right foot very hard.</span>
 
 * HP:Bad a ruffian:Fine&gt;f
 You flee head over heels.
-&lt;span class="look"&gt;Bend in the Road&lt;/span&gt;
+<span class="look">Bend in the Road</span>
 Exits: =North= South =West=.
 
 </MumeSession>
@@ -1871,7 +1871,7 @@ he knows where he is and where the ruffian is...
 <MumeSession v-pre>
 
 
-* HP:Bad&gt;&lt;span class="command"&gt;map&lt;/span&gt;
+* HP:Bad&gt;<span class="command">map</span>
            Map of Nearby Zones
       -----------------------------
      |              X              |
@@ -1903,7 +1903,7 @@ he knows where he is and where the ruffian is...
 * HP:Bad&gt;scout south
 You quietly scout southwards...
 
-&lt;span class="look"&gt;Shaded Path&lt;/span&gt;
+<span class="look">Shaded Path</span>
 A ruffian is here.
 
 You stop scouting.
@@ -1922,19 +1922,19 @@ ruffian and wisely heads back to the city of Fornost.
 
 
 * HP:Bad&gt;n
-&lt;span class="look"&gt;Road to Fornost&lt;/span&gt;
+<span class="look">Road to Fornost</span>
 A tall stag is here, grazing peacefully.
 Exits: =North= East =South= West.
 
 * HP:Bad&gt;n
-&lt;span class="look"&gt;Before the Gates of Fornost&lt;/span&gt;
+<span class="look">Before the Gates of Fornost</span>
 A hardened ranger is walking around, looking for tracks.
 A hardened ranger is walking around, looking for tracks.
 A colourful butterfly is fluttering around here.
 Exits: North East =South= West.
 
 * HP:Bad&gt;n
-&lt;span class="look"&gt;Under the Wall, Between the Gates&lt;/span&gt;
+<span class="look">Under the Wall, Between the Gates</span>
 An experienced Dúnadan officer is standing here, keeping things under control.
 A Dúnadan gateguard is standing here.
 An experienced Dúnadan officer is standing here, keeping things under control.
@@ -1942,7 +1942,7 @@ A Dúnadan gateguard is standing here.
 Exits: North South.
 
 * HP:Bad&gt;n
-&lt;span class="look"&gt;By the Gate&lt;/span&gt;
+<span class="look">By the Gate</span>
 There is an old street-lamp on the border of the street.
 A hardened ranger is walking around, looking for tracks.
 A hardened ranger is walking around, looking for tracks.
@@ -2044,7 +2044,7 @@ You stand up.
 Ozzy begins some strange incantations...
 
 *&gt;l
-&lt;span class="look"&gt;By the Gate&lt;/span&gt;
+<span class="look">By the Gate</span>
 There is an old street-lamp on the border of the street.
 A hardened ranger is walking around, looking for tracks.
 A hardened ranger is walking around, looking for tracks.
@@ -2100,7 +2100,7 @@ You hear a *click* in a lock.
 The Irongate is opened from the other side.
 
 *&gt;s
-&lt;span class="look"&gt;Under the Wall, Between the Gates&lt;/span&gt;
+<span class="look">Under the Wall, Between the Gates</span>
 An experienced Dúnadan officer is standing here, keeping things under control.
 A Dúnadan gateguard is standing here.
 An experienced Dúnadan officer is standing here, keeping things under control.
@@ -2123,25 +2123,25 @@ An experienced Dúnadan officer unlocks the Irongate.
 An experienced Dúnadan officer opens the Irongate.
 
 *&gt;s
-&lt;span class="look"&gt;Before the Gates of Fornost&lt;/span&gt;
+<span class="look">Before the Gates of Fornost</span>
 A colourful butterfly is fluttering around here.
 Exits: North East =South= West.
 The Portcullis closes quietly.
 
 *&gt;w
-&lt;span class="look"&gt;Outside the Walls of Fornost&lt;/span&gt;
+<span class="look">Outside the Walls of Fornost</span>
 Exits: East South.
 
 *&gt;s
-&lt;span class="look"&gt;In a Field&lt;/span&gt;
+<span class="look">In a Field</span>
 Exits: North East South.
 
 *&gt;s
-&lt;span class="look"&gt;Bend in the Road&lt;/span&gt;
+<span class="look">Bend in the Road</span>
 Exits: North =East= =South= West.
 
 *&gt;w
-&lt;span class="look"&gt;A Peaceful Field&lt;/span&gt;
+<span class="look">A Peaceful Field</span>
 A fat rabbit sits here, chewing on some grass.
 Exits: North East South.
 
@@ -2163,16 +2163,16 @@ how easy or hard an opponent might be to you.
 
 
 *&gt;n
-&lt;span class="look"&gt;Edge of the Forest&lt;/span&gt;
+<span class="look">Edge of the Forest</span>
 A woodpecker is here, tapping on a tree.
 Exits: South West.
 
 *&gt;w
-&lt;span class="look"&gt;Green Forest&lt;/span&gt;
+<span class="look">Green Forest</span>
 Exits: North East South West.
 
 *&gt;s
-&lt;span class="look"&gt;Dense Grove&lt;/span&gt;
+<span class="look">Dense Grove</span>
 A small animal, all covered in spines, snuffles amongst the undergrowth.
 Exits: North South West.
 
@@ -2183,38 +2183,38 @@ You would need some luck!
 Your attempt to slash a small fat hedgehog fails.
 
 * a small fat hedgehog:Healthy&gt;
-&lt;span class="hit"&gt;You strongly slash a small fat hedgehog's right hindleg and shatter it.&lt;/span&gt;
+<span class="hit">You strongly slash a small fat hedgehog's right hindleg and shatter it.</span>
 
 * a small fat hedgehog:Fine&gt;
-&lt;span class="hit"&gt;You slash a small fat hedgehog's right hindleg hard and shatter it.&lt;/span&gt;
-&lt;span class="damage"&gt;A small fat hedgehog barely hits your head.&lt;/span&gt;
+<span class="hit">You slash a small fat hedgehog's right hindleg hard and shatter it.</span>
+<span class="damage">A small fat hedgehog barely hits your head.</span>
 
 * HP:Fine a small fat hedgehog:Hurt&gt;
-&lt;span class="narrate"&gt;Gianon narrates 'oh boy!'&lt;/span&gt;
+<span class="narrate">Gianon narrates 'oh boy!'</span>
 
 * HP:Fine a small fat hedgehog:Hurt&gt;
-&lt;span class="narrate"&gt;Aramoor narrates 'left gulf at one point  I'll try to pick up track again'&lt;/span&gt;
+<span class="narrate">Aramoor narrates 'left gulf at one point  I'll try to pick up track again'</span>
 
 * HP:Fine a small fat hedgehog:Hurt&gt;
 A boar cub has arrived from the north.
 
 * HP:Fine a small fat hedgehog:Hurt&gt;
-&lt;span class="narrate"&gt;Panser narrates 'why do some directions have = like =East= ?'&lt;/span&gt;
+<span class="narrate">Panser narrates 'why do some directions have = like =East= ?'</span>
 
 * HP:Fine a small fat hedgehog:Hurt&gt;
-&lt;span class="narrate"&gt;Tiergon narrates 'Wielding a fang'&lt;/span&gt;
+<span class="narrate">Tiergon narrates 'Wielding a fang'</span>
 
 * HP:Fine a small fat hedgehog:Hurt&gt;
-&lt;span class="narrate"&gt;Tholbar narrates 'road'&lt;/span&gt;
+<span class="narrate">Tholbar narrates 'road'</span>
 
 * HP:Fine a small fat hedgehog:Hurt&gt;
-&lt;span class="hit"&gt;You slash a small fat hedgehog's left foreleg extremely hard and shatter it.&lt;/span&gt;
+<span class="hit">You slash a small fat hedgehog's left foreleg extremely hard and shatter it.</span>
 Your victim is shocked by your hit!
 A small fat hedgehog is incapacitated and will slowly die, if not aided.
 
 * HP:Fine a small fat hedgehog:Dying&gt;
 You gain a level!
-&lt;span class="hit"&gt;You slash a small fat hedgehog's body extremely hard and shatter it.&lt;/span&gt;
+<span class="hit">You slash a small fat hedgehog's body extremely hard and shatter it.</span>
 You receive your share of experience.
 Congratulations! This is the first time you've killed it!
 A small fat hedgehog is dead! R.I.P.
@@ -2328,17 +2328,17 @@ this will actually close your session to the game.
 
 
 *&gt;s
-&lt;span class="look"&gt;The Crown of Arnor Inn&lt;/span&gt;
+<span class="look">The Crown of Arnor Inn</span>
 An old innkeeper stands here, talking to some guests.
 A Dúnadan soldier is here busily performing his duties.
 Exits: North East.
 
 *&gt;offer
-&lt;span class="tell"&gt;The innkeeper tells you 'It will cost you 62 copper pennies per day.'&lt;/span&gt;
+<span class="tell">The innkeeper tells you 'It will cost you 62 copper pennies per day.'</span>
 You have enough money for 2 months.
 
 *&gt;rent
-&lt;span class="tell"&gt;The innkeeper tells you 'It will cost you 62 copper pennies per day.'&lt;/span&gt;
+<span class="tell">The innkeeper tells you 'It will cost you 62 copper pennies per day.'</span>
 You have enough money for 2 months.
 The innkeeper stores your stuff in the safe, and helps you into your chamber.
 </MumeSession>
@@ -2352,7 +2352,7 @@ Coming back to the game, Fuor meets a friendly player and chats with him.
 
 
 *&gt;<span class="command">l</span>
-&lt;span class="look"&gt;The Crown of Arnor Inn&lt;/span&gt;
+<span class="look">The Crown of Arnor Inn</span>
 An old innkeeper stands here, talking to some guests.
 Ermin the Elf is standing here.
 An old man is walking around, cleaning up.
@@ -2361,7 +2361,7 @@ An old man is walking around, cleaning up.
 Ok.
 
 *&gt;
-&lt;span class="say"&gt;Ermin says 'Hello!'&lt;/span&gt;
+<span class="say">Ermin says 'Hello!'</span>
 
 *&gt;<span class="command">bow ermin</span>
 You bow before him.
@@ -2372,10 +2372,10 @@ Ermin smiles happily.
 *&gt;<span class="command">tell ermin do you wish to adventure?</span>
 Ok.
 
-&lt;span class="tell"&gt;Ermin tells you 'sure'&lt;/span&gt;
+<span class="tell">Ermin tells you 'sure'</span>
 
 *&gt;
-&lt;span class="tell"&gt;Ermin tells you 'follow me?'&lt;/span&gt;
+<span class="tell">Ermin tells you 'follow me?'</span>
 
 *&gt;<span class="command">follow ermin</span>
 You now follow Ermin.
@@ -2390,7 +2390,7 @@ Your group consists of:
 
 *&gt;
 Ermin leaves north.
-&lt;span class="look"&gt;Market Square&lt;/span&gt;
+<span class="look">Market Square</span>
 There is an old street-lamp on the border of the street.
 A wealthy merchant is slowly strolling around here.
 A simple servant quietly walks around, performing his duties.

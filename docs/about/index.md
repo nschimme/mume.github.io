@@ -10,7 +10,7 @@ description: A short explanation on what Multi-Users in Middle-earth is.
 # About MUME
 
 <MumeQuote>
-"In online games, a lot of the influences on me come from … MUME for doing such interesting things with player conflict …"
+In online games, a lot of the influences on me come from … MUME for doing such interesting things with player conflict …
 <template #cite>Raph Koster, <a href="https://www.raphkoster.com/games/interviews-and-panels/vaultnetwork-designer-dragon-interview/" target="_blank" rel="noopener">VaultNetwork Interview</a></template>
 </MumeQuote>
 
