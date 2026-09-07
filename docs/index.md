@@ -96,7 +96,7 @@ A long-standing pillar of the community, Elvenrunes features combat logs, forums
 <p>
 Read interviews with legendary players and developers. Learn about the history and the people behind the game.
 </p>
-<a href="./community/interviews">Read Interviews</a>
+<a href="./community/interviews/">Read Interviews</a>
 </div>
 </div>
 </section>

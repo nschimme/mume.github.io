@@ -42,7 +42,7 @@ There are three ways to join the battle for Middle-earth:
     </a>
   </div>
 
-  <p>For incompatible or older browsers, you can also try <a href="https://mume.org/play/browser-legacy" target="_self" rel="external">this web client</a>.</p>
+  <p>For incompatible or older browsers, you can also try <a href="./browser-legacy">this web client</a>.</p>
 </section>
 
 <section style="margin-top: 2rem;">
