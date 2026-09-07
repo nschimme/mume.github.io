@@ -1,39 +1,47 @@
 ---
-title: Resources & Guides
-description: Helpful guides, newcomer documentation, session logs, and event information for MUME players.
+title: Resources
+description: Overview of MUME resources, guides, boards, and game documentation.
 ---
 
-# Resources & Guides
+# Resources
 
-<div class="resources-container">
+### Info
+- [What is MUME?](/about/)
+- [Information for Newcomers](/resources/newcomers)
+- [A sample MUME session](/resources/session-logs)
+- [What is MUME VIII?](/about/chronicles#mume-viii)
+- [What was MUME VII?](/about/chronicles#mume-vii)
+- <a href="https://mume.org/help/" target="_self" rel="external">Help Files</a>
+- <a href="https://mume.org/rules/" target="_self" rel="external">Rules</a>
+- <a href="https://mume.org/news/war" target="_self" rel="external">War Status</a>
+- [History of MUME](/about/history)
+- <a href="https://mume.org/about/ainur" target="_self" rel="external">The Ainur</a>
+- <a href="https://mume.org/search" target="_self" rel="external">Search</a>
 
-<section class="card">
-<h2>Newcomers Guide</h2>
-<p>Everything you need to know to survive your first days in Middle-earth: character creation, stats, basic commands, and starting areas.</p>
-<a href="./newcomers">Read Newcomers Guide &rarr;</a>
-</section>
+### MUME Boards
+- <a href="https://mume.org/news/game/" target="_self" rel="external">The Game News Board</a>
+- <a href="https://mume.org/resources/boards/Starter's/" target="_self" rel="external">The Starter's Board</a>
+- <a href="https://mume.org/resources/boards/FAQ/" target="_self" rel="external">FAQ Board</a>
+- <a href="https://mume.org/resources/boards/Tales/" target="_self" rel="external">The Tales Board (MUME fun)</a>
+- <a href="https://mume.org/resources/boards/InCharacter/" target="_self" rel="external">Free People Chronicles</a>
+- <a href="https://mume.org/resources/boards/OrcsIncharacter/" target="_self" rel="external">Orkish Drumlore</a>
 
-<section class="card">
-<h2>Session Logs</h2>
-<p>Archived game session logs, quest walkthroughs, and historical roleplay encounters.</p>
-<a href="./session-logs">View Session Logs &rarr;</a>
-</section>
+### Playing
+- Via telnet at `mume.org` port `23` or `4242`
+- Via a [Game Client](/play/)
 
-<section class="card">
-<h2>Event Guides</h2>
-<p>Community events, seasonal competitions, and war campaign guides.</p>
-<a href="./event-guides">Explore Event Guides &rarr;</a>
-</section>
+### Middle-earth
+- <a href="https://mume.org/dictionary/" target="_self" rel="external">Middle-earth Dictionary</a>
 
-<section class="card">
-<h2>External Resources</h2>
-<p>Access official game rules, help files, and board discussions:</p>
-<ul>
-  <li><a href="https://mume.org/help/" target="_self" rel="external">Official Help System</a></li>
-  <li><a href="https://mume.org/rules/" target="_self" rel="external">Game Rules & Policy</a></li>
-  <li><a href="https://mume.org/dictionary/" target="_self" rel="external">Middle-earth Dictionary</a></li>
-  <li><a href="https://mume.org/resources/boards/" target="_self" rel="external">In-Game Boards</a></li>
-</ul>
-</section>
+### Community
+- [Undertakings by the MUME Community](/community/)
+- [Some links to elsewhere…](/links)
+- [Interviews with players](/community/interviews/)
+- [April '98 Mud of the Month](/community/interviews/motm)
+- [Roguelike Radio MUD podcast](http://www.roguelikeradio.com/2017/11/episode-141-muds.html)
 
-</div>
+### Misc
+- [Web News](/news/)
+- <a href="https://mume.org/download/" target="_self" rel="external">Download area</a>
+- [A guide to mudlle events](/resources/event-guides)
+- <a href="https://mume.org/restricted/" target="_self" rel="external">Restricted area</a>

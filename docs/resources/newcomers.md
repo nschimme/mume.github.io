@@ -1,23 +1,50 @@
 ---
-title: MUME Newcomers Guide
-description: Essential advice, tips, and starter guide for new players entering Multi-Users in Middle-earth.
+title: Information for Newcomers
+description: Guides, FAQs, essential commands, and video tutorials for newcomers to MUME.
 ---
 
-# Newcomers Guide
+# Information for Newcomers
 
-Welcome to MUME! Stepping into Middle-earth can be intimidating, but this guide will help you get oriented.
+> *"Oh yeah, have fun running around at night with no torch not being able to see a loving thing. … hardcore … Enjoy that. … Amazing game."*
+> &mdash; TotalBiscuit, [SA Forum Post](https://forums.somethingawful.com/showthread.php?threadid=3238046#post369417316)
 
-## 1. Creating Your Character
+## Welcome to MUME
 
-When you log in for the first time, you will choose your race, align your statistics (Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma), and select your starting class/profession.
+What you find on this page is an extension of the documentation available in-game. This page features several tutorials to aide you, our newest player, in navigating MUME.
 
-## 2. Basic Survival
+## Complete Beginners
 
-- **Light Source**: Make sure you carry a lantern or torch. Darkness in Middle-earth is absolute.
-- **Resting & Healing**: Use `rest` or `sleep` in safe rooms to recover hit points and mana.
-- **Communication**: Use `say` to talk locally, or `tell` to message another player directly.
+If you are new to Multi-User Dungeons (MUDs), the precursors to MMORPGs, we strongly recommend that you to read the following essential knowledge to help you navigate and survive Middle-earth:
 
-## 3. Recommended Next Steps
+- <a href="https://mume.org/help/newbie" target="_self" rel="external">Introduction to MUME's most important aspects (help newcomer)</a>
+- <a href="https://mume.org/help/faq" target="_self" rel="external">Frequently asked questions (help faq)</a>
+- <a href="https://mume.org/help/basics" target="_self" rel="external">Basic commands needed to survive (help basic)</a>
 
-- Join the official <a href="https://discord.gg/XkZN55am9a" target="_blank" rel="noopener">MUME Discord</a> to ask questions in real-time.
-- Check out the <a href="https://docs.mume.org/wiki/" target="_self" rel="external">MUME Wiki</a> for detailed room maps and quest guides.
+Once you have completed reading the above subjects, then please proceed onwards to the advanced subjects.
+
+## Advanced Subjects
+
+If you have played other MUDs before but are new to MUME, you can skip ahead to read about MUME’s unique features here:
+
+- <a href="https://mume.org/help/advanced" target="_self" rel="external">More advanced commands… (help advanced)</a>
+- [Interesting features](/about/features)
+- <a href="https://mume.org/rules/" target="_self" rel="external">Rules for all players to observe (rules)</a>
+
+If you have not done so yet, check out the tutorials below for more survival tips.
+
+## Tutorials
+
+There are two tutorials that are available. If you prefer text over video then you can read [a complete sample MUME session](/resources/session-logs). Otherwise, watch the YouTube tutorial below.
+
+Quick tips for watching the videos:
+- Watch in fullscreen and high quality; otherwise the text is hard to see
+- Confirm that annotations are enabled (the boxes of text that pop up throughout the videos)
+- Pause and review specific commands as needed!
+
+You can switch videos in the playlist with the hamburger menu at the top right corner or [watch them on YouTube instead](https://www.youtube.com/playlist?list=PLZPa6XiiZkfQZVGIw1xD7B21n51f4wLCs).
+
+<div class="youtube-container">
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/videoseries?list=PLZPa6XiiZkfQZVGIw1xD7B21n51f4wLCs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+Please contact us in game if you have any comments!
