@@ -38,7 +38,7 @@ There are three ways to join the battle for Middle-earth:
 
   <div style="text-align: center; margin: 1.5rem 0;">
     <a href="https://mume.org/play/browser" target="_self" rel="external">
-      <img src="/assets/images/playmume.png" srcset="/assets/images/playmume.png 1x, /assets/images/mmapper-wasm@2x.webp 2x" alt="Play MUME for free using the web client" style="width: 100%; max-width: 924px; height: auto;" />
+      <img src="/assets/images/playmume.png" srcset="/assets/images/playmume.png 1x, /assets/images/playmume@2x.png 2x, /assets/images/mmapper-wasm@2x.webp 2x" alt="Play MUME for free using the web client" style="width: 100%; max-width: 924px; height: auto;" />
     </a>
   </div>
 
