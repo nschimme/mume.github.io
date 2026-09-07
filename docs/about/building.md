@@ -5,6 +5,10 @@ description: An overview of MUME building, roles, and development processes.
 
 # MUME Building
 
+<div style="text-align: center; margin-bottom: 2rem;">
+  <img src="/assets/images/map_public_small.jpg" alt="MUME Builders Map" style="width: 100%; max-width: 790px; height: auto;" />
+</div>
+
 For those of you who do not have Immortals on MUME and for even those of you who do and are not sure how things get built, here are the details behind MUME's development including roles, structure, and projects.
 
 *Last Updated: Jan 2006*

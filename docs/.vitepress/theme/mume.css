@@ -23,7 +23,7 @@
 
 @font-face {
     font-family: "Kelt";
-    font-style: bold;
+    font-style: normal;
     font-weight: bold;
     src: local("Kelt Bold"), local("KeltBold"),
          url("../../fonts/kelt-bold.woff2") format('woff2');
