@@ -16,29 +16,41 @@ Welcome to Multi-Users in Middle-earth (MUME)! MUME is a deep, immersive text-ba
 
 ## Onboarding Steps Overview
 
-<div class="about-grid" style="margin: 2rem 0;">
+<div class="onboarding-steps-grid">
 
-<div class="card" style="border-top: 3px solid darkgoldenrod;">
-<h3>Step 1: Client Setup</h3>
+<div class="step-card">
+<div>
+<div class="step-badge">1</div>
+<h3>Client Setup</h3>
 <p>Choose between instant in-browser play with built-in real-time mapping or downloading MMapper Desktop.</p>
+</div>
 <a href="#step-1-client-setup" class="read-more">Step 1 Details &darr;</a>
 </div>
 
-<div class="card" style="border-top: 3px solid darkgoldenrod;">
-<h3>Step 2: Core Commands</h3>
+<div class="step-card">
+<div>
+<div class="step-badge">2</div>
+<h3>Core Commands</h3>
 <p>Master character creation, movement, gear, combat, food/water, and interaction commands.</p>
+</div>
 <a href="#step-2-character-creation--essential-command-cheat-sheet" class="read-more">Step 2 Details &darr;</a>
 </div>
 
-<div class="card" style="border-top: 3px solid darkgoldenrod;">
-<h3>Step 3: Text Control & Survival</h3>
-<p>Learn `change spam` settings, navigate Gandalf's tutorial, handle torches, and recover from death.</p>
+<div class="step-card">
+<div>
+<div class="step-badge">3</div>
+<h3>Text Control & Survival</h3>
+<p>Learn <code>change spam</code> settings, navigate Gandalf's tutorial, handle torches, and recover from death.</p>
+</div>
 <a href="#step-3-managing-text-density--first-hour-survival" class="read-more">Step 3 Details &darr;</a>
 </div>
 
-<div class="card" style="border-top: 3px solid darkgoldenrod;">
-<h3>Step 4: Discord Mentors</h3>
+<div class="step-card">
+<div>
+<div class="step-badge">4</div>
+<h3>Discord Mentors</h3>
 <p>Join the active Discord community to get real-time answers, advice, and party up with mentors.</p>
+</div>
 <a href="#step-4-community-tutorials--mentoring" class="read-more">Step 4 Details &darr;</a>
 </div>
 

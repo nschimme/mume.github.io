@@ -38,7 +38,7 @@ description: Contents of the Multi-Users in Middle-earth Website.
 - <a href="https://mume.org/dictionary/" target="_self" rel="external">Middle-earth Dictionary</a>
 
 ### Community
-- [Undertakings by the MUME Community](/community/)
+- [Undertakings by the MUME Community](/)
 - [Some links to elsewhere…](/links)
 - [Interviews with players](/community/interviews/)
 - [April '98 Mud of the Month](/community/interviews/motm)
