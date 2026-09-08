@@ -19,7 +19,7 @@ You can trust us to stick to you through thick and thin&mdash;to the bitter end.
 
 <div class="playnow">
 <div class="readytoexplore">Ready to explore Middle-earth?</div>
-<a href="https://mume.org/play/">Play Now</a>
+<a href="./play">Play Now</a>
 </div>
 
 <div class="separator"></div>
@@ -96,7 +96,7 @@ A long-standing pillar of the community, Elvenrunes features combat logs, forums
 <p>
 Read interviews with legendary players and developers. Learn about the history and the people behind the game.
 </p>
-<a href="./interviews">Read Interviews</a>
+<a href="./community/interviews/">Read Interviews</a>
 </div>
 </div>
 </section>
