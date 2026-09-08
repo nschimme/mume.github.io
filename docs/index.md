@@ -22,6 +22,18 @@ You can trust us to stick to you through thick and thin&mdash;to the bitter end.
 <a href="./play">Play Now</a>
 </div>
 
+<div class="card" style="border-left: 4px solid darkgoldenrod; margin-top: 1.5rem; padding: 1.25rem;">
+<h3 style="margin-top: 0; color: #cc9933;">New to MUME? Start Here!</h3>
+<p style="margin-bottom: 0.8rem;">MUME is a deep, immersive text-based world. Follow our 4-step quick-start onboarding funnel to select your client, master essential commands, and meet veteran community mentors:</p>
+<div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+  <span style="background: #1a1d25; border: 1px solid #333; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; color: #d1d5db;">1. Client Setup</span>
+  <span style="background: #1a1d25; border: 1px solid #333; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; color: #d1d5db;">2. Command Cheat Sheet</span>
+  <span style="background: #1a1d25; border: 1px solid #333; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; color: #d1d5db;">3. Text & Survival</span>
+  <span style="background: #1a1d25; border: 1px solid #333; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; color: #d1d5db;">4. Mentors on Discord</span>
+</div>
+<a href="./resources/newcomers" class="read-more">Open Step-by-Step Newcomer Guide &rarr;</a>
+</div>
+
 <div class="separator"></div>
 
 <h1>Join the Community</h1>

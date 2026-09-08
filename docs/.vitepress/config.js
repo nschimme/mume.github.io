@@ -30,7 +30,7 @@ export default defineConfig({
       {
         text: 'Community',
         items: [
-          { text: 'Community Hub', link: '/community/' },
+          { text: 'Community Hub', link: '/' },
           { text: 'Discord', link: 'https://discord.gg/XkZN55am9a' },
           { text: 'Elvenrunes', link: 'https://elvenrunes.com' },
           { text: 'Open Source', link: '/opensource' },
