@@ -169,8 +169,6 @@ label.toggle {
   right: calc(50% + 31.25rem); /* 500 px */
   z-index: 120;
   transition: top 0.3s;
-  width: 90px;
-  height: 90px;
 }
 
 /* Navbar links */
@@ -457,7 +455,7 @@ footer {
 /* Navbar turns into a hamburger menu */
 @media only screen and (max-width: 650px) {
     .content {
-        padding-top: 1rem;
+        padding-top: 0;
     }
 
     nav {
@@ -520,10 +518,20 @@ footer {
       margin-right: 0;
     }
 
+    .content .readytoexplore {
+        white-space: normal;
+        margin: 0.5em 0;
+        font-size: 0.85em;
+    }
+
     .content .playnow a {
         display: block;
         margin-top: 0.5em;
         margin-bottom: 0.5em;
+        white-space: normal;
+        max-width: 100%;
+        padding: 0.5em 1em;
+        font-size: 0.8em;
     }
     .content .playnow {
         background-image: url(../../assets/images/play-now-banner@2x.jpg);

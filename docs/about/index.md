@@ -62,4 +62,4 @@ Below is a snapshot of the Middle-earth outdoor areas that are available on MUME
   <img src="/assets/images/map_public_small.jpg" alt="Map of Arda" style="width: 100%; max-width: 790px; height: auto;" />
 </div>
 
-For the record, here is how Arda looked like in [2001](https://mume.org/Images/map_public_small_200109.jpg), [2006](http://www.elvenrunes.com/mume/building.html), and [2009](https://mume.org/Images/map_public_small_200907.jpg).
+For the record, here is how Arda looked like in [2001](https://mume.org/Images/map_public_small_200109.jpg), [2006](/about/building), and [2009](https://mume.org/Images/map_public_small_200907.jpg).
