@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useData, useRoute, withBase } from 'vitepress'
+import CookieConsent from './components/CookieConsent.vue'
 import gandalfImg from './gandalf_90.gif'
 import gandalfImg2x from './gandalf_90@2x.gif'
 import './mume.css'
@@ -27,27 +28,6 @@ const isActive = (path, exact = false) => {
 const isMenuOpen = ref(false)
 const navbarRef = ref(null)
 const gandalfRef = ref(null)
-const showConsentBanner = ref(false)
-
-const acceptConsent = () => {
-  localStorage.setItem('mume_cookie_consent', 'granted')
-  showConsentBanner.value = false
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('consent', 'update', {
-      analytics_storage: 'granted'
-    })
-  }
-}
-
-const declineConsent = () => {
-  localStorage.setItem('mume_cookie_consent', 'denied')
-  showConsentBanner.value = false
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('consent', 'update', {
-      analytics_storage: 'denied'
-    })
-  }
-}
 
 const lastUpdated = __LAST_UPDATED__
 
@@ -72,11 +52,6 @@ const handleScroll = () => {
 onMounted(() => {
   prevScrollpos = window.scrollY
   window.addEventListener('scroll', handleScroll)
-
-  const savedConsent = localStorage.getItem('mume_cookie_consent')
-  if (!savedConsent) {
-    showConsentBanner.value = true
-  }
 })
 
 onUnmounted(() => {
@@ -180,17 +155,7 @@ onUnmounted(() => {
       </div>
     </footer>
 
-    <!-- Cookie Consent Banner -->
-    <div v-if="showConsentBanner" class="cookie-banner" role="dialog" aria-label="Cookie Consent">
-      <div class="cookie-banner-content">
-        <p>
-          We use cookies and Google Analytics to understand site usage and improve your experience.
-        </p>
-        <div class="cookie-banner-actions">
-          <button class="cookie-btn accept" @click="acceptConsent">Accept</button>
-          <button class="cookie-btn decline" @click="declineConsent">Decline</button>
-        </div>
-      </div>
-    </div>
+    <!-- Cookie Consent Banner Component -->
+    <CookieConsent />
   </div>
 </template>
