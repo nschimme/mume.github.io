@@ -4,13 +4,13 @@ description: Play MUME in your web browser using legacy web clients like DecafMU
 ---
 
 <div style="text-align: center; margin-bottom: 2rem;">
-  <img src="../assets/images/fellowship_bw.jpg" srcset="../assets/images/fellowship_bw.jpg 1x, ../assets/images/fellowship_bw@2x.jpg 2x" alt="Play MUME for free using legacy web clients" style="width: 100%; max-width: 654px; height: auto;" />
+  <img src="/assets/images/fellowship_bw.jpg" srcset="/assets/images/fellowship_bw.jpg 1x, /assets/images/fellowship_bw@2x.jpg 2x" alt="Play MUME for free using legacy web clients" style="width: 100%; max-width: 654px; height: auto;" />
 </div>
 
 # Play MUME in your web browser! (Legacy)
 
 <div class="card">
-<img alt="Speak, friend, and enter to play MUME" src="../assets/images/doors-of-durin.png" srcset="../assets/images/doors-of-durin.png 1x, ../assets/images/doors-of-durin@2x.png 2x" style="width: 100%; max-width: 160px; height: auto;" />
+<img alt="Speak, friend, and enter to play MUME" src="/assets/images/doors-of-durin.png" srcset="/assets/images/doors-of-durin.png 1x, /assets/images/doors-of-durin@2x.png 2x" style="width: 100%; max-width: 160px; height: auto;" />
 <div>
 
 These are legacy web clients.
@@ -31,7 +31,7 @@ Choose a legacy client to launch in your browser:
 
 <div style="text-align: center; margin: 1.5rem 0;">
   <a href="../play-mume/" target="_self" rel="external">
-    <img src="../assets/images/playmume.png" srcset="../assets/images/playmume.png 1x, ../assets/images/playmume@2x.png 2x" alt="Play MUME for free using the web client" style="width: 100%; max-width: 924px; height: auto;" />
+    <img src="/assets/images/playmume.png" srcset="/assets/images/playmume.png 1x, /assets/images/playmume@2x.png 2x" alt="Play MUME for free using the web client" style="width: 100%; max-width: 924px; height: auto;" />
   </a>
 </div>
 

@@ -4,13 +4,13 @@ description: Play MUME for free using the Web Client, downloading MMapper, or co
 ---
 
 <div style="text-align: center; margin-bottom: 2rem;">
-  <img src="../assets/images/fellowship_bw.jpg" srcset="../assets/images/fellowship_bw.jpg 1x, ../assets/images/fellowship_bw@2x.jpg 2x" alt="Play MUME for free by using the Web Client, downloading MMapper, or connecting with a Mud Client" style="width: 100%; max-width: 654px; height: auto;" />
+  <img src="/assets/images/fellowship_bw.jpg" srcset="/assets/images/fellowship_bw.jpg 1x, /assets/images/fellowship_bw@2x.jpg 2x" alt="Play MUME for free by using the Web Client, downloading MMapper, or connecting with a Mud Client" style="width: 100%; max-width: 654px; height: auto;" />
 </div>
 
 # Playing MUME!
 
 <div class="card">
-<img alt="Speak, friend, and enter to play MUME" src="../assets/images/doors-of-durin.png" srcset="../assets/images/doors-of-durin.png 1x, ../assets/images/doors-of-durin@2x.png 2x" style="width: 100%; max-width: 160px; height: auto;" />
+<img alt="Speak, friend, and enter to play MUME" src="/assets/images/doors-of-durin.png" srcset="/assets/images/doors-of-durin.png 1x, /assets/images/doors-of-durin@2x.png 2x" style="width: 100%; max-width: 160px; height: auto;" />
 <div>
 
 MUME is a complex and rich text-based game with an incredibly hard learning curve. If you learn the commands and features, your life may be fulfilling and rewarding; otherwise, it may be frustratingly short!
@@ -38,7 +38,7 @@ There are three ways to join the battle for Middle-earth:
 
   <div style="text-align: center; margin: 1.5rem 0;">
     <a href="https://mume.org/play/browser" target="_self" rel="external">
-      <img src="../assets/images/playmume.png" srcset="../assets/images/playmume.png 1x, ../assets/images/playmume@2x.png 2x, ../assets/images/mmapper-wasm@2x.webp 2x" alt="Play MUME for free using the web client" style="width: 100%; max-width: 924px; height: auto;" />
+      <img src="/assets/images/playmume.png" srcset="/assets/images/playmume.png 1x, /assets/images/playmume@2x.png 2x, /assets/images/mmapper-wasm@2x.webp 2x" alt="Play MUME for free using the web client" style="width: 100%; max-width: 924px; height: auto;" />
     </a>
   </div>
 
@@ -70,7 +70,7 @@ There are three ways to join the battle for Middle-earth:
 
   <div style="text-align: center; margin: 1.5rem 0;">
     <a href="https://www.mudlet.org" target="_blank" rel="noopener">
-      <img src="../assets/images/mudlet.png" srcset="../assets/images/mudlet.png 1x, ../assets/images/mudlet@2x.png 2x" alt="Download Mudlet to play the game Multi-Users in Middle-earth" style="width: 100%; max-width: 923px; height: auto;" />
+      <img src="/assets/images/mudlet.png" srcset="/assets/images/mudlet.png 1x, /assets/images/mudlet@2x.png 2x" alt="Download Mudlet to play the game Multi-Users in Middle-earth" style="width: 100%; max-width: 923px; height: auto;" />
     </a>
   </div>
 
