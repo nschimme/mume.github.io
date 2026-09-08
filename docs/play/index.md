@@ -9,19 +9,22 @@ description: Play MUME for free using the Web Client, downloading MMapper, or co
 
 # Playing MUME!
 
-<div class="card">
+<div class="card" style="border-left: 4px solid darkgoldenrod;">
 <img alt="Speak, friend, and enter to play MUME" src="/assets/images/doors-of-durin.png" srcset="/assets/images/doors-of-durin.png 1x, /assets/images/doors-of-durin@2x.png 2x" style="width: 100%; max-width: 160px; height: auto;" />
 <div>
 
-MUME is a complex and rich text-based game with an incredibly hard learning curve. If you learn the commands and features, your life may be fulfilling and rewarding; otherwise, it may be frustratingly short!
+<h3 style="margin-top: 0;">First Time in Middle-earth?</h3>
 
-We strongly recommend that you browse the [newcomers page](../resources/newcomers) for important survival information before you start playing. That being said, the information is also available in-game, so feel free to jump on in.
+MUME is a rich text-based world with a steep learning curve. Follow our step-by-step onboarding journey:
 
-There are three ways to join the battle for Middle-earth:
+1. **Step 1 — Choose a Client:** Launch instantly with [MMapper Web](#browser) below or [MMapper Desktop](#mapper).
+2. **Step 2 — Create Character & Basics:** Learn character setup and core commands (`look`, `score`, `help`).
+3. **Step 3 — Survival & Text Management:** Control game text density, lighting, and movement.
+4. **Step 4 — Community & Mentoring:** Get real-time help on [Discord](https://discord.gg/XkZN55am9a).
 
-1. [Using your browser (Recommended)](#browser)
-2. [Using MMapper Desktop (Powerful)](#mapper)
-3. [Using a MUD client](#client)
+<div style="margin-top: 1rem;">
+  <a href="../resources/newcomers" class="read-more">Read Complete Newcomer Guide &rarr;</a>
+</div>
 
 </div>
 </div>
