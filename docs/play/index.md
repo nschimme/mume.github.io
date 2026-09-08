@@ -15,7 +15,7 @@ description: Play MUME for free using the Web Client, downloading MMapper, or co
 
 MUME is a complex and rich text-based game with an incredibly hard learning curve. If you learn the commands and features, your life may be fulfilling and rewarding; otherwise, it may be frustratingly short!
 
-We strongly recommend that you browse the [newcomers page](/resources/newcomers) for important survival information before you start playing. That being said, the information is also available in-game, so feel free to jump on in.
+We strongly recommend that you browse the [newcomers page](../resources/newcomers) for important survival information before you start playing. That being said, the information is also available in-game, so feel free to jump on in.
 
 There are three ways to join the battle for Middle-earth:
 
@@ -42,7 +42,7 @@ There are three ways to join the battle for Middle-earth:
     </a>
   </div>
 
-  <p>For incompatible or older browsers, you can also try <a href="https://mume.org/play/browser-legacy" target="_self" rel="external">this web client</a>.</p>
+  <p>For incompatible or older browsers, you can also try <a href="./browser-legacy">this web client</a>.</p>
 </section>
 
 <section style="margin-top: 2rem;">
@@ -74,5 +74,5 @@ There are three ways to join the battle for Middle-earth:
     </a>
   </div>
 
-  <p>For alternatives, check out our <a href="/opensource">open source projects</a>. You may also find legacy clients at our <a href="https://mume.org/download/" target="_self" rel="external">mirror</a>.</p>
+  <p>For alternatives, check out our <a href="../opensource">open source projects</a>. You may also find legacy clients at our <a href="https://mume.org/download/" target="_self" rel="external">mirror</a>.</p>
 </section>

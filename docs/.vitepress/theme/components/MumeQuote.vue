@@ -1,10 +1,13 @@
 <template>
-  <blockquote class="quote">
+  <div class="quote">
+    <i class="fa fa-quote-left" aria-hidden="true"></i>
     <slot />
-    <footer v-if="cite || $slots.cite">
+    <i class="fa fa-quote-right" aria-hidden="true"></i>
+    <br v-if="cite || $slots.cite" />
+    <cite v-if="cite || $slots.cite">
       &mdash; <slot name="cite">{{ cite }}</slot>
-    </footer>
-  </blockquote>
+    </cite>
+  </div>
 </template>
 
 <script setup>
