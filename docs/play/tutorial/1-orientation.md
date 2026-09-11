@@ -1,47 +1,38 @@
 ---
-title: "Orientation & Account Rules"
-description: "What is MUD & MUME, account rules, and Tolkien character names."
+title: "Orientation & Awakening in Mandos"
+description: "Awaken in the Halls of Mandos, review account rules, and prepare to enter Middle-earth."
 teach:
+  - command: "look"
+    desc: "examine your initial surroundings in Mandos"
   - command: "help accounts"
-    desc: "one account per person rule"
-  - command: "help names"
-    desc: "naming conventions for Tolkien roleplay"
+    desc: "review the single account rule"
 steps:
+  - ask: "look"
+    accept:
+      - "look"
+      - "l"
+    hint: "Type: look (or l)"
+    example: "> look\nHalls of Mandos\nYou are in the Halls of Mandos which are larger than any mortal can grasp."
   - ask: "help accounts"
     accept:
       - "help accounts"
       - "help account"
     hint: "Type: help accounts"
-    example: "> help accounts\nACCOUNTS ON MUME\nEach player is permitted ONLY ONE ACCOUNT. You may create multiple characters under your single account."
-  - ask: "help names"
-    accept:
-      - "help names"
-      - "help name"
-    hint: "Type: help names"
-    example: "> help names\nNAMES ON MUME\nMUME's management strongly encourages in-game roleplay. Therefore, names must fit reasonably with the race and Tolkien lore of your character."
+    example: "> help accounts\nEach player is permitted ONLY ONE ACCOUNT. You may create multiple characters under your single account."
 responses:
-  help names: "HELP NAMES ON MUME\n==================\nMUME's management strongly encourages in-game roleplay. Therefore, names must fit reasonably with the race and Tolkien lore of your character."
-  help accounts: "HELP ACCOUNTS ON MUME\n=====================\nEach player is permitted ONLY ONE ACCOUNT. You may create multiple characters under your single account."
+  look: "Halls of Mandos\nYou are in the Halls of Mandos which are larger than any mortal can grasp.\nAll mortal spirits are summoned here after their death yet the Halls never fill since they expand with time.\nThe cavern walls are clad with tapestries woven by Vairë the Weaver which depict every event of the past and of the future.\nA bowl containing a few drops of the pale dew of Telperion is the only light source.\nA large torch lies here among the dust.\nA large piece of cheese has been placed here.\nA Warning Sign for new players is here.\nA large bulletin board is mounted on a wall here.\nA large fountain, made from grey stone, pours water from its centre."
+  l: "Halls of Mandos\nYou are in the Halls of Mandos which are larger than any mortal can grasp.\nAll mortal spirits are summoned here after their death yet the Halls never fill since they expand with time.\nThe cavern walls are clad with tapestries woven by Vairë the Weaver which depict every event of the past and of the future.\nA bowl containing a few drops of the pale dew of Telperion is the only light source.\nA large torch lies here among the dust.\nA large piece of cheese has been placed here.\nA Warning Sign for new players is here.\nA large bulletin board is mounted on a wall here.\nA large fountain, made from grey stone, pours water from its centre."
+  help accounts: "HELP ACCOUNTS ON MUME\n=====================\nMUME uses an ACCOUNT system. Each player is permitted ONLY ONE ACCOUNT. You may create multiple characters under your single account, but sharing accounts or multi-logging is strictly forbidden."
 ---
 
 <TutorialPlayer>
 
-# What is a MUD?
+# Awakening in Mandos
 
-MUME is a MUD: a Multi-User Dungeon. It is a game world made of text, played by hundreds of people at the same time.
+Your journey begins as a spirit summoned to the **Halls of Mandos** before entering the mortal realm. Around you lie woven tapestries of past and future ages.
 
-There are no graphics. The game describes a room, and you type what you want to do. That is the whole loop. Nothing is on a timer while you read. Take as long as you like.
+Before stepping into Middle-earth, every adventurer must understand the law of the world: **one account per player**. All your characters—whether a Man of Eriador, a Hobbit of the Shire, or an Elf of Rivendell—belong to this single account.
 
-# What is MUME?
-
-MUME is Middle-earth. The map is built from Tolkien, from the Shire to Bree to the Misty Mountains, and it has been growing since 1991. You pick a side. The Free Peoples defend the West. The forces of Mordor attack it.
-
-As a new player, you'll start on the side of men, hobbits, dwarves or elves near the Tower Hills with basic equipment.
-
-# Account Rules & Character Names
-
-MUME uses an ACCOUNT system. You are allowed ONLY ONE ACCOUNT per person, though you can create multiple characters on it. Type NEW when first connecting to register your account passphrase.
-
-Character names should fit Middle-earth (e.g. Auretor, Cogundir, Fuor). Modern, offensive, or lore-breaking names are not permitted.
+Take a look around the cavern halls to begin your orientation.
 
 </TutorialPlayer>

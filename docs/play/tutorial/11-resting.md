@@ -1,35 +1,39 @@
 ---
-title: "Resting & Recovery"
-description: "Resting, sleeping, and standing to recover health and stamina."
+title: "Tactical Movement & Fleeing"
+description: "Handle dangerous foes by changing combat mood and fleeing to safety."
 teach:
-  - command: "rest"
-    desc: "sit down to recover health and movement"
-  - command: "sleep"
-    desc: "sleep for fast health and stamina recovery"
-  - command: "wake / stand"
-    desc: "wake up and stand back on your feet"
+  - command: "change mood aggressive"
+    desc: "increase offensive bonus while lowering defense"
+  - command: "flee"
+    desc: "escape a dangerous battle head over heels"
 steps:
-  - ask: "rest"
+  - ask: "change mood aggressive"
     accept:
-      - "rest"
-      - "sleep"
-    hint: "Type: rest"
-    example: "> rest\nYou sit down and rest your tired bones."
+      - "change mood aggressive"
+      - "cha m aggressive"
+      - "change mood wimpy"
+    hint: "Type: change mood aggressive"
+    example: "> change mood aggressive\nOk. Your Offensive Bonus increases."
+  - ask: "flee"
+    accept:
+      - "flee"
+      - "f"
+    hint: "Type: flee"
+    example: "> flee\nYou flee head over heels!\nLight Forest\nExits: North East South West."
 responses:
-  rest: "You sit down and rest your tired bones."
-  sleep: "You go to sleep."
-  wake: "You wake, and sit up."
-  stand: "You stand up."
+  change mood aggressive: "Ok.\nStat update: OB increases from 15% to 26%, PB drops to 16%."
+  cha m aggressive: "Ok."
+  change mood wimpy: "Ok."
+  flee: "A fierce boar strongly hits your left arm and shatters it!\nThat really HURT!\nYou flee head over heels.\nLight Forest\nExits: North East South West."
+  f: "You flee head over heels.\nLight Forest\nExits: North East South West."
 ---
 
 <TutorialPlayer>
 
-# Resting, Sleeping & Standing
+# Battle Tactics & Survival
 
-After combat, recover hit points and movement points in safe areas.
+Not every fight goes as planned. MUME features **Combat Moods** (`berserk`, `aggressive`, `brave`, `normal`, `prudent`, `wimpy`). Changing mood adjusts your OB (Offensive Bonus) versus PB (Parry Bonus).
 
-`rest` sits down to recover at moderate speed. `sleep` goes to sleep for faster recovery (`wake` to wake up, `stand` to stand up).
-
-Note: You recover points much slower if you are hungry or thirsty!
+When facing a foe that hits too hard (such as a wild boar), do not fight to the death! Type `flee` (or `f`) to break away immediately and escape into a random neighboring room.
 
 </TutorialPlayer>

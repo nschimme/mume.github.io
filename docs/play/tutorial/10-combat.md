@@ -1,59 +1,38 @@
 ---
-title: "Combat & Tactics"
-description: "Assessing enemies with consider, combat stances (moods), trophy, and fleeing."
+title: "First Encounters & Wilderness Combat"
+description: "Venturing outside the gates of Fornost to engage wild creatures in battle."
 teach:
-  - command: "consider boar"
-    desc: "gauge enemy difficulty before fighting (also con)"
-  - command: "kill snake"
-    desc: "attack a target creature"
-  - command: "change mood aggressive"
-    desc: "increase OB at the cost of PB defense"
-  - command: "flee"
-    desc: "break off combat and escape!"
+  - command: "consider butterfly"
+    desc: "evaluate an enemy's strength before attacking"
+  - command: "hit butterfly"
+    desc: "initiate melee combat"
 steps:
-  - ask: "consider boar"
+  - ask: "consider butterfly"
     accept:
-      - "consider boar"
-      - "con boar"
-      - "consider"
-    hint: "Type: consider boar"
-    example: "> consider boar\nYou would need some luck!"
-  - ask: "change mood aggressive"
+      - "consider butterfly"
+      - "con butterfly"
+    hint: "Type: consider butterfly"
+    example: "> consider butterfly\nIt looks like easy pickings!"
+  - ask: "hit butterfly"
     accept:
-      - "change mood aggressive"
-      - "cha m aggressive"
-      - "change mood"
-    hint: "Type: change mood aggressive"
-    example: "> change mood aggressive\nOk.\nOB: 26%, DB: 26%, PB: 16%, Armour: 17%. Mood: aggressive."
-  - ask: "flee"
-    accept:
-      - "flee"
-    hint: "Type: flee"
-    example: "> flee\nYou panic and scramble away!\nYou flee to the East! You manage to escape safely."
+      - "hit butterfly"
+      - "k butterfly"
+      - "kill butterfly"
+    hint: "Type: hit butterfly"
+    example: "> hit butterfly\nYou slash a butterfly's leg extremely hard and shatter it.\nA butterfly is dead! R.I.P."
 responses:
-  consider boar: "You would need some luck!"
-  con boar: "You would need some luck!"
-  consider: "You would need some luck!"
-  kill snake: "You slash a garden snake's head hard and shatter it!\nYou receive your share of experience."
-  change mood aggressive: "Ok.\nOB: 26%, DB: 26%, PB: 16%, Armour: 17%. Wimpy: 0. Mood: aggressive."
-  cha m aggressive: "Ok.\nOB: 26%, DB: 26%, PB: 16%, Armour: 17%. Wimpy: 0. Mood: aggressive."
-  change mood: "   _\n  | |   berserk\n  | |   aggressive\n  | |   brave\n  | |   normal\n  | |   prudent\n  |~|<- wimpy\n  / \\\n  \\_/"
-  trophy: "		*** TROPHY *** (Number Killed, Knowledge, Mobile)\n|   1,  1%,  A butterfly               |\n|   1, 10%,  A boar cub                |"
-  flee: "You panic and scramble away!\nYou flee to the East! You manage to escape safely."
+  consider butterfly: "It looks like easy pickings!"
+  con butterfly: "It looks like easy pickings!"
+  hit butterfly: "You slash a butterfly's leg extremely hard and shatter it.\nYou receive your share of experience.\nCongratulations! This is the first time you've killed it!\nA butterfly is dead! R.I.P."
+  kill butterfly: "You slash a butterfly's leg extremely hard and shatter it.\nA butterfly is dead! R.I.P."
 ---
 
 <TutorialPlayer>
 
-# Assessing Enemies
+# Venturing Outside the Walls
 
-Never attack blindly! Always use `consider <target>` (or `con`) before swinging. The game compares your level and gear to the enemy, warning you if a creature is dangerous or if you 'need some luck!'.
+Leaving the city gates of Fornost brings you into the open wild. Beyond the walls flutter harmless butterflies and small woodland creatures.
 
-# Battle Stances, Trophy & Fleeing
-
-Combat is real-time. Initiate with `kill <target>`. Attacks occur automatically until finished.
-
-`change mood` adjusts your stance: berserk, aggressive, brave, normal, prudent, or wimpy. Aggressive increases OB (offense) but drops PB (parry).
-
-`trophy` lists enemies you have slain during your travels. `flee` breaks away from combat through a random exit if health gets low!
+Before attacking any creature, check your odds with `consider <mob>`. Once ready, engage with `hit <mob>` (or `kill`). Defeating new creatures awards experience toward your next level!
 
 </TutorialPlayer>

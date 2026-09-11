@@ -1,40 +1,35 @@
 ---
-title: "Exploration & Maps"
-description: "Scouting ahead with scout and viewing in-game maps."
+title: "Scouting & Map Reading"
+description: "Use ASCII maps and scouting to survey surroundings safely."
 teach:
-  - command: "scout south"
-    desc: "peak into an adjacent room without moving"
   - command: "map"
-    desc: "display regional text map"
-  - command: "map room"
-    desc: "display local ASCII room map"
+    desc: "view an ASCII map of nearby wilderness zones"
+  - command: "scout south"
+    desc: "peer stealthily into an adjacent room"
 steps:
-  - ask: "scout south"
-    accept:
-      - "scout south"
-      - "scout s"
-      - "scout"
-    hint: "Type: scout south"
-    example: "> scout south\nYou quietly scout southwards...\nShaded Path\nA ruffian is here.\nYou stop scouting."
   - ask: "map"
     accept:
       - "map"
     hint: "Type: map"
-    example: "> map\n           Map of Nearby Zones\n      -----------------------------\n     |              X              |\n     |              *              |"
+    example: "> map\nMap of Nearby Zones\n+-----+\n|#   #|\n|* +.*|\n|.+X**|\n+-----+"
+  - ask: "scout south"
+    accept:
+      - "scout south"
+      - "scout s"
+    hint: "Type: scout south"
+    example: "> scout south\nYou quietly scout southwards...\nShaded Path: A ruffian is here."
 responses:
-  scout south: "You quietly scout southwards...\nShaded Path\nA ruffian is here.\nYou stop scouting."
-  scout s: "You quietly scout southwards...\nShaded Path\nA ruffian is here.\nYou stop scouting."
-  scout: "You quietly scout southwards...\nShaded Path\nA ruffian is here.\nYou stop scouting."
-  map: "           Map of Nearby Zones\n      -----------------------------\n     |              X              |\n     |              *              |\n     |              :             W|\n      -----------------------------"
-  map room: "+-----+\n|#   #|\n|* +.*|\n|.+X**|\n+-----+"
+  map: "           Map of Nearby Zones\n      -----------------------------\n     |              X              |\n     |              *              |\n     |              :              |\n     |*         ~~ :*%%:         **|\n     |~~      :::=**B::: ~:::::=:~**|\n      -----------------------------\nIn the map above, your location is marked by 'X'."
+  scout south: "You quietly scout southwards...\nShaded Path\nThe corpse of a brown fox is lying here.\nA fierce boar is grunting here.\nYou stop scouting."
+  scout s: "You quietly scout southwards...\nShaded Path\nA fierce boar is grunting here.\nYou stop scouting."
 ---
 
 <TutorialPlayer>
 
-# Scouting Ahead & Maps
+# Surveying the Wilderness
 
-Before stepping into dangerous or unfamiliar territory, use `scout <direction>` (e.g. `scout south`) to peak quietly without moving into the room.
+Before stepping into unknown territory, wise adventurers scout ahead. MUME provides built-in ASCII mapping tools with `map` (showing regional terrain and your location as `X`).
 
-`map` displays a regional text map of Middle-earth. `map room` displays an ASCII micro-map of your room's local layout.
+Commanding `scout <direction>` allows you to peer into an adjacent room without stepping inside, revealing hidden mobs, enemies, or players before you arrive.
 
 </TutorialPlayer>

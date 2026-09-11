@@ -1,31 +1,37 @@
 ---
-title: "Teamwork & Grouping"
-description: "Following party leaders and managing adventuring groups."
+title: "Adventuring in Groups"
+description: "Form adventuring parties with fellow players to conquer tough challenges."
 teach:
   - command: "follow ermin"
-    desc: "follow another character automatically"
+    desc: "follow an adventuring companion"
   - command: "group"
-    desc: "display members of your adventuring party"
+    desc: "view active members of your group"
 steps:
   - ask: "follow ermin"
     accept:
       - "follow ermin"
-      - "follow"
-      - "group"
+      - "fol ermin"
     hint: "Type: follow ermin"
-    example: "> follow ermin\nYou now follow Ermin.\n\n> group\nYour group consists of:\n  Ermin (Head of group)\n  Fuor"
+    example: "> follow ermin\nYou now follow Ermin."
+  - ask: "group"
+    accept:
+      - "group"
+      - "gr"
+    hint: "Type: group"
+    example: "> group\nYour group consists of: Ermin (Head), Fuor."
 responses:
-  follow ermin: "You now follow Ermin."
-  follow: "You now follow Ermin."
-  group: "Your group consists of:\n  Ermin (Head of group)\n  Fuor"
+  follow ermin: "You now follow Ermin.\nYou are now a member of Ermin's group."
+  fol ermin: "You now follow Ermin."
+  group: "Your group consists of:\n     Ermin (Head of group)\n     Fuor"
+  gr: "Your group consists of:\n     Ermin (Head of group)\n     Fuor"
 ---
 
 <TutorialPlayer>
 
-# Grouping & Following Leaders
+# The Strength of Fellowship
 
-Adventuring in Middle-earth is much safer in a team.
+Middle-earth is dangerous to walk alone. Joining forces with other Free Peoples makes adventuring safer and far more rewarding.
 
-`follow <player>` aligns your movement automatically with a leader. `group` displays all current members of your adventuring party.
+To join a party, type `follow <leader>`. Once accepted, you automatically walk alongside the leader when they move. Use `group` to inspect all adventurers currently in your fellowship.
 
 </TutorialPlayer>

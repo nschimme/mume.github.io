@@ -1,46 +1,37 @@
 ---
-title: "Looking & Inspecting"
-description: "Describing rooms with look and inspecting objects with examine."
+title: "Arrival at Fornost & Observation"
+description: "Pray to the Ainur to arrive at Fornost Well, and observe the bustling town square."
 teach:
-  - command: "look / l"
-    desc: "describe the room you are in"
-  - command: "examine elf"
-    desc: "study a person or monster closely"
-  - command: "examine sword"
-    desc: "inspect an object closely"
+  - command: "pray fornost"
+    desc: "travel from Mandos to your starting town"
+  - command: "look"
+    desc: "examine the well in Fornost"
 steps:
+  - ask: "pray fornost"
+    accept:
+      - "pray fornost"
+      - "pray"
+    hint: "Type: pray fornost"
+    example: "> pray fornost\nYou kneel down and try to hear the Ainulindalë...\nSuddenly an explosion of ancient rhymes makes space collapse... You are in Fornost!"
   - ask: "look"
     accept:
       - "look"
       - "l"
     hint: "Type: look"
-    example: "> look\nEast of the Bridge\nYou are standing on the Old East Road, just east of the Brandywine bridge.\nExits: north, south, east, west.\nA friendly elf is resting here under the oak tree."
-  - ask: "examine elf"
-    accept:
-      - "examine elf"
-      - "exa elf"
-      - "examine"
-      - "exa"
-    hint: "Type: examine elf"
-    example: "> examine elf\nFair and graceful this child of Eru is, and with but a cursory glance in your direction he continues to walk.\nAn elf is in an excellent condition."
+    example: "> look\nAt the Well\nYou stand at an old well, which serves its purpose as people arrive to fill barrels."
 responses:
-  look: "East of the Bridge\nYou are standing on the Old East Road, just east of the Brandywine bridge.\nExits: north, south, east, west.\nA friendly elf is resting here under the oak tree."
-  l: "East of the Bridge\nYou are standing on the Old East Road, just east of the Brandywine bridge.\nExits: north, south, east, west.\nA friendly elf is resting here under the oak tree."
-  examine elf: "Fair and graceful this child of Eru is, and with but a cursory glance in your direction he continues to walk.\nAn elf is in an excellent condition."
-  exa elf: "Fair and graceful this child of Eru is, and with but a cursory glance in your direction he continues to walk.\nAn elf is in an excellent condition."
-  examine sword: "This narrow, single-edged blade has been inlaid with gold filigree from point to pommel."
+  pray fornost: "You kneel down and try to hear the Ainulindalë.\nIn response to your request strange harmonies come from nowhere...\nListening to them, you have the strange sensation to fade away...\nSuddenly an explosion of ancient rhymes makes the space collapse around you!\nYou blink, you vanish! And you are in Fornost!\nAt the Well\nYou stand at an old well, which apparently still serves its purpose, as people\narrive to fill their barrels, pots or waterskins.\nA circular stone well has been built here.\nFardur the guide is here, leaning on his walking-stick.\nAn insolent scholar is here, pondering.\nThe Ainulindalë whispers to you 'Fornost is your hometown!'"
+  pray: "You kneel down and try to hear the Ainulindalë...\nYou blink, you vanish! And you are in Fornost!"
+  look: "At the Well\nYou stand at an old well, which apparently still serves its purpose, as people\narrive to fill their barrels, pots or waterskins. You hear laughter and singing\nthrough a window in a house to the south.\nA circular stone well has been built here.\nThere is an old street-lamp on the border of the street.\nFardur the guide is here, leaning on his walking-stick."
+  l: "At the Well\nYou stand at an old well, which apparently still serves its purpose."
 ---
 
 <TutorialPlayer>
 
-# How to Type & Look Around
+# The Journey to Middle-earth
 
-You talk to MUME in short instructions. Usually a verb, then a thing (e.g. `look sign`, `get sword`).
+In Mandos, mortal spirits leave by kneeling and praying to their starting city. As a Man of Eriador, your hometown is the ancient city of **Fornost**.
 
-`look` (or `l`) describes your room, occupants, objects, and compass exits. If text scrolls past quickly, `look` brings back the room description immediately.
-
-# Inspecting Things Closely
-
-`examine <target>` (or `exa`) studies a specific person, monster, object, or sign in detail. It reveals condition, worn equipment on characters, and inscriptions on signs.
+Upon praying, the music of the Ainulindalë whisks you through space and time. You materialize in the center of Fornost beside an old stone well. Around you, scholars, guides, and townsfolk go about their daily lives.
 
 </TutorialPlayer>

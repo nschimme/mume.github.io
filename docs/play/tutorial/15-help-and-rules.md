@@ -1,49 +1,35 @@
 ---
-title: "Help, Rules & Death"
-description: "Reading help files, player rules, death, and praying in Mandos."
+title: "Rules & In-Game Reference"
+description: "Review essential game rules and built-in help features."
 teach:
-  - command: "help"
-    desc: "list what the game can explain"
-  - command: "help basic"
-    desc: "the full basic command list"
   - command: "rules"
-    desc: "index of MUME player rules"
-  - command: "pray fornost"
-    desc: "pray to return to life in a town from the Halls of Mandos"
+    desc: "view the index of MUME rules and guidelines"
+  - command: "help newbie"
+    desc: "access the in-game beginner guide"
 steps:
-  - ask: "help basic"
+  - ask: "rules"
     accept:
-      - "help basic"
-      - "help"
-    hint: "Type: help basic"
-    example: "> help basic\nHELP BASIC COMMANDS\n===================\nMovement: north, south, east, west, up, down, exits, open\nLook:     look, examine, inventory, equipment, score"
-  - ask: "pray fornost"
+      - "rules"
+      - "rule"
+    hint: "Type: rules"
+    example: "> rules\nINDEX: RULES CHARACTER, RULES COMMUNICATION, RULES PLAYERKILLING..."
+  - ask: "help newbie"
     accept:
-      - "pray fornost"
-      - "pray bree"
-      - "pray"
-    hint: "Type: pray fornost"
-    example: "> pray fornost\nYou kneel down and try to hear the Ainulindalë...\nSuddenly an explosion of ancient rhymes makes space collapse around you!\nYou blink, you vanish! And you are in Fornost!"
+      - "help newbie"
+      - "help new"
+    hint: "Type: help newbie"
+    example: "> help newbie\nWELCOME TO MUME! Type HELP BASICS or HELP ADVANCED for guidance."
 responses:
-  help: "HELP INDEX (Reference: mume.org/help)\n======================================\nhelp basic - Basic command list\nhelp new   - Guide for new players"
-  help basic: "HELP BASIC COMMANDS\n===================\nMovement: north, south, east, west, up, down, exits, open\nLook:     look, examine, inventory, equipment, score"
-  rules: "RULES INDEX (Reference: mume.org/rules)\n=====================================\n- RULES CHARACTER     Rules for character creation and accounts\n- RULES COMMUNICATION Rules for speech, whoises, and titles"
-  pray fornost: "You kneel down and try to hear the Ainulindalë...\nSuddenly an explosion of ancient rhymes makes space collapse around you!\nYou blink, you vanish! And you are in Fornost!"
-  pray: "You kneel down and try to hear the Ainulindalë...\nSuddenly an explosion of ancient rhymes makes space collapse around you!\nYou blink, you vanish! And you are in Fornost!"
+  rules: "INDEX\n   /--------------------------------------------------------------------\n  | These are the rules concerning the players of MUME.                  |\n  | RULES CHARACTER     Important rules for newcomers.                   |\n  | RULES COMMUNICATION Rules for communication, channels, titles.       |\n  | RULES PLAYERKILLING Regulates battles between player characters.     |\n   \\--------------------------------------------------------------------/"
+  help newbie: "WELCOME TO MUME!\nThis is a complex world! 'HELP BASICS' if you have never played a MUD before;\n'HELP ADVANCED' if you have played other MUDs but this is your first visit to MUME."
 ---
 
 <TutorialPlayer>
 
-# Where to Find Help & Rules
+# Essential Guidelines & References
 
-`help` on its own lists help subjects. `help basic` is the full basic command list. `rules` displays the index of MUME player rules (`rules character`, `rules communication`, `rules playerkilling`).
+To keep Middle-earth immersion enjoyable for everyone, MUME maintains clear rules regarding communication, player combat, and fair play.
 
-# Dying, Halls of Mandos & Prayer
-
-Dying is a normal part of learning MUME. You do not lose your character or start again.
-
-When you die, your spirit wakes in the Halls of Mandos. From Mandos, `pray <city>` (e.g. `pray Fornost` or `pray Bree`) returns you to life in that town.
-
-Your equipment stays on your corpse where you died—you can return to recover it or ask friends/rangers for help.
+You can inspect the game rulebook anytime with `rules`. For help topics on any command, item, or concept, type `help <topic>` (or `help newbie`).
 
 </TutorialPlayer>

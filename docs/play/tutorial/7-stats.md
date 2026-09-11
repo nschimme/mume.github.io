@@ -1,48 +1,39 @@
 ---
-title: "Character Condition"
-description: "Understanding score, stat, and info (Hits, Mana, Moves, OB, DB, PB)."
+title: "Understanding Character Stats"
+description: "Review hit points, movement points, and combat bonuses using stat and score."
 teach:
-  - command: "score / sc"
-    desc: "hits, mana, and movement points"
+  - command: "score"
+    desc: "check current health, mana, and movement"
   - command: "stat"
-    desc: "OB, DB, PB, Armour protection %, and XP needed"
-  - command: "info / inf"
-    desc: "full character sheet and base attributes"
+    desc: "examine combat bonuses and needed experience"
 steps:
   - ask: "score"
     accept:
       - "score"
       - "sc"
-    hint: "Type: score"
-    example: "> score\nScore: 354/354 hits, 114/114 mana, and 132/132 moves."
+    hint: "Type: score (or sc)"
+    example: "> score\n27/27 hit, 74/74 mana, and 114/114 moves."
   - ask: "stat"
     accept:
       - "stat"
       - "st"
     hint: "Type: stat"
-    example: "> stat\nOB: 17%, DB: 26%, PB: 24%, Armour: 17%. Wimpy: 0. Mood: wimpy.\nNeeded: 831 xp, 0 tp. Gold: 0. Alert: normal."
-  - ask: "info"
-    accept:
-      - "info"
-      - "inf"
-    hint: "Type: info"
-    example: "> info\nYou are a male Eriadorian (level 1).\nBase abilities: Str:17 Int:12 Wis:11 Dex:17 Con:15 Wil:14 Per:15.\nYou have 24/24 hit, 76/76 mana, and 114/114 movement points."
+    example: "> stat\nOB: 17%, DB: 26%, PB: 24%, Armour: 17%. Wimpy: 0. Mood: wimpy.\nNeeded: 831 xp, 0 tp."
 responses:
-  score: "Score: 354/354 hits, 114/114 mana, and 132/132 moves."
-  sc: "Score: 354/354 hits, 114/114 mana, and 132/132 moves."
+  score: "27/27 hit, 74/74 mana, and 114/114 moves."
+  sc: "27/27 hit, 74/74 mana, and 114/114 moves."
   stat: "OB: 17%, DB: 26%, PB: 24%, Armour: 17%. Wimpy: 0. Mood: wimpy.\nNeeded: 831 xp, 0 tp. Gold: 0. Alert: normal."
-  info: "You are a male Eriadorian.\nThis ranks you as Fuor the Man Apprentice (level 1).\nBase abilities: Str:17 Int:12 Wis:11 Dex:17 Con:15 Wil:14 Per:15.\nYou have 24/24 hit, 76/76 mana, and 114/114 movement points."
-  inf: "You are a male Eriadorian.\nThis ranks you as Fuor the Man Apprentice (level 1).\nBase abilities: Str:17 Int:12 Wis:11 Dex:17 Con:15 Wil:14 Per:15."
 ---
 
 <TutorialPlayer>
 
-# Understanding Stats: score, stat, info
+# Knowing Your Vitals
 
-Three essential commands reveal your character status:
+Before facing wild beasts, an adventurer must monitor three vital stats:
+1. **Hit Points (HP)**: Your health. If this reaches 0, you fall incapacitated or die.
+2. **Mana**: Magical energy required for spells.
+3. **Movement (Moves)**: Stamina for traveling. If exhausted, you cannot run or flee!
 
-- `score` (sc) shows Hits (health), Mana (magic), and Moves (stamina).
-- `stat` shows combat percentages: OB (Offensive Bonus), DB (Dodge Bonus), PB (Parry Bonus), and Armour protection %.
-- `info` (inf) shows age, level, base attributes (Str, Int, Wis, Dex, Con, Wil), and total equipment weight.
+Additionally, `stat` displays your combat percentages: **OB** (Offensive Bonus), **DB** (Dodge Bonus), and **PB** (Parry Bonus).
 
 </TutorialPlayer>

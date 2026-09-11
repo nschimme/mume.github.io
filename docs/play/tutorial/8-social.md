@@ -1,58 +1,35 @@
 ---
-title: "Social & Communication"
-description: "Talking, telling, emotes, finding Rangers, and checking who is online."
+title: "Communication & Socials"
+description: "Communicate with fellow citizens using say, tell, and emotes."
 teach:
   - command: "say hello"
-    desc: "speak to everyone in the room"
-  - command: "tell relim hello"
-    desc: "send a private message to a player"
-  - command: "nod / bow"
-    desc: "perform a social gesture"
-  - command: "who"
-    desc: "list all online players"
-  - command: "who ranger"
-    desc: "find active Rangers available for help"
+    desc: "speak to players in the same room"
+  - command: "bow"
+    desc: "perform a polite social emote"
 steps:
   - ask: "say hello"
     accept:
       - "say hello"
-      - "say"
+      - "say hi"
     hint: "Type: say hello"
-    example: "> say hello\nYou say 'hello'\nErmin says 'Hello friend!'"
-  - ask: "tell relim hello"
+    example: "> say hello\nYou say 'hello'"
+  - ask: "bow"
     accept:
-      - "tell relim hello"
-      - "tell"
-    hint: "Type: tell relim hello"
-    example: "> tell relim hello\nYou tell Relim 'hello'\nRelim tells you 'Welcome to Middle-earth! Let me know if you need help.'"
-  - ask: "who ranger"
-    accept:
-      - "who ranger"
-      - "who rangers"
-    hint: "Type: who ranger"
-    example: "> who ranger\nRangers Online\n--------------\n  Martyrson N'Ekasrof (Type 'tell Martyrson hello' for help!)"
+      - "bow"
+    hint: "Type: bow"
+    example: "> bow\nYou bow deeply."
 responses:
-  say hello: "You say 'hello'\nErmin says 'Hello friend!'"
-  say: "You say 'hello'"
-  tell relim hello: "You tell Relim 'hello'\nRelim tells you 'Welcome to Middle-earth! Let me know if you need help.'"
-  nod: "You nod in agreement."
-  bow: "You bow deeply before the company."
-  who: "Players Online in Middle-earth\n------------------------------\n  Martyrson    [Ranger]\n  Elrond       [Elf Lord]\n  GandalftheGrey [Wizard]\nTotal players online: 3."
-  who ranger: "Rangers Online\n--------------\n  Martyrson N'Ekasrof (Type 'tell Martyrson hello' for help!)"
-  who rangers: "Rangers Online\n--------------\n  Martyrson N'Ekasrof (Type 'tell Martyrson hello' for help!)"
-  where: "Players in your zone\n--------------------\nFuor                 - Western End of Market Square"
+  say hello: "You say 'hello'\nErmin the Elf smiles happily and says 'Greetings, fellow traveler!'"
+  say hi: "You say 'hi'\nErmin the Elf smiles happily and says 'Greetings, fellow traveler!'"
+  bow: "You bow deeply.\nFardur the guide nods respectfully in return."
 ---
 
 <TutorialPlayer>
 
-# Talking, Telling & Emotes
+# Living in a Multi-User World
 
-`say` talks to everyone in your current room. `tell <player> <message>` sends a private message to a player anywhere in the world.
+MUME is filled with both non-player characters (mobs) and live players across the globe. You can speak to anyone in your room using `say <message>`, send private messages with `tell <player> <message>`, or communicate across channels like `narrate`.
 
-Use simple emotes like `nod`, `bow`, `smile`, or `thank` to interact with non-player characters (NPCs) and players.
-
-# Finding Rangers & Players Online
-
-`who` lists players currently online in Middle-earth. `who ranger` lists Rangers on duty specifically dedicated to helping new players. `where` lists players in your local zone area.
+Social expressions like `bow`, `smile`, and `nod` enrich roleplay in Middle-earth. Try saying hello and bowing!
 
 </TutorialPlayer>

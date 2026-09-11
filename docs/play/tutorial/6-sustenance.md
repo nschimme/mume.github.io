@@ -1,42 +1,36 @@
 ---
-title: "Sustenance & Survival"
-description: "Eating, drinking, and refilling water skins at fountains."
+title: "Managing Inventory & Provisions"
+description: "Organize supplies into sacks, and eat provisions to stay nourished."
 teach:
-  - command: "eat bread"
-    desc: "eat food from your inventory"
-  - command: "drink water"
-    desc: "drink from a water skin, well, or fountain"
-  - command: "pour fountain skin"
-    desc: "refill a water skin at a water source"
+  - command: "inventory"
+    desc: "check what you are holding"
+  - command: "eat cheese"
+    desc: "consume food to prevent hunger"
 steps:
-  - ask: "eat bread"
+  - ask: "inventory"
     accept:
-      - "eat bread"
-      - "eat"
-    hint: "Type: eat bread"
-    example: "> eat bread\nYou eat a loaf of crusty bread. You are no longer hungry."
-  - ask: "drink water"
+      - "inventory"
+      - "inv"
+      - "i"
+    hint: "Type: inventory (or inv)"
+    example: "> inventory\nYou are carrying: some cheese, a large sack."
+  - ask: "eat cheese"
     accept:
-      - "drink water"
-      - "drink"
-    hint: "Type: drink water"
-    example: "> drink water\nYou take a long drink of cool water from your water skin. You feel refreshed!"
+      - "eat cheese"
+    hint: "Type: eat cheese"
+    example: "> eat cheese\nYou eat the cheese.\nYou are full."
 responses:
-  eat bread: "You eat a loaf of crusty bread. You are no longer hungry."
-  eat: "You eat a small portion of rations. You are no longer hungry."
-  drink water: "You take a long drink of cool water from your water skin. You feel refreshed!"
-  drink: "You take a long drink of cool water from your water skin. You feel refreshed!"
-  pour fountain skin: "You refill your water skin at the well. It is now full of fresh water."
+  inventory: "You are carrying:\nsome cheese\na large sack"
+  inv: "You are carrying:\nsome cheese\na large sack"
+  eat cheese: "You eat the cheese.\nYou are full."
 ---
 
 <TutorialPlayer>
 
-# Food, Water & Refilling
+# Sustenance on the Road
 
-Your character gets hungry and thirsty over time. If left untreated, your health and move points recover much slower.
+Travelers in Middle-earth must manage hunger and thirst. If your character becomes hungry or thirsty, hit points and movement points recover much slower!
 
-`eat bread` and `drink water` keep you fed and hydrated.
-
-Use `pour fountain skin` to refill your water skin at rivers, wells, or fountains.
+Check your carried supplies with `inventory` (or `inv`), then eat the piece of cheese you carried from Mandos.
 
 </TutorialPlayer>
