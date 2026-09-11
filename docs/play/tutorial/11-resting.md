@@ -8,12 +8,13 @@ teach:
     desc: "sleep for fast health and stamina recovery"
   - command: "wake / stand"
     desc: "wake up and stand back on your feet"
-practice: "rest"
-accept:
-  - "rest"
-  - "sleep"
-hint: "Type: rest"
-example: "> rest\nYou sit down and rest your tired bones."
+steps:
+  - ask: "rest"
+    accept:
+      - "rest"
+      - "sleep"
+    hint: "Type: rest"
+    example: "> rest\nYou sit down and rest your tired bones."
 responses:
   rest: "You sit down and rest your tired bones."
   sleep: "You go to sleep."

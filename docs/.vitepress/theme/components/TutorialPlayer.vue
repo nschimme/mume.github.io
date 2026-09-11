@@ -1,8 +1,7 @@
 <script setup>
 /*
   Interactive new-player tutorial component driven dynamically by chapter Markdown files.
-  Non-technical friendly: chapter sequence, counts, prev/next links, and command responses
-  are derived automatically from docs/play/tutorial/*.md via chapters.data.js!
+  Non-technical friendly: supports multi-step command practice per chapter defined in YAML frontmatter!
 */
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useData, useRoute, useRouter, withBase } from 'vitepress'
@@ -63,10 +62,25 @@ const nextChapterUrl = computed(() => {
 })
 
 const teachList = computed(() => frontmatter.value?.teach || currentChapterObj.value?.teach || [])
-const practiceAsk = computed(() => frontmatter.value?.practice || currentChapterObj.value?.practice || null)
-const acceptList = computed(() => frontmatter.value?.accept || (practiceAsk.value ? [practiceAsk.value] : []))
-const practiceHint = computed(() => frontmatter.value?.hint || (practiceAsk.value ? `Type: ${practiceAsk.value}` : null))
-const exampleText = computed(() => frontmatter.value?.example || currentChapterObj.value?.example || null)
+
+// Multi-step in-chapter practice steps
+const stepsList = computed(() => {
+  if (frontmatter.value?.steps && frontmatter.value.steps.length) {
+    return frontmatter.value.steps
+  }
+  if (frontmatter.value?.practice) {
+    return [{
+      ask: frontmatter.value.practice,
+      accept: frontmatter.value.accept || [frontmatter.value.practice],
+      hint: frontmatter.value.hint || `Type: ${frontmatter.value.practice}`,
+      example: frontmatter.value.example || null
+    }]
+  }
+  return []
+})
+
+const subStepIdx = ref(0)
+const currentSubStep = computed(() => stepsList.value[subStepIdx.value] || null)
 
 // Driven 100% dynamically from chapter frontmatter
 const mumeResponses = computed(() => frontmatter.value?.responses || currentChapterObj.value?.responses || {})
@@ -112,6 +126,7 @@ function scrollLog() {
 }
 
 function renderStepLog() {
+  subStepIdx.value = 0
   awaitingExample.value = false
   finished.value = !nextChapterUrl.value
 
@@ -121,7 +136,7 @@ function renderStepLog() {
     chapterNum: chapterNum.value,
     title: chapterTitle.value,
     teach: teachList.value,
-    ask: practiceAsk.value
+    ask: currentSubStep.value ? currentSubStep.value.ask : null
   })
 
   log.value = newLog
@@ -138,6 +153,20 @@ function advanceNext() {
   }
 }
 
+function advanceSubStep() {
+  subStepIdx.value++
+  if (subStepIdx.value < stepsList.value.length) {
+    const nextSub = currentSubStep.value
+    log.value.push({
+      kind: 'prompt_next',
+      ask: nextSub.ask
+    })
+    scrollLog()
+  } else {
+    advanceNext()
+  }
+}
+
 function submit() {
   const raw = entry.value.trim()
   const cmd = raw.toLowerCase()
@@ -149,12 +178,14 @@ function submit() {
 
   if (awaitingExample.value) {
     awaitingExample.value = false
-    advanceNext()
+    advanceSubStep()
     focusInput()
     return
   }
 
-  if (!practiceAsk.value) {
+  const curStep = currentSubStep.value
+
+  if (!curStep) {
     if (cmd && mumeResponses.value[cmd]) {
       log.value.push({ kind: 'example', body: mumeResponses.value[cmd] })
       scrollLog()
@@ -166,28 +197,30 @@ function submit() {
   }
 
   if (!cmd) {
-    log.value.push({ kind: 'error', text: practiceHint.value || (`Type: ${practiceAsk.value}`) })
+    log.value.push({ kind: 'error', text: curStep.hint || (`Type: ${curStep.ask}`) })
     scrollLog()
     focusInput()
     return
   }
 
-  const ok = acceptList.value.some(a => a.toLowerCase() === cmd)
+  const accept = curStep.accept || [curStep.ask]
+  const ok = accept.some(a => a.toLowerCase() === cmd)
+
   if (ok) {
-    if (exampleText.value) {
-      const body = exampleText.value.replace(/^>[^\n]*\n?/, '')
+    if (curStep.example) {
+      const body = curStep.example.replace(/^>[^\n]*\n?/, '')
       log.value.push({ kind: 'example', body })
       awaitingExample.value = true
       scrollLog()
     } else {
-      advanceNext()
+      advanceSubStep()
     }
   } else if (mumeResponses.value[cmd]) {
     log.value.push({ kind: 'example', body: mumeResponses.value[cmd] })
-    log.value.push({ kind: 'error', text: 'Good try! To proceed in this lesson, ' + (practiceHint.value || (`try: ${practiceAsk.value}`)) })
+    log.value.push({ kind: 'error', text: 'Good try! To proceed in this step, ' + (curStep.hint || (`try: ${curStep.ask}`)) })
     scrollLog()
   } else {
-    log.value.push({ kind: 'error', text: 'MUME does not know that one here. ' + (practiceHint.value || (`Try: ${practiceAsk.value}`)) })
+    log.value.push({ kind: 'error', text: 'MUME does not know that one here. ' + (curStep.hint || (`Try: ${curStep.ask}`)) })
     scrollLog()
   }
   focusInput()
@@ -279,6 +312,10 @@ onUnmounted(() => {
                 <p class="tut-ask" v-if="b.ask">Type <span class="tut-cmd">{{ b.ask }}</span> to carry on.</p>
                 <p class="tut-ask" v-else>Press Enter to carry on.</p>
               </template>
+
+              <p v-else-if="b.kind === 'prompt_next'" class="tut-ask">
+                Great job! Now type <span class="tut-cmd">{{ b.ask }}</span> to carry on.
+              </p>
 
               <p v-else-if="b.kind === 'echo'" class="tut-echo">&gt; {{ b.text }}</p>
 

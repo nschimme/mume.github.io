@@ -6,11 +6,17 @@ teach:
     desc: "ask an innkeeper what rent will cost"
   - command: "rent"
     desc: "store equipment in safe and log out safely"
-practice: "rent"
-accept:
-  - "rent"
-hint: "Type: rent"
-example: "> rent\nBarliman Butterbur says 'It will cost you 6 silver pennies per day.'\nNob brings you to a quiet room where your character and gear rest safely."
+steps:
+  - ask: "offer"
+    accept:
+      - "offer"
+    hint: "Type: offer"
+    example: "> offer\nBarliman Butterbur says 'It will cost you 6 silver pennies per day.'\nYou have enough money for 2 months."
+  - ask: "rent"
+    accept:
+      - "rent"
+    hint: "Type: rent"
+    example: "> rent\nBarliman Butterbur says 'It will cost you 6 silver pennies per day.'\nNob brings you to a quiet room where your character and gear rest safely."
 responses:
   offer: "Barliman Butterbur says 'It will cost you 6 silver pennies per day.'\nYou have enough money for 2 months."
   rent: "Barliman Butterbur says 'It will cost you 6 silver pennies per day.'\nNob brings you to a quiet room where your character and gear rest safely."

@@ -8,12 +8,19 @@ teach:
     desc: "drink from a water skin, well, or fountain"
   - command: "pour fountain skin"
     desc: "refill a water skin at a water source"
-practice: "drink water"
-accept:
-  - "drink water"
-  - "drink"
-hint: "Type: drink water"
-example: "> drink water\nYou take a long drink of cool water from your water skin. You feel refreshed!"
+steps:
+  - ask: "eat bread"
+    accept:
+      - "eat bread"
+      - "eat"
+    hint: "Type: eat bread"
+    example: "> eat bread\nYou eat a loaf of crusty bread. You are no longer hungry."
+  - ask: "drink water"
+    accept:
+      - "drink water"
+      - "drink"
+    hint: "Type: drink water"
+    example: "> drink water\nYou take a long drink of cool water from your water skin. You feel refreshed!"
 responses:
   eat bread: "You eat a loaf of crusty bread. You are no longer hungry."
   eat: "You eat a small portion of rations. You are no longer hungry."

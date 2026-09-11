@@ -12,14 +12,25 @@ teach:
     desc: "list all online players"
   - command: "who ranger"
     desc: "find active Rangers available for help"
-  - command: "where"
-    desc: "list players nearby in your zone"
-practice: "who ranger"
-accept:
-  - "who ranger"
-  - "who rangers"
-hint: "Type: who ranger"
-example: "> who ranger\nRangers Online\n--------------\n  Martyrson N'Ekasrof (Type 'tell Martyrson hello' for help!)"
+steps:
+  - ask: "say hello"
+    accept:
+      - "say hello"
+      - "say"
+    hint: "Type: say hello"
+    example: "> say hello\nYou say 'hello'\nErmin says 'Hello friend!'"
+  - ask: "tell relim hello"
+    accept:
+      - "tell relim hello"
+      - "tell"
+    hint: "Type: tell relim hello"
+    example: "> tell relim hello\nYou tell Relim 'hello'\nRelim tells you 'Welcome to Middle-earth! Let me know if you need help.'"
+  - ask: "who ranger"
+    accept:
+      - "who ranger"
+      - "who rangers"
+    hint: "Type: who ranger"
+    example: "> who ranger\nRangers Online\n--------------\n  Martyrson N'Ekasrof (Type 'tell Martyrson hello' for help!)"
 responses:
   say hello: "You say 'hello'\nErmin says 'Hello friend!'"
   say: "You say 'hello'"
@@ -29,7 +40,7 @@ responses:
   who: "Players Online in Middle-earth\n------------------------------\n  Martyrson    [Ranger]\n  Elrond       [Elf Lord]\n  GandalftheGrey [Wizard]\nTotal players online: 3."
   who ranger: "Rangers Online\n--------------\n  Martyrson N'Ekasrof (Type 'tell Martyrson hello' for help!)"
   who rangers: "Rangers Online\n--------------\n  Martyrson N'Ekasrof (Type 'tell Martyrson hello' for help!)"
-  where: "Players in your zone\n--------------------\nFuor                 - Western End of Market Square\nTheowen              - City Council's Meeting Room"
+  where: "Players in your zone\n--------------------\nFuor                 - Western End of Market Square"
 ---
 
 <TutorialPlayer>

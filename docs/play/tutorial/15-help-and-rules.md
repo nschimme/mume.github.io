@@ -10,13 +10,20 @@ teach:
     desc: "index of MUME player rules"
   - command: "pray fornost"
     desc: "pray to return to life in a town from the Halls of Mandos"
-practice: "pray fornost"
-accept:
-  - "pray fornost"
-  - "pray bree"
-  - "pray"
-hint: "Type: pray fornost"
-example: "> pray fornost\nYou kneel down and try to hear the Ainulindalë...\nSuddenly an explosion of ancient rhymes makes space collapse around you!\nYou blink, you vanish! And you are in Fornost!"
+steps:
+  - ask: "help basic"
+    accept:
+      - "help basic"
+      - "help"
+    hint: "Type: help basic"
+    example: "> help basic\nHELP BASIC COMMANDS\n===================\nMovement: north, south, east, west, up, down, exits, open\nLook:     look, examine, inventory, equipment, score"
+  - ask: "pray fornost"
+    accept:
+      - "pray fornost"
+      - "pray bree"
+      - "pray"
+    hint: "Type: pray fornost"
+    example: "> pray fornost\nYou kneel down and try to hear the Ainulindalë...\nSuddenly an explosion of ancient rhymes makes space collapse around you!\nYou blink, you vanish! And you are in Fornost!"
 responses:
   help: "HELP INDEX (Reference: mume.org/help)\n======================================\nhelp basic - Basic command list\nhelp new   - Guide for new players"
   help basic: "HELP BASIC COMMANDS\n===================\nMovement: north, south, east, west, up, down, exits, open\nLook:     look, examine, inventory, equipment, score"

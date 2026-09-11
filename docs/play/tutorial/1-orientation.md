@@ -6,15 +6,22 @@ teach:
     desc: "one account per person rule"
   - command: "help names"
     desc: "naming conventions for Tolkien roleplay"
-practice: "help names"
-accept:
-  - "help names"
-  - "help name"
-hint: "Type: help names"
-example: "> help names\nNAMES ON MUME\nMUME's management strongly encourages in-game roleplay. Therefore, names must fit reasonably with the race and Tolkien lore of your character.\nExamples of inappropriate names: Skullcrusher, Elfmage, Blah."
+steps:
+  - ask: "help accounts"
+    accept:
+      - "help accounts"
+      - "help account"
+    hint: "Type: help accounts"
+    example: "> help accounts\nACCOUNTS ON MUME\nEach player is permitted ONLY ONE ACCOUNT. You may create multiple characters under your single account."
+  - ask: "help names"
+    accept:
+      - "help names"
+      - "help name"
+    hint: "Type: help names"
+    example: "> help names\nNAMES ON MUME\nMUME's management strongly encourages in-game roleplay. Therefore, names must fit reasonably with the race and Tolkien lore of your character."
 responses:
-  help names: "HELP NAMES ON MUME\n==================\nMUME's management strongly encourages in-game roleplay. Therefore, names must fit reasonably with the race and Tolkien lore of your character.\nUnacceptable: Skullcrusher, Elfmage, Blah, Helpme, Cuddlebunny."
-  help accounts: "HELP ACCOUNTS ON MUME\n=====================\nEach player is permitted ONLY ONE ACCOUNT. You may create multiple characters under your single account. Sharing or transferring accounts is forbidden."
+  help names: "HELP NAMES ON MUME\n==================\nMUME's management strongly encourages in-game roleplay. Therefore, names must fit reasonably with the race and Tolkien lore of your character."
+  help accounts: "HELP ACCOUNTS ON MUME\n=====================\nEach player is permitted ONLY ONE ACCOUNT. You may create multiple characters under your single account."
 ---
 
 <TutorialPlayer>

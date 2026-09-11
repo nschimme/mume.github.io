@@ -6,24 +6,27 @@ teach:
     desc: "move north (also s, e, w, u, d)"
   - command: "exits"
     desc: "list the ways out of this room"
-  - command: "open north"
-    desc: "open a closed door or gate"
-  - command: "say open"
-    desc: "ask gateguards to open the city gates"
   - command: "call"
     desc: "call out to gateguards from outside closed gates"
-practice: "call"
-accept:
-  - "call"
-  - "say open"
-hint: "Type: call"
-example: "> call\nYou call for the gate to be opened.\nYou hear a *click* in a lock.\nThe Irongate is opened from the other side."
+steps:
+  - ask: "exits"
+    accept:
+      - "exits"
+      - "ex"
+    hint: "Type: exits"
+    example: "> exits\nExits:\n  North   - Prancing Pony Inn\n -East-   - Cobble Street\n -South-  - Old East Road\n -West-   - Old East Road"
+  - ask: "call"
+    accept:
+      - "call"
+      - "say open"
+    hint: "Type: call"
+    example: "> call\nYou call for the gate to be opened.\nYou hear a *click* in a lock.\nThe Irongate is opened from the other side."
 responses:
   exits: "Exits:\n  North   - Prancing Pony Inn\n -East-   - Cobble Street\n -South-  - Old East Road\n -West-   - Old East Road"
   ex: "Exits:\n  North   - Prancing Pony Inn\n -East-   - Cobble Street\n -South-  - Old East Road\n -West-   - Old East Road"
+  call: "You call for the gate to be opened.\nYou hear a *click* in a lock.\nThe Irongate is opened from the other side."
   open north: "You open the door leading north."
   say open: "An experienced Dúnadan officer looks you over and opens the Irongate."
-  call: "You call for the gate to be opened.\nYou hear a *click* in a lock.\nThe Irongate is opened from the other side."
 ---
 
 <TutorialPlayer>

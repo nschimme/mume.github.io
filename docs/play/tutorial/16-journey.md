@@ -2,7 +2,7 @@
 title: "Beginning Your Journey"
 description: "Gandalf's introduction and entering the MUME Web Client."
 teach: []
-practice: null
+steps: []
 responses:
   tutorial: "Redirecting to Chapter 1..."
 ---

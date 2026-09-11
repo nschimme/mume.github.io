@@ -6,13 +6,14 @@ teach:
     desc: "follow another character automatically"
   - command: "group"
     desc: "display members of your adventuring party"
-practice: "follow ermin"
-accept:
-  - "follow ermin"
-  - "follow"
-  - "group"
-hint: "Type: follow ermin"
-example: "> follow ermin\nYou now follow Ermin.\n\n> group\nYour group consists of:\n  Ermin (Head of group)\n  Fuor"
+steps:
+  - ask: "follow ermin"
+    accept:
+      - "follow ermin"
+      - "follow"
+      - "group"
+    hint: "Type: follow ermin"
+    example: "> follow ermin\nYou now follow Ermin.\n\n> group\nYour group consists of:\n  Ermin (Head of group)\n  Fuor"
 responses:
   follow ermin: "You now follow Ermin."
   follow: "You now follow Ermin."

@@ -8,17 +8,28 @@ teach:
     desc: "attack a target creature"
   - command: "change mood aggressive"
     desc: "increase OB at the cost of PB defense"
-  - command: "trophy"
-    desc: "view list of slain creatures and knowledge %"
   - command: "flee"
     desc: "break off combat and escape!"
-practice: "change mood aggressive"
-accept:
-  - "change mood aggressive"
-  - "cha m aggressive"
-  - "change mood"
-hint: "Type: change mood aggressive"
-example: "> change mood aggressive\nOk.\nOB: 26%, DB: 26%, PB: 16%, Armour: 17%. Mood: aggressive."
+steps:
+  - ask: "consider boar"
+    accept:
+      - "consider boar"
+      - "con boar"
+      - "consider"
+    hint: "Type: consider boar"
+    example: "> consider boar\nYou would need some luck!"
+  - ask: "change mood aggressive"
+    accept:
+      - "change mood aggressive"
+      - "cha m aggressive"
+      - "change mood"
+    hint: "Type: change mood aggressive"
+    example: "> change mood aggressive\nOk.\nOB: 26%, DB: 26%, PB: 16%, Armour: 17%. Mood: aggressive."
+  - ask: "flee"
+    accept:
+      - "flee"
+    hint: "Type: flee"
+    example: "> flee\nYou panic and scramble away!\nYou flee to the East! You manage to escape safely."
 responses:
   consider boar: "You would need some luck!"
   con boar: "You would need some luck!"

@@ -8,13 +8,19 @@ teach:
     desc: "display regional text map"
   - command: "map room"
     desc: "display local ASCII room map"
-practice: "scout south"
-accept:
-  - "scout south"
-  - "scout s"
-  - "scout"
-hint: "Type: scout south"
-example: "> scout south\nYou quietly scout southwards...\nShaded Path\nA ruffian is here.\nYou stop scouting."
+steps:
+  - ask: "scout south"
+    accept:
+      - "scout south"
+      - "scout s"
+      - "scout"
+    hint: "Type: scout south"
+    example: "> scout south\nYou quietly scout southwards...\nShaded Path\nA ruffian is here.\nYou stop scouting."
+  - ask: "map"
+    accept:
+      - "map"
+    hint: "Type: map"
+    example: "> map\n           Map of Nearby Zones\n      -----------------------------\n     |              X              |\n     |              *              |"
 responses:
   scout south: "You quietly scout southwards...\nShaded Path\nA ruffian is here.\nYou stop scouting."
   scout s: "You quietly scout southwards...\nShaded Path\nA ruffian is here.\nYou stop scouting."
