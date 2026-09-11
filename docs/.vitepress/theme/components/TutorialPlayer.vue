@@ -1,19 +1,36 @@
 <script setup>
 /*
-  Interactive new-player tutorial, as a VitePress component with page-based routes.
-  Content lives in ../data/tutorialContent.js; assets are imported from the
-  shared docs/assets/images so nothing is duplicated.
+  Interactive new-player tutorial component reading Markdown chapter frontmatter.
+  Non-technical friendly: contributors can edit lessons directly in docs/play/tutorial/*.md!
 */
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useData, useRoute, useRouter, withBase } from 'vitepress'
-import { TUTORIAL } from '../data/tutorialContent.js'
 import logoImg from '../../../assets/images/mume_logo.jpg'
 import mapImg from '../../../assets/images/tutorial-map.png'
 import descImg from '../../../assets/images/tutorial-desc.png'
 
 const PLAY_URL = '/play/browser'
 const NEWCOMERS_URL = '/resources/newcomers'
-const MAP_SECTION = 'Playing the game'
+
+const CHAPTER_URLS = [
+  '/play/tutorial/1-orientation',
+  '/play/tutorial/2-items',
+  '/play/tutorial/3-looking',
+  '/play/tutorial/4-movement',
+  '/play/tutorial/5-equipment',
+  '/play/tutorial/6-sustenance',
+  '/play/tutorial/7-stats',
+  '/play/tutorial/8-social',
+  '/play/tutorial/9-scouting',
+  '/play/tutorial/10-combat',
+  '/play/tutorial/11-resting',
+  '/play/tutorial/12-guilds',
+  '/play/tutorial/13-grouping',
+  '/play/tutorial/14-renting',
+  '/play/tutorial/15-help-and-rules',
+  '/play/tutorial/16-journey'
+]
+
 const MUME_RESPONSES = {
   'look': `East of the Bridge
 You are standing on the Old East Road, just east of the Brandywine bridge.
@@ -264,30 +281,19 @@ Available commands:
 
 Account>`
 
-const chapters = TUTORIAL.chapters || []
-const lessons = TUTORIAL.lessons
-const total = lessons.length
-
-const currentLesson = computed(() => lessons[idx.value])
-const currentChapter = computed(() => {
-  const L = currentLesson.value
-  if (!L) return null
-  return chapters.find(c => c.id === L.chapterId) || null
-})
-
-const route = useRoute()
 const router = useRouter()
-const { params } = useData()
+const { frontmatter } = useData()
 
-// Determine current step index (0-based) from URL route
-const currentStep = computed(() => {
-  const p = params.value?.step || route.path.split('/').filter(Boolean).pop().replace(/\.html$/, '')
-  const n = parseInt(p, 10)
-  if (isNaN(n) || n < 1) return 1
-  return Math.min(n, total)
-})
-
-const idx = computed(() => currentStep.value - 1)
+const chapter = computed(() => frontmatter.value?.chapter || 1)
+const totalChapters = computed(() => frontmatter.value?.totalChapters || 16)
+const chapterTitle = computed(() => frontmatter.value?.title || 'Tutorial')
+const prevChapter = computed(() => frontmatter.value?.prev || null)
+const nextChapter = computed(() => frontmatter.value?.next || null)
+const teachList = computed(() => frontmatter.value?.teach || [])
+const practiceAsk = computed(() => frontmatter.value?.practice || null)
+const acceptList = computed(() => frontmatter.value?.accept || (practiceAsk.value ? [practiceAsk.value] : []))
+const practiceHint = computed(() => frontmatter.value?.hint || (practiceAsk.value ? `Type: ${practiceAsk.value}` : null))
+const exampleText = computed(() => frontmatter.value?.example || null)
 
 const log = ref([])
 const finished = ref(false)
@@ -298,34 +304,7 @@ const isSheetOpen = ref(false)
 const logEl = ref(null)
 const inputEl = ref(null)
 
-const stepLabel = computed(() => `${currentStep.value} of ${total}`)
-
-// Learned commands up to current index
-const learned = computed(() => {
-  const list = []
-  for (let i = 0; i <= idx.value && i < total; i++) {
-    const L = lessons[i]
-    if (L && L.teach) {
-      for (const t of L.teach) {
-        if (!list.some(x => x.c === t.c && x.section === L.section)) {
-          list.push({ c: t.c, d: t.d, section: L.section })
-        }
-      }
-    }
-  }
-  return list
-})
-
-// Commands grouped by section for the command sheet
-const sheetGroups = computed(() => {
-  const groups = []
-  for (const c of learned.value) {
-    let g = groups.find(x => x.section === c.section)
-    if (!g) { g = { section: c.section, items: [] }; groups.push(g) }
-    g.items.push(c)
-  }
-  return groups
-})
+const stepLabel = computed(() => `Chapter ${chapter.value} of ${totalChapters.value}`)
 
 function focusInput() {
   if (typeof window !== 'undefined') {
@@ -335,16 +314,12 @@ function focusInput() {
   }
 }
 
-function goToStep(stepNum) {
-  if (stepNum < 1 || stepNum > total) return
-  awaitingExample.value = false
-  finished.value = false
-  const targetUrl = withBase(`/play/tutorial/${stepNum}`)
+function navigateToUrl(url) {
+  if (!url) return
+  const targetUrl = withBase(url)
   if (router && router.go) {
     router.go(targetUrl).catch(() => {
-      if (typeof window !== 'undefined') {
-        window.location.href = targetUrl
-      }
+      if (typeof window !== 'undefined') window.location.href = targetUrl
     })
   } else if (typeof window !== 'undefined') {
     window.location.href = targetUrl
@@ -362,23 +337,15 @@ function scrollLog() {
 
 function renderStepLog() {
   awaitingExample.value = false
-  finished.value = false
-
-  const L = lessons[idx.value]
-  if (!L) {
-    showEnd()
-    return
-  }
+  finished.value = !nextChapter.value
 
   const newLog = [{ kind: 'banner', text: BANNER }]
   newLog.push({
     kind: 'lesson',
-    section: L.section,
-    title: L.title,
-    body: L.body || [],
-    teach: L.teach || [],
-    ask: L.practice ? { cmd: L.practice.ask } : null,
-    map: L.section === MAP_SECTION
+    chapterNum: chapter.value,
+    title: chapterTitle.value,
+    teach: teachList.value,
+    ask: practiceAsk.value
   })
 
   log.value = newLog
@@ -386,32 +353,12 @@ function renderStepLog() {
   focusInput()
 }
 
-function showEnd() {
-  finished.value = true
-  log.value.push({ kind: 'end' })
-  scrollLog()
-}
-
-function handover() {
-  log.value.push({ kind: 'handover' })
-  scrollLog()
-}
-
-function dumpSheet() {
-  if (!learned.value.length) {
-    log.value.push({ kind: 'error', text: 'You have not been shown any commands yet.' })
-  } else {
-    log.value.push({ kind: 'sheetdump', groups: sheetGroups.value.map(g => ({ ...g })) })
-  }
-  scrollLog()
-}
-
 function advanceNext() {
-  const nextStep = currentStep.value + 1
-  if (nextStep <= total) {
-    goToStep(nextStep)
+  if (nextChapter.value) {
+    navigateToUrl(nextChapter.value)
   } else {
-    showEnd()
+    finished.value = true
+    scrollLog()
   }
 }
 
@@ -421,11 +368,8 @@ function submit() {
   entry.value = ''
   if (raw) { log.value.push({ kind: 'echo', text: raw }) }
 
-  if (cmd === 'commands') { dumpSheet(); focusInput(); return }
-  if (cmd === 'skip') { skip(); focusInput(); return }
-  if (cmd === 'tutorial') { goToStep(1); focusInput(); return }
-
-  if (finished.value) { handover(); focusInput(); return }
+  if (cmd === 'skip') { advanceNext(); focusInput(); return }
+  if (cmd === 'tutorial') { navigateToUrl('/play/tutorial/1-orientation'); focusInput(); return }
 
   if (awaitingExample.value) {
     awaitingExample.value = false
@@ -434,11 +378,7 @@ function submit() {
     return
   }
 
-  const L = lessons[idx.value]
-  const p = L && L.practice
-
-  if (!p) {
-    // Check if the user typed a known MUME command even on non-practice steps
+  if (!practiceAsk.value) {
     if (cmd && MUME_RESPONSES[cmd]) {
       log.value.push({ kind: 'example', body: MUME_RESPONSES[cmd] })
       scrollLog()
@@ -450,16 +390,16 @@ function submit() {
   }
 
   if (!cmd) {
-    log.value.push({ kind: 'error', text: p.hint || ('Type: ' + p.ask) })
+    log.value.push({ kind: 'error', text: practiceHint.value || (`Type: ${practiceAsk.value}`) })
     scrollLog()
     focusInput()
     return
   }
 
-  const ok = (p.accept || [p.ask]).some(a => a.toLowerCase() === cmd)
+  const ok = acceptList.value.some(a => a.toLowerCase() === cmd)
   if (ok) {
-    if (L.example) {
-      const body = L.example.replace(/^>[^\n]*\n?/, '')
+    if (exampleText.value) {
+      const body = exampleText.value.replace(/^>[^\n]*\n?/, '')
       log.value.push({ kind: 'example', body })
       awaitingExample.value = true
       scrollLog()
@@ -467,22 +407,17 @@ function submit() {
       advanceNext()
     }
   } else if (MUME_RESPONSES[cmd]) {
-    // Show authentic response for typed command and hint practice ask
     log.value.push({ kind: 'example', body: MUME_RESPONSES[cmd] })
-    log.value.push({ kind: 'error', text: 'Good try! To proceed in this lesson, ' + (p.hint || ('try: ' + p.ask)) })
+    log.value.push({ kind: 'error', text: 'Good try! To proceed in this lesson, ' + (practiceHint.value || (`try: ${practiceAsk.value}`)) })
     scrollLog()
   } else {
-    log.value.push({ kind: 'error', text: 'MUME does not know that one here. ' + (p.hint || ('Try: ' + p.ask)) })
+    log.value.push({ kind: 'error', text: 'MUME does not know that one here. ' + (practiceHint.value || (`Try: ${practiceAsk.value}`)) })
     scrollLog()
   }
   focusInput()
 }
 
-function skip() {
-  showEnd()
-}
-
-watch(currentStep, () => {
+watch(() => frontmatter.value, () => {
   renderStepLog()
 }, { immediate: true })
 
@@ -519,26 +454,26 @@ onUnmounted(() => {
         <img class="tut-logo" :src="logoImg" alt="MUME" />
         <div class="tut-heading">
           <div class="tut-title-row">
-            <span class="tut-title">{{ currentChapter ? currentChapter.title : 'New player tutorial' }}</span>
+            <span class="tut-title">Chapter {{ chapter }}: {{ chapterTitle }}</span>
             <button type="button" class="tut-sheet-toggle-btn" @click="isSheetOpen = !isSheetOpen" aria-label="Toggle Command Sheet">
-              Commands {{ learned.length ? `(${learned.length})` : '' }}
+              Commands
             </button>
             <a class="tut-hub-link" :href="withBase('/resources/newcomers')">← Newcomers Hub</a>
           </div>
           <span class="tut-sub">Your first hour in Middle-earth</span>
         </div>
-        <div class="tut-progress" v-if="!finished">
+        <div class="tut-progress">
           <span class="tut-ticks">
-            <button v-for="i in total" :key="i"
+            <button v-for="(chUrl, i) in CHAPTER_URLS" :key="i"
                     type="button"
                     class="tut-tick"
                     :class="{
-                      done: i < currentStep,
-                      now: i === currentStep,
-                      clickable: i !== currentStep
+                      done: (i + 1) < chapter,
+                      now: (i + 1) === chapter,
+                      clickable: (i + 1) !== chapter
                     }"
-                    :title="'Go to step ' + i"
-                    @click="goToStep(i)"></button>
+                    :title="'Go to Chapter ' + (i + 1)"
+                    @click="navigateToUrl(chUrl)"></button>
           </span>
           <span class="tut-step">{{ stepLabel }}</span>
         </div>
@@ -552,22 +487,21 @@ onUnmounted(() => {
 
               <template v-else-if="b.kind === 'lesson'">
                 <hr class="tut-rule" />
-                <div class="tut-eyebrow">{{ b.section }}</div>
+                <div class="tut-eyebrow">Chapter {{ b.chapterNum }} of {{ totalChapters }}</div>
                 <h3 class="tut-h">{{ b.title }}</h3>
-                <p v-for="(line, j) in b.body" :key="j" class="tut-line">{{ line }}</p>
 
-                <dl v-if="b.teach.length" class="tut-teach">
+                <!-- Render markdown lesson content -->
+                <div class="tut-md-content">
+                  <slot />
+                </div>
+
+                <dl v-if="b.teach && b.teach.length" class="tut-teach">
                   <template v-for="(t, k) in b.teach" :key="k">
-                    <dt>{{ t.c }}</dt><dd>{{ t.d }}</dd>
+                    <dt>{{ t.command }}</dt><dd>{{ t.desc }}</dd>
                   </template>
                 </dl>
 
-                <div v-if="b.map" class="tut-panels">
-                  <figure><img :src="mapImg" alt="Live map of Middle-earth" /><figcaption>The map</figcaption></figure>
-                  <figure><img :src="descImg" alt="Room description and view" /><figcaption>The description</figcaption></figure>
-                </div>
-
-                <p class="tut-ask" v-if="b.ask">Type <span class="tut-cmd">{{ b.ask.cmd }}</span> to carry on.</p>
+                <p class="tut-ask" v-if="b.ask">Type <span class="tut-cmd">{{ b.ask }}</span> to carry on.</p>
                 <p class="tut-ask" v-else>Press Enter to carry on.</p>
               </template>
 
@@ -588,15 +522,14 @@ onUnmounted(() => {
                 </template>
               </div>
 
-              <template v-else-if="b.kind === 'end'">
+              <template v-else-if="b.kind === 'end' || !nextChapter">
                 <hr class="tut-rule" />
                 <div class="tut-eyebrow">Ready</div>
                 <h3 class="tut-h">Create your character</h3>
                 <p class="tut-line">That is everything you need for your first hour in Middle-earth!</p>
-                <p class="tut-line">Your command sheet stays with you. Type <span class="tut-cmd">commands</span> for it, or <span class="tut-cmd">tutorial</span> to run this again while you are still new.</p>
                 <div class="tut-end-actions">
-                  <a class="tut-enter" :href="PLAY_URL">Play MUME Now</a>
-                  <a class="tut-secondary-link" :href="NEWCOMERS_URL">Explore Newcomers Guide</a>
+                  <a class="tut-enter" :href="withBase(PLAY_URL)">Play MUME Now</a>
+                  <a class="tut-secondary-link" :href="withBase(NEWCOMERS_URL)">Explore Newcomers Guide</a>
                 </div>
                 <p class="tut-note">Opens the web client. You can retake this tutorial at any time.</p>
               </template>
@@ -628,12 +561,14 @@ onUnmounted(() => {
             <button type="button" class="tut-sheet-close" @click="isSheetOpen = false" aria-label="Close command sheet">&times;</button>
           </div>
           <div class="tut-sheet-body">
-            <p v-if="!learned.length" class="tut-empty">Commands appear here as you learn them.</p>
+            <p v-if="!teachList.length" class="tut-empty">No special commands listed for this chapter.</p>
             <template v-else>
-              <template v-for="(g, gi) in sheetGroups" :key="gi">
-                <div class="tut-grp">{{ g.section }}</div>
-                <dl><template v-for="(c, ci) in g.items" :key="ci"><dt>{{ c.c }}</dt><dd>{{ c.d }}</dd></template></dl>
-              </template>
+              <div class="tut-grp">Chapter {{ chapter }} Commands</div>
+              <dl>
+                <template v-for="(t, ti) in teachList" :key="ti">
+                  <dt>{{ t.command }}</dt><dd>{{ t.desc }}</dd>
+                </template>
+              </dl>
             </template>
           </div>
         </aside>
@@ -642,9 +577,9 @@ onUnmounted(() => {
       <div class="tut-sheet-backdrop" v-if="isSheetOpen" @click="isSheetOpen = false"></div>
 
       <div class="tut-controls">
-        <a class="tut-hub-ghost" :href="withBase('/resources/newcomers')">← Newcomers Guide</a>
-        <button v-if="!finished" class="tut-ghost" @click="skip">Skip to the end</button>
-        <button v-else class="tut-ghost" @click="goToStep(1)">Run the tutorial again</button>
+        <a class="tut-hub-ghost" :href="withBase('/resources/newcomers')">← Newcomers Hub</a>
+        <button v-if="prevChapter" class="tut-ghost" @click="navigateToUrl(prevChapter)">← Previous Chapter</button>
+        <button v-if="nextChapter" class="tut-ghost" @click="navigateToUrl(nextChapter)">Next Chapter →</button>
       </div>
     </div>
   </div>

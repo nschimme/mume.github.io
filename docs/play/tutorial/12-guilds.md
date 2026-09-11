@@ -1,0 +1,31 @@
+---
+chapter: 12
+totalChapters: 16
+title: "Character Growth & Guilds"
+description: "Visiting Guildmasters and spending practice points on skills."
+prev: "/play/tutorial/11-resting"
+next: "/play/tutorial/13-grouping"
+teach:
+  - command: "practice"
+    desc: "list available skills at a guildmaster"
+  - command: "practice slashing"
+    desc: "spend a session to learn a weapon skill"
+practice: "practice"
+accept:
+  - "practice"
+  - "prac"
+hint: "Type: practice"
+example: "> practice\nYou have 13 practice sessions left.\nHuor can teach you:\n  slashing weapons   0/29   0%   Normal\n  parry              0/29   0%   Normal"
+---
+
+<TutorialPlayer>
+
+# Practicing Skills at Guilds
+
+When you gain levels, you earn practice sessions.
+
+Visit Guildmasters across Middle-earth (Warrior, Ranger, Scout, Cleric, Mage) and type `practice` to see what skills they teach.
+
+`practice <skill>` spends sessions to raise knowledge % in weapon skills (slashing, parry, bash), survival (swim, climb, ride), or magic.
+
+</TutorialPlayer>

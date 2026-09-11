@@ -8,7 +8,7 @@ import { onMounted } from 'vue'
 
 onMounted(() => {
   if (typeof window !== 'undefined') {
-    window.location.replace('./tutorial/1')
+    window.location.replace('./tutorial/1-orientation')
   }
 })
 </script>
