@@ -63,6 +63,7 @@ const log = ref([])
 const finished = ref(false)
 const awaitingExample = ref(false)
 const entry = ref('')
+const isSheetOpen = ref(false)
 
 const logEl = ref(null)
 const inputEl = ref(null)
@@ -263,7 +264,12 @@ onMounted(() => {
       <div class="tut-head">
         <img class="tut-logo" :src="logoImg" alt="MUME" />
         <div class="tut-heading">
-          <span class="tut-title">New player tutorial</span>
+          <div class="tut-title-row">
+            <span class="tut-title">New player tutorial</span>
+            <button type="button" class="tut-sheet-toggle-btn" @click="isSheetOpen = !isSheetOpen" aria-label="Toggle Command Sheet">
+              Commands {{ learned.length ? `(${learned.length})` : '' }}
+            </button>
+          </div>
           <span class="tut-sub">Your first hour in Middle-earth</span>
         </div>
         <div class="tut-progress" v-if="!finished">
@@ -355,11 +361,18 @@ onMounted(() => {
                    autocomplete="off" spellcheck="false"
                    :placeholder="finished ? 'type tutorial to replay' : 'type here, then press Enter'"
                    aria-label="Type a command" />
+            <button type="button" class="tut-send-btn" @click="submit" aria-label="Send Command">
+              Send
+            </button>
           </div>
         </div>
 
-        <aside class="tut-sheet">
-          <div class="tut-sheet-bar">Command sheet</div>
+        <!-- Command Sheet (Desktop sidebar & Mobile modal/drawer) -->
+        <aside class="tut-sheet" :class="{ open: isSheetOpen }">
+          <div class="tut-sheet-bar">
+            <span>Command sheet</span>
+            <button type="button" class="tut-sheet-close" @click="isSheetOpen = false" aria-label="Close command sheet">&times;</button>
+          </div>
           <div class="tut-sheet-body">
             <p v-if="!learned.length" class="tut-empty">Commands appear here as you learn them.</p>
             <template v-else>
@@ -371,6 +384,8 @@ onMounted(() => {
           </div>
         </aside>
       </div>
+
+      <div class="tut-sheet-backdrop" v-if="isSheetOpen" @click="isSheetOpen = false"></div>
 
       <div class="tut-controls">
         <button v-if="!finished" class="tut-ghost" @click="skip">Skip to the end</button>
@@ -447,7 +462,38 @@ onMounted(() => {
 .tut-sheet-body dt, .tut-dump dt { color: #d8b04a; font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 12.5px; }
 .tut-sheet-body dd, .tut-dump dd { color: #9a9a9a; margin: 0; font-size: 12.5px; }
 
+.tut-title-row { display: flex; align-items: center; gap: 8px; }
+.tut-sheet-toggle-btn { display: none; background: rgba(184,134,11,.18); border: 1px solid rgba(215,166,63,.4); color: #f4dd94; font-size: 11px; padding: 2px 8px; border-radius: 12px; cursor: pointer; }
+
+.tut-send-btn { background: darkgoldenrod; border: none; color: #fff; font-family: 'Kelt', serif; font-size: 13px; padding: 4px 12px; border-radius: 14px; cursor: pointer; font-weight: bold; }
+
+.tut-sheet-close { display: none; background: none; border: none; color: #9a927f; font-size: 20px; cursor: pointer; padding: 0 4px; }
+
 .tut-controls { border-top: 1px solid #23262e; padding: 10px 16px; text-align: right; background: #0b0b0d; }
 .tut-ghost { background: none; border: 1px solid #b8860b; color: #d7a63f; border-radius: 30px; padding: 7px 16px; font-size: 13px; cursor: pointer; font-family: 'Merriweather', serif; transition: background .2s, color .2s; }
 .tut-ghost:hover { background: rgba(184,134,11,.12); color: #f4dd94; }
+
+@media (max-width: 720px) {
+  .tut-sheet-toggle-btn { display: inline-block; }
+  .tut-sheet-close { display: block; }
+  .tut-head { flex-wrap: wrap; gap: 8px 12px; }
+  .tut-progress { width: 100%; justify-content: space-between; margin-top: 2px; }
+
+  .tut-sheet {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 60vh;
+    z-index: 1000;
+    border-top: 2px solid darkgoldenrod;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.8);
+    background: #0d0e12;
+  }
+  .tut-sheet.open { display: flex; }
+  .tut-sheet-bar { display: flex; justify-content: space-between; align-items: center; }
+  .tut-sheet-backdrop { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 999; }
+}
 </style>

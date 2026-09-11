@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useData, useRoute, withBase } from 'vitepress'
 import CookieConsent from './components/CookieConsent.vue'
 import gandalfImg from './gandalf_90.gif'
@@ -31,6 +31,8 @@ const gandalfRef = ref(null)
 
 const lastUpdated = __LAST_UPDATED__
 
+const isTutorialPage = computed(() => vpRoute.path.includes('/play/tutorial'))
+
 let prevScrollpos = 0
 
 const handleScroll = () => {
@@ -60,7 +62,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="theme-container">
+  <div class="theme-container" :class="{ 'is-tutorial': isTutorialPage }">
     <label class="toggle" for="toggle">
       <i class="fa fa-bars" aria-hidden="true"></i> <span>Menu</span>
     </label>
