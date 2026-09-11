@@ -1,5 +1,14 @@
 ---
 layout: home
+title: MUME - Multi-Users in Middle-earth | Free Online Tolkien MUD
+description: Play MUME for free. A rich multiplayer text RPG set in Tolkien's Middle-earth with real-time mapping, interactive beginner tutorial, and active community.
+head:
+  - - meta
+    - property: og:title
+      content: MUME - Multi-Users in Middle-earth | Free Online Tolkien MUD
+  - - meta
+    - property: og:description
+      content: Explore Tolkien's Middle-earth in MUME. Free online text MUD with interactive tutorial and MMapper web client.
 ---
 
 <div class="home">
@@ -21,6 +30,16 @@ You can trust us to stick to you through thick and thin&mdash;to the bitter end.
 <div class="readytoexplore">Ready to explore Middle-earth?</div>
 <a href="./play">Play Now</a>
 </div>
+
+<MumeCallout
+  title="New to MUME?"
+  subtitle="Interactive Walkthrough"
+  body="Take your first steps in Middle-earth with our interactive beginner tutorial. Learn basic commands, map navigation, and survival tips."
+  actionText="Start Interactive Tutorial"
+  actionHref="./play/tutorial"
+  icon="fa-compass"
+  variant="gold"
+/>
 
 <div class="separator"></div>
 

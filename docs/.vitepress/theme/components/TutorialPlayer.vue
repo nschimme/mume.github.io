@@ -11,8 +11,9 @@ import logoImg from '../../../assets/images/mume_logo.jpg'
 import mapImg from '../../../assets/images/tutorial-map.png'
 import descImg from '../../../assets/images/tutorial-desc.png'
 
-// Where the tutorial hands over: the MMapper web client.
-const PLAY_URL = 'https://mume.org/play/browser'
+// Where the tutorial hands over: the MMapper web client & newcomers guide.
+const PLAY_URL = '/play/browser'
+const NEWCOMERS_URL = '/resources/newcomers'
 const MAP_SECTION = 'Playing the game'
 
 const BANNER =
@@ -244,16 +245,19 @@ onMounted(() => {
                 <hr class="tut-rule" />
                 <div class="tut-eyebrow">Ready</div>
                 <h3 class="tut-h">Create your character</h3>
-                <p class="tut-line">That is everything you need for your first hour.</p>
+                <p class="tut-line">That is everything you need for your first hour in Middle-earth!</p>
                 <p class="tut-line">Your command sheet stays with you. Type <span class="tut-cmd">commands</span> for it, or <span class="tut-cmd">tutorial</span> to run this again while you are still new.</p>
-                <a class="tut-enter" :href="PLAY_URL" rel="external">Enter MUME</a>
+                <div class="tut-end-actions">
+                  <a class="tut-enter" :href="PLAY_URL">Play MUME Now</a>
+                  <a class="tut-secondary-link" :href="NEWCOMERS_URL">Explore Newcomers Guide</a>
+                </div>
                 <p class="tut-note">Opens the web client. You can retake this tutorial at any time.</p>
               </template>
 
               <template v-else-if="b.kind === 'handover'">
                 <hr class="tut-rule" />
                 <h3 class="tut-h">Off you go</h3>
-                <p class="tut-line">The <a :href="PLAY_URL" rel="external">web client</a> is where you drop into the account prompt and begin. Good luck out there.</p>
+                <p class="tut-line">The <a :href="PLAY_URL">web client</a> is where you drop into the account prompt and begin. Good luck out there!</p>
               </template>
             </div>
           </div>
@@ -332,8 +336,11 @@ onMounted(() => {
 .tut-err { color: #d98a7f; font-size: 14px; margin: 8px 0; }
 .tut-dump { margin: 8px 0; }
 
-.tut-enter { display: inline-block; font-family: 'Kelt', serif; font-size: 22px; background: darkgoldenrod; color: #fff; padding: .35em 1.4em; border-radius: 40px; box-shadow: 0 6px 18px rgba(0,0,0,.5); text-decoration: none; margin: 6px 0 8px; transition: transform .2s, box-shadow .2s; }
-.tut-enter:hover { color: #fff; text-decoration: none; transform: scale(1.04); box-shadow: 0 9px 24px rgba(0,0,0,.6); }
+.tut-end-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 8px 0 12px; }
+.tut-enter { display: inline-block; font-family: 'Kelt', serif; font-size: 20px; background: darkgoldenrod; color: #000 !important; font-weight: bold; padding: .4em 1.4em; border-radius: 40px; box-shadow: 0 6px 18px rgba(0,0,0,.5); text-decoration: none !important; transition: transform .2s, box-shadow .2s, background-color .2s; }
+.tut-enter:hover, .tut-enter:focus-visible { color: #000 !important; background: goldenrod; transform: scale(1.04); box-shadow: 0 9px 24px rgba(184,134,11,.4); }
+.tut-secondary-link { display: inline-block; font-family: 'Kelt', serif; font-size: 17px; background: transparent; color: #74a9be !important; border: 1px solid #74a9be; padding: .4em 1.2em; border-radius: 40px; text-decoration: none !important; transition: background-color .2s, color .2s; }
+.tut-secondary-link:hover, .tut-secondary-link:focus-visible { background: rgba(116,169,190,.15); color: #fff !important; }
 .tut-note { color: #8f8a7d; font-size: 12.5px; margin: 4px 0 6px; }
 
 .tut-prompt { display: flex; align-items: center; gap: 8px; border-top: 1px solid #23262e; padding: 12px 18px; background: #08080a; }

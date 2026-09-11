@@ -1,21 +1,43 @@
 ---
-title: Play MUME
-description: Play MUME for free using the Web Client, downloading MMapper, or connecting with a Mud Client.
+title: Play MUME - Free Online Tolkien MUD Game
+description: Play MUME for free using the Web Client, downloading MMapper Desktop, or connecting with a Mud Client. Choose your experience below.
+head:
+  - - meta
+    - property: og:title
+      content: Play MUME - Free Online Tolkien MUD Game
+  - - meta
+    - property: og:description
+      content: Join the battle for Middle-earth. Play MUME directly in your browser with MMapper Web, download MMapper Desktop, or connect via Mudlet.
 ---
 
-<div style="text-align: center; margin-bottom: 2rem;">
-  <img src="/assets/images/fellowship_bw.jpg" srcset="/assets/images/fellowship_bw.jpg 1x, /assets/images/fellowship_bw@2x.jpg 2x" alt="Play MUME for free by using the Web Client, downloading MMapper, or connecting with a Mud Client" style="width: 100%; max-width: 654px; height: auto;" />
+<div style="text-align: center; margin-bottom: 1.5rem;">
+  <img src="/assets/images/fellowship_bw.jpg" srcset="/assets/images/fellowship_bw.jpg 1x, /assets/images/fellowship_bw@2x.jpg 2x" alt="Play MUME for free by using the Web Client, downloading MMapper, or connecting with a Mud Client" style="width: 100%; max-width: 654px; height: auto; border-radius: 6px;" />
 </div>
 
-# Playing MUME!
+# Playing MUME
 
-<div class="card">
+<p style="font-size: 1.05rem; line-height: 1.6; color: #d1d5db;">
+MUME is a rich, immersive text-based multiplayer RPG set in Tolkien's Middle-earth. Choose your path below to begin your adventure or connect with your preferred client.
+</p>
+
+<MumeChoice
+  newTitle="I'm New to MUME"
+  newDesc="New to text MUDs or MUME? Take our interactive walkthrough to learn movement, map navigation, combat basics, and survival tips."
+  newActionText="Start Interactive Tutorial"
+  newHref="/play/tutorial"
+  expTitle="I'm an Experienced Player"
+  expDesc="Skip straight to client connections below: MMapper Web (browser), MMapper Desktop, or Mudlet."
+  expActionText="Choose Client & Play"
+  expHref="#browser"
+/>
+
+<div class="card" style="margin-bottom: 2rem;">
 <img alt="Speak, friend, and enter to play MUME" src="/assets/images/doors-of-durin.png" srcset="/assets/images/doors-of-durin.png 1x, /assets/images/doors-of-durin@2x.png 2x" style="width: 100%; max-width: 160px; height: auto;" />
 <div>
 
-MUME is a complex and rich text-based game with an incredibly hard learning curve. If you learn the commands and features, your life may be fulfilling and rewarding; otherwise, it may be frustratingly short!
+MUME has a deep learning curve and rewarding world. If you learn the commands and features, your journey will be fulfilling and heroic!
 
-We strongly recommend that you browse the [newcomers page](../resources/newcomers) for important survival information before you start playing. That being said, the information is also available in-game, so feel free to jump on in.
+We recommend that all new players check out the [Interactive Tutorial](/play/tutorial) and browse the [Newcomers Survival Guide](../resources/newcomers) before diving deep into the wilds.
 
 There are three ways to join the battle for Middle-earth:
 
