@@ -1,10 +1,6 @@
 ---
-chapter: 7
-totalChapters: 16
 title: "Character Condition"
 description: "Understanding score, stat, and info (Hits, Mana, Moves, OB, DB, PB)."
-prev: "/play/tutorial/6-sustenance"
-next: "/play/tutorial/8-social"
 teach:
   - command: "score / sc"
     desc: "hits, mana, and movement points"

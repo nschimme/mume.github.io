@@ -1,10 +1,6 @@
 ---
-chapter: 5
-totalChapters: 16
 title: "Equipment & Light Sources"
 description: "Wearing armor, wielding weapons, and lighting torches or lanterns."
-prev: "/play/tutorial/4-movement"
-next: "/play/tutorial/6-sustenance"
 teach:
   - command: "wear jerkin"
     desc: "put on armor or clothing"

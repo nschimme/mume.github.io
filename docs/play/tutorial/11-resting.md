@@ -1,10 +1,6 @@
 ---
-chapter: 11
-totalChapters: 16
 title: "Resting & Recovery"
 description: "Resting, sleeping, and standing to recover health and stamina."
-prev: "/play/tutorial/10-combat"
-next: "/play/tutorial/12-guilds"
 teach:
   - command: "rest"
     desc: "sit down to recover health and movement"

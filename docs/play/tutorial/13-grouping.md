@@ -1,10 +1,6 @@
 ---
-chapter: 13
-totalChapters: 16
 title: "Teamwork & Grouping"
 description: "Following party leaders and managing adventuring groups."
-prev: "/play/tutorial/12-guilds"
-next: "/play/tutorial/14-renting"
 teach:
   - command: "follow ermin"
     desc: "follow another character automatically"

@@ -1,10 +1,6 @@
 ---
-chapter: 3
-totalChapters: 16
 title: "Looking & Inspecting"
 description: "Describing rooms with look and inspecting objects with examine."
-prev: "/play/tutorial/2-items"
-next: "/play/tutorial/4-movement"
 teach:
   - command: "look / l"
     desc: "describe the room you are in"

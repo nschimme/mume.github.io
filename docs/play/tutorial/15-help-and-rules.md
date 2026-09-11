@@ -1,10 +1,6 @@
 ---
-chapter: 15
-totalChapters: 16
 title: "Help, Rules & Death"
 description: "Reading help files, player rules, death, and praying in Mandos."
-prev: "/play/tutorial/14-renting"
-next: "/play/tutorial/16-journey"
 teach:
   - command: "help"
     desc: "list what the game can explain"

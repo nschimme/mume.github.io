@@ -1,10 +1,6 @@
 ---
-chapter: 4
-totalChapters: 16
 title: "Movement & Navigation"
 description: "Compass travel, checking exits, opening doors, and calling city gateguards."
-prev: "/play/tutorial/3-looking"
-next: "/play/tutorial/5-equipment"
 teach:
   - command: "north / n"
     desc: "move north (also s, e, w, u, d)"

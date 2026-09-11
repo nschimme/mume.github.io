@@ -1,10 +1,6 @@
 ---
-chapter: 1
-totalChapters: 16
 title: "Orientation & Account Rules"
 description: "What is MUD & MUME, account rules, and Tolkien character names."
-prev: null
-next: "/play/tutorial/2-items"
 teach:
   - command: "help accounts"
     desc: "one account per person rule"

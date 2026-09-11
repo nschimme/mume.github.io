@@ -1,10 +1,6 @@
 ---
-chapter: 2
-totalChapters: 16
 title: "Manipulating Items"
 description: "Picking up, dropping, and organizing items inside sacks and containers."
-prev: "/play/tutorial/1-orientation"
-next: "/play/tutorial/3-looking"
 teach:
   - command: "get torch"
     desc: "pick up an item from the floor"

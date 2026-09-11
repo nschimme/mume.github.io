@@ -1,10 +1,6 @@
 ---
-chapter: 14
-totalChapters: 16
 title: "Inn Storage & Renting"
 description: "Safely storing equipment at inns with offer and rent."
-prev: "/play/tutorial/13-grouping"
-next: "/play/tutorial/15-help-and-rules"
 teach:
   - command: "offer"
     desc: "ask an innkeeper what rent will cost"

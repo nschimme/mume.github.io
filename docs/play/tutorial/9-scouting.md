@@ -1,10 +1,6 @@
 ---
-chapter: 9
-totalChapters: 16
 title: "Exploration & Maps"
 description: "Scouting ahead with scout and viewing in-game maps."
-prev: "/play/tutorial/8-social"
-next: "/play/tutorial/10-combat"
 teach:
   - command: "scout south"
     desc: "peak into an adjacent room without moving"

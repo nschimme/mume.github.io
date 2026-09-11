@@ -1,10 +1,6 @@
 ---
-chapter: 10
-totalChapters: 16
 title: "Combat & Tactics"
 description: "Assessing enemies with consider, combat stances (moods), trophy, and fleeing."
-prev: "/play/tutorial/9-scouting"
-next: "/play/tutorial/11-resting"
 teach:
   - command: "consider boar"
     desc: "gauge enemy difficulty before fighting (also con)"

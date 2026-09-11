@@ -1,260 +1,16 @@
 <script setup>
 /*
-  Interactive new-player tutorial component reading Markdown chapter frontmatter.
-  Non-technical friendly: contributors can edit lessons directly in docs/play/tutorial/*.md!
+  Interactive new-player tutorial component driven dynamically by chapter Markdown files.
+  Non-technical friendly: chapter sequence, counts, prev/next links, and command responses
+  are derived automatically from docs/play/tutorial/*.md via chapters.data.js!
 */
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useData, useRoute, useRouter, withBase } from 'vitepress'
+import { data as allChapters } from '../../../play/tutorial/chapters.data.js'
 import logoImg from '../../../assets/images/mume_logo.jpg'
-import mapImg from '../../../assets/images/tutorial-map.png'
-import descImg from '../../../assets/images/tutorial-desc.png'
 
 const PLAY_URL = '/play/browser'
 const NEWCOMERS_URL = '/resources/newcomers'
-
-const CHAPTER_URLS = [
-  '/play/tutorial/1-orientation',
-  '/play/tutorial/2-items',
-  '/play/tutorial/3-looking',
-  '/play/tutorial/4-movement',
-  '/play/tutorial/5-equipment',
-  '/play/tutorial/6-sustenance',
-  '/play/tutorial/7-stats',
-  '/play/tutorial/8-social',
-  '/play/tutorial/9-scouting',
-  '/play/tutorial/10-combat',
-  '/play/tutorial/11-resting',
-  '/play/tutorial/12-guilds',
-  '/play/tutorial/13-grouping',
-  '/play/tutorial/14-renting',
-  '/play/tutorial/15-help-and-rules',
-  '/play/tutorial/16-journey'
-]
-
-const MUME_RESPONSES = {
-  'look': `East of the Bridge
-You are standing on the Old East Road, just east of the Brandywine bridge.
-A dusty road leads to a gate in a tall hedgerow to the south - the High Hay.
-It was grown to protect Buckland from the old forest many years ago.
-Exits: north, south, east, west.
-A friendly elf is resting here under the oak tree.`,
-
-  'exits': `Exits:
-  North   - Prancing Pony Inn
- -East-   - Cobble Street
- -South-  - Old East Road
- -West-   - Brandywine Bridge`,
-
-  'examine elf': `Fair and graceful this child of Eru is, and with but a cursory glance in your
-direction he continues to walk, dreaming of mysterious things.
-An elf is in an excellent condition.
-An elf is using:
-<worn on head>       a green hood (flawless)
-<worn on body>       a grey shirt (well-maintained)
-<worn on legs>       a grey pair of pants (flawless)`,
-
-  'examine sword': `This narrow, single-edged blade has been inlaid with gold filigree from point
-to pommel. The grip is black leather, embossed with the image of a red hill
-against a setting sun. An intricately fashioned guard of silver cages the handle.`,
-
-  'inventory': `You are carrying:
-a sturdy rope
-a water skin
-a coach ticket
-a lantern
-a dark coloured flask`,
-
-  'equipment': `You are using:
-<worn on body>       a travel-worn wool cloak
-<worn on legs>       leather breeches
-<worn on feet>       sturdy leather boots
-<wielded>            a silver-hilted longsword`,
-
-  'score': `Score: 354/354 hits, 114/114 mana, and 132/132 moves.
-You are a young Adventurer (Level 1).
-You are unhurt, hydrated, and well nourished.`,
-
-  'who': `Players Online in Middle-earth
-------------------------------
-  Martyrson    [Ranger]
-  Elrond       [Elf Lord]
-  GandalftheGrey [Wizard]
-Total players online: 3.`,
-
-  'who ranger': `Rangers Online
---------------
-  Martyrson N'Ekasrof (Type 'tell Martyrson hello' for help!)`,
-
-  'drink water': `You take a long drink of cool water from your water skin. You feel refreshed!`,
-  'drink': `You take a long drink of cool water from your water skin. You feel refreshed!`,
-  'eat bread': `You eat a loaf of crusty elf bread. You are no longer hungry.`,
-  'eat': `You eat a small portion of rations. You are no longer hungry.`,
-
-  'flee': `You panic and scramble away!
-You flee to the East! You manage to escape safely.`,
-
-  'rent': `Barliman Butterbur says 'Welcome to the Prancing Pony!'
-Barliman says 'It will cost you 6 silver pennies to store your equipment safely.'
-Nob brings you to a quiet, warm chamber where your character and gear rest safely.`,
-
-  'help': `HELP INDEX (Reference: mume.org/help)
-======================================
-MUME's built-in help files cover all aspect of gameplay:
-
-  help basic    - Basic command list for movement, combat, & speech
-  help new      - Advice and guide for new players
-  help move     - Directional travel, doors, and terrain
-  help fight    - Combat, attacks, positioning, and flee
-  help magic    - Spells, mana, and magical arts
-  help rules    - World rules and conduct
-
-Type 'help <topic>' or '?' for details on any command.`,
-
-  'help basic': `HELP BASIC COMMANDS
-===================
-Movement:  north, south, east, west, up, down, exits, open
-Look:      look, examine <object>, inventory, equipment, score
-Social:    say <text>, tell <player> <text>, nod, smile
-Survival:  eat <food>, drink <container>, light <torch>, rest, rent
-Help:      help <topic>, commands, tutorial`,
-
-  'help new': `HELP NEW PLAYERS
-================
-Welcome to MUME! As a new player, remember:
-1. Always look at exits before entering new rooms.
-2. If you need assistance, type 'who ranger' and send them a message with 'tell'.
-3. Always 'rent' at an Inn before logging off so you do not lose your equipment!`,
-
-  'help move': `HELP MOVEMENT
-=============
-Travel across Middle-earth using standard compass directions (n, s, e, w, u, d).
-Doors can be opened or locked ('open north'). Rest when your moves run low.`,
-
-  'help fight': `HELP COMBAT
-===========
-Attack using 'kill <target>'. Watch your hits in 'score'. If a fight goes poorly,
-type 'flee' to break away to a random exit!`,
-
-  'stat': `OB: 17%, DB: 26%, PB: 24%, Armour: 17%. Wimpy: 0. Mood: wimpy.
-Needed: 831 xp, 0 tp. Gold: 0. Alert: normal.`,
-
-  'info': `You are a male Eriadorian.
-You are 18 years old.
-This ranks you as Fuor the Man Apprentice (level 1).
-Perception: vision 40, hearing -10, smell -25.
-Base abilities: Str:17 Int:12 Wis:11 Dex:17 Con:15 Wil:14 Per:15.
-Offensive Bonus: 17%, Dodging Bonus: 26%, Parrying Bonus: 24%.
-Your armour provides an average protection of 17%.
-You have 24/24 hit, 76/76 mana, and 114/114 movement points.
-You are speaking Westron.`,
-
-  'help names': `HELP NAMES ON MUME
-==================
-MUME's management strongly encourages in-game roleplay. Therefore, names
-must fit reasonably with the race and Tolkien lore of your character.
-Unacceptable: Skullcrusher, Elfmage, Blah, Helpme, Cuddlebunny.`,
-
-  'help accounts': `HELP ACCOUNTS ON MUME
-=====================
-Each player is permitted ONLY ONE ACCOUNT. You may create multiple characters
-under your single account. Sharing or transferring accounts is forbidden.`,
-
-  'scout south': `You quietly scout southwards...
-Shaded Path
-A ruffian is here.
-You stop scouting.`,
-
-  'scout': `You quietly scout southwards...
-Shaded Path
-A ruffian is here.
-You stop scouting.`,
-
-  'consider boar': `You would need some luck!`,
-  'consider': `You would need some luck!`,
-
-  'change mood aggressive': `Ok.
-OB: 26%, DB: 26%, PB: 16%, Armour: 17%. Wimpy: 0. Mood: aggressive.`,
-
-  'change mood': `   _
-  | |   berserk
-  | |   aggressive
-  | |   brave
-  | |   normal
-  | |   prudent
-  |~|<- wimpy
-  / \\
-  \\_/`,
-
-  'practice': `You have 13 practice sessions left.
-Huor can teach you:
-  slashing weapons   0/29   0%   Normal
-  parry              0/29   0%   Normal
-  endurance          0/58   0%   Very hard
-  bash               0/43   0%   Hard`,
-
-  'follow ermin': `You now follow Ermin.`,
-  'follow': `You now follow Ermin.`,
-
-  'group': `Your group consists of:
-  Ermin (Head of group)
-  Fuor`,
-
-  'get torch': `You get a torch.`,
-  'get all': `You get a torch.
-You get a piece of cheese.`,
-  'drop cheese': `You drop a piece of cheese on the ground.`,
-
-  'look in sack': `sack (carried) :
-a cup
-a map of Fornost
-a torch`,
-
-  'put all sack': `You put a cup in a large sack.
-You put a map of Fornost in a large sack.
-You put a torch in a large sack.`,
-
-  'hold torch': `You hold a torch in your hand.`,
-  'light torch': `You light a torch. It glows brightly, illuminating the room!`,
-  'light lantern': `You light a lantern on your belt.`,
-  'wear lantern belt': `You fasten a lantern on your belt.
-You light a lantern.`,
-
-  'call': `You call for the gate to be opened.
-You hear a *click* in a lock.
-The Irongate is opened from the other side.`,
-
-  'where': `Players in your zone
---------------------
-Fuor                 - Western End of Market Square
-Theowen              - City Council's Meeting Room`,
-
-  'trophy': `		*** TROPHY *** (Number Killed, Knowledge, Mobile)
-
-|   1,  1%,  A butterfly               |
-|   1, 10%,  A boar cub                |`,
-
-  'rest': `You sit down and rest your tired bones.`,
-  'sleep': `You go to sleep.`,
-  'wake': `You wake, and sit up.`,
-  'stand': `You stand up.`,
-
-  'rules': `RULES INDEX (Reference: mume.org/rules)
-=====================================
-- RULES CHARACTER     Rules for character creation and accounts
-- RULES COMMUNICATION Rules for speech, whoises, and titles
-- RULES PLAYERKILLING Regulates battles between players
-- RULES AINUR         Rules for immortals`,
-
-  'pray fornost': `You kneel down and try to hear the Ainulindalë...
-Listening to them, you have the strange sensation to fade away...
-Suddenly an explosion of ancient rhymes makes the space collapse around you!
-You blink, you vanish! And you are in Fornost!`,
-
-  'pray': `You kneel down and try to hear the Ainulindalë...
-Listening to them, you have the strange sensation to fade away...
-Suddenly an explosion of ancient rhymes makes the space collapse around you!
-You blink, you vanish! And you are in Fornost!`
-}
 
 const BANNER =
 `                    ***  MUME IX  ***
@@ -282,19 +38,38 @@ Available commands:
 Account>`
 
 const router = useRouter()
+const route = useRoute()
 const { frontmatter } = useData()
 
-const chapter = computed(() => frontmatter.value?.chapter || 1)
-const mumeResponses = computed(() => frontmatter.value?.responses || {})
-const totalChapters = computed(() => frontmatter.value?.totalChapters || 16)
-const chapterTitle = computed(() => frontmatter.value?.title || 'Tutorial')
-const prevChapter = computed(() => frontmatter.value?.prev || null)
-const nextChapter = computed(() => frontmatter.value?.next || null)
-const teachList = computed(() => frontmatter.value?.teach || [])
-const practiceAsk = computed(() => frontmatter.value?.practice || null)
+const currentChapterObj = computed(() => {
+  const currentPath = route.path.replace(/\.html$/, '').replace(/\/$/, '')
+  return allChapters.find(c => c.url === currentPath || currentPath.endsWith(c.filename)) || allChapters[0]
+})
+
+const chapterNum = computed(() => currentChapterObj.value ? currentChapterObj.value.chapterNum : 1)
+const totalChapters = computed(() => allChapters.length)
+const chapterTitle = computed(() => frontmatter.value?.title || currentChapterObj.value?.title || 'Tutorial')
+
+const currentIndex = computed(() => allChapters.findIndex(c => c.chapterNum === chapterNum.value))
+
+const prevChapterUrl = computed(() => {
+  const idx = currentIndex.value
+  return idx > 0 ? allChapters[idx - 1].url : null
+})
+
+const nextChapterUrl = computed(() => {
+  const idx = currentIndex.value
+  return idx >= 0 && idx < allChapters.length - 1 ? allChapters[idx + 1].url : null
+})
+
+const teachList = computed(() => frontmatter.value?.teach || currentChapterObj.value?.teach || [])
+const practiceAsk = computed(() => frontmatter.value?.practice || currentChapterObj.value?.practice || null)
 const acceptList = computed(() => frontmatter.value?.accept || (practiceAsk.value ? [practiceAsk.value] : []))
 const practiceHint = computed(() => frontmatter.value?.hint || (practiceAsk.value ? `Type: ${practiceAsk.value}` : null))
-const exampleText = computed(() => frontmatter.value?.example || null)
+const exampleText = computed(() => frontmatter.value?.example || currentChapterObj.value?.example || null)
+
+// Driven 100% dynamically from chapter frontmatter
+const mumeResponses = computed(() => frontmatter.value?.responses || currentChapterObj.value?.responses || {})
 
 const log = ref([])
 const finished = ref(false)
@@ -305,7 +80,7 @@ const isSheetOpen = ref(false)
 const logEl = ref(null)
 const inputEl = ref(null)
 
-const stepLabel = computed(() => `Chapter ${chapter.value} of ${totalChapters.value}`)
+const stepLabel = computed(() => `Chapter ${chapterNum.value} of ${totalChapters.value}`)
 
 function focusInput() {
   if (typeof window !== 'undefined') {
@@ -338,12 +113,12 @@ function scrollLog() {
 
 function renderStepLog() {
   awaitingExample.value = false
-  finished.value = !nextChapter.value
+  finished.value = !nextChapterUrl.value
 
   const newLog = [{ kind: 'banner', text: BANNER }]
   newLog.push({
     kind: 'lesson',
-    chapterNum: chapter.value,
+    chapterNum: chapterNum.value,
     title: chapterTitle.value,
     teach: teachList.value,
     ask: practiceAsk.value
@@ -355,8 +130,8 @@ function renderStepLog() {
 }
 
 function advanceNext() {
-  if (nextChapter.value) {
-    navigateToUrl(nextChapter.value)
+  if (nextChapterUrl.value) {
+    navigateToUrl(nextChapterUrl.value)
   } else {
     finished.value = true
     scrollLog()
@@ -370,7 +145,7 @@ function submit() {
   if (raw) { log.value.push({ kind: 'echo', text: raw }) }
 
   if (cmd === 'skip') { advanceNext(); focusInput(); return }
-  if (cmd === 'tutorial') { navigateToUrl('/play/tutorial/1-orientation'); focusInput(); return }
+  if (cmd === 'tutorial') { navigateToUrl(allChapters[0]?.url || '/play/tutorial/1-orientation'); focusInput(); return }
 
   if (awaitingExample.value) {
     awaitingExample.value = false
@@ -418,14 +193,13 @@ function submit() {
   focusInput()
 }
 
-watch(() => frontmatter.value, () => {
+watch(() => route.path, () => {
   renderStepLog()
 }, { immediate: true })
 
 function handleGlobalKeydown(e) {
   if (e.key === 'Enter') {
     const active = typeof document !== 'undefined' ? document.activeElement : null
-    // If input element is already handling enter via @keydown.enter, don't double-trigger submit
     if (active && active !== document.body && active !== document.documentElement) {
       return
     }
@@ -455,7 +229,7 @@ onUnmounted(() => {
         <img class="tut-logo" :src="logoImg" alt="MUME" />
         <div class="tut-heading">
           <div class="tut-title-row">
-            <span class="tut-title">Chapter {{ chapter }}: {{ chapterTitle }}</span>
+            <span class="tut-title">Chapter {{ chapterNum }}: {{ chapterTitle }}</span>
             <button type="button" class="tut-sheet-toggle-btn" @click="isSheetOpen = !isSheetOpen" aria-label="Toggle Command Sheet">
               Commands
             </button>
@@ -465,16 +239,16 @@ onUnmounted(() => {
         </div>
         <div class="tut-progress">
           <span class="tut-ticks">
-            <button v-for="(chUrl, i) in CHAPTER_URLS" :key="i"
+            <button v-for="ch in allChapters" :key="ch.chapterNum"
                     type="button"
                     class="tut-tick"
                     :class="{
-                      done: (i + 1) < chapter,
-                      now: (i + 1) === chapter,
-                      clickable: (i + 1) !== chapter
+                      done: ch.chapterNum < chapterNum,
+                      now: ch.chapterNum === chapterNum,
+                      clickable: ch.chapterNum !== chapterNum
                     }"
-                    :title="'Go to Chapter ' + (i + 1)"
-                    @click="navigateToUrl(chUrl)"></button>
+                    :title="'Go to Chapter ' + ch.chapterNum + ': ' + ch.title"
+                    @click="navigateToUrl(ch.url)"></button>
           </span>
           <span class="tut-step">{{ stepLabel }}</span>
         </div>
@@ -516,14 +290,7 @@ onUnmounted(() => {
 
               <p v-else-if="b.kind === 'error'" class="tut-err">{{ b.text }}</p>
 
-              <div v-else-if="b.kind === 'sheetdump'" class="tut-dump">
-                <template v-for="(g, gi) in b.groups" :key="gi">
-                  <div class="tut-grp">{{ g.section }}</div>
-                  <dl><template v-for="(c, ci) in g.items" :key="ci"><dt>{{ c.c }}</dt><dd>{{ c.d }}</dd></template></dl>
-                </template>
-              </div>
-
-              <template v-else-if="b.kind === 'end' || !nextChapter">
+              <template v-else-if="b.kind === 'end' || !nextChapterUrl">
                 <hr class="tut-rule" />
                 <div class="tut-eyebrow">Ready</div>
                 <h3 class="tut-h">Create your character</h3>
@@ -533,12 +300,6 @@ onUnmounted(() => {
                   <a class="tut-secondary-link" :href="withBase(NEWCOMERS_URL)">Explore Newcomers Guide</a>
                 </div>
                 <p class="tut-note">Opens the web client. You can retake this tutorial at any time.</p>
-              </template>
-
-              <template v-else-if="b.kind === 'handover'">
-                <hr class="tut-rule" />
-                <h3 class="tut-h">Off you go</h3>
-                <p class="tut-line">The <a :href="PLAY_URL">web client</a> is where you drop into the account prompt and begin. Good luck out there!</p>
               </template>
             </div>
           </div>
@@ -564,7 +325,7 @@ onUnmounted(() => {
           <div class="tut-sheet-body">
             <p v-if="!teachList.length" class="tut-empty">No special commands listed for this chapter.</p>
             <template v-else>
-              <div class="tut-grp">Chapter {{ chapter }} Commands</div>
+              <div class="tut-grp">Chapter {{ chapterNum }} Commands</div>
               <dl>
                 <template v-for="(t, ti) in teachList" :key="ti">
                   <dt>{{ t.command }}</dt><dd>{{ t.desc }}</dd>
@@ -579,8 +340,8 @@ onUnmounted(() => {
 
       <div class="tut-controls">
         <a class="tut-hub-ghost" :href="withBase('/resources/newcomers')">← Newcomers Hub</a>
-        <button v-if="prevChapter" class="tut-ghost" @click="navigateToUrl(prevChapter)">← Previous Chapter</button>
-        <button v-if="nextChapter" class="tut-ghost" @click="navigateToUrl(nextChapter)">Next Chapter →</button>
+        <button v-if="prevChapterUrl" class="tut-ghost" @click="navigateToUrl(prevChapterUrl)">← Previous Chapter</button>
+        <button v-if="nextChapterUrl" class="tut-ghost" @click="navigateToUrl(nextChapterUrl)">Next Chapter →</button>
       </div>
     </div>
   </div>
@@ -609,7 +370,6 @@ onUnmounted(() => {
 
 .tut-term { display: flex; flex-direction: column; min-width: 0; }
 .tut-log { height: 460px; overflow-y: auto; padding: 6px 18px 14px; scroll-behavior: smooth; }
-.tut-block { }
 .tut-banner { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 12px; color: #8f8f8f; white-space: pre-wrap; margin: 8px 0 4px; }
 .tut-rule { border: 0; border-top: 1px solid #23262e; margin: 20px 0 14px; }
 .tut-eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 11px; color: #b8860b; margin-bottom: 4px; }
@@ -618,18 +378,13 @@ onUnmounted(() => {
 .tut-teach { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 4px 0 14px; padding: 12px 14px; background: #101216; border: 1px solid #23262e; border-radius: 8px; }
 .tut-teach dt { color: #d8b04a; font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 13px; }
 .tut-teach dd { color: #9a9a9a; margin: 0; font-size: 13.5px; }
-.tut-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 6px 0 16px; }
-@media (max-width: 520px) { .tut-panels { grid-template-columns: 1fr; } }
-.tut-panels figure { margin: 0; }
-.tut-panels img { width: 100%; border: 1px solid #23262e; border-radius: 8px; display: block; }
-.tut-panels figcaption { color: #8f8a7d; font-size: 12px; margin-top: 6px; text-align: center; }
+
 .tut-ask { color: #7fb0c8; font-size: 14px; margin: 4px 0 2px; }
 .tut-cmd { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #f4dd94; background: rgba(184,134,11,.12); padding: 1px 6px; border-radius: 4px; }
 .tut-echo { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #cfcfcf; margin: 10px 0 2px; }
 .tut-exlead { color: #9a927f; font-size: 13px; margin: 8px 0 4px; }
 .tut-example { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 12.5px; color: #b9d3c2; white-space: pre-wrap; background: #06120c; border: 1px solid #17301f; border-radius: 8px; padding: 12px 14px; margin: 0 0 8px; }
 .tut-err { color: #d98a7f; font-size: 14px; margin: 8px 0; }
-.tut-dump { margin: 8px 0; }
 
 .tut-end-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 8px 0 12px; }
 .tut-enter { display: inline-block; font-family: 'Kelt', serif; font-size: 1.15rem; background: darkgoldenrod; color: white !important; padding: 0.5em 2em; border-radius: 3.75rem; box-shadow: 1px 5px 10px 0px rgba(184, 134, 11, 0.5); text-decoration: none !important; transition: color .2s; }
@@ -649,9 +404,9 @@ onUnmounted(() => {
 .tut-sheet-body { padding: 10px 14px 14px; overflow-y: auto; max-height: 472px; }
 .tut-empty { color: #7d7d7d; font-size: 13px; }
 .tut-grp { color: #7d7d7d; border-bottom: 1px solid #242424; padding-bottom: 3px; margin: 12px 0 8px; font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; }
-.tut-sheet-body dl, .tut-dump dl { display: grid; grid-template-columns: max-content 1fr; gap: 3px 12px; margin: 0; }
-.tut-sheet-body dt, .tut-dump dt { color: #d8b04a; font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 12.5px; }
-.tut-sheet-body dd, .tut-dump dd { color: #9a9a9a; margin: 0; font-size: 12.5px; }
+.tut-sheet-body dl { display: grid; grid-template-columns: max-content 1fr; gap: 3px 12px; margin: 0; }
+.tut-sheet-body dt { color: #d8b04a; font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 12.5px; }
+.tut-sheet-body dd { color: #9a9a9a; margin: 0; font-size: 12.5px; }
 
 .tut-title-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .tut-sheet-toggle-btn { display: none; background: rgba(184,134,11,.18); border: 1px solid rgba(215,166,63,.4); color: #f4dd94; font-size: 11px; padding: 2px 8px; border-radius: 12px; cursor: pointer; }

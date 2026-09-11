@@ -1,10 +1,6 @@
 ---
-chapter: 6
-totalChapters: 16
 title: "Sustenance & Survival"
 description: "Eating, drinking, and refilling water skins at fountains."
-prev: "/play/tutorial/5-equipment"
-next: "/play/tutorial/7-stats"
 teach:
   - command: "eat bread"
     desc: "eat food from your inventory"

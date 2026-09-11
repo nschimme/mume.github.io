@@ -1,10 +1,6 @@
 ---
-chapter: 8
-totalChapters: 16
 title: "Social & Communication"
 description: "Talking, telling, emotes, finding Rangers, and checking who is online."
-prev: "/play/tutorial/7-stats"
-next: "/play/tutorial/9-scouting"
 teach:
   - command: "say hello"
     desc: "speak to everyone in the room"

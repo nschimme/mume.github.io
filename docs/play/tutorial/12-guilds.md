@@ -1,10 +1,6 @@
 ---
-chapter: 12
-totalChapters: 16
 title: "Character Growth & Guilds"
 description: "Visiting Guildmasters and spending practice points on skills."
-prev: "/play/tutorial/11-resting"
-next: "/play/tutorial/13-grouping"
 teach:
   - command: "practice"
     desc: "list available skills at a guildmaster"
