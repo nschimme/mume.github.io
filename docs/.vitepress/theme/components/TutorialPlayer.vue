@@ -4,8 +4,8 @@
   Content lives in ../data/tutorialContent.js; assets are imported from the
   shared docs/assets/images so nothing is duplicated.
 */
-import { ref, computed, watch, onMounted } from 'vue'
-import { useData, useRoute, useRouter } from 'vitepress'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
+import { useData, useRoute, useRouter, withBase } from 'vitepress'
 import { TUTORIAL } from '../data/tutorialContent.js'
 import logoImg from '../../../assets/images/mume_logo.jpg'
 import mapImg from '../../../assets/images/tutorial-map.png'
@@ -123,9 +123,13 @@ function goToStep(stepNum) {
   if (stepNum > maxCompletedStep.value) return
   awaitingExample.value = false
   finished.value = false
-  const targetUrl = `/play/tutorial/${stepNum}`
+  const targetUrl = withBase(`/play/tutorial/${stepNum}`)
   if (router && router.go) {
-    router.go(targetUrl)
+    router.go(targetUrl).catch(() => {
+      if (typeof window !== 'undefined') {
+        window.location.href = targetUrl
+      }
+    })
   } else if (typeof window !== 'undefined') {
     window.location.href = targetUrl
   }
@@ -252,9 +256,27 @@ watch(currentStep, () => {
   renderStepLog()
 }, { immediate: true })
 
+function handleGlobalKeydown(e) {
+  if (e.key === 'Enter') {
+    const active = typeof document !== 'undefined' ? document.activeElement : null
+    if (!active || active === document.body || active === inputEl.value) {
+      submit()
+    }
+  }
+}
+
 onMounted(() => {
   loadMaxStep()
   renderStepLog()
+  if (typeof window !== 'undefined') {
+    window.addEventListener('keydown', handleGlobalKeydown)
+  }
+})
+
+onUnmounted(() => {
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('keydown', handleGlobalKeydown)
+  }
 })
 </script>
 
