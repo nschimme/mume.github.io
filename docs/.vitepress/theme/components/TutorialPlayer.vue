@@ -1,20 +1,20 @@
 <script setup>
 /*
-  Interactive new-player tutorial, as a VitePress component.
+  Interactive new-player tutorial, as a VitePress component with page-based routes.
   Content lives in ../data/tutorialContent.js; assets are imported from the
-  shared docs/assets/images so nothing is duplicated. No backend: the whole
-  walkthrough runs client-side and ends by handing over to the web client.
+  shared docs/assets/images so nothing is duplicated.
 */
-import { ref, computed, nextTick, onMounted } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
+import { useData, useRoute, useRouter } from 'vitepress'
 import { TUTORIAL } from '../data/tutorialContent.js'
 import logoImg from '../../../assets/images/mume_logo.jpg'
 import mapImg from '../../../assets/images/tutorial-map.png'
 import descImg from '../../../assets/images/tutorial-desc.png'
 
-// Where the tutorial hands over: the MMapper web client & newcomers guide.
 const PLAY_URL = '/play/browser'
 const NEWCOMERS_URL = '/resources/newcomers'
 const MAP_SECTION = 'Playing the game'
+const STORAGE_KEY = 'mume_tutorial_max_step'
 
 const BANNER =
 `                    ***  MUME IX  ***
@@ -44,9 +44,22 @@ Account>`
 const lessons = TUTORIAL.lessons
 const total = lessons.length
 
-const idx = ref(0)
+const route = useRoute()
+const router = useRouter()
+const { params } = useData()
+
+// Determine current step index (0-based) from URL route
+const currentStep = computed(() => {
+  const p = params.value?.step || route.path.split('/').filter(Boolean).pop().replace(/\.html$/, '')
+  const n = parseInt(p, 10)
+  if (isNaN(n) || n < 1) return 1
+  return Math.min(n, total)
+})
+
+const idx = computed(() => currentStep.value - 1)
+
+const maxCompletedStep = ref(1)
 const log = ref([])
-const learned = ref([])
 const finished = ref(false)
 const awaitingExample = ref(false)
 const entry = ref('')
@@ -54,9 +67,25 @@ const entry = ref('')
 const logEl = ref(null)
 const inputEl = ref(null)
 
-const stepLabel = computed(() => `${Math.min(idx.value + 1, total)} of ${total}`)
+const stepLabel = computed(() => `${currentStep.value} of ${total}`)
 
-// Commands grouped by the section they were taught in, for the side sheet.
+// Learned commands up to current index
+const learned = computed(() => {
+  const list = []
+  for (let i = 0; i <= idx.value && i < total; i++) {
+    const L = lessons[i]
+    if (L && L.teach) {
+      for (const t of L.teach) {
+        if (!list.some(x => x.c === t.c && x.section === L.section)) {
+          list.push({ c: t.c, d: t.d, section: L.section })
+        }
+      }
+    }
+  }
+  return list
+})
+
+// Commands grouped by section for the command sheet
 const sheetGroups = computed(() => {
   const groups = []
   for (const c of learned.value) {
@@ -67,21 +96,62 @@ const sheetGroups = computed(() => {
   return groups
 })
 
-function scrollLog() {
-  nextTick(() => { const el = logEl.value; if (el) el.scrollTop = el.scrollHeight })
-}
-
-function learn(L) {
-  for (const t of (L.teach || [])) {
-    if (!learned.value.some(x => x.c === t.c && x.section === L.section))
-      learned.value.push({ c: t.c, d: t.d, section: L.section })
+function loadMaxStep() {
+  if (typeof window !== 'undefined') {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    if (saved) {
+      const parsed = parseInt(saved, 10)
+      if (!isNaN(parsed) && parsed > 1) {
+        maxCompletedStep.value = Math.max(1, Math.min(parsed, total))
+      }
+    }
   }
 }
 
-function showLesson() {
+function updateMaxStep(step) {
+  if (step > maxCompletedStep.value) {
+    maxCompletedStep.value = Math.min(step, total)
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(STORAGE_KEY, String(maxCompletedStep.value))
+    }
+  }
+}
+
+function goToStep(stepNum) {
+  if (stepNum < 1 || stepNum > total) return
+  if (stepNum > maxCompletedStep.value) return
+  awaitingExample.value = false
+  finished.value = false
+  const targetUrl = `/play/tutorial/${stepNum}`
+  if (router && router.go) {
+    router.go(targetUrl)
+  } else if (typeof window !== 'undefined') {
+    window.location.href = targetUrl
+  }
+}
+
+function scrollLog() {
+  if (typeof window !== 'undefined') {
+    setTimeout(() => {
+      const el = logEl.value
+      if (el) el.scrollTop = el.scrollHeight
+    }, 50)
+  }
+}
+
+function renderStepLog() {
+  updateMaxStep(currentStep.value)
+  awaitingExample.value = false
+  finished.value = false
+
   const L = lessons[idx.value]
-  if (!L) { showEnd(); return }
-  log.value.push({
+  if (!L) {
+    showEnd()
+    return
+  }
+
+  const newLog = [{ kind: 'banner', text: BANNER }]
+  newLog.push({
     kind: 'lesson',
     section: L.section,
     title: L.title,
@@ -90,7 +160,8 @@ function showLesson() {
     ask: L.practice ? { cmd: L.practice.ask } : null,
     map: L.section === MAP_SECTION
   })
-  learn(L)
+
+  log.value = newLog
   scrollLog()
 }
 
@@ -114,26 +185,46 @@ function dumpSheet() {
   scrollLog()
 }
 
+function advanceNext() {
+  const nextStep = currentStep.value + 1
+  updateMaxStep(nextStep)
+  if (nextStep <= total) {
+    goToStep(nextStep)
+  } else {
+    showEnd()
+  }
+}
+
 function submit() {
   const raw = entry.value.trim()
   const cmd = raw.toLowerCase()
   entry.value = ''
-  if (raw) { log.value.push({ kind: 'echo', text: raw }); }
+  if (raw) { log.value.push({ kind: 'echo', text: raw }) }
 
   if (cmd === 'commands') { dumpSheet(); return }
   if (cmd === 'skip') { skip(); return }
-  if (cmd === 'tutorial') { restart(); return }
+  if (cmd === 'tutorial') { goToStep(1); return }
 
   if (finished.value) { handover(); return }
 
-  // After an example response, any Enter carries on to the next lesson.
-  if (awaitingExample.value) { awaitingExample.value = false; idx.value++; showLesson(); return }
+  if (awaitingExample.value) {
+    awaitingExample.value = false
+    advanceNext()
+    return
+  }
 
   const L = lessons[idx.value]
   const p = L && L.practice
 
-  if (!p) { idx.value++; showLesson(); return }
-  if (!cmd) { log.value.push({ kind: 'error', text: p.hint || ('Type: ' + p.ask) }); scrollLog(); return }
+  if (!p) {
+    advanceNext()
+    return
+  }
+  if (!cmd) {
+    log.value.push({ kind: 'error', text: p.hint || ('Type: ' + p.ask) })
+    scrollLog()
+    return
+  }
 
   const ok = (p.accept || [p.ask]).some(a => a.toLowerCase() === cmd)
   if (ok) {
@@ -143,8 +234,7 @@ function submit() {
       awaitingExample.value = true
       scrollLog()
     } else {
-      idx.value++
-      showLesson()
+      advanceNext()
     }
   } else {
     log.value.push({ kind: 'error', text: 'MUME does not know that one here. ' + (p.hint || ('Try: ' + p.ask)) })
@@ -153,28 +243,17 @@ function submit() {
 }
 
 function skip() {
-  lessons.forEach(learn)
-  idx.value = total
+  updateMaxStep(total)
   showEnd()
 }
 
-function restart() {
-  idx.value = 0
-  learned.value = []
-  finished.value = false
-  awaitingExample.value = false
-  log.value = [{ kind: 'banner', text: BANNER }]
-  showLesson()
-  focusInput()
-}
-
-function focusInput() {
-  nextTick(() => { const el = inputEl.value; if (el) el.focus() })
-}
+watch(currentStep, () => {
+  renderStepLog()
+}, { immediate: true })
 
 onMounted(() => {
-  log.value = [{ kind: 'banner', text: BANNER }]
-  showLesson()
+  loadMaxStep()
+  renderStepLog()
 })
 </script>
 
@@ -189,9 +268,17 @@ onMounted(() => {
         </div>
         <div class="tut-progress" v-if="!finished">
           <span class="tut-ticks">
-            <span v-for="i in total" :key="i"
-                  class="tut-tick"
-                  :class="{ done: i - 1 < idx, now: i - 1 === idx }"></span>
+            <button v-for="i in total" :key="i"
+                    type="button"
+                    class="tut-tick"
+                    :class="{
+                      done: i < currentStep,
+                      now: i === currentStep,
+                      clickable: i <= maxCompletedStep && i !== currentStep
+                    }"
+                    :disabled="i > maxCompletedStep"
+                    :title="i <= maxCompletedStep ? 'Go to step ' + i : 'Complete previous steps to unlock'"
+                    @click="goToStep(i)"></button>
           </span>
           <span class="tut-step">{{ stepLabel }}</span>
         </div>
@@ -287,7 +374,7 @@ onMounted(() => {
 
       <div class="tut-controls">
         <button v-if="!finished" class="tut-ghost" @click="skip">Skip to the end</button>
-        <button v-else class="tut-ghost" @click="restart">Run the tutorial again</button>
+        <button v-else class="tut-ghost" @click="goToStep(1)">Run the tutorial again</button>
       </div>
     </div>
   </div>
@@ -303,10 +390,12 @@ onMounted(() => {
 .tut-title { font-family: 'Kelt', serif; color: #f4dd94; font-size: 22px; }
 .tut-sub { color: #9a927f; font-size: 12.5px; }
 .tut-progress { display: flex; align-items: center; gap: 10px; }
-.tut-ticks { display: inline-flex; gap: 4px; }
-.tut-tick { width: 8px; height: 8px; border-radius: 50%; background: #2a2a2a; transition: background .3s; }
+.tut-ticks { display: inline-flex; gap: 5px; align-items: center; }
+.tut-tick { width: 10px; height: 10px; border-radius: 50%; background: #2a2a2a; border: none; padding: 0; cursor: default; transition: background .3s, transform .2s, box-shadow .2s; }
 .tut-tick.done { background: #a9812a; }
-.tut-tick.now { background: #f4dd94; box-shadow: 0 0 8px rgba(244,221,148,.6); }
+.tut-tick.now { background: #f4dd94; box-shadow: 0 0 8px rgba(244,221,148,.6); transform: scale(1.15); }
+.tut-tick.clickable { cursor: pointer; }
+.tut-tick.clickable:hover { background: #ffd966; transform: scale(1.25); }
 .tut-step { color: #9a927f; font-size: 12.5px; white-space: nowrap; }
 
 .tut-body { display: grid; grid-template-columns: 1fr 260px; gap: 0; }
