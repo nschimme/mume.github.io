@@ -21,6 +21,12 @@ accept:
   - "pray"
 hint: "Type: pray fornost"
 example: "> pray fornost\nYou kneel down and try to hear the Ainulindalë...\nSuddenly an explosion of ancient rhymes makes space collapse around you!\nYou blink, you vanish! And you are in Fornost!"
+responses:
+  help: "HELP INDEX (Reference: mume.org/help)\n======================================\nhelp basic - Basic command list\nhelp new   - Guide for new players"
+  help basic: "HELP BASIC COMMANDS\n===================\nMovement: north, south, east, west, up, down, exits, open\nLook:     look, examine, inventory, equipment, score"
+  rules: "RULES INDEX (Reference: mume.org/rules)\n=====================================\n- RULES CHARACTER     Rules for character creation and accounts\n- RULES COMMUNICATION Rules for speech, whoises, and titles"
+  pray fornost: "You kneel down and try to hear the Ainulindalë...\nSuddenly an explosion of ancient rhymes makes space collapse around you!\nYou blink, you vanish! And you are in Fornost!"
+  pray: "You kneel down and try to hear the Ainulindalë...\nSuddenly an explosion of ancient rhymes makes space collapse around you!\nYou blink, you vanish! And you are in Fornost!"
 ---
 
 <TutorialPlayer>

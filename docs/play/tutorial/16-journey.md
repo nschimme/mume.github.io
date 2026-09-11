@@ -7,6 +7,8 @@ prev: "/play/tutorial/15-help-and-rules"
 next: null
 teach: []
 practice: null
+responses:
+  tutorial: "Redirecting to Chapter 1..."
 ---
 
 <TutorialPlayer>

@@ -17,6 +17,10 @@ accept:
   - "group"
 hint: "Type: follow ermin"
 example: "> follow ermin\nYou now follow Ermin.\n\n> group\nYour group consists of:\n  Ermin (Head of group)\n  Fuor"
+responses:
+  follow ermin: "You now follow Ermin."
+  follow: "You now follow Ermin."
+  group: "Your group consists of:\n  Ermin (Head of group)\n  Fuor"
 ---
 
 <TutorialPlayer>

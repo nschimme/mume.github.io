@@ -18,6 +18,12 @@ accept:
   - "drink"
 hint: "Type: drink water"
 example: "> drink water\nYou take a long drink of cool water from your water skin. You feel refreshed!"
+responses:
+  eat bread: "You eat a loaf of crusty bread. You are no longer hungry."
+  eat: "You eat a small portion of rations. You are no longer hungry."
+  drink water: "You take a long drink of cool water from your water skin. You feel refreshed!"
+  drink: "You take a long drink of cool water from your water skin. You feel refreshed!"
+  pour fountain skin: "You refill your water skin at the well. It is now full of fresh water."
 ---
 
 <TutorialPlayer>

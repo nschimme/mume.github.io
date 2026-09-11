@@ -18,6 +18,11 @@ accept:
   - "sleep"
 hint: "Type: rest"
 example: "> rest\nYou sit down and rest your tired bones."
+responses:
+  rest: "You sit down and rest your tired bones."
+  sleep: "You go to sleep."
+  wake: "You wake, and sit up."
+  stand: "You stand up."
 ---
 
 <TutorialPlayer>

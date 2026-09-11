@@ -1,4 +1,6 @@
 <script setup>
+import { withBase } from 'vitepress'
+
 defineProps({
   title: {
     type: String,
@@ -38,6 +40,13 @@ defineProps({
   }
 })
 
+function resolveHref(url) {
+  if (!url || url.startsWith('#') || url.startsWith('http://') || url.startsWith('https://')) {
+    return url
+  }
+  return withBase(url)
+}
+
 function handleExpClick(e, href) {
   if (href.startsWith('#')) {
     e.preventDefault()
@@ -55,7 +64,7 @@ function handleExpClick(e, href) {
       <div class="choice-badge">Recommended for Newcomers</div>
       <h3 class="choice-title">{{ newTitle }}</h3>
       <p class="choice-desc">{{ newDesc }}</p>
-      <a :href="newHref" class="choice-btn primary-btn">
+      <a :href="resolveHref(newHref)" class="choice-btn primary-btn">
         {{ newActionText }}
         <i class="fa fa-arrow-right" aria-hidden="true"></i>
       </a>
@@ -65,7 +74,7 @@ function handleExpClick(e, href) {
       <div class="choice-badge exp-badge">Veterans & Returning</div>
       <h3 class="choice-title">{{ expTitle }}</h3>
       <p class="choice-desc">{{ expDesc }}</p>
-      <a :href="expHref" class="choice-btn secondary-btn" @click="e => handleExpClick(e, expHref)">
+      <a :href="resolveHref(expHref)" class="choice-btn secondary-btn" @click="e => handleExpClick(e, expHref)">
         {{ expActionText }}
         <i class="fa fa-arrow-down" aria-hidden="true"></i>
       </a>

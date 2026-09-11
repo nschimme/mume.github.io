@@ -22,6 +22,12 @@ accept:
   - "say open"
 hint: "Type: call"
 example: "> call\nYou call for the gate to be opened.\nYou hear a *click* in a lock.\nThe Irongate is opened from the other side."
+responses:
+  exits: "Exits:\n  North   - Prancing Pony Inn\n -East-   - Cobble Street\n -South-  - Old East Road\n -West-   - Old East Road"
+  ex: "Exits:\n  North   - Prancing Pony Inn\n -East-   - Cobble Street\n -South-  - Old East Road\n -West-   - Old East Road"
+  open north: "You open the door leading north."
+  say open: "An experienced Dúnadan officer looks you over and opens the Irongate."
+  call: "You call for the gate to be opened.\nYou hear a *click* in a lock.\nThe Irongate is opened from the other side."
 ---
 
 <TutorialPlayer>

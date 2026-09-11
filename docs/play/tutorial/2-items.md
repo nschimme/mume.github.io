@@ -26,6 +26,14 @@ accept:
   - "l sack"
 hint: "Type: look in sack"
 example: "> look in sack\nsack (carried) :\na cup\na map of Fornost\na torch"
+responses:
+  get torch: "You get a torch."
+  get all: "You get a torch.\nYou get a piece of cheese."
+  drop cheese: "You drop a piece of cheese on the ground."
+  inventory: "You are carrying:\na sturdy rope\na water skin\na coach ticket\na lantern\na dark coloured flask"
+  i: "You are carrying:\na sturdy rope\na water skin\na coach ticket\na lantern\na dark coloured flask"
+  look in sack: "sack (carried) :\na cup\na map of Fornost\na torch"
+  put all sack: "You put a cup in a large sack.\nYou put a map of Fornost in a large sack.\nYou put a torch in a large sack."
 ---
 
 <TutorialPlayer>

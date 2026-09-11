@@ -27,6 +27,15 @@ accept:
   - "light"
 hint: "Type: light torch"
 example: "> light torch\nYou light a torch. It glows brightly, illuminating the dark cavern!"
+responses:
+  wear jerkin: "You wear a thick, soft leather jerkin on your body."
+  wield sword: "You wield a backsword in your main hand."
+  remove jerkin: "You take off a thick, soft leather jerkin."
+  equipment: "You are using:\n<wielded>            a backsword (brand new)\n<worn on body>       a thick, soft leather jerkin (brand new)\n<worn on legs>       a pair of trousers (brand new)"
+  eq: "You are using:\n<wielded>            a backsword (brand new)\n<worn on body>       a thick, soft leather jerkin (brand new)\n<worn on legs>       a pair of trousers (brand new)"
+  hold torch: "You hold a torch in your hand."
+  light torch: "You light a torch. It glows brightly, illuminating the room!"
+  wear lantern belt: "You fasten a lantern on your belt.\nYou light a lantern."
 ---
 
 <TutorialPlayer>

@@ -1,4 +1,6 @@
 <script setup>
+import { withBase } from 'vitepress'
+
 defineProps({
   title: {
     type: String,
@@ -43,7 +45,7 @@ defineProps({
       <slot></slot>
     </div>
     <div class="callout-action">
-      <a :href="actionHref" class="callout-btn">
+      <a :href="actionHref.startsWith('http') ? actionHref : withBase(actionHref)" class="callout-btn">
         {{ actionText }}
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>

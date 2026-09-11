@@ -15,6 +15,9 @@ accept:
   - "rent"
 hint: "Type: rent"
 example: "> rent\nBarliman Butterbur says 'It will cost you 6 silver pennies per day.'\nNob brings you to a quiet room where your character and gear rest safely."
+responses:
+  offer: "Barliman Butterbur says 'It will cost you 6 silver pennies per day.'\nYou have enough money for 2 months."
+  rent: "Barliman Butterbur says 'It will cost you 6 silver pennies per day.'\nNob brings you to a quiet room where your character and gear rest safely."
 ---
 
 <TutorialPlayer>

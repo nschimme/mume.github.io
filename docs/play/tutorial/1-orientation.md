@@ -16,6 +16,9 @@ accept:
   - "help name"
 hint: "Type: help names"
 example: "> help names\nNAMES ON MUME\nMUME's management strongly encourages in-game roleplay. Therefore, names must fit reasonably with the race and Tolkien lore of your character.\nExamples of inappropriate names: Skullcrusher, Elfmage, Blah."
+responses:
+  help names: "HELP NAMES ON MUME\n==================\nMUME's management strongly encourages in-game roleplay. Therefore, names must fit reasonably with the race and Tolkien lore of your character.\nUnacceptable: Skullcrusher, Elfmage, Blah, Helpme, Cuddlebunny."
+  help accounts: "HELP ACCOUNTS ON MUME\n=====================\nEach player is permitted ONLY ONE ACCOUNT. You may create multiple characters under your single account. Sharing or transferring accounts is forbidden."
 ---
 
 <TutorialPlayer>

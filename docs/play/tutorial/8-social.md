@@ -24,6 +24,16 @@ accept:
   - "who rangers"
 hint: "Type: who ranger"
 example: "> who ranger\nRangers Online\n--------------\n  Martyrson N'Ekasrof (Type 'tell Martyrson hello' for help!)"
+responses:
+  say hello: "You say 'hello'\nErmin says 'Hello friend!'"
+  say: "You say 'hello'"
+  tell relim hello: "You tell Relim 'hello'\nRelim tells you 'Welcome to Middle-earth! Let me know if you need help.'"
+  nod: "You nod in agreement."
+  bow: "You bow deeply before the company."
+  who: "Players Online in Middle-earth\n------------------------------\n  Martyrson    [Ranger]\n  Elrond       [Elf Lord]\n  GandalftheGrey [Wizard]\nTotal players online: 3."
+  who ranger: "Rangers Online\n--------------\n  Martyrson N'Ekasrof (Type 'tell Martyrson hello' for help!)"
+  who rangers: "Rangers Online\n--------------\n  Martyrson N'Ekasrof (Type 'tell Martyrson hello' for help!)"
+  where: "Players in your zone\n--------------------\nFuor                 - Western End of Market Square\nTheowen              - City Council's Meeting Room"
 ---
 
 <TutorialPlayer>

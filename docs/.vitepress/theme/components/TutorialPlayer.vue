@@ -285,6 +285,7 @@ const router = useRouter()
 const { frontmatter } = useData()
 
 const chapter = computed(() => frontmatter.value?.chapter || 1)
+const mumeResponses = computed(() => frontmatter.value?.responses || {})
 const totalChapters = computed(() => frontmatter.value?.totalChapters || 16)
 const chapterTitle = computed(() => frontmatter.value?.title || 'Tutorial')
 const prevChapter = computed(() => frontmatter.value?.prev || null)
@@ -379,8 +380,8 @@ function submit() {
   }
 
   if (!practiceAsk.value) {
-    if (cmd && MUME_RESPONSES[cmd]) {
-      log.value.push({ kind: 'example', body: MUME_RESPONSES[cmd] })
+    if (cmd && mumeResponses.value[cmd]) {
+      log.value.push({ kind: 'example', body: mumeResponses.value[cmd] })
       scrollLog()
     } else {
       advanceNext()
@@ -406,8 +407,8 @@ function submit() {
     } else {
       advanceNext()
     }
-  } else if (MUME_RESPONSES[cmd]) {
-    log.value.push({ kind: 'example', body: MUME_RESPONSES[cmd] })
+  } else if (mumeResponses.value[cmd]) {
+    log.value.push({ kind: 'example', body: mumeResponses.value[cmd] })
     log.value.push({ kind: 'error', text: 'Good try! To proceed in this lesson, ' + (practiceHint.value || (`try: ${practiceAsk.value}`)) })
     scrollLog()
   } else {

@@ -23,6 +23,16 @@ accept:
   - "change mood"
 hint: "Type: change mood aggressive"
 example: "> change mood aggressive\nOk.\nOB: 26%, DB: 26%, PB: 16%, Armour: 17%. Mood: aggressive."
+responses:
+  consider boar: "You would need some luck!"
+  con boar: "You would need some luck!"
+  consider: "You would need some luck!"
+  kill snake: "You slash a garden snake's head hard and shatter it!\nYou receive your share of experience."
+  change mood aggressive: "Ok.\nOB: 26%, DB: 26%, PB: 16%, Armour: 17%. Wimpy: 0. Mood: aggressive."
+  cha m aggressive: "Ok.\nOB: 26%, DB: 26%, PB: 16%, Armour: 17%. Wimpy: 0. Mood: aggressive."
+  change mood: "   _\n  | |   berserk\n  | |   aggressive\n  | |   brave\n  | |   normal\n  | |   prudent\n  |~|<- wimpy\n  / \\\n  \\_/"
+  trophy: "		*** TROPHY *** (Number Killed, Knowledge, Mobile)\n|   1,  1%,  A butterfly               |\n|   1, 10%,  A boar cub                |"
+  flee: "You panic and scramble away!\nYou flee to the East! You manage to escape safely."
 ---
 
 <TutorialPlayer>
