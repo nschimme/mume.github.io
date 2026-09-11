@@ -1,7 +1,7 @@
 // Tutorial content for the new-player walkthrough.
-// Extracted from the original standalone tutorial; edit lessons here.
+// Extracted from original tutorial & enriched with concepts from session.md.
 export const TUTORIAL = {
-  "version": 3,
+  "version": 4,
   "lessons": [
     {
       "section": "Before you start",
@@ -24,6 +24,34 @@ export const TUTORIAL = {
       ],
       "teach": [],
       "practice": null
+    },
+    {
+      "section": "Your Account & Name",
+      "title": "Account Rules & Character Names",
+      "body": [
+        "MUME uses an ACCOUNT system. You are allowed ONLY ONE ACCOUNT per person, though you can create multiple characters on it.",
+        "Type NEW when first connecting to register your account passphrase.",
+        "Character names should fit Middle-earth (e.g. Auretor, Cogundir, Fuor). Modern, offensive, or lore-breaking names are not permitted."
+      ],
+      "teach": [
+        {
+          "c": "help accounts",
+          "d": "one account per person rule"
+        },
+        {
+          "c": "help names",
+          "d": "naming conventions for Tolkien roleplay"
+        }
+      ],
+      "practice": {
+        "ask": "help names",
+        "accept": [
+          "help names",
+          "help name"
+        ],
+        "hint": "Type: help names"
+      },
+      "example": "> help names\nNAMES ON MUME\nMUME's management strongly encourages in-game role-play. Therefore, names\nmust fit reasonably with the race and Tolkien lore of your character.\nExamples of inappropriate names: Skullcrusher, Elfmage, Blah."
     },
     {
       "section": "Talking to the game",
@@ -49,14 +77,14 @@ export const TUTORIAL = {
         ],
         "hint": "Type: look"
       },
-      "example": "> look\nEast of the Bridge\nYou are standing on the Old East Road, just east of the Brandywine bridge.\nA dusty road leads to a gate in a tall hedgerow to the south - the High Hay.\nIt was grown to protect Buckland from the old forest many years ago, and is\nthick and nearly impenetrable.\nExits: north, south, east, west."
+      "example": "> look\nEast of the Bridge\nYou are standing on the Old East Road, just east of the Brandywine bridge.\nA dusty road leads to a gate in a tall hedgerow to the south - the High Hay.\nExits: north, south, east, west."
     },
     {
       "section": "The basics",
       "title": "Moving around",
       "body": [
         "You move by compass direction, not left and right. North, south, east, west, up, down.",
-        "You can type the whole word or just the first letter.",
+        "You can type the whole word or just the first letter (n, s, e, w, u, d).",
         "Every room lists its exits. If a direction is not listed, you cannot go that way.",
         "Doors sometimes need opening first: open north."
       ],
@@ -112,7 +140,7 @@ export const TUTORIAL = {
         ],
         "hint": "Type: examine elf"
       },
-      "example": "> examine elf\nFair and graceful this child of Eru is, and with but a cursory glance in your\ndirection he continues to walk, dreaming of mysterious things.\nAn elf is in an excellent condition.\nAn elf is using:\n<worn on head>       a green hood (flawless)\n<worn on body>       a grey shirt (well-maintained)\n<worn on arms>       a white pair of sleeves (satisfactory)\n<worn on legs>       a grey pair of pants (flawless)\n<worn on feet>       a pair of soft leather boots (neglected)\n\n> examine sword\nThis narrow, single-edged blade has been inlaid with gold filigree from point\nto pommel. The grip is black leather, embossed with the image of a red hill\nagainst a setting sun. An intricately fashioned guard of silver cages the\nhandle."
+      "example": "> examine elf\nFair and graceful this child of Eru is, and with but a cursory glance in your\ndirection he continues to walk, dreaming of mysterious things.\nAn elf is in an excellent condition.\nAn elf is using:\n<worn on head>       a green hood (flawless)\n<worn on body>       a grey shirt (well-maintained)"
     },
     {
       "section": "The basics",
@@ -157,7 +185,36 @@ export const TUTORIAL = {
         ],
         "hint": "Type: inventory"
       },
-      "example": "You are carrying:\na sturdy rope\na water skin\na coach ticket\na lantern\na dark coloured flask\na ticket for a trained horse"
+      "example": "You are carrying:\na sturdy rope\na water skin\na coach ticket\na lantern\na dark coloured flask"
+    },
+    {
+      "section": "Understanding Your Character",
+      "title": "Character Stats & Conditions",
+      "body": [
+        "Three commands show your condition: score, stat, and info.",
+        "score shows hits, mana, and movement points.",
+        "stat shows combat bonuses: OB (Offensive Bonus), DB (Dodge Bonus), PB (Parry Bonus), and Armour %.",
+        "info shows full details: age, level, base attributes (Str, Int, Wis, Dex, Con, Wil), and weight carried."
+      ],
+      "teach": [
+        {
+          "c": "stat",
+          "d": "OB, DB, PB, Armour protection, and XP needed"
+        },
+        {
+          "c": "info / inf",
+          "d": "full character sheet and base attributes"
+        }
+      ],
+      "practice": {
+        "ask": "stat",
+        "accept": [
+          "stat",
+          "st"
+        ],
+        "hint": "Type: stat"
+      },
+      "example": "> stat\nOB: 17%, DB: 26%, PB: 24%, Armour: 17%. Wimpy: 0. Mood: wimpy.\nNeeded: 831 xp, 0 tp. Gold: 0. Alert: normal."
     },
     {
       "section": "The basics",
@@ -175,10 +232,6 @@ export const TUTORIAL = {
         {
           "c": "drink water",
           "d": "drink from a fountain, well or river"
-        },
-        {
-          "c": "pour fountain skin",
-          "d": "refill your water skin at a water source"
         },
         {
           "c": "light torch",
@@ -220,10 +273,6 @@ export const TUTORIAL = {
         {
           "c": "tell relim hello",
           "d": "speak to one person by name"
-        },
-        {
-          "c": "nod",
-          "d": "answer yes to a character talking to you"
         }
       ],
       "practice": {
@@ -237,63 +286,109 @@ export const TUTORIAL = {
       "example": "> who ranger\nRangers\n-------\n      Martyrson N'Ekasrof"
     },
     {
-      "section": "Staying alive",
-      "title": "Fighting, and running",
+      "section": "Adventuring & Safety",
+      "title": "Scouting & Maps",
       "body": [
-        "Combat is fast and it is not turn based. You attack, then the fight continues on its own until someone stops it.",
-        "Check what you are up against before you swing. Most things that kill new characters were avoidable.",
-        "You are allowed to run. flee gets you out through a random exit, and it is often the right move.",
-        "score shows your health and how tired you are. Watch it during a fight."
+        "Before entering an unknown room or area, use scout <direction> (e.g. scout south) to peak quietly without moving into danger.",
+        "map displays a text-based regional map around your position.",
+        "map room displays an ASCII micro-map of immediate surroundings."
       ],
       "teach": [
         {
-          "c": "score",
-          "d": "your health, movement and condition"
+          "c": "scout south",
+          "d": "peak into adjacent room without moving"
         },
         {
-          "c": "kill snake",
-          "d": "attack something"
+          "c": "map",
+          "d": "display regional map"
         },
         {
-          "c": "flee",
-          "d": "break off and run!"
-        },
-        {
-          "c": "rest/sleep",
-          "d": "recover health and movement"
+          "c": "map room",
+          "d": "display local ASCII room map"
         }
       ],
       "practice": {
-        "ask": "score",
+        "ask": "scout south",
         "accept": [
-          "score",
-          "sc"
+          "scout south",
+          "scout s",
+          "scout"
         ],
-        "hint": "Type: score"
+        "hint": "Type: scout south"
       },
-      "example": "> score\nScore: 354/354 hits, 114/114 mana, and 132/132 moves."
+      "example": "> scout south\nYou quietly scout southwards...\nShaded Path\nA ruffian is here.\nYou stop scouting."
+    },
+    {
+      "section": "Staying alive",
+      "title": "Assessing Enemies",
+      "body": [
+        "Before swinging at an unfamiliar creature, check your chances with consider <target> (or con).",
+        "The game will estimate whether the fight is easy, fair, or if you 'need some luck!'."
+      ],
+      "teach": [
+        {
+          "c": "consider boar",
+          "d": "gauge difficulty of an enemy before fighting (also con)"
+        }
+      ],
+      "practice": {
+        "ask": "consider boar",
+        "accept": [
+          "consider boar",
+          "con boar",
+          "consider"
+        ],
+        "hint": "Type: consider boar"
+      },
+      "example": "> consider boar\nYou would need some luck!"
+    },
+    {
+      "section": "Staying alive",
+      "title": "Battle Tactics & Moods",
+      "body": [
+        "Combat is not turn-based. Once initiated with kill <target>, attacks occur automatically.",
+        "change mood adjusts your combat stance: berserk, aggressive, brave, normal, prudent, or wimpy.",
+        "Aggressive mood increases Offensive Bonus (OB) but lowers Parry Bonus (PB). Wimpy or prudent increases defense.",
+        "flee gets you out through a random exit when health drops low!"
+      ],
+      "teach": [
+        {
+          "c": "change mood aggressive",
+          "d": "increase OB at the cost of PB"
+        },
+        {
+          "c": "flee",
+          "d": "break off combat and escape!"
+        }
+      ],
+      "practice": {
+        "ask": "change mood aggressive",
+        "accept": [
+          "change mood aggressive",
+          "cha m aggressive",
+          "change mood"
+        ],
+        "hint": "Type: change mood aggressive"
+      },
+      "example": "> change mood aggressive\nOk.\nOB: 26%, DB: 26%, PB: 16%, Armour: 17%. Mood: aggressive."
     },
     {
       "section": "Staying alive",
       "title": "Stopping for the day",
       "body": [
-        "This is the one that catches people out. If you simply close the window, you keep your character but you lose the equipment you were carrying.",
-        "To keep your things, go to an inn and \"rent\". Your gear is stored until you come back. ",
-        "Offer tells you the price first. Inns are marked on the map.",
-        "Quit leaves the game - but you will lose your equipment!"
+        "If you simply close your browser window, you lose the equipment you were carrying!",
+        "To keep your items, go to an inn and rent. Your gear is safely stored until you log in again.",
+        "offer tells you the daily rent price.",
+        "Quit leaves the game immediately—but drops all carried items!"
       ],
       "teach": [
         {
           "c": "offer",
-          "d": "ask an inn what storage will cost"
+          "d": "ask an innkeeper what rent will cost"
         },
         {
           "c": "rent",
-          "d": "store your equipment and log out safely"
-        },
-        {
-          "c": "quit",
-          "d": "leave the game"
+          "d": "store equipment and log out safely"
         }
       ],
       "practice": {
@@ -303,17 +398,73 @@ export const TUTORIAL = {
         ],
         "hint": "Type: rent"
       },
-      "example": "> rent\nBarliman tells you 'It will cost you 6 silver pennies, and 21 copper\npennies per day.'\nYou have enough money for at least one year!\nBarliman calls for Nob who hurries from attending the Prancing Pony\nInn's guests to look at his employer inquiringly.\nBarliman says 'Please bring our esteemed guest to their chamber.'\nNob greets you with a smile before directing you to your room."
+      "example": "> rent\nBarliman Butterbur says 'It will cost you 6 silver pennies per day.'\nNob brings you to a quiet room where your character and gear rest safely."
+    },
+    {
+      "section": "Guilds & Levels",
+      "title": "Practicing Skills at Guilds",
+      "body": [
+        "When you gain levels, you earn practice sessions.",
+        "Visit Guildmasters across Middle-earth (Warrior, Ranger, Scout, Cleric, Mage) and type practice to see what they teach.",
+        "practice <skill> spends sessions to improve your knowledge % in weapon skills (slashing, parry, bash), survival (swim, climb, ride), or spells."
+      ],
+      "teach": [
+        {
+          "c": "practice",
+          "d": "list available skills at a guildmaster"
+        },
+        {
+          "c": "practice slashing",
+          "d": "spend a session to learn a skill"
+        }
+      ],
+      "practice": {
+        "ask": "practice",
+        "accept": [
+          "practice",
+          "prac"
+        ],
+        "hint": "Type: practice"
+      },
+      "example": "> practice\nYou have 13 practice sessions left.\nHuor can teach you:\n  slashing weapons   0/29   0%   Normal\n  parry              0/29   0%   Normal"
+    },
+    {
+      "section": "Interacting with players",
+      "title": "Grouping & Following",
+      "body": [
+        "Adventuring in Middle-earth is safer in a team.",
+        "follow <player> aligns your movement with a friend or Ranger leader.",
+        "group displays your current adventuring party."
+      ],
+      "teach": [
+        {
+          "c": "follow ermin",
+          "d": "follow another character automatically"
+        },
+        {
+          "c": "group",
+          "d": "display members of your adventuring party"
+        }
+      ],
+      "practice": {
+        "ask": "follow ermin",
+        "accept": [
+          "follow ermin",
+          "follow",
+          "group"
+        ],
+        "hint": "Type: follow ermin"
+      },
+      "example": "> follow ermin\nYou now follow Ermin.\n\n> group\nYour group consists of:\n  Ermin (Head of group)\n  Fuor"
     },
     {
       "section": "Getting unstuck",
       "title": "Where to find help",
       "body": [
-        "help on its own lists the subjects the game can explain. help basic is the wider command list.",
-        "The hint line at the top of your screen changes as you play, and is worth reading.",
-        "Your command sheet stays on the right. Type commands to print it into the game window at any time.",
-        "This whole walkthrough stays available while you are still marked as new. Type tutorial to run it again.",
-        "And there is always a person. Type who ranger and ask."
+        "help on its own lists help subjects. help basic is the full basic command list.",
+        "Type commands to print your tutorial command sheet into the terminal at any time.",
+        "Type tutorial to run this walkthrough again while you are new.",
+        "Type who ranger and ask a ranger whenever you need guidance."
       ],
       "teach": [
         {
@@ -327,10 +478,6 @@ export const TUTORIAL = {
         {
           "c": "commands",
           "d": "your sheet from this tutorial"
-        },
-        {
-          "c": "tutorial",
-          "d": "run this walkthrough again while you are new"
         }
       ],
       "practice": {
@@ -341,14 +488,15 @@ export const TUTORIAL = {
         ],
         "hint": "Type: help"
       },
-      "example": "> help\nHELP INDEX, INDEX\nThe help files of MUME are extensive. Below is a list of extra important\nhelp topics to explore.\n\nType the command to the left (for example \"help new\") to read about that\ntopic. You can also write \"?\" instead of \"help\": \"?new\"."
+      "example": "> help\nHELP INDEX\nhelp basic - Basic command list\nhelp new   - Guide for new players"
     },
     {
       "section": "Staying alive",
       "title": "Dying is not the end",
       "body": [
-        "You will die. Everybody dies, often, and it is a normal part of the game rather than a failure.",
-        "When you die you wake up in the Halls of Mandos. From here you \"pray <city>\" (ie, \"pray Bree\") to return to one of the towns around Middle-Earth. Your equipment stays behind on your corpse and you can go back for it, or ask someone to help you recover it.",
+        "You will die. Everybody dies, often, and it is a normal part of learning rather than a failure.",
+        "When you die you wake up in the Halls of Mandos. From here you pray <city> (e.g. pray Bree) to return to one of the towns.",
+        "Your equipment stays behind on your corpse and you can go back for it, or ask someone to help you recover it.",
         "You do not lose your character and you do not start again."
       ],
       "teach": [],
@@ -356,55 +504,11 @@ export const TUTORIAL = {
     },
     {
       "section": "Playing the game",
-      "title": "The Map and the Description panel",
-      "body": [
-        "When you start shortly, the map will appear on the left and the description panel on the right.",
-        "The map shows where you are in the game. Various icons will be displayed - \"R\" for \"Rent\" (at Inns), \"S\" for a shop, \"G\" for a guild and so on.",
-        "The Description panel gives you the description of the room you're in. This adds enormously to the immersive nature of the game."
-      ],
-      "teach": [],
-      "practice": null
-    },
-    {
-      "section": "Your character",
-      "title": "Making your character",
-      "body": [
-        "Next you choose a side, then a race, then a name.",
-        "Free Peoples play as humans, elves, half-elves, dwarves or hobbits. The forces of Mordor play as orcs, trolls and black numenoreans.",
-        "If you have no strong feeling, take a human or a hobbit on the Free Peoples side. They are the most forgiving to learn on.",
-        "Pick a name that fits Middle-earth. It stays with you."
-      ],
-      "teach": [],
-      "practice": null
-    },
-    {
-      "section": "Quests",
-      "title": "Quests",
-      "body": [
-        "You'll find many quests from non-player characters across the world. When you start, explore Tower Hills and respond when any of the characters in the town talk to you - a simple \"nod\" or \"say yes\" will help that interaction. They'll then set you off on a few quests which will help you learn the game."
-      ],
-      "teach": [],
-      "practice": null
-    },
-    {
-      "section": "Guilds and Levels",
-      "title": "Improving your character",
-      "body": [
-        "There's much to learn in MUME - it's a huge world. So we won't continue too much further in the tutorial except two more things:",
-        "Levels: Every time you level your character, by earning enough experience points (earned by killing various creatures) and travel points (earned by travelling far and wide), you'll gain practise points. You spend these in Guilds on various abilities - from Ranger and Scout skills, through to Warrior, Cleric and Mage abilities",
-        "Guilds: You'll find guilds all over Middle-Earth. At early levels, it's best to learn basic combat skills (pierce, slash, shoot) and Ranger abilities (climb, ride, swim). Don't worry about experimenting on various abilities - you can (slowly) forget them later!"
-      ],
-      "teach": [],
-      "practice": null
-    },
-    {
-      "section": "Your character",
       "title": "What happens next",
       "body": [
-        "Once your character exists, Gandalf finds you and asks for your help. That is the introduction to the world, and it will move you through several places quickly.",
+        "Once your character exists, Gandalf finds you and asks for your help.",
         "Text will scroll past faster than you can read it. That is fine. Nothing is lost, you can scroll back, and look brings the room back at any time.",
-        "You do not have to finish it. If you would rather explore Bree on your own, you can.",
-        "You know enough to start."
+        "You know enough to start your journey!"
       ],
       "teach": [],
       "practice": null

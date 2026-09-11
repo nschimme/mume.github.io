@@ -116,7 +116,71 @@ Doors can be opened or locked ('open north'). Rest when your moves run low.`,
   'help fight': `HELP COMBAT
 ===========
 Attack using 'kill <target>'. Watch your hits in 'score'. If a fight goes poorly,
-type 'flee' to break away to a random exit!`
+type 'flee' to break away to a random exit!`,
+
+  'stat': `OB: 17%, DB: 26%, PB: 24%, Armour: 17%. Wimpy: 0. Mood: wimpy.
+Needed: 831 xp, 0 tp. Gold: 0. Alert: normal.`,
+
+  'info': `You are a male Eriadorian.
+You are 18 years old.
+This ranks you as Fuor the Man Apprentice (level 1).
+Perception: vision 40, hearing -10, smell -25.
+Base abilities: Str:17 Int:12 Wis:11 Dex:17 Con:15 Wil:14 Per:15.
+Offensive Bonus: 17%, Dodging Bonus: 26%, Parrying Bonus: 24%.
+Your armour provides an average protection of 17%.
+You have 24/24 hit, 76/76 mana, and 114/114 movement points.
+You are speaking Westron.`,
+
+  'help names': `HELP NAMES ON MUME
+==================
+MUME's management strongly encourages in-game roleplay. Therefore, names
+must fit reasonably with the race and Tolkien lore of your character.
+Unacceptable: Skullcrusher, Elfmage, Blah, Helpme, Cuddlebunny.`,
+
+  'help accounts': `HELP ACCOUNTS ON MUME
+=====================
+Each player is permitted ONLY ONE ACCOUNT. You may create multiple characters
+under your single account. Sharing or transferring accounts is forbidden.`,
+
+  'scout south': `You quietly scout southwards...
+Shaded Path
+A ruffian is here.
+You stop scouting.`,
+
+  'scout': `You quietly scout southwards...
+Shaded Path
+A ruffian is here.
+You stop scouting.`,
+
+  'consider boar': `You would need some luck!`,
+  'consider': `You would need some luck!`,
+
+  'change mood aggressive': `Ok.
+OB: 26%, DB: 26%, PB: 16%, Armour: 17%. Wimpy: 0. Mood: aggressive.`,
+
+  'change mood': `   _
+  | |   berserk
+  | |   aggressive
+  | |   brave
+  | |   normal
+  | |   prudent
+  |~|<- wimpy
+  / \\
+  \\_/`,
+
+  'practice': `You have 13 practice sessions left.
+Huor can teach you:
+  slashing weapons   0/29   0%   Normal
+  parry              0/29   0%   Normal
+  endurance          0/58   0%   Very hard
+  bash               0/43   0%   Hard`,
+
+  'follow ermin': `You now follow Ermin.`,
+  'follow': `You now follow Ermin.`,
+
+  'group': `Your group consists of:
+  Ermin (Head of group)
+  Fuor`
 }
 
 const BANNER =
