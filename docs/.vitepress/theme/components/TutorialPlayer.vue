@@ -14,7 +14,110 @@ import descImg from '../../../assets/images/tutorial-desc.png'
 const PLAY_URL = '/play/browser'
 const NEWCOMERS_URL = '/resources/newcomers'
 const MAP_SECTION = 'Playing the game'
-const STORAGE_KEY = 'mume_tutorial_max_step'
+const MUME_RESPONSES = {
+  'look': `East of the Bridge
+You are standing on the Old East Road, just east of the Brandywine bridge.
+A dusty road leads to a gate in a tall hedgerow to the south - the High Hay.
+It was grown to protect Buckland from the old forest many years ago.
+Exits: north, south, east, west.
+A friendly elf is resting here under the oak tree.`,
+
+  'exits': `Exits:
+  North   - Prancing Pony Inn
+ -East-   - Cobble Street
+ -South-  - Old East Road
+ -West-   - Brandywine Bridge`,
+
+  'examine elf': `Fair and graceful this child of Eru is, and with but a cursory glance in your
+direction he continues to walk, dreaming of mysterious things.
+An elf is in an excellent condition.
+An elf is using:
+<worn on head>       a green hood (flawless)
+<worn on body>       a grey shirt (well-maintained)
+<worn on legs>       a grey pair of pants (flawless)`,
+
+  'examine sword': `This narrow, single-edged blade has been inlaid with gold filigree from point
+to pommel. The grip is black leather, embossed with the image of a red hill
+against a setting sun. An intricately fashioned guard of silver cages the handle.`,
+
+  'inventory': `You are carrying:
+a sturdy rope
+a water skin
+a coach ticket
+a lantern
+a dark coloured flask`,
+
+  'equipment': `You are using:
+<worn on body>       a travel-worn wool cloak
+<worn on legs>       leather breeches
+<worn on feet>       sturdy leather boots
+<wielded>            a silver-hilted longsword`,
+
+  'score': `Score: 354/354 hits, 114/114 mana, and 132/132 moves.
+You are a young Adventurer (Level 1).
+You are unhurt, hydrated, and well nourished.`,
+
+  'who': `Players Online in Middle-earth
+------------------------------
+  Martyrson    [Ranger]
+  Elrond       [Elf Lord]
+  GandalftheGrey [Wizard]
+Total players online: 3.`,
+
+  'who ranger': `Rangers Online
+--------------
+  Martyrson N'Ekasrof (Type 'tell Martyrson hello' for help!)`,
+
+  'drink water': `You take a long drink of cool water from your water skin. You feel refreshed!`,
+  'drink': `You take a long drink of cool water from your water skin. You feel refreshed!`,
+  'eat bread': `You eat a loaf of crusty elf bread. You are no longer hungry.`,
+  'eat': `You eat a small portion of rations. You are no longer hungry.`,
+
+  'flee': `You panic and scramble away!
+You flee to the East! You manage to escape safely.`,
+
+  'rent': `Barliman Butterbur says 'Welcome to the Prancing Pony!'
+Barliman says 'It will cost you 6 silver pennies to store your equipment safely.'
+Nob brings you to a quiet, warm chamber where your character and gear rest safely.`,
+
+  'help': `HELP INDEX (Reference: mume.org/help)
+======================================
+MUME's built-in help files cover all aspect of gameplay:
+
+  help basic    - Basic command list for movement, combat, & speech
+  help new      - Advice and guide for new players
+  help move     - Directional travel, doors, and terrain
+  help fight    - Combat, attacks, positioning, and flee
+  help magic    - Spells, mana, and magical arts
+  help rules    - World rules and conduct
+
+Type 'help <topic>' or '?' for details on any command.`,
+
+  'help basic': `HELP BASIC COMMANDS
+===================
+Movement:  north, south, east, west, up, down, exits, open
+Look:      look, examine <object>, inventory, equipment, score
+Social:    say <text>, tell <player> <text>, nod, smile
+Survival:  eat <food>, drink <container>, light <torch>, rest, rent
+Help:      help <topic>, commands, tutorial`,
+
+  'help new': `HELP NEW PLAYERS
+================
+Welcome to MUME! As a new player, remember:
+1. Always look at exits before entering new rooms.
+2. If you need assistance, type 'who ranger' and send them a message with 'tell'.
+3. Always 'rent' at an Inn before logging off so you do not lose your equipment!`,
+
+  'help move': `HELP MOVEMENT
+=============
+Travel across Middle-earth using standard compass directions (n, s, e, w, u, d).
+Doors can be opened or locked ('open north'). Rest when your moves run low.`,
+
+  'help fight': `HELP COMBAT
+===========
+Attack using 'kill <target>'. Watch your hits in 'score'. If a fight goes poorly,
+type 'flee' to break away to a random exit!`
+}
 
 const BANNER =
 `                    ***  MUME IX  ***
@@ -58,7 +161,6 @@ const currentStep = computed(() => {
 
 const idx = computed(() => currentStep.value - 1)
 
-const maxCompletedStep = ref(1)
 const log = ref([])
 const finished = ref(false)
 const awaitingExample = ref(false)
@@ -97,30 +199,16 @@ const sheetGroups = computed(() => {
   return groups
 })
 
-function loadMaxStep() {
+function focusInput() {
   if (typeof window !== 'undefined') {
-    const saved = localStorage.getItem(STORAGE_KEY)
-    if (saved) {
-      const parsed = parseInt(saved, 10)
-      if (!isNaN(parsed) && parsed > 1) {
-        maxCompletedStep.value = Math.max(1, Math.min(parsed, total))
-      }
-    }
-  }
-}
-
-function updateMaxStep(step) {
-  if (step > maxCompletedStep.value) {
-    maxCompletedStep.value = Math.min(step, total)
-    if (typeof window !== 'undefined') {
-      localStorage.setItem(STORAGE_KEY, String(maxCompletedStep.value))
-    }
+    setTimeout(() => {
+      if (inputEl.value) inputEl.value.focus()
+    }, 50)
   }
 }
 
 function goToStep(stepNum) {
   if (stepNum < 1 || stepNum > total) return
-  if (stepNum > maxCompletedStep.value) return
   awaitingExample.value = false
   finished.value = false
   const targetUrl = withBase(`/play/tutorial/${stepNum}`)
@@ -145,7 +233,6 @@ function scrollLog() {
 }
 
 function renderStepLog() {
-  updateMaxStep(currentStep.value)
   awaitingExample.value = false
   finished.value = false
 
@@ -168,6 +255,7 @@ function renderStepLog() {
 
   log.value = newLog
   scrollLog()
+  focusInput()
 }
 
 function showEnd() {
@@ -192,7 +280,6 @@ function dumpSheet() {
 
 function advanceNext() {
   const nextStep = currentStep.value + 1
-  updateMaxStep(nextStep)
   if (nextStep <= total) {
     goToStep(nextStep)
   } else {
@@ -206,15 +293,16 @@ function submit() {
   entry.value = ''
   if (raw) { log.value.push({ kind: 'echo', text: raw }) }
 
-  if (cmd === 'commands') { dumpSheet(); return }
-  if (cmd === 'skip') { skip(); return }
-  if (cmd === 'tutorial') { goToStep(1); return }
+  if (cmd === 'commands') { dumpSheet(); focusInput(); return }
+  if (cmd === 'skip') { skip(); focusInput(); return }
+  if (cmd === 'tutorial') { goToStep(1); focusInput(); return }
 
-  if (finished.value) { handover(); return }
+  if (finished.value) { handover(); focusInput(); return }
 
   if (awaitingExample.value) {
     awaitingExample.value = false
     advanceNext()
+    focusInput()
     return
   }
 
@@ -222,12 +310,21 @@ function submit() {
   const p = L && L.practice
 
   if (!p) {
-    advanceNext()
+    // Check if the user typed a known MUME command even on non-practice steps
+    if (cmd && MUME_RESPONSES[cmd]) {
+      log.value.push({ kind: 'example', body: MUME_RESPONSES[cmd] })
+      scrollLog()
+    } else {
+      advanceNext()
+    }
+    focusInput()
     return
   }
+
   if (!cmd) {
     log.value.push({ kind: 'error', text: p.hint || ('Type: ' + p.ask) })
     scrollLog()
+    focusInput()
     return
   }
 
@@ -241,14 +338,19 @@ function submit() {
     } else {
       advanceNext()
     }
+  } else if (MUME_RESPONSES[cmd]) {
+    // Show authentic response for typed command and hint practice ask
+    log.value.push({ kind: 'example', body: MUME_RESPONSES[cmd] })
+    log.value.push({ kind: 'error', text: 'Good try! To proceed in this lesson, ' + (p.hint || ('try: ' + p.ask)) })
+    scrollLog()
   } else {
     log.value.push({ kind: 'error', text: 'MUME does not know that one here. ' + (p.hint || ('Try: ' + p.ask)) })
     scrollLog()
   }
+  focusInput()
 }
 
 function skip() {
-  updateMaxStep(total)
   showEnd()
 }
 
@@ -259,17 +361,19 @@ watch(currentStep, () => {
 function handleGlobalKeydown(e) {
   if (e.key === 'Enter') {
     const active = typeof document !== 'undefined' ? document.activeElement : null
-    if (!active || active === document.body || active === inputEl.value) {
-      submit()
+    // If input element is already handling enter via @keydown.enter, don't double-trigger submit
+    if (active && active !== document.body && active !== document.documentElement) {
+      return
     }
+    submit()
   }
 }
 
 onMounted(() => {
-  loadMaxStep()
   renderStepLog()
   if (typeof window !== 'undefined') {
     window.addEventListener('keydown', handleGlobalKeydown)
+    focusInput()
   }
 })
 
@@ -302,10 +406,9 @@ onUnmounted(() => {
                     :class="{
                       done: i < currentStep,
                       now: i === currentStep,
-                      clickable: i <= maxCompletedStep && i !== currentStep
+                      clickable: i !== currentStep
                     }"
-                    :disabled="i > maxCompletedStep"
-                    :title="i <= maxCompletedStep ? 'Go to step ' + i : 'Complete previous steps to unlock'"
+                    :title="'Go to step ' + i"
                     @click="goToStep(i)"></button>
           </span>
           <span class="tut-step">{{ stepLabel }}</span>
