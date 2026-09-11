@@ -13,7 +13,7 @@ head:
 
 <div class="home">
 <div class="center-img">
-<img src="./assets/images/fellowship_bw.jpg" alt="The Fellowship" class="banner-img">
+<img src="./assets/images/fellowship_bw.jpg" alt="The Fellowship of the Ring" class="banner-img">
 </div>
 
 <div class="quote">
@@ -26,20 +26,13 @@ You can trust us to stick to you through thick and thin&mdash;to the bitter end.
 
 <div class="separator"></div>
 
-<div class="playnow">
-<div class="readytoexplore">Ready to explore Middle-earth?</div>
-<a href="./play">Play Now</a>
-</div>
-
-<MumeCallout
-  title="New to MUME?"
-  subtitle="Interactive Walkthrough"
-  body="Take your first steps in Middle-earth with our interactive beginner tutorial. Learn basic commands, map navigation, and survival tips."
-  actionText="Start Interactive Tutorial"
-  actionHref="./play/tutorial"
-  icon="fa-compass"
-  variant="gold"
-/>
+<section class="hero-actions" aria-label="Start playing MUME">
+  <div class="readytoexplore">Ready to explore Middle-earth?</div>
+  <div class="hero-buttons">
+    <a href="./play/" class="btn-primary-hero"><i class="fa fa-gamepad" aria-hidden="true"></i> Play Now</a>
+    <a href="./play/tutorial" class="btn-secondary-hero"><i class="fa fa-compass" aria-hidden="true"></i> Interactive Tutorial</a>
+  </div>
+</section>
 
 <div class="separator"></div>
 
@@ -137,3 +130,90 @@ Discover player-developed tools like MMapper, Powwow, and more. All our projects
 </section>
 </div>
 </div>
+
+<style>
+.hero-actions {
+  margin: 1.25rem 0;
+  text-align: center;
+  background: #0a0d15;
+  background-image: url(./assets/images/play-now-banner.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  font-family: "Kelt", serif;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(215, 166, 63, 0.25);
+}
+
+.readytoexplore {
+  font-size: 1.8rem;
+  color: #f4dd94;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary-hero {
+  background-color: darkgoldenrod;
+  color: #000 !important;
+  font-size: 1.2rem;
+  padding: 0.6rem 1.8rem;
+  border-radius: 40px;
+  text-decoration: none !important;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.4);
+  transition: transform 0.2s, background-color 0.2s;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary-hero:hover, .btn-primary-hero:focus-visible {
+  background-color: goldenrod;
+  transform: scale(1.04);
+}
+
+.btn-secondary-hero {
+  background-color: rgba(10, 13, 21, 0.85);
+  color: #f4dd94 !important;
+  border: 1px solid darkgoldenrod;
+  font-size: 1.1rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 40px;
+  text-decoration: none !important;
+  font-weight: bold;
+  transition: transform 0.2s, background-color 0.2s;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-secondary-hero:hover, .btn-secondary-hero:focus-visible {
+  background-color: rgba(184, 134, 11, 0.25);
+  color: #ffffff !important;
+  transform: scale(1.04);
+}
+
+@media (max-width: 650px) {
+  .hero-buttons {
+    flex-direction: column;
+  }
+  .btn-primary-hero, .btn-secondary-hero {
+    width: 100%;
+    justify-content: center;
+  }
+  .readytoexplore {
+    font-size: 1.4rem;
+  }
+}
+</style>
