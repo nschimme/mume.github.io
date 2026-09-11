@@ -180,7 +180,63 @@ Huor can teach you:
 
   'group': `Your group consists of:
   Ermin (Head of group)
-  Fuor`
+  Fuor`,
+
+  'get torch': `You get a torch.`,
+  'get all': `You get a torch.
+You get a piece of cheese.`,
+  'drop cheese': `You drop a piece of cheese on the ground.`,
+
+  'look in sack': `sack (carried) :
+a cup
+a map of Fornost
+a torch`,
+
+  'put all sack': `You put a cup in a large sack.
+You put a map of Fornost in a large sack.
+You put a torch in a large sack.`,
+
+  'hold torch': `You hold a torch in your hand.`,
+  'light torch': `You light a torch. It glows brightly, illuminating the room!`,
+  'light lantern': `You light a lantern on your belt.`,
+  'wear lantern belt': `You fasten a lantern on your belt.
+You light a lantern.`,
+
+  'call': `You call for the gate to be opened.
+You hear a *click* in a lock.
+The Irongate is opened from the other side.`,
+
+  'where': `Players in your zone
+--------------------
+Fuor                 - Western End of Market Square
+Theowen              - City Council's Meeting Room`,
+
+  'trophy': `		*** TROPHY *** (Number Killed, Knowledge, Mobile)
+
+|   1,  1%,  A butterfly               |
+|   1, 10%,  A boar cub                |`,
+
+  'rest': `You sit down and rest your tired bones.`,
+  'sleep': `You go to sleep.`,
+  'wake': `You wake, and sit up.`,
+  'stand': `You stand up.`,
+
+  'rules': `RULES INDEX (Reference: mume.org/rules)
+=====================================
+- RULES CHARACTER     Rules for character creation and accounts
+- RULES COMMUNICATION Rules for speech, whoises, and titles
+- RULES PLAYERKILLING Regulates battles between players
+- RULES AINUR         Rules for immortals`,
+
+  'pray fornost': `You kneel down and try to hear the Ainulindalë...
+Listening to them, you have the strange sensation to fade away...
+Suddenly an explosion of ancient rhymes makes the space collapse around you!
+You blink, you vanish! And you are in Fornost!`,
+
+  'pray': `You kneel down and try to hear the Ainulindalë...
+Listening to them, you have the strange sensation to fade away...
+Suddenly an explosion of ancient rhymes makes the space collapse around you!
+You blink, you vanish! And you are in Fornost!`
 }
 
 const BANNER =
@@ -208,8 +264,16 @@ Available commands:
 
 Account>`
 
+const chapters = TUTORIAL.chapters || []
 const lessons = TUTORIAL.lessons
 const total = lessons.length
+
+const currentLesson = computed(() => lessons[idx.value])
+const currentChapter = computed(() => {
+  const L = currentLesson.value
+  if (!L) return null
+  return chapters.find(c => c.id === L.chapterId) || null
+})
 
 const route = useRoute()
 const router = useRouter()
@@ -455,10 +519,11 @@ onUnmounted(() => {
         <img class="tut-logo" :src="logoImg" alt="MUME" />
         <div class="tut-heading">
           <div class="tut-title-row">
-            <span class="tut-title">New player tutorial</span>
+            <span class="tut-title">{{ currentChapter ? currentChapter.title : 'New player tutorial' }}</span>
             <button type="button" class="tut-sheet-toggle-btn" @click="isSheetOpen = !isSheetOpen" aria-label="Toggle Command Sheet">
               Commands {{ learned.length ? `(${learned.length})` : '' }}
             </button>
+            <a class="tut-hub-link" :href="withBase('/resources/newcomers')">← Newcomers Hub</a>
           </div>
           <span class="tut-sub">Your first hour in Middle-earth</span>
         </div>
@@ -577,6 +642,7 @@ onUnmounted(() => {
       <div class="tut-sheet-backdrop" v-if="isSheetOpen" @click="isSheetOpen = false"></div>
 
       <div class="tut-controls">
+        <a class="tut-hub-ghost" :href="withBase('/resources/newcomers')">← Newcomers Guide</a>
         <button v-if="!finished" class="tut-ghost" @click="skip">Skip to the end</button>
         <button v-else class="tut-ghost" @click="goToStep(1)">Run the tutorial again</button>
       </div>
@@ -651,8 +717,12 @@ onUnmounted(() => {
 .tut-sheet-body dt, .tut-dump dt { color: #d8b04a; font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 12.5px; }
 .tut-sheet-body dd, .tut-dump dd { color: #9a9a9a; margin: 0; font-size: 12.5px; }
 
-.tut-title-row { display: flex; align-items: center; gap: 8px; }
+.tut-title-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .tut-sheet-toggle-btn { display: none; background: rgba(184,134,11,.18); border: 1px solid rgba(215,166,63,.4); color: #f4dd94; font-size: 11px; padding: 2px 8px; border-radius: 12px; cursor: pointer; }
+.tut-hub-link { color: #d8b04a !important; font-size: 12px; margin-left: auto; text-decoration: none !important; transition: color .2s; }
+.tut-hub-link:hover { color: #fff !important; text-decoration: underline !important; }
+.tut-hub-ghost { display: inline-block; background: none; border: 1px solid rgba(215,166,63,.4); color: #9a927f !important; border-radius: 30px; padding: 7px 16px; font-size: 13px; text-decoration: none !important; margin-right: 12px; font-family: 'Merriweather', serif; transition: background .2s, color .2s; }
+.tut-hub-ghost:hover { background: rgba(184,134,11,.12); color: #f4dd94 !important; }
 
 .tut-send-btn { background: darkgoldenrod; border: none; color: #fff; font-family: 'Kelt', serif; font-size: 13px; padding: 4px 12px; border-radius: 14px; cursor: pointer; font-weight: bold; }
 
