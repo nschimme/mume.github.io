@@ -337,10 +337,10 @@ onMounted(() => {
 .tut-dump { margin: 8px 0; }
 
 .tut-end-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 8px 0 12px; }
-.tut-enter { display: inline-block; font-family: 'Kelt', serif; font-size: 20px; background: darkgoldenrod; color: #000 !important; font-weight: bold; padding: .4em 1.4em; border-radius: 40px; box-shadow: 0 6px 18px rgba(0,0,0,.5); text-decoration: none !important; transition: transform .2s, box-shadow .2s, background-color .2s; }
-.tut-enter:hover, .tut-enter:focus-visible { color: #000 !important; background: goldenrod; transform: scale(1.04); box-shadow: 0 9px 24px rgba(184,134,11,.4); }
-.tut-secondary-link { display: inline-block; font-family: 'Kelt', serif; font-size: 17px; background: transparent; color: #74a9be !important; border: 1px solid #74a9be; padding: .4em 1.2em; border-radius: 40px; text-decoration: none !important; transition: background-color .2s, color .2s; }
-.tut-secondary-link:hover, .tut-secondary-link:focus-visible { background: rgba(116,169,190,.15); color: #fff !important; }
+.tut-enter { display: inline-block; font-family: 'Kelt', serif; font-size: 1.15rem; background: darkgoldenrod; color: white !important; padding: 0.5em 2em; border-radius: 3.75rem; box-shadow: 1px 5px 10px 0px rgba(184, 134, 11, 0.5); text-decoration: none !important; transition: color .2s; }
+.tut-enter:hover, .tut-enter:focus-visible { color: #3a3a3a !important; text-decoration: none !important; }
+.tut-secondary-link { display: inline-block; font-family: 'Kelt', serif; font-size: 1.15rem; background: rgba(10, 13, 21, 0.75); color: white !important; border: 2px solid darkgoldenrod; padding: 0.5em 2em; border-radius: 3.75rem; box-shadow: 1px 5px 10px 0px rgba(184, 134, 11, 0.5); text-decoration: none !important; transition: background-color .2s, color .2s; }
+.tut-secondary-link:hover, .tut-secondary-link:focus-visible { background: darkgoldenrod; color: #3a3a3a !important; text-decoration: none !important; }
 .tut-note { color: #8f8a7d; font-size: 12.5px; margin: 4px 0 6px; }
 
 .tut-prompt { display: flex; align-items: center; gap: 8px; border-top: 1px solid #23262e; padding: 12px 18px; background: #08080a; }

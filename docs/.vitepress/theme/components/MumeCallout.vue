@@ -132,30 +132,31 @@ defineProps({
   align-items: center;
   gap: 0.5rem;
   background-color: darkgoldenrod;
-  color: #000 !important;
+  color: white !important;
   font-family: 'Kelt', serif;
-  font-size: 1rem;
-  padding: 0.55rem 1.2rem;
-  border-radius: 25px;
+  font-size: 1.1rem;
+  padding: 0.5em 2em;
+  border-radius: 3.75rem;
   text-decoration: none !important;
-  font-weight: bold;
   white-space: nowrap;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 1px 5px 10px 0px rgba(184, 134, 11, 0.5);
+  transition: color 0.2s ease;
   min-height: 44px;
 }
 
 .variant-blue .callout-btn {
-  background-color: #74a9be;
-  color: #0b0d14 !important;
+  background-color: darkgoldenrod;
+  color: white !important;
 }
 
 .callout-btn:hover, .callout-btn:focus-visible {
-  background-color: goldenrod;
-  transform: scale(1.03);
+  color: #3a3a3a !important;
+  text-decoration: none !important;
 }
 
 .variant-blue .callout-btn:hover, .variant-blue .callout-btn:focus-visible {
-  background-color: #a1cad9;
+  color: #3a3a3a !important;
+  text-decoration: none !important;
 }
 
 .callout-btn:focus-visible {

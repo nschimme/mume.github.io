@@ -149,37 +149,39 @@ function handleExpClick(e, href) {
   justify-content: center;
   gap: 0.5rem;
   font-family: 'Kelt', serif;
-  font-size: 1.05rem;
-  padding: 0.65rem 1.25rem;
-  border-radius: 30px;
+  font-size: 1.15rem;
+  padding: 0.5em 2em;
+  border-radius: 3.75rem;
   text-decoration: none !important;
-  font-weight: bold;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  font-weight: normal;
+  transition: background-color 0.2s ease, color 0.2s ease;
   cursor: pointer;
   min-height: 44px;
+  box-shadow: 1px 5px 10px 0px rgba(184, 134, 11, 0.5);
+  color: white !important;
 }
 
 .primary-btn {
   background-color: darkgoldenrod;
-  color: #000 !important;
+  border: none;
 }
 
 .primary-btn:hover, .primary-btn:focus-visible {
-  background-color: goldenrod;
-  color: #000 !important;
-  transform: scale(1.02);
+  background-color: darkgoldenrod;
+  color: #3a3a3a !important;
+  text-decoration: none !important;
 }
 
 .secondary-btn {
-  background-color: transparent;
-  color: #f4dd94 !important;
-  border: 1px solid darkgoldenrod;
+  background-color: rgba(10, 13, 21, 0.75);
+  border: 2px solid darkgoldenrod;
+  color: white !important;
 }
 
 .secondary-btn:hover, .secondary-btn:focus-visible {
-  background-color: rgba(184, 134, 11, 0.15);
-  color: #ffffff !important;
-  transform: scale(1.02);
+  background-color: darkgoldenrod;
+  color: #3a3a3a !important;
+  text-decoration: none !important;
 }
 
 .choice-btn:focus-visible {
