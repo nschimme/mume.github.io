@@ -1,10 +1,10 @@
 // Tutorial content for the new-player walkthrough.
-// Extracted from original tutorial & enriched with concepts from session.md.
+// Sequenced logically from basic interaction -> exploration -> combat -> character growth -> safety nets.
 export const TUTORIAL = {
-  "version": 4,
+  "version": 5,
   "lessons": [
     {
-      "section": "Before you start",
+      "section": "1. Orientation",
       "title": "What is a MUD?",
       "body": [
         "MUME is a MUD: a Multi-User Dungeon. It is a game world made of text, played by hundreds of people at the same time.",
@@ -15,18 +15,18 @@ export const TUTORIAL = {
       "practice": null
     },
     {
-      "section": "Before you start",
+      "section": "1. Orientation",
       "title": "What is MUME?",
       "body": [
         "MUME is Middle-earth. The map is built from Tolkien, from the Shire to Bree to the Misty Mountains, and it has been growing since 1991.",
         "You pick a side. The Free Peoples defend the West. The forces of Mordor attack it.",
-        "As a new player, you'll start on the side of men, hobbits, dwarves and elves. You will begin your journey near the Tower Hills as a new character with only the most basic of equipment. That is normal. Everyone starts there."
+        "As a new player, you'll start on the side of men, hobbits, dwarves or elves. You will begin your journey near the Tower Hills with basic equipment."
       ],
       "teach": [],
       "practice": null
     },
     {
-      "section": "Your Account & Name",
+      "section": "1. Orientation",
       "title": "Account Rules & Character Names",
       "body": [
         "MUME uses an ACCOUNT system. You are allowed ONLY ONE ACCOUNT per person, though you can create multiple characters on it.",
@@ -51,10 +51,10 @@ export const TUTORIAL = {
         ],
         "hint": "Type: help names"
       },
-      "example": "> help names\nNAMES ON MUME\nMUME's management strongly encourages in-game role-play. Therefore, names\nmust fit reasonably with the race and Tolkien lore of your character.\nExamples of inappropriate names: Skullcrusher, Elfmage, Blah."
+      "example": "> help names\nNAMES ON MUME\nMUME's management strongly encourages in-game roleplay. Therefore, names\nmust fit reasonably with the race and Tolkien lore of your character.\nExamples of inappropriate names: Skullcrusher, Elfmage, Blah."
     },
     {
-      "section": "Talking to the game",
+      "section": "2. Basic Interaction",
       "title": "How to type",
       "body": [
         "You talk to MUME in short instructions. Usually a verb, then a thing.",
@@ -80,7 +80,7 @@ export const TUTORIAL = {
       "example": "> look\nEast of the Bridge\nYou are standing on the Old East Road, just east of the Brandywine bridge.\nA dusty road leads to a gate in a tall hedgerow to the south - the High Hay.\nExits: north, south, east, west."
     },
     {
-      "section": "The basics",
+      "section": "2. Basic Interaction",
       "title": "Moving around",
       "body": [
         "You move by compass direction, not left and right. North, south, east, west, up, down.",
@@ -113,11 +113,11 @@ export const TUTORIAL = {
       "example": "> exits\nExits:\n  North   - Prancing Pony Inn\n -East-   - Cobble Street\n -South-  - Old East Road\n -West-   - Old East Road"
     },
     {
-      "section": "The basics",
+      "section": "2. Basic Interaction",
       "title": "Looking at things",
       "body": [
         "look on its own describes the room again. Useful when text has scrolled past you.",
-        "examine a specific thing to study it closely. Most objects, people and signs have their own description, and examine shows you the detail.",
+        "examine a specific thing to study it closely. Most objects, people and signs have their own description.",
         "It works on anything you can see: examine sword, examine elf, examine sign."
       ],
       "teach": [
@@ -140,14 +140,14 @@ export const TUTORIAL = {
         ],
         "hint": "Type: examine elf"
       },
-      "example": "> examine elf\nFair and graceful this child of Eru is, and with but a cursory glance in your\ndirection he continues to walk, dreaming of mysterious things.\nAn elf is in an excellent condition.\nAn elf is using:\n<worn on head>       a green hood (flawless)\n<worn on body>       a grey shirt (well-maintained)"
+      "example": "> examine elf\nFair and graceful this child of Eru is, and with but a cursory glance in your\ndirection he continues to walk, dreaming of mysterious things.\nAn elf is in an excellent condition."
     },
     {
-      "section": "The basics",
+      "section": "2. Basic Interaction",
       "title": "Carrying and wearing",
       "body": [
         "Picking something up is not the same as using it. You get it, then you wear it or wield it.",
-        "Two lists matter. inventory is what you are carrying. equipment is what you have on you and in your hands.",
+        "Two lists matter: inventory is what you are carrying; equipment is what you have on you and in your hands.",
         "Word order counts when you give things away: give sword to guard."
       ],
       "teach": [
@@ -170,10 +170,6 @@ export const TUTORIAL = {
         {
           "c": "wield sword",
           "d": "hold a weapon ready"
-        },
-        {
-          "c": "remove cloak",
-          "d": "take something off"
         }
       ],
       "practice": {
@@ -188,41 +184,12 @@ export const TUTORIAL = {
       "example": "You are carrying:\na sturdy rope\na water skin\na coach ticket\na lantern\na dark coloured flask"
     },
     {
-      "section": "Understanding Your Character",
-      "title": "Character Stats & Conditions",
-      "body": [
-        "Three commands show your condition: score, stat, and info.",
-        "score shows hits, mana, and movement points.",
-        "stat shows combat bonuses: OB (Offensive Bonus), DB (Dodge Bonus), PB (Parry Bonus), and Armour %.",
-        "info shows full details: age, level, base attributes (Str, Int, Wis, Dex, Con, Wil), and weight carried."
-      ],
-      "teach": [
-        {
-          "c": "stat",
-          "d": "OB, DB, PB, Armour protection, and XP needed"
-        },
-        {
-          "c": "info / inf",
-          "d": "full character sheet and base attributes"
-        }
-      ],
-      "practice": {
-        "ask": "stat",
-        "accept": [
-          "stat",
-          "st"
-        ],
-        "hint": "Type: stat"
-      },
-      "example": "> stat\nOB: 17%, DB: 26%, PB: 24%, Armour: 17%. Wimpy: 0. Mood: wimpy.\nNeeded: 831 xp, 0 tp. Gold: 0. Alert: normal."
-    },
-    {
-      "section": "The basics",
+      "section": "2. Basic Interaction",
       "title": "Food, water and light",
       "body": [
         "Your character gets hungry and thirsty, and will tell you when. Ignore it long enough and you weaken.",
         "Buy food in towns and drink at fountains, wells and rivers. Carry a water skin so you can drink anywhere.",
-        "Away from towns it gets dark, and in the dark you cannot see the room or the exits. Carry a torch or wear a lantern before you leave."
+        "Away from towns it gets dark. Carry a torch or wear a lantern before you leave."
       ],
       "teach": [
         {
@@ -249,13 +216,46 @@ export const TUTORIAL = {
       "example": "> drink water\nYou drink the water."
     },
     {
-      "section": "The basics",
+      "section": "3. Your Character",
+      "title": "Understanding Your Stats",
+      "body": [
+        "Three commands show your condition: score, stat, and info.",
+        "score shows hits, mana, and movement points.",
+        "stat shows combat bonuses: OB (Offensive Bonus), DB (Dodge Bonus), PB (Parry Bonus), and Armour %.",
+        "info shows full details: age, level, base attributes (Str, Int, Wis, Dex, Con, Wil), and weight carried."
+      ],
+      "teach": [
+        {
+          "c": "score",
+          "d": "your health, movement and condition"
+        },
+        {
+          "c": "stat",
+          "d": "OB, DB, PB, Armour protection, and XP needed"
+        },
+        {
+          "c": "info / inf",
+          "d": "full character sheet and base attributes"
+        }
+      ],
+      "practice": {
+        "ask": "score",
+        "accept": [
+          "score",
+          "sc"
+        ],
+        "hint": "Type: score"
+      },
+      "example": "> score\nScore: 354/354 hits, 114/114 mana, and 132/132 moves."
+    },
+    {
+      "section": "4. Social & Community",
       "title": "Talking to people",
       "body": [
         "There are real people in this world, and they will help you. Rangers exist specifically to help new players.",
         "say talks to everyone in the room. tell talks to one person anywhere in the world.",
         "Characters run by the game respond to simple things. If one asks you a question, nod or say yes.",
-        "If you are stuck, this is the fastest fix in the game. Find a ranger and ask."
+        "If you are stuck, find a ranger and ask."
       ],
       "teach": [
         {
@@ -286,7 +286,36 @@ export const TUTORIAL = {
       "example": "> who ranger\nRangers\n-------\n      Martyrson N'Ekasrof"
     },
     {
-      "section": "Adventuring & Safety",
+      "section": "4. Social & Community",
+      "title": "Grouping & Following",
+      "body": [
+        "Adventuring in Middle-earth is safer in a team.",
+        "follow <player> aligns your movement with a friend or Ranger leader.",
+        "group displays your current adventuring party."
+      ],
+      "teach": [
+        {
+          "c": "follow ermin",
+          "d": "follow another character automatically"
+        },
+        {
+          "c": "group",
+          "d": "display members of your adventuring party"
+        }
+      ],
+      "practice": {
+        "ask": "follow ermin",
+        "accept": [
+          "follow ermin",
+          "follow",
+          "group"
+        ],
+        "hint": "Type: follow ermin"
+      },
+      "example": "> follow ermin\nYou now follow Ermin.\n\n> group\nYour group consists of:\n  Ermin (Head of group)\n  Fuor"
+    },
+    {
+      "section": "5. Exploration & Survival",
       "title": "Scouting & Maps",
       "body": [
         "Before entering an unknown room or area, use scout <direction> (e.g. scout south) to peak quietly without moving into danger.",
@@ -319,7 +348,7 @@ export const TUTORIAL = {
       "example": "> scout south\nYou quietly scout southwards...\nShaded Path\nA ruffian is here.\nYou stop scouting."
     },
     {
-      "section": "Staying alive",
+      "section": "5. Exploration & Survival",
       "title": "Assessing Enemies",
       "body": [
         "Before swinging at an unfamiliar creature, check your chances with consider <target> (or con).",
@@ -343,7 +372,7 @@ export const TUTORIAL = {
       "example": "> consider boar\nYou would need some luck!"
     },
     {
-      "section": "Staying alive",
+      "section": "5. Exploration & Survival",
       "title": "Battle Tactics & Moods",
       "body": [
         "Combat is not turn-based. Once initiated with kill <target>, attacks occur automatically.",
@@ -352,6 +381,10 @@ export const TUTORIAL = {
         "flee gets you out through a random exit when health drops low!"
       ],
       "teach": [
+        {
+          "c": "kill snake",
+          "d": "attack something"
+        },
         {
           "c": "change mood aggressive",
           "d": "increase OB at the cost of PB"
@@ -373,35 +406,7 @@ export const TUTORIAL = {
       "example": "> change mood aggressive\nOk.\nOB: 26%, DB: 26%, PB: 16%, Armour: 17%. Mood: aggressive."
     },
     {
-      "section": "Staying alive",
-      "title": "Stopping for the day",
-      "body": [
-        "If you simply close your browser window, you lose the equipment you were carrying!",
-        "To keep your items, go to an inn and rent. Your gear is safely stored until you log in again.",
-        "offer tells you the daily rent price.",
-        "Quit leaves the game immediately—but drops all carried items!"
-      ],
-      "teach": [
-        {
-          "c": "offer",
-          "d": "ask an innkeeper what rent will cost"
-        },
-        {
-          "c": "rent",
-          "d": "store equipment and log out safely"
-        }
-      ],
-      "practice": {
-        "ask": "rent",
-        "accept": [
-          "rent"
-        ],
-        "hint": "Type: rent"
-      },
-      "example": "> rent\nBarliman Butterbur says 'It will cost you 6 silver pennies per day.'\nNob brings you to a quiet room where your character and gear rest safely."
-    },
-    {
-      "section": "Guilds & Levels",
+      "section": "6. Character Growth",
       "title": "Practicing Skills at Guilds",
       "body": [
         "When you gain levels, you earn practice sessions.",
@@ -429,36 +434,35 @@ export const TUTORIAL = {
       "example": "> practice\nYou have 13 practice sessions left.\nHuor can teach you:\n  slashing weapons   0/29   0%   Normal\n  parry              0/29   0%   Normal"
     },
     {
-      "section": "Interacting with players",
-      "title": "Grouping & Following",
+      "section": "6. Character Growth",
+      "title": "Stopping for the day",
       "body": [
-        "Adventuring in Middle-earth is safer in a team.",
-        "follow <player> aligns your movement with a friend or Ranger leader.",
-        "group displays your current adventuring party."
+        "If you simply close your browser window, you lose the equipment you were carrying!",
+        "To keep your items, go to an inn and rent. Your gear is safely stored until you log in again.",
+        "offer tells you the daily rent price.",
+        "Quit leaves the game immediately—but drops all carried items!"
       ],
       "teach": [
         {
-          "c": "follow ermin",
-          "d": "follow another character automatically"
+          "c": "offer",
+          "d": "ask an innkeeper what rent will cost"
         },
         {
-          "c": "group",
-          "d": "display members of your adventuring party"
+          "c": "rent",
+          "d": "store equipment and log out safely"
         }
       ],
       "practice": {
-        "ask": "follow ermin",
+        "ask": "rent",
         "accept": [
-          "follow ermin",
-          "follow",
-          "group"
+          "rent"
         ],
-        "hint": "Type: follow ermin"
+        "hint": "Type: rent"
       },
-      "example": "> follow ermin\nYou now follow Ermin.\n\n> group\nYour group consists of:\n  Ermin (Head of group)\n  Fuor"
+      "example": "> rent\nBarliman Butterbur says 'It will cost you 6 silver pennies per day.'\nNob brings you to a quiet room where your character and gear rest safely."
     },
     {
-      "section": "Getting unstuck",
+      "section": "7. Getting Unstuck",
       "title": "Where to find help",
       "body": [
         "help on its own lists help subjects. help basic is the full basic command list.",
@@ -491,7 +495,7 @@ export const TUTORIAL = {
       "example": "> help\nHELP INDEX\nhelp basic - Basic command list\nhelp new   - Guide for new players"
     },
     {
-      "section": "Staying alive",
+      "section": "7. Getting Unstuck",
       "title": "Dying is not the end",
       "body": [
         "You will die. Everybody dies, often, and it is a normal part of learning rather than a failure.",
@@ -503,7 +507,7 @@ export const TUTORIAL = {
       "practice": null
     },
     {
-      "section": "Playing the game",
+      "section": "8. Beginning Your Journey",
       "title": "What happens next",
       "body": [
         "Once your character exists, Gandalf finds you and asks for your help.",
