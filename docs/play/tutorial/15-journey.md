@@ -1,42 +1,32 @@
 ---
-title: "The Hero's Journey Begins"
-description: "Graduate from the interactive tutorial, check online adventurers with who, and choose your preferred MUME client."
+title: "Hero's Graduation & Community Help"
+description: "Locate online player Rangers with WHO RANGER and prepare to enter Middle-earth."
 teach:
-  - command: "who"
-    desc: "check list of online players currently in Middle-earth"
-  - command: "help client"
-    desc: "review web and desktop client options"
+  - command: "who ranger"
+    desc: "find online Rangers dedicated to assisting new players"
 steps:
-  - ask: "who"
-    note: "Fuor is ready for true adventures! Check who is online across Middle-earth with WHO."
+  - ask: "who ranger"
+    note: "MUME Rangers exist specifically to help newcomers! Find active Rangers using WHO RANGER."
     accept:
+      - "who ranger"
+      - "who rangers"
       - "who"
-    hint: "Type: who"
-    example: "> who\nPlayers currently online: Fuor, Ermin, Ozzy, Ashura."
-  - ask: "help client"
-    note: "Review available web and desktop MUD clients."
-    accept:
-      - "help client"
-      - "help clients"
-    hint: "Type: help client"
-    example: "> help client\nClients: MMapper Web (browser), MMapper Desktop, Mudlet."
+    hint: "Type: who ranger"
+    example: "> who ranger\nRangers\n-------\n\n0 such allies or visible Ainur on."
 responses:
-  who: "PLAYERS ONLINE IN MIDDLE-EARTH\n==============================\nFuor the Man Warrior (Level 2)\nErmin the Elf Ranger\nOzzy the Rohirrim\nAshura the Half-Elf"
-  help client: "CLIENTS FOR MUME\n================\n1. MMapper Web: Play directly in your browser with real-time mapping at /play/browser.\n2. MMapper Desktop: Native desktop client with automapping and hotkeys.\n3. Mudlet: Highly customizable open-source MUD client."
-  help clients: "CLIENTS FOR MUME: MMapper Web (/play/browser), MMapper Desktop, Mudlet."
+  who ranger: "Rangers\n-------\n\n0 such allies or visible Ainur on.\n\n*+->"
+  who rangers: "Rangers\n-------\n\n0 such allies or visible Ainur on.\n\n*+->"
+  who: "Players Online: Fuor, Martyrson, Elrond, Glorfindel.\n\n*+->"
 ---
 
 <TutorialPlayer>
 
-# The Hero's Journey Begins
+# Hero's Graduation & Community Help
 
-Congratulations! You have completed all 15 chapters of Fuor's interactive tutorial.
+Congratulations! You have mastered the core mechanics of MUME: navigation, wimpy safety setup, equipment, communication, combat postures, and inn renting.
 
-Check who is currently online (`WHO`), review client options (`HELP CLIENT`), and choose how you want to play:
+If you ever get lost or need advice in-game, type `who ranger` to find friendly players dedicated to helping newcomers!
 
-<div class="tutorial-completion-cta" style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-  <a href="/play/browser" class="callout-btn" style="background: #b8860b; color: #fff; padding: 0.75rem 1.25rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Launch MMapper Web (Browser) ➔</a>
-  <a href="/resources/newcomers" class="callout-btn" style="background: #2a2a2a; color: #f0e6d2; border: 1px solid #b8860b; padding: 0.75rem 1.25rem; border-radius: 6px; text-decoration: none;">Return to Newcomers Hub ➔</a>
-</div>
+Type `who ranger` below to graduate!
 
 </TutorialPlayer>

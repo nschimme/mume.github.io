@@ -5,7 +5,7 @@ teach:
   - command: "up"
     desc: "ascend to the Inn's Private Rooms"
   - command: "examine innkeeper"
-    desc: "inspect the innkeeper at his counter"
+    desc: "inspect the innkeeper at his desk"
   - command: "offer"
     desc: "ask the innkeeper for your daily storage rate"
   - command: "rent"
@@ -38,12 +38,12 @@ steps:
     hint: "Type: rent"
     example: "> rent\nThe innkeeper says 'Please bring our esteemed guest to their chamber.'"
 responses:
-  up: "Inn's Private Rooms\nRows of simple wooden doors leading to the guest rooms are accessed from a long\ncorridor behind a small counter. A small brass bell rests on the counter to\nsummon the innkeeper if he is away from his post. Covering the floor is a\nthreadbare rug which, although worn, deadens the noise coming from below.\nThe innkeeper set is here, smiling at would-be customers.\nExits: north, down."
-  u: "Inn's Private Rooms\nThe innkeeper stands behind the desk here.\nExits: north, down."
-  examine innkeeper: "The old innkeeper was maybe in his youth an adventurer like yourself, who\nprospered enough on his travels to buy this inn.\nThe innkeeper is in an excellent condition.\nThe innkeeper is using:\n<worn on body>       a chequered shirt (flawless)\n<worn on legs>       a pair of cotton pants (worn)\n<worn on finger>     a ring"
-  ex innkeeper: "The old innkeeper stands behind the counter, smiling warmly."
-  offer: "The innkeeper tells you 'It will cost you 19 copper pennies per day.'\nYou have enough money for at least two years!"
-  rent: "The innkeeper tells you 'It will cost you 19 copper pennies per day.'\nYou have enough money for at least two years!\nThe innkeeper calls for a servant who hurries from attending guests.\nThe innkeeper says 'Please bring our esteemed guest to their chamber.'\nYou are guided to your private room. Your equipment is safely stored."
+  up: "Inn's Private Rooms\nRows of simple wooden doors leading to the guest rooms are accessed from a long\ncorridor behind a small counter. A small brass bell rests on the counter to\nsummon the innkeeper if he is away from his post. Covering the floor is a\nthreadbare rug which, although worn, deadens the noise coming from below.\nThe innkeeper set is here, smiling at would-be customers.\nExits: north, down.\nThe innkeeper says 'Welcome to the largest inn in Black Hill village! I have never run out of rooms.'\n\n![>"
+  u: "Inn's Private Rooms\nThe innkeeper stands behind the desk here.\nExits: north, down.\n\n![>"
+  examine innkeeper: "The old innkeeper was maybe in his youth an adventurer like yourself, who\nprospered enough on his travels to buy this inn.\nThe innkeeper is in an excellent condition.\nThe innkeeper is using:\n<worn on body>       a chequered shirt (flawless)\n<worn on legs>       a pair of cotton pants (worn)\n<worn on finger>     a ring\n\n![>"
+  ex innkeeper: "The old innkeeper stands behind the counter, smiling warmly.\n\n![>"
+  offer: "The innkeeper tells you 'It will cost you 19 copper pennies per day.'\nYou have enough money for at least two years!\n\n![>"
+  rent: "The innkeeper tells you 'It will cost you 19 copper pennies per day.'\nYou have enough money for at least two years!\nThe innkeeper calls for a servant who hurries from attending guests.\nThe innkeeper says 'Please bring our esteemed guest to their chamber.'\nYou are guided to your private room. Your equipment is safely stored.\n\n![>"
 ---
 
 <TutorialPlayer>

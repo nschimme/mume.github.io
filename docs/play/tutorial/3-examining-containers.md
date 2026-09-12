@@ -1,68 +1,51 @@
 ---
-title: "Navigating Black Hill Village"
-description: "Master compass movement, exit inspection, and zone orientation across Black Hill Village."
+title: "Examining & Containers"
+description: "Inspect specific objects in detail and practice putting items in or retrieving them from bags."
 teach:
-  - command: "exits"
-    desc: "display obvious exits and destinations"
-  - command: "south"
-    desc: "head south into the Black Hill Stables"
-  - command: "west"
-    desc: "head west into Black Hill Market Square"
-  - command: "where"
-    desc: "locate players in your immediate area"
-  - command: "north"
-    desc: "head north into the Common Room of The Foaming Mug"
+  - command: "examine table"
+    desc: "inspect a specific object in detail"
+  - command: "get cheese sack"
+    desc: "retrieve an item from inside a container"
+  - command: "put cheese sack"
+    desc: "store an item inside a bag or container"
 steps:
-  - ask: "exits"
-    note: "Check available exits in The Foaming Mug's Beer Garden using EXITS."
+  - ask: "examine table"
+    note: "Use EXAMINE (or EXA) to inspect the small oaken table in detail."
     accept:
-      - "exits"
-      - "ex"
-    hint: "Type: exits"
-    example: "> exits\n  South   - Black Hill Stables\n  West    - Common Room of The Foaming Mug"
-  - ask: "south"
-    note: "Move SOUTH into the Black Hill Stables."
+      - "examine table"
+      - "exa table"
+      - "examine"
+    hint: "Type: examine table"
+    example: "> examine table\nA small oaken table set on the lawn. On the table, there is a piece of cheese."
+  - ask: "get cheese sack"
+    note: "Retrieve rations from inside your sack using GET <item> <container>."
     accept:
-      - "south"
-      - "s"
-    hint: "Type: south (or s)"
-    example: "> south\nBlack Hill Stables\nNarrow wooden stalls filled with fresh-cut hay provide basic accommodation."
-  - ask: "west"
-    note: "Move WEST from the stables into Black Hill Market Square."
+      - "get cheese sack"
+      - "get cheese from sack"
+    hint: "Type: get cheese sack"
+    example: "> get cheese sack\nYou get a piece of cheese from a large sack."
+  - ask: "put cheese sack"
+    note: "Store items back in your bag using PUT <item> <container>."
     accept:
-      - "west"
-      - "w"
-    hint: "Type: west (or w)"
-    example: "> west\nBlack Hill Market Square\nThis is the heart and centre of the village. Many residents crowd the square."
-  - ask: "where"
-    note: "Use WHERE to locate players and key residents nearby."
-    accept:
-      - "where"
-    hint: "Type: where"
-    example: "> where\nPlayer               Distance    Direction  Room\nFuor                 Very near              Black Hill Market Square"
-  - ask: "north"
-    note: "Head NORTH into the cozy Common Room of The Foaming Mug inn."
-    accept:
-      - "north"
-      - "n"
-    hint: "Type: north (or n)"
-    example: "> north\nCommon Room of The Foaming Mug\nThis large room is filled with long, wooden tables and simple benches."
+      - "put cheese sack"
+      - "put cheese in sack"
+    hint: "Type: put cheese sack"
+    example: "> put cheese sack\nYou put a piece of cheese in a large sack."
 responses:
-  exits: "Exits:\n  South   - Black Hill Stables\n  West    - Common Room of The Foaming Mug"
-  ex: "Exits:\n  South   - Black Hill Stables\n  West    - Common Room of The Foaming Mug"
-  south: "Black Hill Stables\nNarrow wooden stalls filled with fresh-cut hay provide basic but comfortable\naccommodation for horses and mules of all kinds. Primitive but functional tack\nfor use on the horses has been stored on a wooden trestle against the outer\nwall. A ladder leading to the loft space allows the stable-hands access.\nA long water trough made of wood stands here.\nA rather dirty young boy is here, ready to tend to the stable.\nExits: north, east, west."
-  s: "Black Hill Stables\nNarrow wooden stalls filled with fresh-cut hay provide basic accommodation.\nExits: north, east, west."
-  west: "Black Hill Market Square\nThis is the heart and centre of the village. Many residents crowd the square,\ntalking and laughing as they go about their business. A small market has been\nset up here specialising in vegetables and other local produce. A rather large\nbuilding dominates the northern side of the square.\nMaelton, village elder of Black Hill, stands here watching the goings-on.\nExits: north, east, south, =west=."
-  w: "Black Hill Market Square\nThis is the heart and centre of the village. Maelton stands here.\nExits: north, east, south, =west=."
-  where: "Player               Distance    Direction  Room\n-----------------------------------------------------------\nFuor                 Very near              Black Hill Market Square"
-  north: "Common Room of The Foaming Mug\nThis large room is filled with long, wooden tables and simple benches running\nalong each side. The locals appear to be making great use of this inn with most\ntables taken and the room filled with sounds of chattering and clinking of\nmugs. Set into the wall is a large, open fire which burns local peat.\nA bartender watches you calmly, while wiping ale mugs with a grimy cloth.\nExits: north, east, south, up."
-  n: "Common Room of The Foaming Mug\nA large stone fireplace warms the room. A bartender watches you calmly.\nExits: north, east, south, up."
+  examine table: "A small oaken table crafted from local timber rests on the garden lawn.\nOn the table, there is a piece of cheese.\n\n!.*>"
+  exa table: "A small oaken table crafted from local timber rests on the garden lawn.\n\n!.*>"
+  get cheese sack: "You get a piece of cheese from a large sack.\n\n!.*>"
+  get cheese from sack: "You get a piece of cheese from a large sack.\n\n!.*>"
+  put cheese sack: "You put a piece of cheese in a large sack.\n\n!.*>"
+  put cheese in sack: "You put a piece of cheese in a large sack.\n\n!.*>"
 ---
 
 <TutorialPlayer>
 
-# Navigating Black Hill Village
+# Examining & Containers
 
-Explore the bustling village of **Black Hill**: step from the Beer Garden into the **Black Hill Stables**, cross over to **Market Square**, check nearby players (`WHERE`), and step inside **The Foaming Mug** tavern.
+`examine` gives detailed descriptions of items, people, and room features. Container commands follow the pattern `get <item> <container>` and `put <item> <container>`.
+
+Practice `examine table`, `get cheese sack`, and `put cheese sack` below!
 
 </TutorialPlayer>

@@ -1,74 +1,59 @@
 ---
-title: "Combat Stances & Battle Tactics"
-description: "Adjust offensive and defensive combat stances, battle a wild boar cub, and achieve Level 2."
+title: "Shopping & Trading"
+description: "Browse shop inventory, buy travel rations, and give items to townspeople."
 teach:
-  - command: "change mood aggressive"
-    desc: "shift to aggressive stance for maximum Offensive Bonus (OB)"
-  - command: "stat"
-    desc: "verify OB increase and PB decrease in aggressive stance"
-  - command: "change mood wimpy"
-    desc: "return to defensive wimpy stance for safety"
-  - command: "hit cub"
-    desc: "engage a wild boar cub in battle"
-  - command: "info"
-    desc: "verify your new rank: Level 2 Man Apprentice!"
+  - command: "south"
+    desc: "head south into the Cluttered Traveller's Shop"
+  - command: "list"
+    desc: "browse the shopkeeper's available stock and prices"
+  - command: "buy bread"
+    desc: "purchase travel rations"
+  - command: "give bread maelton"
+    desc: "give an item to another character (item name comes first)"
 steps:
-  - ask: "change mood aggressive"
-    note: "Change Fuor's stance to AGGRESSIVE to maximize Offensive Bonus."
+  - ask: "south"
+    note: "Head SOUTH from Market Square into the Cluttered Traveller's Shop."
     accept:
-      - "change mood aggressive"
-      - "cha m aggressive"
-    hint: "Type: change mood aggressive"
-    example: "> change mood aggressive\nOk."
-  - ask: "stat"
-    note: "Check your stats to observe higher OB (26%) and lower PB (16%)."
+      - "south"
+      - "s"
+    hint: "Type: south (or s)"
+    example: "> south\nCluttered Traveller's Shop\nWhile the shop may be small it is packed from floor to ceiling."
+  - ask: "list"
+    note: "Type LIST to browse the grocer's wares and prices."
     accept:
-      - "stat"
-      - "st"
-    hint: "Type: stat"
-    example: "> stat\nOB: 26%, DB: 26%, PB: 16%. Mood: aggressive."
-  - ask: "change mood wimpy"
-    note: "Return to a defensive WIMPY stance."
+      - "list"
+    hint: "Type: list"
+    example: "> list\nYou can buy: 71. ten loaves of bread up to 13 copper."
+  - ask: "buy bread"
+    note: "Purchase a loaf of travel bread using BUY BREAD."
     accept:
-      - "change mood wimpy"
-      - "cha m wimpy"
-    hint: "Type: change mood wimpy"
-    example: "> change mood wimpy\nOk."
-  - ask: "hit cub"
-    note: "Attack the wild boar cub!"
+      - "buy bread"
+    hint: "Type: buy bread"
+    example: "> buy bread\nYou buy a loaf of bread for 13 copper pennies."
+  - ask: "give bread maelton"
+    note: "Give your bread to Maelton. Remember MUME syntax: GIVE <item> <person>!"
     accept:
-      - "hit cub"
-      - "kill cub"
-      - "k cub"
-    hint: "Type: hit cub"
-    example: "> hit cub\nYou strongly slash a boar cub! You gain a level!"
-  - ask: "info"
-    note: "Inspect your character sheet to celebrate reaching Level 2!"
-    accept:
-      - "info"
-      - "inf"
-    hint: "Type: info"
-    example: "> info\nThis ranks you as Fuor the Man Apprentice (level 2)."
+      - "give bread maelton"
+      - "give bread to maelton"
+    hint: "Type: give bread maelton"
+    example: "> give bread maelton\nYou give a loaf of bread to Maelton the village elder."
 responses:
-  change mood aggressive: "Ok."
-  cha m aggressive: "Ok."
-  stat: "OB: 26%, DB: 26%, PB: 16%, Armour: 17%. Wimpy: 0. Mood: aggressive."
-  st: "OB: 26%, DB: 26%, PB: 16%."
-  change mood wimpy: "Ok."
-  cha m wimpy: "Ok."
-  hit cub: "You strongly slash a boar cub's left foreleg and shatter it.\nYou slash a boar cub's body extremely hard and shatter it.\nYou gain a level!\nYou receive your share of experience.\nCongratulations! This is the first time you've killed it!\nA boar cub is dead! R.I.P."
-  kill cub: "You strongly slash a boar cub... You gain a level! A boar cub is dead! R.I.P."
-  k cub: "You strongly slash a boar cub... You gain a level! A boar cub is dead! R.I.P."
-  info: "You are a male Eriadorian.\nThis ranks you as Fuor the Man Apprentice (level 2).\nYou have 30/38 hit, 74/74 mana, and 114/114 movement points.\nOffensive Bonus: 19%, Dodging Bonus: 26%, Parrying Bonus: 25%."
-  inf: "Fuor the Man Apprentice (level 2). Hit: 30/38, Mana: 74/74, Moves: 114/114."
+  south: "Cluttered Traveller's Shop\nWhile the shop may be small it is packed from floor to ceiling with all manner\nof items, most of them stored in dusty boxes upon wooden shelves. It certainly\nseems as if few people have bought much of the shopkeeper's stock recently.\nA large grocer is here, waiting to buy or sell some goods.\nExits: north.\n\n*[>ÿù"
+  s: "Cluttered Traveller's Shop\nExits: north.\n\n*[>ÿù"
+  list: "You can buy:\n   1. five large yellow apples up to thirteen copper.\n   7. five large biscuits up to seven copper.\n  71. ten loaves of bread up to thirteen copper.\n 124. ten pieces of cheese up to seven copper.\n\n*[>ÿù"
+  buy bread: "You buy a loaf of bread for thirteen copper pennies.\n\n*[>ÿù"
+  give bread maelton: "You give a loaf of bread to Maelton the village elder.\nMaelton says 'Thank you, Fuor! You are truly a friend of Black Hill Village!'\n\n!+*>"
+  give bread to maelton: "You give a loaf of bread to Maelton the village elder.\n\n!+*>"
 ---
 
 <TutorialPlayer>
 
-# Combat Stances & Battle Tactics
+# Shopping & Trading
 
-Combat in MUME allows you to adjust your tactical stance depending on the threat level.
+To trade with merchants, inspect stock using `list` and purchase items with `buy <item>`.
 
-Practice changing combat stances (`CHANGE MOOD AGGRESSIVE` / `WIMPY`), engaging a wild boar cub in battle (`HIT CUB`), and celebrating Fuor's milestone: **Gaining Level 2**!
+When giving items to NPCs or players, MUME syntax strictly expects **`give <item> <person>`** (item name before person)!
+
+Practice `south`, `list`, `buy bread`, and `give bread maelton` below!
 
 </TutorialPlayer>

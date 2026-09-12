@@ -1,64 +1,30 @@
 ---
-title: "Survival, Healing & Rest"
-description: "Rest, sleep, wake, stand, and drink water from your cup to accelerate hit point and movement recovery."
+title: "Emergency Fleeing"
+description: "Master emergency tactical retreats to disengage from dangerous combat."
 teach:
-  - command: "rest"
-    desc: "sit down to rest tired bones and speed recovery"
-  - command: "sleep"
-    desc: "sleep to maximize hit point and mana regeneration"
-  - command: "wake"
-    desc: "awaken from sleep"
-  - command: "stand"
-    desc: "stand up to prepare for movement or combat"
-  - command: "drink cup"
-    desc: "drink fresh water to prevent dehydration"
+  - command: "flee"
+    desc: "immediately disengage and run away through a random exit"
 steps:
-  - ask: "rest"
-    note: "Fuor reaches a safe clearing. Sit down and REST to accelerate recovery."
+  - ask: "flee"
+    note: "When a fight turns deadly, type FLEE (or F) to break combat immediately!"
     accept:
-      - "rest"
-    hint: "Type: rest"
-    example: "> rest\nYou sit down and rest your tired bones."
-  - ask: "sleep"
-    note: "Go to SLEEP to maximize hit point regeneration."
-    accept:
-      - "sleep"
-    hint: "Type: sleep"
-    example: "> sleep\nYou go to sleep."
-  - ask: "wake"
-    note: "WAKE up after feeling fully refreshed."
-    accept:
-      - "wake"
-    hint: "Type: wake"
-    example: "> wake\nYou wake, and sit up."
-  - ask: "stand"
-    note: "STAND up so Fuor can walk and fight again."
-    accept:
-      - "stand"
-      - "st"
-    hint: "Type: stand"
-    example: "> stand\nYou stand up."
-  - ask: "drink cup"
-    note: "Drink fresh water from your cup to satisfy thirst."
-    accept:
-      - "drink cup"
-    hint: "Type: drink cup"
-    example: "> drink cup\nYou drink the water. A cup is now empty."
+      - "flee"
+      - "f"
+    hint: "Type: flee"
+    example: "> flee\nYou flee head over heels.\nYou flee north.\nBend in the Path"
 responses:
-  rest: "You sit down and rest your tired bones."
-  sleep: "You go to sleep."
-  wake: "You wake, and sit up."
-  stand: "You stand up."
-  st: "You stand up."
-  drink cup: "You drink the water.\nA cup is now empty."
+  flee: "You flee head over heels.\nYou flee north.\n\nBend in the Path\nThe road turns here to pass between the tall homes on either side of the road.\nHigh above, a laundry line stretches across the street, the bed sheets pegged\nto it flapping in the wind.\nA little boy is here, running around.\nExits: =south=, =west=.\n\n*+->"
+  f: "You flee head over heels.\nYou flee north.\n\nBend in the Path\nExits: =south=, =west=.\n\n*+->"
 ---
 
 <TutorialPlayer>
 
-# Survival, Healing & Rest
+# Emergency Fleeing
 
-Injured or exhausted adventurers must rest and stay hydrated to recover vital strength.
+Dying is a natural part of learning MUME, but running away is often the smartest tactical decision!
 
-Practice resting (`REST`), sleeping (`SLEEP`), waking (`WAKE`), standing (`STAND`), and drinking fresh water (`DRINK CUP`).
+Typing `flee` immediately breaks combat and escapes through a random exit.
+
+Type `flee` below to practice your emergency retreat!
 
 </TutorialPlayer>

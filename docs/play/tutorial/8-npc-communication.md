@@ -1,52 +1,61 @@
 ---
-title: "Into the Wilds & First Blood"
-description: "Step into northern fields, evaluate enemy difficulty with consider, defeat a butterfly, and check trophy logs."
+title: "NPC Interaction & Communication"
+description: "Inspect townspeople, listen to quest givers, speak aloud, and send private tells."
 teach:
-  - command: "consider butterfly"
-    desc: "assess enemy difficulty before attacking"
-  - command: "hit butterfly"
-    desc: "engage a target in combat"
-  - command: "trophy"
-    desc: "view your vanquished enemy kill log"
+  - command: "examine maelton"
+    desc: "inspect Maelton the village elder in detail"
+  - command: "say yes"
+    desc: "speak aloud to accept a quest or answer an NPC"
+  - command: "nod"
+    desc: "nod solemnly to confirm agreement"
+  - command: "tell Fuor hello"
+    desc: "send a private message to a player anywhere in Middle-earth"
 steps:
-  - ask: "consider butterfly"
-    note: "Fuor steps into the fields outside Fornost. Use CONSIDER to evaluate the translucent butterfly."
+  - ask: "examine maelton"
+    note: "Inspect Maelton the village elder in Market Square using EXAMINE MAELTON."
     accept:
-      - "consider butterfly"
-      - "con butterfly"
-      - "consider"
-    hint: "Type: consider butterfly"
-    example: "> consider butterfly\nIt looks easy indeed!"
-  - ask: "hit butterfly"
-    note: "Attack the butterfly with your backsword."
+      - "examine maelton"
+      - "exa maelton"
+    hint: "Type: examine maelton"
+    example: "> examine maelton\nMaelton the village elder has a long, thin jaw and immaculate white beard."
+  - ask: "say yes"
+    note: "Speak aloud to accept Maelton's quest with SAY YES."
     accept:
-      - "hit butterfly"
-      - "kill butterfly"
-      - "k butterfly"
-    hint: "Type: hit butterfly"
-    example: "> hit butterfly\nYou slash a butterfly's leg extremely hard! A butterfly is dead! R.I.P."
-  - ask: "trophy"
-    note: "Inspect your trophy list to see vanquished creatures."
+      - "say yes"
+      - "say y"
+    hint: "Type: say yes"
+    example: "> say yes\nYou say 'yes'\nMaelton says 'Wonderful! Please visit the local grocer in the southern shop.'"
+  - ask: "nod"
+    note: "Confirm your agreement with NOD."
     accept:
-      - "trophy"
-    hint: "Type: trophy"
-    example: "> trophy\n*** TROPHY *** (1 Killed, 1% Knowledge: A butterfly)"
+      - "nod"
+    hint: "Type: nod"
+    example: "> nod\nYou nod solemnly."
+  - ask: "tell Fuor hello"
+    note: "Send a private direct message across Middle-earth using TELL <person> <message>."
+    accept:
+      - "tell Fuor hello"
+      - "tell fuor hello"
+      - "tell"
+    hint: "Type: tell Fuor hello"
+    example: "> tell Fuor hello\nYou tell Fuor 'hello'"
 responses:
-  consider butterfly: "It looks easy indeed!"
-  con butterfly: "It looks easy indeed!"
-  consider: "It looks easy indeed!"
-  hit butterfly: "You slash a butterfly's leg extremely hard and shatter it.\nYou receive your share of experience.\nCongratulations! This is the first time you've killed it!\nA butterfly is dead! R.I.P."
-  kill butterfly: "You slash a butterfly's leg extremely hard and shatter it. A butterfly is dead! R.I.P."
-  k butterfly: "You slash a butterfly's leg extremely hard and shatter it. A butterfly is dead! R.I.P."
-  trophy: "		*** TROPHY *** (Number Killed, Knowledge, Mobile)\n\n|   1,  1%,  A butterfly               |                                      |"
+  examine maelton: "Frail wisps of white hair have been combed over rather ineffectively to rest on\na balding head of a village elder. He has a long, thin jaw and prominent chin\nthat ends with a long and white immaculately-trimmed beard. The elder is quite\ntanned with thick calluses on his hands, remnants of his past hard work.\nMaelton the village elder is in an excellent condition.\nMaelton the village elder is using:\n<worn on head>       a brown hood (flawless)\n<worn on body>       a brown shirt (satisfactory)\n<worn about body>    a blue cloak (satisfactory)\n<worn on arms>       a brown pair of sleeves (flawless)\n<worn on legs>       a brown pair of pants (used)\n<worn on feet>       a pair of heavy shoes (satisfactory)\n<worn on finger>     a ring\n<worn as belt>       a black leather belt\n<worn on belt>       a lit lantern\n\n!+*>"
+  exa maelton: "Maelton the village elder stands here watching the goings-on.\n\n!+*>"
+  say yes: "You say 'yes'\nMaelton the village elder says 'Wonderful, Fuor! Please visit the local grocer in the southern shop.'\n\n!+*>"
+  say y: "You say 'yes'\n\n!+*>"
+  nod: "You nod solemnly.\n\n!+*>"
+  tell Fuor hello: "You tell Fuor 'hello'\n\n!+*>"
+  tell fuor hello: "You tell Fuor 'hello'\n\n!+*>"
+  tell: "You tell Fuor 'hello'\n\n!+*>"
 ---
 
 <TutorialPlayer>
 
-# Into the Wilds & First Blood
+# NPC Interaction & Communication
 
-Fuor steps past the city gates into the open fields of Eriador.
+Interacting with characters is key to unlocking quests and getting help. `say` speaks to everyone in the room, while `tell` sends a private message to anyone online.
 
-Learn how to evaluate opponents using `CONSIDER`, initiate combat (`HIT`), and check your vanquished kill log (`TROPHY`).
+Practice `examine maelton`, `say yes`, `nod`, and `tell Fuor hello` below!
 
 </TutorialPlayer>

@@ -1,59 +1,69 @@
 ---
-title: "Tactical Retreat & Scouting Danger"
-description: "Flee emergency combat, set auto-flee thresholds, view regional tactical maps, and scout ahead."
+title: "Combat Safety & Stances"
+description: "Assess enemy strength with CONSIDER and adjust combat stances with CHANGE MOOD."
 teach:
-  - command: "flee"
-    desc: "immediately escape emergency combat in a random direction"
-  - command: "change wimpy 15"
-    desc: "set automatic fleeing threshold when HP falls below 15"
-  - command: "map"
-    desc: "view regional area map"
-  - command: "scout south"
-    desc: "stealthily scout adjacent room for lurking threats"
+  - command: "consider wolf"
+    desc: "gauge enemy difficulty relative to your hero level"
+  - command: "change mood aggressive"
+    desc: "boost Offensive Bonus (OB) at the cost of defense"
+  - command: "hit wolf"
+    desc: "engage target in real-time combat"
+  - command: "change mood wimpy"
+    desc: "restore defensive Dodging Bonus (DB) to protect your health"
 steps:
-  - ask: "flee"
-    note: "Ambushed by a dangerous highway ruffian! Type FLEE to escape immediately!"
+  - ask: "consider wolf"
+    note: "Gauge a hungry timber wolf's strength using CONSIDER WOLF."
     accept:
-      - "flee"
-      - "f"
-    hint: "Type: flee (or f)"
-    example: "> flee\nYou flee head over heels! Shaded Path."
-  - ask: "change wimpy 15"
-    note: "Set your automatic wimpy flee threshold to 15 HP for safety."
+      - "consider wolf"
+      - "con wolf"
+    hint: "Type: consider wolf"
+    example: "> consider wolf\nThe timber wolf looks like an easy target for you."
+  - ask: "change mood aggressive"
+    note: "Switch to aggressive stance (CHANGE MOOD AGGRESSIVE) to maximize your attack bonus."
     accept:
-      - "change wimpy 15"
-      - "cha w 15"
-    hint: "Type: change wimpy 15"
-    example: "> change wimpy 15\nWimpy set to 15 hit points."
-  - ask: "map"
-    note: "Inspect the regional wilderness area map centered on your position ('X')."
+      - "change mood aggressive"
+      - "cha mood aggressive"
+      - "cha m aggressive"
+    hint: "Type: change mood aggressive"
+    example: "> change mood aggressive\nOk."
+  - ask: "hit wolf"
+    note: "Attack the wolf with HIT WOLF."
     accept:
-      - "map"
-    hint: "Type: map"
-    example: "> map\n           Map of Nearby Zones\n     |              X              |"
-  - ask: "scout south"
-    note: "Scout stealthily southwards to check if the ruffian is lurking."
+      - "hit wolf"
+      - "kill wolf"
+      - "k wolf"
+    hint: "Type: hit wolf"
+    example: "> hit wolf\nYou slash a hungry timber wolf with your backsword!"
+  - ask: "change mood wimpy"
+    note: "Switch back to defensive stance (CHANGE MOOD WIMPY) to restore your defense."
     accept:
-      - "scout south"
-      - "scout s"
-    hint: "Type: scout south"
-    example: "> scout south\nYou quietly scout southwards... Shaded Path: A ruffian is here."
+      - "change mood wimpy"
+      - "cha mood wimpy"
+      - "cha m wimpy"
+    hint: "Type: change mood wimpy"
+    example: "> change mood wimpy\nOk."
 responses:
-  flee: "A ruffian cleaves your left arm and shatters it. That really HURT!\nYou flee head over heels.\nBend in the Road\nExits: =North= South =West=."
-  f: "You flee head over heels.\nBend in the Road."
-  change wimpy 15: "Wimpy set to 15 hit points."
-  cha w 15: "Wimpy set to 15 hit points."
-  map: "           Map of Nearby Zones\n      -----------------------------\n     |              X              |\n     |              *              |\n     |              :              |\n     |*         ~~ :*%%:         **|\n      -----------------------------"
-  scout south: "You quietly scout southwards...\nShaded Path\nA ruffian is here.\nYou stop scouting."
-  scout s: "You quietly scout southwards... Shaded Path: A ruffian is here."
+  consider wolf: "A hungry timber wolf looks like an easy target for you.\n\n*+->"
+  con wolf: "A hungry timber wolf looks like an easy target for you.\n\n*+->"
+  change mood aggressive: "Ok.\nYour Offensive Bonus (OB) increases while your Dodging Bonus (DB) decreases.\n\n*+->"
+  cha mood aggressive: "Ok.\n\n*+->"
+  cha m aggressive: "Ok.\n\n*+->"
+  hit wolf: "You slash a hungry timber wolf's side with your backsword!\nA hungry timber wolf growls and snaps at you!\n\n*+->"
+  kill wolf: "You slash a hungry timber wolf's side with your backsword!\n\n*+->"
+  k wolf: "You slash a hungry timber wolf's side with your backsword!\n\n*+->"
+  change mood wimpy: "Ok.\nYour Dodging Bonus (DB) increases to protect your health.\n\n*+->"
+  cha mood wimpy: "Ok.\n\n*+->"
+  cha m wimpy: "Ok.\n\n*+->"
 ---
 
 <TutorialPlayer>
 
-# Tactical Retreat & Scouting Danger
+# Combat Safety & Stances
 
-When faced with overwhelming foes, tactical retreat and scouting save lives.
+Before fighting, use `consider` to assess your enemy.
 
-Practice emergency fleeing (`FLEE`), setting automatic flee thresholds (`CHANGE WIMPY 15`), checking regional wilderness maps (`MAP`), and scouting adjacent rooms stealthily (`SCOUT SOUTH`).
+In MUME, combat is real-time! Adjust your posture using `change mood aggressive` to strike harder, or `change mood wimpy` to raise your defense (`DB`).
+
+Practice `consider wolf`, `change mood aggressive`, `hit wolf`, and `change mood wimpy` below!
 
 </TutorialPlayer>
