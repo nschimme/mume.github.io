@@ -136,28 +136,54 @@ function renderStepLog() {
   focusInput()
 }
 
+function completeChapter() {
+  finished.value = true
+  log.value.push({
+    kind: 'chapter_complete',
+    chapterNum: chapterNum.value,
+    title: chapterTitle.value,
+    nextUrl: nextChapterUrl.value
+  })
+  scrollLog()
+}
+
 function advanceNext() {
   if (nextChapterUrl.value) {
     navigateToUrl(nextChapterUrl.value)
   } else {
-    finished.value = true
-    log.value.push({ kind: 'end' })
-    scrollLog()
+    completeChapter()
   }
 }
 
 function advanceSubStep() {
-  subStepIdx.value++
-  if (subStepIdx.value < stepsList.value.length) {
+  if (subStepIdx.value < stepsList.value.length - 1) {
+    subStepIdx.value++
     const nextSub = currentSubStep.value
     log.value.push({
       kind: 'prompt_next',
+      stepIndex: subStepIdx.value,
+      totalSteps: stepsList.value.length,
       note: nextSub.note || null,
       ask: nextSub.ask
     })
     scrollLog()
   } else {
-    advanceNext()
+    completeChapter()
+  }
+}
+
+function prevSubStep() {
+  if (subStepIdx.value > 0) {
+    subStepIdx.value--
+    const prevSub = currentSubStep.value
+    log.value.push({
+      kind: 'prompt_prev',
+      stepIndex: subStepIdx.value,
+      totalSteps: stepsList.value.length,
+      note: prevSub.note || null,
+      ask: prevSub.ask
+    })
+    scrollLog()
   }
 }
 
@@ -283,6 +309,24 @@ onMounted(() => {
 
               <div v-else-if="b.kind === 'error'" class="tut-err">{{ b.text }}</div>
 
+              <template v-else-if="b.kind === 'chapter_complete'">
+                <div class="tut-complete-box">
+                  <div class="tut-eyebrow">Chapter {{ b.chapterNum }} Complete!</div>
+                  <h3 class="tut-h">Great work mastering {{ b.title }}</h3>
+                  <p class="tut-line" v-if="b.nextUrl">Ready to continue your journey into Middle-earth?</p>
+                  <p class="tut-line" v-else>You have completed all chapters in the interactive tutorial!</p>
+
+                  <div class="tut-end-actions">
+                    <button v-if="b.nextUrl" type="button" class="tut-enter" @click="navigateToUrl(b.nextUrl)">
+                      Continue to Next Chapter &rarr;
+                    </button>
+                    <a v-else class="tut-enter" :href="withBase(BROWSER_PLAY_URL)">Play MUME Now (Web Client) &rarr;</a>
+                    <a class="tut-secondary-link" :href="withBase(NEWCOMERS_URL)">Newcomers Hub</a>
+                    <a class="tut-secondary-link" :href="withBase(PLAY_HUB_URL)">Play Hub</a>
+                  </div>
+                </div>
+              </template>
+
               <template v-else-if="b.kind === 'end'">
                 <hr class="tut-rule" />
                 <div class="tut-eyebrow">Congratulations!</div>
@@ -334,9 +378,26 @@ onMounted(() => {
       <div class="tut-sheet-backdrop" v-if="isSheetOpen" @click="isSheetOpen = false"></div>
 
       <div class="tut-controls">
-        <a class="tut-hub-ghost" :href="withBase('/resources/newcomers')">← Newcomers Hub</a>
-        <button v-if="prevChapterUrl" class="tut-ghost" @click="navigateToUrl(prevChapterUrl)">← Previous Chapter</button>
-        <button v-if="nextChapterUrl" class="tut-ghost" @click="navigateToUrl(nextChapterUrl)">Next Chapter →</button>
+        <div class="tut-nav-group tut-step-nav" v-if="stepsList.length > 1">
+          <button type="button" class="tut-icon-btn" :disabled="subStepIdx === 0" @click="prevSubStep" title="Previous Step">
+            &#x2039;
+          </button>
+          <div class="tut-step-pills">
+            <span v-for="(st, sIdx) in stepsList" :key="sIdx"
+                  class="tut-step-pill"
+                  :class="{ active: sIdx === subStepIdx, done: sIdx < subStepIdx }"
+                  :title="'Step ' + (sIdx + 1)"></span>
+          </div>
+          <button type="button" class="tut-icon-btn" :disabled="subStepIdx >= stepsList.length - 1" @click="advanceSubStep" title="Next Step">
+            &#x203A;
+          </button>
+        </div>
+
+        <div class="tut-nav-group tut-chapter-nav">
+          <a class="tut-hub-ghost" :href="withBase('/resources/newcomers')">&larr; Newcomers Hub</a>
+          <button v-if="prevChapterUrl" class="tut-ghost" @click="navigateToUrl(prevChapterUrl)">&larr; Prev Chapter</button>
+          <button v-if="nextChapterUrl" class="tut-ghost" @click="navigateToUrl(nextChapterUrl)">Next Chapter &rarr;</button>
+        </div>
       </div>
     </div>
   </div>
@@ -362,6 +423,23 @@ onMounted(() => {
 
 .tut-body { display: grid; grid-template-columns: 1fr 260px; gap: 0; }
 @media (max-width: 720px) { .tut-body { grid-template-columns: 1fr; } }
+
+@keyframes tutStreamIn {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.tut-block {
+  animation: tutStreamIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.tut-complete-box {
+  margin: 16px 0;
+  padding: 16px 20px;
+  background: rgba(184, 134, 11, 0.1);
+  border: 1px solid rgba(215, 166, 63, 0.4);
+  border-radius: 8px;
+}
 
 .tut-term { display: flex; flex-direction: column; min-width: 0; }
 .tut-log { min-height: 440px; max-height: 520px; overflow-y: auto; padding: 12px 18px 16px; scroll-behavior: smooth; }
@@ -407,7 +485,17 @@ onMounted(() => {
 
 .tut-sheet-close { display: none; background: none; border: none; color: #9a927f; font-size: 20px; cursor: pointer; padding: 0 4px; }
 
-.tut-controls { border-top: 1px solid #23262e; padding: 10px 16px; text-align: right; background: #0b0b0d; }
+.tut-controls { border-top: 1px solid #23262e; padding: 10px 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; background: #0b0b0d; }
+.tut-nav-group { display: flex; align-items: center; gap: 8px; }
+
+.tut-step-pills { display: flex; align-items: center; gap: 4px; padding: 0 4px; }
+.tut-step-pill { width: 14px; height: 4px; border-radius: 2px; background: #2a2a2a; transition: background .2s, width .2s; }
+.tut-step-pill.done { background: #a9812a; }
+.tut-step-pill.active { background: #f4dd94; width: 22px; box-shadow: 0 0 6px rgba(244,221,148,.5); }
+
+.tut-icon-btn { background: rgba(184,134,11,.12); border: 1px solid rgba(215,166,63,.3); color: #f4dd94; width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 16px; cursor: pointer; transition: background .2s, opacity .2s; line-height: 1; padding-bottom: 2px; }
+.tut-icon-btn:hover:not(:disabled) { background: rgba(184,134,11,.3); }
+.tut-icon-btn:disabled { opacity: 0.3; cursor: not-allowed; }
 .tut-ghost { background: none; border: 1px solid #b8860b; color: #d7a63f; border-radius: 30px; padding: 7px 16px; font-size: 13px; cursor: pointer; font-family: 'Merriweather', serif; transition: background .2s, color .2s; }
 .tut-ghost:hover { background: rgba(184,134,11,.12); color: #f4dd94; }
 
