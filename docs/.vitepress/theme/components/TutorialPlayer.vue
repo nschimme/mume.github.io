@@ -191,6 +191,17 @@ function submit() {
   const raw = entry.value.trim()
   const cmd = raw.toLowerCase()
   entry.value = ''
+
+  if (finished.value) {
+    if (nextChapterUrl.value) {
+      navigateToUrl(nextChapterUrl.value)
+    } else {
+      navigateToUrl(BROWSER_PLAY_URL)
+    }
+    focusInput()
+    return
+  }
+
   if (raw) { log.value.push({ kind: 'echo', text: raw }) }
 
   if (cmd === 'skip') { advanceNext(); focusInput(); return }
@@ -347,7 +358,7 @@ onMounted(() => {
             <span class="tut-caret">&gt;</span>
             <input ref="inputEl" v-model="entry" @keydown.enter.prevent="submit"
                    autocomplete="off" spellcheck="false"
-                   :placeholder="finished ? 'type tutorial to replay' : 'type here, then press Enter'"
+                   :placeholder="finished ? (nextChapterUrl ? 'Press Enter to continue to next chapter...' : 'Press Enter to play MUME...') : 'type here, then press Enter'"
                    aria-label="Type a command" />
             <button type="button" class="tut-send-btn" @click="submit" aria-label="Send Command">
               Send
@@ -378,26 +389,38 @@ onMounted(() => {
       <div class="tut-sheet-backdrop" v-if="isSheetOpen" @click="isSheetOpen = false"></div>
 
       <div class="tut-controls">
-        <div class="tut-nav-group tut-step-nav" v-if="stepsList.length > 1">
-          <button type="button" class="tut-icon-btn" :disabled="subStepIdx === 0" @click="prevSubStep" title="Previous Step">
-            &#x2039;
+        <div class="tut-combined-nav">
+          <!-- Prev Chapter « -->
+          <button type="button" class="tut-nav-btn" :disabled="!prevChapterUrl" @click="navigateToUrl(prevChapterUrl)" title="Previous Chapter («)">
+            &laquo;
           </button>
-          <div class="tut-step-pills">
+
+          <!-- Prev Step < -->
+          <button type="button" class="tut-nav-btn" :disabled="subStepIdx === 0 || stepsList.length <= 1" @click="prevSubStep" title="Previous Step (<)">
+            &lsaquo;
+          </button>
+
+          <!-- Integrated Step Indicator Pills -->
+          <div class="tut-step-pills" v-if="stepsList.length > 1">
             <span v-for="(st, sIdx) in stepsList" :key="sIdx"
                   class="tut-step-pill"
                   :class="{ active: sIdx === subStepIdx, done: sIdx < subStepIdx }"
-                  :title="'Step ' + (sIdx + 1)"></span>
+                  :title="'Step ' + (sIdx + 1) + ' of ' + stepsList.length"></span>
           </div>
-          <button type="button" class="tut-icon-btn" :disabled="subStepIdx >= stepsList.length - 1" @click="advanceSubStep" title="Next Step">
-            &#x203A;
+          <span v-else class="tut-ch-badge">Ch {{ chapterNum }}</span>
+
+          <!-- Next Step > -->
+          <button type="button" class="tut-nav-btn" :disabled="subStepIdx >= stepsList.length - 1 || stepsList.length <= 1" @click="advanceSubStep" title="Next Step (>)">
+            &rsaquo;
+          </button>
+
+          <!-- Next Chapter » -->
+          <button type="button" class="tut-nav-btn" :disabled="!nextChapterUrl" @click="navigateToUrl(nextChapterUrl)" title="Next Chapter (»)">
+            &raquo;
           </button>
         </div>
 
-        <div class="tut-nav-group tut-chapter-nav">
-          <a class="tut-hub-ghost" :href="withBase('/resources/newcomers')">&larr; Newcomers Hub</a>
-          <button v-if="prevChapterUrl" class="tut-ghost" @click="navigateToUrl(prevChapterUrl)">&larr; Prev Chapter</button>
-          <button v-if="nextChapterUrl" class="tut-ghost" @click="navigateToUrl(nextChapterUrl)">Next Chapter &rarr;</button>
-        </div>
+        <a class="tut-hub-ghost" :href="withBase('/resources/newcomers')">Newcomers Hub</a>
       </div>
     </div>
   </div>
@@ -486,18 +509,19 @@ onMounted(() => {
 .tut-sheet-close { display: none; background: none; border: none; color: #9a927f; font-size: 20px; cursor: pointer; padding: 0 4px; }
 
 .tut-controls { border-top: 1px solid #23262e; padding: 10px 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; background: #0b0b0d; }
-.tut-nav-group { display: flex; align-items: center; gap: 8px; }
 
-.tut-step-pills { display: flex; align-items: center; gap: 4px; padding: 0 4px; }
-.tut-step-pill { width: 14px; height: 4px; border-radius: 2px; background: #2a2a2a; transition: background .2s, width .2s; }
+.tut-combined-nav { display: inline-flex; align-items: center; gap: 6px; background: #060709; border: 1px solid rgba(215,166,63,.3); padding: 4px 8px; border-radius: 24px; }
+
+.tut-nav-btn { background: rgba(184,134,11,.12); border: 1px solid rgba(215,166,63,.25); color: #f4dd94; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; cursor: pointer; transition: background .2s, opacity .2s; line-height: 1; padding: 0; font-family: sans-serif; }
+.tut-nav-btn:hover:not(:disabled) { background: rgba(184,134,11,.35); color: #fff; }
+.tut-nav-btn:disabled { opacity: 0.25; cursor: not-allowed; }
+
+.tut-ch-badge { color: #9a927f; font-size: 12px; padding: 0 6px; }
+
+.tut-step-pills { display: flex; align-items: center; gap: 4px; padding: 0 6px; }
+.tut-step-pill { width: 12px; height: 4px; border-radius: 2px; background: #2a2a2a; transition: background .2s, width .2s; }
 .tut-step-pill.done { background: #a9812a; }
-.tut-step-pill.active { background: #f4dd94; width: 22px; box-shadow: 0 0 6px rgba(244,221,148,.5); }
-
-.tut-icon-btn { background: rgba(184,134,11,.12); border: 1px solid rgba(215,166,63,.3); color: #f4dd94; width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 16px; cursor: pointer; transition: background .2s, opacity .2s; line-height: 1; padding-bottom: 2px; }
-.tut-icon-btn:hover:not(:disabled) { background: rgba(184,134,11,.3); }
-.tut-icon-btn:disabled { opacity: 0.3; cursor: not-allowed; }
-.tut-ghost { background: none; border: 1px solid #b8860b; color: #d7a63f; border-radius: 30px; padding: 7px 16px; font-size: 13px; cursor: pointer; font-family: 'Merriweather', serif; transition: background .2s, color .2s; }
-.tut-ghost:hover { background: rgba(184,134,11,.12); color: #f4dd94; }
+.tut-step-pill.active { background: #f4dd94; width: 20px; box-shadow: 0 0 6px rgba(244,221,148,.5); }
 
 @media (max-width: 720px) {
   .tut-sheet-toggle-btn { display: inline-block; }
