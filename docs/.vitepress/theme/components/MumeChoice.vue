@@ -159,7 +159,7 @@ function handleExpClick(e, href) {
   gap: 0.5rem;
   font-family: 'Kelt', serif;
   font-size: 1.15rem;
-  padding: 0.5em 2em;
+  padding: 0.5em 1.5em;
   border-radius: 3.75rem;
   text-decoration: none !important;
   font-weight: normal;
@@ -168,6 +168,17 @@ function handleExpClick(e, href) {
   min-height: 44px;
   box-shadow: 1px 5px 10px 0px rgba(184, 134, 11, 0.5);
   color: white !important;
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .choice-btn {
+    font-size: 1rem;
+    padding: 0.5em 1em;
+    white-space: normal;
+  }
 }
 
 .primary-btn {

@@ -64,6 +64,8 @@ defineProps({
   padding: 1.25rem 1.5rem;
   margin: 1.5rem 0;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .variant-blue {
@@ -73,15 +75,20 @@ defineProps({
 @media (max-width: 650px) {
   .mume-callout {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    padding: 1rem 1.25rem;
   }
   .callout-action {
     width: 100%;
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
   }
   .callout-btn {
     width: 100%;
     justify-content: center;
+    white-space: normal;
+    text-align: center;
+    padding: 0.5em 1em;
+    font-size: 1rem;
   }
 }
 
@@ -100,6 +107,7 @@ defineProps({
 
 .callout-content {
   flex: 1;
+  min-width: 0;
 }
 
 .callout-subtitle {
@@ -120,6 +128,7 @@ defineProps({
   color: #f4dd94;
   margin: 0 0 0.25rem 0;
   line-height: 1.25;
+  word-break: break-word;
 }
 
 .callout-body {
@@ -127,6 +136,7 @@ defineProps({
   color: #c4c8d0;
   margin: 0;
   line-height: 1.45;
+  word-break: break-word;
 }
 
 .callout-btn {
@@ -137,13 +147,15 @@ defineProps({
   color: white !important;
   font-family: 'Kelt', serif;
   font-size: 1.1rem;
-  padding: 0.5em 2em;
+  padding: 0.5em 1.5em;
   border-radius: 3.75rem;
   text-decoration: none !important;
   white-space: nowrap;
   box-shadow: 1px 5px 10px 0px rgba(184, 134, 11, 0.5);
   transition: color 0.2s ease;
   min-height: 44px;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .variant-blue .callout-btn {

@@ -77,6 +77,8 @@ import { data as allChapters } from '../../../play/tutorial/chapters.data.js'
   text-align: center;
   text-decoration: none !important;
   transition: background 0.2s, color 0.2s;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .chapter-btn:hover {
