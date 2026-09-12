@@ -1,261 +1,179 @@
 <script setup>
 /*
-  Interactive new-player tutorial component driven dynamically by chapter Markdown files.
-  Streamlined terminal output: immediate MUD output execution without extra "Press Enter to carry on" pauses.
-  Clear end-of-tutorial handover options to Play Hub, Browser Client, or Newcomers Guide.
+  Interactive new-player tutorial, as a VitePress component.
+  Content lives in ../data/tutorialContent.js; assets are imported from the
+  shared docs/assets/images so nothing is duplicated. No backend: the whole
+  walkthrough runs client-side and ends by handing over to the web client.
 */
-import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
-import { useData, useRoute, useRouter, withBase } from 'vitepress'
-import { data as allChapters } from '../../../play/tutorial/chapters.data.js'
+import { ref, computed, nextTick, onMounted } from 'vue'
+import { TUTORIAL } from '../data/tutorialContent.js'
 import logoImg from '../../../assets/images/mume_logo.jpg'
+import mapImg from '../../../assets/images/tutorial-map.png'
+import descImg from '../../../assets/images/tutorial-desc.png'
 
-const PLAY_HUB_URL = '/play/'
-const BROWSER_PLAY_URL = '/play/browser'
-const NEWCOMERS_URL = '/resources/newcomers'
+// Where the tutorial hands over: the MMapper web client.
+const PLAY_URL = 'https://mume.org/play/browser'
+const MAP_SECTION = 'Playing the game'
 
+const BANNER =
+`                    ***  MUME IX  ***
 
-const router = useRouter()
-const route = useRoute()
-const { frontmatter } = useData()
+                  In progress at FIRE
+               (Free Internet Roleplay Experiences)
+               Hosted at HEIG-VD (www.heig-vd.ch)
 
-const currentChapterObj = computed(() => {
-  const currentPath = route.path.replace(/\.html$/, '').replace(/\/$/, '')
-  return allChapters.find(c => c.url === currentPath || currentPath.endsWith(c.filename)) || allChapters[0]
-})
+        Adapted from J.R.R. Tolkien's Middle-earth world and
+                maintained by CryHavoc, Manwe, and Nada.
 
-const chapterNum = computed(() => currentChapterObj.value ? currentChapterObj.value.chapterNum : 1)
-const totalChapters = computed(() => allChapters.length)
-const chapterTitle = computed(() => frontmatter.value?.title || currentChapterObj.value?.title || 'Tutorial')
+If you have never played MUME before, type NEW to create a new character,
+or ? for help.
 
-const currentIndex = computed(() => allChapters.findIndex(c => c.chapterNum === chapterNum.value))
+By what name do you wish to be known?
+Account password:
+Available commands:
 
-const prevChapterUrl = computed(() => {
-  const idx = currentIndex.value
-  return idx > 0 ? allChapters[idx - 1].url : null
-})
+  create        - Create a new character
+  play <name>   - Play the character <name>
+  help          - Display help about these commands
+  menu          - Display this menu
+  quit          - Leave the account menu; logs you out
 
-const nextChapterUrl = computed(() => {
-  const idx = currentIndex.value
-  return idx >= 0 && idx < allChapters.length - 1 ? allChapters[idx + 1].url : null
-})
+Account>`
 
-const teachList = computed(() => frontmatter.value?.teach || currentChapterObj.value?.teach || [])
+const lessons = TUTORIAL.lessons
+const total = lessons.length
 
-// Multi-step in-chapter practice steps
-const stepsList = computed(() => {
-  if (frontmatter.value?.steps && frontmatter.value.steps.length) {
-    return frontmatter.value.steps
-  }
-  if (frontmatter.value?.practice) {
-    return [{
-      ask: frontmatter.value.practice,
-      accept: frontmatter.value.accept || [frontmatter.value.practice],
-      hint: frontmatter.value.hint || `Type: ${frontmatter.value.practice}`,
-      example: frontmatter.value.example || null
-    }]
-  }
-  return []
-})
-
-const subStepIdx = ref(0)
-const currentSubStep = computed(() => stepsList.value[subStepIdx.value] || null)
-
-// Driven 100% dynamically from chapter frontmatter
-const mumeResponses = computed(() => frontmatter.value?.responses || currentChapterObj.value?.responses || {})
-
+const idx = ref(0)
 const log = ref([])
+const learned = ref([])
 const finished = ref(false)
+const awaitingExample = ref(false)
 const entry = ref('')
-const isSheetOpen = ref(false)
 
 const logEl = ref(null)
 const inputEl = ref(null)
 
-const stepLabel = computed(() => `Chapter ${chapterNum.value} of ${totalChapters.value}`)
+const stepLabel = computed(() => `${Math.min(idx.value + 1, total)} of ${total}`)
 
-function focusInput() {
-  if (typeof window !== 'undefined') {
-    setTimeout(() => {
-      if (inputEl.value) inputEl.value.focus()
-    }, 50)
+// Commands grouped by the section they were taught in, for the side sheet.
+const sheetGroups = computed(() => {
+  const groups = []
+  for (const c of learned.value) {
+    let g = groups.find(x => x.section === c.section)
+    if (!g) { g = { section: c.section, items: [] }; groups.push(g) }
+    g.items.push(c)
   }
-}
-
-function navigateToUrl(url) {
-  if (!url) return
-  const targetUrl = withBase(url)
-  if (router && router.go) {
-    router.go(targetUrl).catch(() => {
-      if (typeof window !== 'undefined') window.location.href = targetUrl
-    })
-  } else if (typeof window !== 'undefined') {
-    window.location.href = targetUrl
-  }
-}
+  return groups
+})
 
 function scrollLog() {
-  if (typeof window !== 'undefined') {
-    setTimeout(() => {
-      const container = logEl.value
-      if (!container) return
-      const blocks = container.querySelectorAll('.tut-block')
-      if (blocks.length > 0) {
-        const lastBlock = blocks[blocks.length - 1]
-        const containerRect = container.getBoundingClientRect()
-        const blockRect = lastBlock.getBoundingClientRect()
+  nextTick(() => { const el = logEl.value; if (el) el.scrollTop = el.scrollHeight })
+}
 
-        // If block is taller than the view, bring the start of the block into view
-        if (blockRect.height > containerRect.height - 40) {
-          lastBlock.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        } else {
-          container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' })
-        }
-      } else {
-        container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' })
-      }
-    }, 60)
+function learn(L) {
+  for (const t of (L.teach || [])) {
+    if (!learned.value.some(x => x.c === t.c && x.section === L.section))
+      learned.value.push({ c: t.c, d: t.d, section: L.section })
   }
 }
 
-function renderStepLog() {
-  subStepIdx.value = 0
-  finished.value = false
-
-  const newLog = []
-  newLog.push({
-    kind: 'lesson',
-    chapterNum: chapterNum.value,
-    title: chapterTitle.value,
-    teach: teachList.value,
-    note: currentSubStep.value ? currentSubStep.value.note : null,
-    ask: currentSubStep.value ? currentSubStep.value.ask : null
-  })
-
-  log.value = newLog
-  scrollLog()
-  focusInput()
-}
-
-function completeChapter() {
-  finished.value = true
+function showLesson() {
+  const L = lessons[idx.value]
+  if (!L) { showEnd(); return }
   log.value.push({
-    kind: 'chapter_complete',
-    chapterNum: chapterNum.value,
-    title: chapterTitle.value,
-    nextUrl: nextChapterUrl.value
+    kind: 'lesson',
+    section: L.section,
+    title: L.title,
+    body: L.body || [],
+    teach: L.teach || [],
+    ask: L.practice ? { cmd: L.practice.ask } : null,
+    map: L.section === MAP_SECTION
   })
+  learn(L)
   scrollLog()
 }
 
-function advanceNext() {
-  if (nextChapterUrl.value) {
-    navigateToUrl(nextChapterUrl.value)
-  } else {
-    completeChapter()
-  }
+function showEnd() {
+  finished.value = true
+  log.value.push({ kind: 'end' })
+  scrollLog()
 }
 
-function advanceSubStep() {
-  if (subStepIdx.value < stepsList.value.length - 1) {
-    subStepIdx.value++
-    const nextSub = currentSubStep.value
-    log.value.push({
-      kind: 'prompt_next',
-      stepIndex: subStepIdx.value,
-      totalSteps: stepsList.value.length,
-      note: nextSub.note || null,
-      ask: nextSub.ask
-    })
-    scrollLog()
-  } else {
-    completeChapter()
-  }
+function handover() {
+  log.value.push({ kind: 'handover' })
+  scrollLog()
 }
 
-function prevSubStep() {
-  if (subStepIdx.value > 0) {
-    subStepIdx.value--
-    const prevSub = currentSubStep.value
-    log.value.push({
-      kind: 'prompt_prev',
-      stepIndex: subStepIdx.value,
-      totalSteps: stepsList.value.length,
-      note: prevSub.note || null,
-      ask: prevSub.ask
-    })
-    scrollLog()
+function dumpSheet() {
+  if (!learned.value.length) {
+    log.value.push({ kind: 'error', text: 'You have not been shown any commands yet.' })
+  } else {
+    log.value.push({ kind: 'sheetdump', groups: sheetGroups.value.map(g => ({ ...g })) })
   }
+  scrollLog()
 }
 
 function submit() {
   const raw = entry.value.trim()
   const cmd = raw.toLowerCase()
   entry.value = ''
+  if (raw) { log.value.push({ kind: 'echo', text: raw }); }
 
-  if (finished.value) {
-    if (nextChapterUrl.value) {
-      navigateToUrl(nextChapterUrl.value)
-    } else {
-      navigateToUrl(BROWSER_PLAY_URL)
-    }
-    focusInput()
-    return
-  }
+  if (cmd === 'commands') { dumpSheet(); return }
+  if (cmd === 'skip') { skip(); return }
+  if (cmd === 'tutorial') { restart(); return }
 
-  if (raw) { log.value.push({ kind: 'echo', text: raw }) }
+  if (finished.value) { handover(); return }
 
-  if (cmd === 'skip') { advanceNext(); focusInput(); return }
-  if (cmd === 'tutorial') { navigateToUrl(allChapters[0]?.url || '/play/tutorial/1-orientation'); focusInput(); return }
+  // After an example response, any Enter carries on to the next lesson.
+  if (awaitingExample.value) { awaitingExample.value = false; idx.value++; showLesson(); return }
 
-  const curStep = currentSubStep.value
+  const L = lessons[idx.value]
+  const p = L && L.practice
 
-  if (!curStep) {
-    if (cmd && mumeResponses.value[cmd]) {
-      log.value.push({ kind: 'example', body: mumeResponses.value[cmd] })
+  if (!p) { idx.value++; showLesson(); return }
+  if (!cmd) { log.value.push({ kind: 'error', text: p.hint || ('Type: ' + p.ask) }); scrollLog(); return }
+
+  const ok = (p.accept || [p.ask]).some(a => a.toLowerCase() === cmd)
+  if (ok) {
+    if (L.example) {
+      const body = L.example.replace(/^>[^\n]*\n?/, '')
+      log.value.push({ kind: 'example', body })
+      awaitingExample.value = true
       scrollLog()
     } else {
-      advanceNext()
+      idx.value++
+      showLesson()
     }
-    focusInput()
-    return
-  }
-
-  if (!cmd) {
-    log.value.push({ kind: 'error', text: curStep.hint || (`Type: ${curStep.ask}`) })
-    scrollLog()
-    focusInput()
-    return
-  }
-
-  const accept = curStep.accept || [curStep.ask]
-  const ok = accept.some(a => a.toLowerCase() === cmd)
-
-  if (ok) {
-    const body = curStep.example ? curStep.example.replace(/^>[^\n]*\n?/, '') : (mumeResponses.value[cmd] || '')
-    if (body) {
-      log.value.push({ kind: 'example', body })
-    }
-    advanceSubStep()
-  } else if (mumeResponses.value[cmd]) {
-    log.value.push({ kind: 'example', body: mumeResponses.value[cmd] })
-    log.value.push({ kind: 'error', text: 'Good try! To proceed in this step, ' + (curStep.hint || (`try: ${curStep.ask}`)) })
-    scrollLog()
   } else {
-    log.value.push({ kind: 'error', text: 'MUME does not know that one here. ' + (curStep.hint || (`Try: ${curStep.ask}`)) })
+    log.value.push({ kind: 'error', text: 'MUME does not know that one here. ' + (p.hint || ('Try: ' + p.ask)) })
     scrollLog()
   }
+}
+
+function skip() {
+  lessons.forEach(learn)
+  idx.value = total
+  showEnd()
+}
+
+function restart() {
+  idx.value = 0
+  learned.value = []
+  finished.value = false
+  awaitingExample.value = false
+  log.value = [{ kind: 'banner', text: BANNER }]
+  showLesson()
   focusInput()
 }
 
-watch(() => route.path, () => {
-  renderStepLog()
-}, { immediate: true })
+function focusInput() {
+  nextTick(() => { const el = inputEl.value; if (el) el.focus() })
+}
 
 onMounted(() => {
-  renderStepLog()
-  if (typeof window !== 'undefined') {
-    focusInput()
-  }
+  log.value = [{ kind: 'banner', text: BANNER }]
+  showLesson()
 })
 </script>
 
@@ -265,26 +183,14 @@ onMounted(() => {
       <div class="tut-head">
         <img class="tut-logo" :src="logoImg" alt="MUME" />
         <div class="tut-heading">
-          <div class="tut-title-row">
-            <span class="tut-title">Chapter {{ chapterNum }}: {{ chapterTitle }}</span>
-            <button type="button" class="tut-sheet-toggle-btn" @click="isSheetOpen = !isSheetOpen" aria-label="Toggle Command Sheet">
-              Commands
-            </button>
-          </div>
+          <span class="tut-title">New player tutorial</span>
           <span class="tut-sub">Your first hour in Middle-earth</span>
         </div>
-        <div class="tut-progress">
+        <div class="tut-progress" v-if="!finished">
           <span class="tut-ticks">
-            <button v-for="ch in allChapters" :key="ch.chapterNum"
-                    type="button"
-                    class="tut-tick"
-                    :class="{
-                      done: ch.chapterNum < chapterNum,
-                      now: ch.chapterNum === chapterNum,
-                      clickable: ch.chapterNum !== chapterNum
-                    }"
-                    :title="'Go to Chapter ' + ch.chapterNum + ': ' + ch.title"
-                    @click="navigateToUrl(ch.url)"></button>
+            <span v-for="i in total" :key="i"
+                  class="tut-tick"
+                  :class="{ done: i - 1 < idx, now: i - 1 === idx }"></span>
           </span>
           <span class="tut-step">{{ stepLabel }}</span>
         </div>
@@ -294,62 +200,60 @@ onMounted(() => {
         <div class="tut-term">
           <div class="tut-log" ref="logEl">
             <div v-for="(b, i) in log" :key="i" class="tut-block">
-              <template v-if="b.kind === 'lesson'">
-                <div class="tut-eyebrow">Chapter {{ b.chapterNum }} of {{ totalChapters }}</div>
+              <pre v-if="b.kind === 'banner'" class="tut-banner">{{ b.text }}</pre>
+
+              <template v-else-if="b.kind === 'lesson'">
+                <hr class="tut-rule" />
+                <div class="tut-eyebrow">{{ b.section }}</div>
                 <h3 class="tut-h">{{ b.title }}</h3>
+                <p v-for="(line, j) in b.body" :key="j" class="tut-line">{{ line }}</p>
 
-                <!-- Render markdown lesson content -->
-                <div class="tut-md-content">
-                  <slot />
+                <dl v-if="b.teach.length" class="tut-teach">
+                  <template v-for="(t, k) in b.teach" :key="k">
+                    <dt>{{ t.c }}</dt><dd>{{ t.d }}</dd>
+                  </template>
+                </dl>
+
+                <div v-if="b.map" class="tut-panels">
+                  <figure><img :src="mapImg" alt="Live map of Middle-earth" /><figcaption>The map</figcaption></figure>
+                  <figure><img :src="descImg" alt="Room description and view" /><figcaption>The description</figcaption></figure>
                 </div>
 
-                <div v-if="b.note" class="tut-step-guide">{{ b.note }}</div>
-                <div class="tut-ask" v-if="b.ask">Task: type <span class="tut-cmd">{{ b.ask }}</span></div>
+                <p class="tut-ask" v-if="b.ask">Type <span class="tut-cmd">{{ b.ask.cmd }}</span> to carry on.</p>
+                <p class="tut-ask" v-else>Press Enter to carry on.</p>
               </template>
 
-              <template v-else-if="b.kind === 'prompt_next'">
-                <div v-if="b.note" class="tut-step-guide">{{ b.note }}</div>
-                <div class="tut-ask">
-                  Task: type <span class="tut-cmd">{{ b.ask }}</span>
-                </div>
+              <p v-else-if="b.kind === 'echo'" class="tut-echo">&gt; {{ b.text }}</p>
+
+              <template v-else-if="b.kind === 'example'">
+                <p class="tut-exlead">Here's an example of what you'll see:</p>
+                <pre class="tut-example">{{ b.body }}</pre>
+                <p class="tut-ask">Press Enter to carry on.</p>
               </template>
 
-              <div v-else-if="b.kind === 'echo'" class="tut-echo">&gt; {{ b.text }}</div>
+              <p v-else-if="b.kind === 'error'" class="tut-err">{{ b.text }}</p>
 
-              <pre v-else-if="b.kind === 'example'" class="tut-example">{{ b.body }}</pre>
-
-              <div v-else-if="b.kind === 'error'" class="tut-err">{{ b.text }}</div>
-
-              <template v-else-if="b.kind === 'chapter_complete'">
-                <div class="tut-complete-box">
-                  <div class="tut-eyebrow">Chapter {{ b.chapterNum }} Complete!</div>
-                  <h3 class="tut-h">Great work mastering {{ b.title }}</h3>
-                  <p class="tut-line" v-if="b.nextUrl">Ready to continue your journey into Middle-earth?</p>
-                  <p class="tut-line" v-else>You have completed all chapters in the interactive tutorial!</p>
-
-                  <div class="tut-end-actions">
-                    <button v-if="b.nextUrl" type="button" class="tut-enter" @click="navigateToUrl(b.nextUrl)">
-                      Continue to Next Chapter &rarr;
-                    </button>
-                    <a v-else class="tut-enter" :href="withBase(BROWSER_PLAY_URL)">Play MUME Now (Web Client) &rarr;</a>
-                    <a class="tut-secondary-link" :href="withBase(NEWCOMERS_URL)">Newcomers Hub</a>
-                    <a class="tut-secondary-link" :href="withBase(PLAY_HUB_URL)">Play Hub</a>
-                  </div>
-                </div>
-              </template>
+              <div v-else-if="b.kind === 'sheetdump'" class="tut-dump">
+                <template v-for="(g, gi) in b.groups" :key="gi">
+                  <div class="tut-grp">{{ g.section }}</div>
+                  <dl><template v-for="(c, ci) in g.items" :key="ci"><dt>{{ c.c }}</dt><dd>{{ c.d }}</dd></template></dl>
+                </template>
+              </div>
 
               <template v-else-if="b.kind === 'end'">
                 <hr class="tut-rule" />
-                <div class="tut-eyebrow">Congratulations!</div>
-                <h3 class="tut-h">You have completed the tutorial!</h3>
-                <p class="tut-line">You have mastered movement, equipment, stats, combat, scouting, skills, and resting in Middle-earth.</p>
+                <div class="tut-eyebrow">Ready</div>
+                <h3 class="tut-h">Create your character</h3>
+                <p class="tut-line">That is everything you need for your first hour.</p>
+                <p class="tut-line">Your command sheet stays with you. Type <span class="tut-cmd">commands</span> for it, or <span class="tut-cmd">tutorial</span> to run this again while you are still new.</p>
+                <a class="tut-enter" :href="PLAY_URL" rel="external">Enter MUME</a>
+                <p class="tut-note">Opens the web client. You can retake this tutorial at any time.</p>
+              </template>
 
-                <div class="tut-end-actions">
-                  <a class="tut-enter" :href="withBase(BROWSER_PLAY_URL)">Play MUME Now (Web Client) &rarr;</a>
-                  <a class="tut-secondary-link" :href="withBase(NEWCOMERS_URL)">Explore Newcomers Guide</a>
-                  <a class="tut-secondary-link" :href="withBase(PLAY_HUB_URL)">Back to Play Hub</a>
-                </div>
-                <p class="tut-note">You can retake any chapter at any time from the top progress bar or the Newcomers Hub.</p>
+              <template v-else-if="b.kind === 'handover'">
+                <hr class="tut-rule" />
+                <h3 class="tut-h">Off you go</h3>
+                <p class="tut-line">The <a :href="PLAY_URL" rel="external">web client</a> is where you drop into the account prompt and begin. Good luck out there.</p>
               </template>
             </div>
           </div>
@@ -358,69 +262,28 @@ onMounted(() => {
             <span class="tut-caret">&gt;</span>
             <input ref="inputEl" v-model="entry" @keydown.enter.prevent="submit"
                    autocomplete="off" spellcheck="false"
-                   :placeholder="finished ? (nextChapterUrl ? 'Press Enter to continue to next chapter...' : 'Press Enter to play MUME...') : 'type here, then press Enter'"
+                   :placeholder="finished ? 'type tutorial to replay' : 'type here, then press Enter'"
                    aria-label="Type a command" />
-            <button type="button" class="tut-send-btn" @click="submit" aria-label="Send Command">
-              Send
-            </button>
           </div>
         </div>
 
-        <!-- Command Sheet (Desktop sidebar & Mobile modal/drawer) -->
-        <aside class="tut-sheet" :class="{ open: isSheetOpen }">
-          <div class="tut-sheet-bar">
-            <span>Command sheet</span>
-            <button type="button" class="tut-sheet-close" @click="isSheetOpen = false" aria-label="Close command sheet">&times;</button>
-          </div>
+        <aside class="tut-sheet">
+          <div class="tut-sheet-bar">Command sheet</div>
           <div class="tut-sheet-body">
-            <p v-if="!teachList.length" class="tut-empty">No special commands listed for this chapter.</p>
+            <p v-if="!learned.length" class="tut-empty">Commands appear here as you learn them.</p>
             <template v-else>
-              <div class="tut-grp">Chapter {{ chapterNum }} Commands</div>
-              <dl>
-                <template v-for="(t, ti) in teachList" :key="ti">
-                  <dt>{{ t.command }}</dt><dd>{{ t.desc }}</dd>
-                </template>
-              </dl>
+              <template v-for="(g, gi) in sheetGroups" :key="gi">
+                <div class="tut-grp">{{ g.section }}</div>
+                <dl><template v-for="(c, ci) in g.items" :key="ci"><dt>{{ c.c }}</dt><dd>{{ c.d }}</dd></template></dl>
+              </template>
             </template>
           </div>
         </aside>
       </div>
 
-      <div class="tut-sheet-backdrop" v-if="isSheetOpen" @click="isSheetOpen = false"></div>
-
       <div class="tut-controls">
-        <div class="tut-combined-nav">
-          <!-- Prev Chapter « -->
-          <button type="button" class="tut-nav-btn" :disabled="!prevChapterUrl" @click="navigateToUrl(prevChapterUrl)" title="Previous Chapter («)">
-            &laquo;
-          </button>
-
-          <!-- Prev Step < -->
-          <button type="button" class="tut-nav-btn" :disabled="subStepIdx === 0 || stepsList.length <= 1" @click="prevSubStep" title="Previous Step (<)">
-            &lsaquo;
-          </button>
-
-          <!-- Integrated Step Indicator Pills -->
-          <div class="tut-step-pills" v-if="stepsList.length > 1">
-            <span v-for="(st, sIdx) in stepsList" :key="sIdx"
-                  class="tut-step-pill"
-                  :class="{ active: sIdx === subStepIdx, done: sIdx < subStepIdx }"
-                  :title="'Step ' + (sIdx + 1) + ' of ' + stepsList.length"></span>
-          </div>
-          <span v-else class="tut-ch-badge">Ch {{ chapterNum }}</span>
-
-          <!-- Next Step > -->
-          <button type="button" class="tut-nav-btn" :disabled="subStepIdx >= stepsList.length - 1 || stepsList.length <= 1" @click="advanceSubStep" title="Next Step (>)">
-            &rsaquo;
-          </button>
-
-          <!-- Next Chapter » -->
-          <button type="button" class="tut-nav-btn" :disabled="!nextChapterUrl" @click="navigateToUrl(nextChapterUrl)" title="Next Chapter (»)">
-            &raquo;
-          </button>
-        </div>
-
-        <a class="tut-hub-ghost" :href="withBase('/resources/newcomers')">Newcomers Hub</a>
+        <button v-if="!finished" class="tut-ghost" @click="skip">Skip to the end</button>
+        <button v-else class="tut-ghost" @click="restart">Run the tutorial again</button>
       </div>
     </div>
   </div>
@@ -436,52 +299,41 @@ onMounted(() => {
 .tut-title { font-family: 'Kelt', serif; color: #f4dd94; font-size: 22px; }
 .tut-sub { color: #9a927f; font-size: 12.5px; }
 .tut-progress { display: flex; align-items: center; gap: 10px; }
-.tut-ticks { display: inline-flex; gap: 5px; align-items: center; }
-.tut-tick { width: 10px; height: 10px; border-radius: 50%; background: #2a2a2a; border: none; padding: 0; cursor: default; transition: background .3s, transform .2s, box-shadow .2s; }
+.tut-ticks { display: inline-flex; gap: 4px; }
+.tut-tick { width: 8px; height: 8px; border-radius: 50%; background: #2a2a2a; transition: background .3s; }
 .tut-tick.done { background: #a9812a; }
-.tut-tick.now { background: #f4dd94; box-shadow: 0 0 8px rgba(244,221,148,.6); transform: scale(1.15); }
-.tut-tick.clickable { cursor: pointer; }
-.tut-tick.clickable:hover { background: #ffd966; transform: scale(1.25); }
+.tut-tick.now { background: #f4dd94; box-shadow: 0 0 8px rgba(244,221,148,.6); }
 .tut-step { color: #9a927f; font-size: 12.5px; white-space: nowrap; }
 
 .tut-body { display: grid; grid-template-columns: 1fr 260px; gap: 0; }
 @media (max-width: 720px) { .tut-body { grid-template-columns: 1fr; } }
 
-@keyframes tutStreamIn {
-  0% { opacity: 0; transform: translateY(8px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-.tut-block {
-  animation: tutStreamIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.tut-complete-box {
-  margin: 16px 0;
-  padding: 16px 20px;
-  background: rgba(184, 134, 11, 0.1);
-  border: 1px solid rgba(215, 166, 63, 0.4);
-  border-radius: 8px;
-}
-
 .tut-term { display: flex; flex-direction: column; min-width: 0; }
-.tut-log { min-height: 440px; max-height: 520px; overflow-y: auto; padding: 12px 18px 16px; scroll-behavior: smooth; }
+.tut-log { height: 460px; overflow-y: auto; padding: 6px 18px 14px; scroll-behavior: smooth; }
+.tut-block { }
+.tut-banner { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 12px; color: #8f8f8f; white-space: pre-wrap; margin: 8px 0 4px; }
+.tut-rule { border: 0; border-top: 1px solid #23262e; margin: 20px 0 14px; }
 .tut-eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 11px; color: #b8860b; margin-bottom: 4px; }
-.tut-h { font-family: 'Kelt', serif; color: #e6d79a; font-size: 24px; margin: 0 0 .4em; border: 0; padding: 0; }
-.tut-line { color: #cdc7b8; font-size: 14.5px; line-height: 1.6; margin: 0 0 12px; }
+.tut-h { font-family: 'Kelt', serif; color: #e6d79a; font-size: 26px; margin: 0 0 .4em; border: 0; padding: 0; }
+.tut-line { color: #cdc7b8; font-size: 15px; line-height: 1.6; margin: 0 0 12px; }
+.tut-teach { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 4px 0 14px; padding: 12px 14px; background: #101216; border: 1px solid #23262e; border-radius: 8px; }
+.tut-teach dt { color: #d8b04a; font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 13px; }
+.tut-teach dd { color: #9a9a9a; margin: 0; font-size: 13.5px; }
+.tut-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 6px 0 16px; }
+@media (max-width: 520px) { .tut-panels { grid-template-columns: 1fr; } }
+.tut-panels figure { margin: 0; }
+.tut-panels img { width: 100%; border: 1px solid #23262e; border-radius: 8px; display: block; }
+.tut-panels figcaption { color: #8f8a7d; font-size: 12px; margin-top: 6px; text-align: center; }
+.tut-ask { color: #7fb0c8; font-size: 14px; margin: 4px 0 2px; }
+.tut-cmd { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #f4dd94; background: rgba(184,134,11,.12); padding: 1px 6px; border-radius: 4px; }
+.tut-echo { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #cfcfcf; margin: 10px 0 2px; }
+.tut-exlead { color: #9a927f; font-size: 13px; margin: 8px 0 4px; }
+.tut-example { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 12.5px; color: #b9d3c2; white-space: pre-wrap; background: #06120c; border: 1px solid #17301f; border-radius: 8px; padding: 12px 14px; margin: 0 0 8px; }
+.tut-err { color: #d98a7f; font-size: 14px; margin: 8px 0; }
+.tut-dump { margin: 8px 0; }
 
-.tut-step-guide { color: #d2c8ae; font-size: 13.5px; line-height: 1.55; margin: 12px 0 6px; padding: 8px 12px; background: rgba(215,166,63,.05); border-left: 3px solid #b8860b; border-radius: 0 6px 6px 0; }
-.tut-ask { color: #8abed6; font-size: 13.5px; margin: 6px 0 10px; font-weight: 500; }
-.tut-cmd { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #f4dd94; background: rgba(184,134,11,.15); padding: 2px 7px; border-radius: 4px; border: 1px solid rgba(215,166,63,.3); }
-.tut-echo { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #dcdcdc; margin: 12px 0 4px; font-weight: bold; }
-.tut-example { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 13px; line-height: 1.45; color: #b9d3c2; white-space: pre-wrap; background: #05100a; border: 1px solid #142b1c; border-radius: 6px; padding: 10px 14px; margin: 6px 0 10px; }
-.tut-err { color: #e5988e; font-size: 13.5px; margin: 6px 0; }
-
-.tut-end-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 16px 0 16px; }
-.tut-enter { display: inline-block; font-family: 'Kelt', serif; font-size: 1.15rem; background: darkgoldenrod; color: white !important; padding: 0.5em 2em; border-radius: 3.75rem; box-shadow: 1px 5px 10px 0px rgba(184, 134, 11, 0.5); text-decoration: none !important; transition: color .2s; }
-.tut-enter:hover, .tut-enter:focus-visible { color: #3a3a3a !important; text-decoration: none !important; }
-.tut-secondary-link { display: inline-block; font-family: 'Kelt', serif; font-size: 1.05rem; background: rgba(10, 13, 21, 0.75); color: white !important; border: 2px solid darkgoldenrod; padding: 0.5em 1.5em; border-radius: 3.75rem; box-shadow: 1px 5px 10px 0px rgba(184, 134, 11, 0.5); text-decoration: none !important; transition: background-color .2s, color .2s; }
-.tut-secondary-link:hover, .tut-secondary-link:focus-visible { background: darkgoldenrod; color: #3a3a3a !important; text-decoration: none !important; }
+.tut-enter { display: inline-block; font-family: 'Kelt', serif; font-size: 22px; background: darkgoldenrod; color: #fff; padding: .35em 1.4em; border-radius: 40px; box-shadow: 0 6px 18px rgba(0,0,0,.5); text-decoration: none; margin: 6px 0 8px; transition: transform .2s, box-shadow .2s; }
+.tut-enter:hover { color: #fff; text-decoration: none; transform: scale(1.04); box-shadow: 0 9px 24px rgba(0,0,0,.6); }
 .tut-note { color: #8f8a7d; font-size: 12.5px; margin: 4px 0 6px; }
 
 .tut-prompt { display: flex; align-items: center; gap: 8px; border-top: 1px solid #23262e; padding: 12px 18px; background: #08080a; }
@@ -495,62 +347,11 @@ onMounted(() => {
 .tut-sheet-body { padding: 10px 14px 14px; overflow-y: auto; max-height: 472px; }
 .tut-empty { color: #7d7d7d; font-size: 13px; }
 .tut-grp { color: #7d7d7d; border-bottom: 1px solid #242424; padding-bottom: 3px; margin: 12px 0 8px; font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; }
-.tut-sheet-body dl { display: grid; grid-template-columns: max-content 1fr; gap: 3px 12px; margin: 0; }
-.tut-sheet-body dt { color: #d8b04a; font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 12.5px; }
-.tut-sheet-body dd { color: #9a9a9a; margin: 0; font-size: 12.5px; }
+.tut-sheet-body dl, .tut-dump dl { display: grid; grid-template-columns: max-content 1fr; gap: 3px 12px; margin: 0; }
+.tut-sheet-body dt, .tut-dump dt { color: #d8b04a; font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 12.5px; }
+.tut-sheet-body dd, .tut-dump dd { color: #9a9a9a; margin: 0; font-size: 12.5px; }
 
-.tut-title-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-.tut-sheet-toggle-btn { display: none; background: rgba(184,134,11,.18); border: 1px solid rgba(215,166,63,.4); color: #f4dd94; font-size: 11px; padding: 2px 8px; border-radius: 12px; cursor: pointer; }
-.tut-hub-ghost { display: inline-block; background: none; border: 1px solid rgba(215,166,63,.4); color: #9a927f !important; border-radius: 30px; padding: 7px 16px; font-size: 13px; text-decoration: none !important; margin-right: 12px; font-family: 'Merriweather', serif; transition: background .2s, color .2s; }
-.tut-hub-ghost:hover { background: rgba(184,134,11,.12); color: #f4dd94 !important; }
-
-.tut-send-btn { background: darkgoldenrod; border: none; color: #fff; font-family: 'Kelt', serif; font-size: 13px; padding: 4px 12px; border-radius: 14px; cursor: pointer; font-weight: bold; }
-
-.tut-sheet-close { display: none; background: none; border: none; color: #9a927f; font-size: 20px; cursor: pointer; padding: 0 4px; }
-
-.tut-controls { border-top: 1px solid #23262e; padding: 10px 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; background: #0b0b0d; }
-
-.tut-combined-nav { display: inline-flex; align-items: center; gap: 6px; background: #060709; border: 1px solid rgba(215,166,63,.3); padding: 4px 8px; border-radius: 24px; }
-
-.tut-nav-btn { background: rgba(184,134,11,.12); border: 1px solid rgba(215,166,63,.25); color: #f4dd94; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; cursor: pointer; transition: background .2s, opacity .2s; line-height: 1; padding: 0; font-family: sans-serif; }
-.tut-nav-btn:hover:not(:disabled) { background: rgba(184,134,11,.35); color: #fff; }
-.tut-nav-btn:disabled { opacity: 0.25; cursor: not-allowed; }
-
-.tut-ch-badge { color: #9a927f; font-size: 12px; padding: 0 6px; }
-
-.tut-step-pills { display: flex; align-items: center; gap: 4px; padding: 0 6px; }
-.tut-step-pill { width: 12px; height: 4px; border-radius: 2px; background: #2a2a2a; transition: background .2s, width .2s; }
-.tut-step-pill.done { background: #a9812a; }
-.tut-step-pill.active { background: #f4dd94; width: 20px; box-shadow: 0 0 6px rgba(244,221,148,.5); }
-
-@media (max-width: 720px) {
-  .tut-sheet-toggle-btn { display: inline-block; }
-  .tut-sheet-close { display: block; }
-  .tut-head { flex-wrap: wrap; gap: 8px 10px; padding: 10px 12px; }
-  .tut-progress { width: 100%; justify-content: space-between; margin-top: 2px; flex-wrap: wrap; gap: 6px; }
-  .tut-ticks { gap: 3px; }
-  .tut-tick { width: 8px; height: 8px; }
-  .tut-log { height: 340px; padding: 6px 12px 10px; }
-  .tut-prompt { padding: 8px 12px; }
-  .tut-controls { padding: 8px 12px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
-  .tut-hub-ghost { margin-right: 0; font-size: 12px; padding: 5px 12px; }
-  .tut-ghost { font-size: 12px; padding: 5px 12px; }
-
-  .tut-sheet {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    max-height: 60vh;
-    z-index: 1000;
-    border-top: 2px solid darkgoldenrod;
-    border-radius: 16px 16px 0 0;
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.8);
-    background: #0d0e12;
-  }
-  .tut-sheet.open { display: flex; }
-  .tut-sheet-bar { display: flex; justify-content: space-between; align-items: center; }
-  .tut-sheet-backdrop { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 999; }
-}
+.tut-controls { border-top: 1px solid #23262e; padding: 10px 16px; text-align: right; background: #0b0b0d; }
+.tut-ghost { background: none; border: 1px solid #b8860b; color: #d7a63f; border-radius: 30px; padding: 7px 16px; font-size: 13px; cursor: pointer; font-family: 'Merriweather', serif; transition: background .2s, color .2s; }
+.tut-ghost:hover { background: rgba(184,134,11,.12); color: #f4dd94; }
 </style>
