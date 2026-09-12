@@ -1,6 +1,6 @@
 ---
-title: "Account Creation & Awakening in Mandos"
-description: "Creating your MUME account, defining your first hero Fuor, and awakening in the Halls of Mandos."
+title: "Account Creation & Hero Definition"
+description: "Register your MUME account, define your character Fuor the Man Warrior, and prepare to awaken."
 teach:
   - command: "new"
     desc: "begin interactive account creation"
@@ -87,7 +87,7 @@ steps:
     hint: "Type: Fuor"
     example: "> Fuor\nFuor the Man, is that correct [Y/N]?"
   - ask: "y"
-    note: "Confirm your character creation to awaken Fuor in the Halls of Mandos."
+    note: "Confirm character creation to awaken Fuor in the Halls of Mandos."
     accept:
       - "y"
       - "yes"
@@ -111,17 +111,17 @@ responses:
   u: "What name do you want for your character?\nCharacter name (or enter for more, or ?):"
   Fuor: "New character Fuor created (7-bit ascii name is fuor).\n\nFuor the Man, is that correct [Y/N]?"
   fuor: "New character Fuor created (7-bit ascii name is fuor).\n\nFuor the Man, is that correct [Y/N]?"
-  y: "            ~~~\n           ~~         _----|        _ _ __ _ _\n                       ----|_----|  ]-I-II-I-[\n   _ _ _/\\_ _ _ _---|      | ----|   \\ `  ' /\n   ]-I-I--I-I-[  ---|      |     |    |. ` |\n\nWelcome to the land of Middle Earth. May your visit here be... interesting.\nNever forget! Try to role-play...\n\nHalls of Mandos\nYou are in the Halls of Mandos which are larger than any mortal can grasp.\nA bowl containing a few drops of the pale dew of Telperion is the only light source.\nA large torch lies here among the dust.\nA large piece of cheese has been placed here.\nA Warning Sign for new players is here.\nA large bulletin board is mounted on a wall here.\nA large fountain, made from grey stone, pours water from its centre."
-  yes: "            ~~~\n           ~~         _----|        _ _ __ _ _\n                       ----|_----|  ]-I-II-I-[\n   _ _ _/\\_ _ _ _---|      | ----|   \\ `  ' /\n   ]-I-I--I-I-[  ---|      |     |    |. ` |\n\nWelcome to the land of Middle Earth. May your visit here be... interesting.\nNever forget! Try to role-play...\n\nHalls of Mandos\nYou are in the Halls of Mandos which are larger than any mortal can grasp.\nA bowl containing a few drops of the pale dew of Telperion is the only light source.\nA large torch lies here among the dust.\nA large piece of cheese has been placed here.\nA Warning Sign for new players is here.\nA large bulletin board is mounted on a wall here.\nA large fountain, made from grey stone, pours water from its centre."
+  y: "            ~~~\n           ~~         _----|        _ _ __ _ _\n                       ----|_----|  ]-I-II-I-[\n   _ _ _/\\_ _ _ _---|      | ----|   \\ `  ' /\n   ]-I-I--I-I-[  ---|      |     |    |. ` |\n\nWelcome to the land of Middle Earth. May your visit here be... interesting.\nNever forget! Try to role-play...\n\nHalls of Mandos\nYou are in the Halls of Mandos which are larger than any mortal can grasp."
+  yes: "            ~~~\n           ~~         _----|        _ _ __ _ _\n                       ----|_----|  ]-I-II-I-[\n   _ _ _/\\_ _ _ _---|      | ----|   \\ `  ' /\n   ]-I-I--I-I-[  ---|      |     |    |. ` |\n\nWelcome to the land of Middle Earth. May your visit here be... interesting.\nNever forget! Try to role-play...\n\nHalls of Mandos\nYou are in the Halls of Mandos which are larger than any mortal can grasp."
 ---
 
 <TutorialPlayer>
 
-# Account Creation & Awakening in Mandos
+# Account Creation & Hero Definition
 
 Your adventure begins at MUME's login prompt. In MUME, all characters belong to a single player account.
 
-Follow Fuor step-by-step as he registers his account (`NEW`), selects his sex, race, class, archetype, and character name (**Fuor the Man**), and finally awakens in the mysterious **Halls of Mandos**.
+Follow Fuor step-by-step as he registers his account (`NEW`), selects his sex, race, class, archetype, and character name (**Fuor the Man**), and prepares to awaken.
 
 Type `new` below to begin!
 

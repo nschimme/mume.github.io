@@ -5,6 +5,7 @@ import TutorialPlayer from './components/TutorialPlayer.vue'
 import MumeChoice from './components/MumeChoice.vue'
 import MumeCallout from './components/MumeCallout.vue'
 import TutorialChapterGrid from './components/TutorialChapterGrid.vue'
+import MumeCommandGuide from './components/MumeCommandGuide.vue'
 import { nextTick } from 'vue'
 
 export default {
@@ -16,6 +17,7 @@ export default {
     app.component('MumeChoice', MumeChoice)
     app.component('MumeCallout', MumeCallout)
     app.component('TutorialChapterGrid', TutorialChapterGrid)
+    app.component('MumeCommandGuide', MumeCommandGuide)
 
     if (typeof window !== 'undefined') {
       const GA_MEASUREMENT_ID = 'G-LL4RX9KM6Q'

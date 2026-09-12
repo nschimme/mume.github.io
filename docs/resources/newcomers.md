@@ -1,13 +1,13 @@
 ---
 title: MUME Newbie & Beginner Survival Guide
-description: Essential beginner guides, 16-chapter interactive tutorial directory, video guides, FAQs, and survival commands for new players joining Multi-Users in Middle-earth (MUME).
+description: Essential beginner guides, 15-chapter interactive tutorial directory, quick command reference guide, and survival tips for new players joining Multi-Users in Middle-earth (MUME).
 head:
   - - meta
     - property: og:title
       content: MUME Newbie & Beginner Survival Guide
   - - meta
     - property: og:description
-      content: Essential beginner guides, 16-chapter interactive tutorial directory, video guides, FAQs, and survival commands for new players joining MUME.
+      content: Essential beginner guides, 15-chapter interactive tutorial directory, quick command reference guide, and survival tips for new players joining MUME.
 ---
 
 # Information for Newcomers
@@ -20,20 +20,26 @@ Oh yeah, have fun running around at night with no torch not being able to see a 
 <MumeCallout
   title="Interactive Walkthrough"
   subtitle="Start Here"
-  body="Master MUME step-by-step with our interactive tutorial. Complete all 16 chapters at your own pace, or jump directly to any topic below."
-  actionText="Start Chapter 1: Orientation"
+  body="Master MUME step-by-step with Fuor the Man in our 15-chapter interactive tutorial. Complete chapters at your own pace, or test commands in the terminal."
+  actionText="Start Chapter 1: Hero Creation"
   actionHref="/play/tutorial/1-orientation"
   icon="fa-terminal"
   variant="gold"
 />
 
-## 1. Interactive Tutorial Chapters
+## 1. Quick Command Reference Guide
 
-Jump directly into any interactive walkthrough chapter below. Progress through each chapter seamlessly or return here anytime.
+Filter by category below to inspect essential MUME survival commands, syntax, and descriptions. Click any chapter link to practice the command live in our interactive terminal simulator.
+
+<MumeCommandGuide />
+
+## 2. Interactive Tutorial Chapters
+
+Jump directly into any walkthrough chapter below following **Fuor the Man** from account creation in Mandos through wild adventuring outside Fornost.
 
 <TutorialChapterGrid />
 
-## 2. Recommended Guides & Documentation
+## 3. Recommended Guides & Documentation
 
 Explore the official in-game documentation and guides to deepen your understanding:
 
@@ -42,7 +48,7 @@ Explore the official in-game documentation and guides to deepen your understandi
 - **Advanced Features**: <a href="https://mume.org/help/advanced" target="_self" rel="external">Advanced Commands (help advanced)</a> | [Unique Features](/about/features)
 - **Rules of Middle-earth**: <a href="https://mume.org/rules/" target="_self" rel="external">MUME Code of Conduct & Rules</a>
 
-## 3. Video Tutorials & Sample Sessions
+## 4. Video Tutorials & Sample Sessions
 
 Prefer visual or log-based learning? Watch our complete YouTube walkthrough series or inspect an annotated session log:
 
@@ -53,7 +59,7 @@ Prefer visual or log-based learning? Watch our complete YouTube walkthrough seri
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/videoseries?list=PLZPa6XiiZkfQZVGIw1xD7B21n51f4wLCs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-## 4. Finding Help In-Game
+## 5. Finding Help In-Game
 
 Never hesitate to ask for assistance. MUME has dedicated **Rangers** whose purpose is to mentor new players:
 
