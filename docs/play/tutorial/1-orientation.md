@@ -8,12 +8,14 @@ teach:
     desc: "review the single account rule"
 steps:
   - ask: "look"
+    note: "When you first enter MUME, take time to inspect the room around you. Observing your environment reveals objects, exits, and characters present."
     accept:
       - "look"
       - "l"
     hint: "Type: look (or l)"
     example: "> look\nHalls of Mandos\nYou are in the Halls of Mandos which are larger than any mortal can grasp."
   - ask: "help accounts"
+    note: "Before departing Mandos, remember MUME's strict rule regarding accounts: every player is allowed only one account, though you may own multiple characters."
     accept:
       - "help accounts"
       - "help account"
@@ -31,8 +33,8 @@ responses:
 
 Your journey begins as a spirit summoned to the **Halls of Mandos** before entering the mortal realm. Around you lie woven tapestries of past and future ages.
 
-Before stepping into Middle-earth, every adventurer must understand the law of the world: **one account per player**. All your characters—whether a Man of Eriador, a Hobbit of the Shire, or an Elf of Rivendell—belong to this single account.
+In MUME, every room tells a story through text. As in the sample session walkthrough, getting into the habit of examining your surroundings with `look` and reading help files ensures you stay informed about the laws and geography of Middle-earth.
 
-Take a look around the cavern halls to begin your orientation.
+Take a look around the cavern halls and review the account rules to begin your orientation.
 
 </TutorialPlayer>

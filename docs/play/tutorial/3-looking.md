@@ -8,12 +8,14 @@ teach:
     desc: "examine the well in Fornost"
 steps:
   - ask: "pray fornost"
+    note: "When you are ready to leave Mandos, you pray to your chosen hometown. For Men, Dwarves, and Hobbits, Fornost is a prominent northern stronghold."
     accept:
       - "pray fornost"
       - "pray"
     hint: "Type: pray fornost"
     example: "> pray fornost\nYou kneel down and try to hear the Ainulindalë...\nSuddenly an explosion of ancient rhymes makes space collapse... You are in Fornost!"
   - ask: "look"
+    note: "You have arrived at the ancient stone well of Fornost. Observe the surroundings, the nearby street lamps, and non-player characters wandering by."
     accept:
       - "look"
       - "l"

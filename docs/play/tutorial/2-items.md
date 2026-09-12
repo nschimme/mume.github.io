@@ -1,19 +1,21 @@
 ---
-title: "Gathering Gear in Mandos"
-description: "Collect essential travel items from the cavern floor before departing."
+title: "Picking Up Starting Items"
+description: "Learn to pick up torches, food, and supplies from room floors."
 teach:
   - command: "get torch"
-    desc: "pick up a torch from the ground"
+    desc: "pick up the torch lying on the ground"
   - command: "get cheese"
-    desc: "pick up food supplies"
+    desc: "pick up food for your journey"
 steps:
   - ask: "get torch"
+    note: "Light is vital in Middle-earth when exploring dark caverns, dungeons, or night-time forests. Lying in the dust is a large wooden torch."
     accept:
       - "get torch"
       - "take torch"
     hint: "Type: get torch"
     example: "> get torch\nYou get a torch."
   - ask: "get cheese"
+    note: "Adventuring causes hunger and thirst. Hungry adventurers recover hit points and movement far more slowly, so keeping rations like cheese is essential."
     accept:
       - "get cheese"
       - "take cheese"
@@ -21,17 +23,15 @@ steps:
     example: "> get cheese\nYou get some cheese."
 responses:
   get torch: "You get a torch."
-  take torch: "You get a torch."
   get cheese: "You get some cheese."
-  take cheese: "You get some cheese."
 ---
 
 <TutorialPlayer>
 
-# Preparing for Departure
+# Gathering Initial Supplies
 
-Before leaving Mandos for the mortal realm of Fornost, you look upon the cavern floor. Cast among the ancient dust lie items left for travelers: a sturdy torch and a piece of cheese.
+When exploring rooms in Middle-earth, you will frequently see loose items lying on the ground—torches, dropped coins, rations, maps, or fallen equipment.
 
-In MUME, you interact with items using commands like `get <item>` or `take <item>`. Gather these essential travel provisions before invoking the Ainulindalë to begin your journey.
+Commands in MUME follow natural verb-noun phrasing. To take an item from the room floor, use `get <item>` or `take <item>`. Collecting supplies before setting out on your journey ensures you are prepared for darker roads and long travels.
 
 </TutorialPlayer>

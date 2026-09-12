@@ -13,30 +13,6 @@ const PLAY_HUB_URL = '/play/'
 const BROWSER_PLAY_URL = '/play/browser'
 const NEWCOMERS_URL = '/resources/newcomers'
 
-const BANNER =
-`                    ***  MUME IX  ***
-
-                  In progress at FIRE
-               (Free Internet Roleplay Experiences)
-               Hosted at HEIG-VD (www.heig-vd.ch)
-
-        Adapted from J.R.R. Tolkien's Middle-earth world and
-                maintained by CryHavoc, Manwe, and Nada.
-
-If you have never played MUME before, type NEW to create a new character,
-or ? for help.
-
-By what name do you wish to be known?
-Account password:
-Available commands:
-
-  create        - Create a new character
-  play <name>   - Play the character <name>
-  help          - Display help about these commands
-  menu          - Display this menu
-  quit          - Leave the account menu; logs you out
-
-Account>`
 
 const router = useRouter()
 const route = useRoute()
@@ -130,12 +106,13 @@ function renderStepLog() {
   subStepIdx.value = 0
   finished.value = false
 
-  const newLog = [{ kind: 'banner', text: BANNER }]
+  const newLog = []
   newLog.push({
     kind: 'lesson',
     chapterNum: chapterNum.value,
     title: chapterTitle.value,
     teach: teachList.value,
+    note: currentSubStep.value ? currentSubStep.value.note : null,
     ask: currentSubStep.value ? currentSubStep.value.ask : null
   })
 
@@ -160,6 +137,7 @@ function advanceSubStep() {
     const nextSub = currentSubStep.value
     log.value.push({
       kind: 'prompt_next',
+      note: nextSub.note || null,
       ask: nextSub.ask
     })
     scrollLog()
@@ -253,7 +231,6 @@ onUnmounted(() => {
             <button type="button" class="tut-sheet-toggle-btn" @click="isSheetOpen = !isSheetOpen" aria-label="Toggle Command Sheet">
               Commands
             </button>
-            <a class="tut-hub-link" :href="withBase('/resources/newcomers')">← Newcomers Hub</a>
           </div>
           <span class="tut-sub">Your first hour in Middle-earth</span>
         </div>
@@ -278,9 +255,7 @@ onUnmounted(() => {
         <div class="tut-term">
           <div class="tut-log" ref="logEl">
             <div v-for="(b, i) in log" :key="i" class="tut-block">
-              <pre v-if="b.kind === 'banner'" class="tut-banner">{{ b.text }}</pre>
-
-              <template v-else-if="b.kind === 'lesson'">
+              <template v-if="b.kind === 'lesson'">
                 <hr class="tut-rule" />
                 <div class="tut-eyebrow">Chapter {{ b.chapterNum }} of {{ totalChapters }}</div>
                 <h3 class="tut-h">{{ b.title }}</h3>
@@ -296,12 +271,16 @@ onUnmounted(() => {
                   </template>
                 </dl>
 
+                <p v-if="b.note" class="tut-note-line">{{ b.note }}</p>
                 <p class="tut-ask" v-if="b.ask">Type <span class="tut-cmd">{{ b.ask }}</span> to carry on.</p>
               </template>
 
-              <p v-else-if="b.kind === 'prompt_next'" class="tut-ask">
-                Great job! Now type <span class="tut-cmd">{{ b.ask }}</span> to carry on.
-              </p>
+              <template v-else-if="b.kind === 'prompt_next'">
+                <p v-if="b.note" class="tut-note-line">{{ b.note }}</p>
+                <p class="tut-ask">
+                  Great job! Now type <span class="tut-cmd">{{ b.ask }}</span> to carry on.
+                </p>
+              </template>
 
               <p v-else-if="b.kind === 'echo'" class="tut-echo">&gt; {{ b.text }}</p>
 
@@ -391,7 +370,6 @@ onUnmounted(() => {
 
 .tut-term { display: flex; flex-direction: column; min-width: 0; }
 .tut-log { height: 460px; overflow-y: auto; padding: 6px 18px 14px; scroll-behavior: smooth; }
-.tut-banner { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 12px; color: #8f8f8f; white-space: pre-wrap; margin: 8px 0 4px; }
 .tut-rule { border: 0; border-top: 1px solid #23262e; margin: 20px 0 14px; }
 .tut-eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 11px; color: #b8860b; margin-bottom: 4px; }
 .tut-h { font-family: 'Kelt', serif; color: #e6d79a; font-size: 26px; margin: 0 0 .4em; border: 0; padding: 0; }
@@ -400,6 +378,7 @@ onUnmounted(() => {
 .tut-teach dt { color: #d8b04a; font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 13px; }
 .tut-teach dd { color: #9a9a9a; margin: 0; font-size: 13.5px; }
 
+.tut-note-line { color: #c4ba9d; font-size: 14px; line-height: 1.5; margin: 10px 0 4px; font-style: italic; background: rgba(215,166,63,.06); padding: 8px 12px; border-left: 3px solid darkgoldenrod; border-radius: 0 6px 6px 0; }
 .tut-ask { color: #7fb0c8; font-size: 14px; margin: 8px 0 4px; }
 .tut-cmd { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #f4dd94; background: rgba(184,134,11,.12); padding: 1px 6px; border-radius: 4px; }
 .tut-echo { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #cfcfcf; margin: 10px 0 2px; }
@@ -430,8 +409,6 @@ onUnmounted(() => {
 
 .tut-title-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .tut-sheet-toggle-btn { display: none; background: rgba(184,134,11,.18); border: 1px solid rgba(215,166,63,.4); color: #f4dd94; font-size: 11px; padding: 2px 8px; border-radius: 12px; cursor: pointer; }
-.tut-hub-link { color: #d8b04a !important; font-size: 12px; margin-left: auto; text-decoration: none !important; transition: color .2s; }
-.tut-hub-link:hover { color: #fff !important; text-decoration: underline !important; }
 .tut-hub-ghost { display: inline-block; background: none; border: 1px solid rgba(215,166,63,.4); color: #9a927f !important; border-radius: 30px; padding: 7px 16px; font-size: 13px; text-decoration: none !important; margin-right: 12px; font-family: 'Merriweather', serif; transition: background .2s, color .2s; }
 .tut-hub-ghost:hover { background: rgba(184,134,11,.12); color: #f4dd94 !important; }
 
@@ -446,8 +423,15 @@ onUnmounted(() => {
 @media (max-width: 720px) {
   .tut-sheet-toggle-btn { display: inline-block; }
   .tut-sheet-close { display: block; }
-  .tut-head { flex-wrap: wrap; gap: 8px 12px; }
-  .tut-progress { width: 100%; justify-content: space-between; margin-top: 2px; }
+  .tut-head { flex-wrap: wrap; gap: 8px 10px; padding: 10px 12px; }
+  .tut-progress { width: 100%; justify-content: space-between; margin-top: 2px; flex-wrap: wrap; gap: 6px; }
+  .tut-ticks { gap: 3px; }
+  .tut-tick { width: 8px; height: 8px; }
+  .tut-log { height: 340px; padding: 6px 12px 10px; }
+  .tut-prompt { padding: 8px 12px; }
+  .tut-controls { padding: 8px 12px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+  .tut-hub-ghost { margin-right: 0; font-size: 12px; padding: 5px 12px; }
+  .tut-ghost { font-size: 12px; padding: 5px 12px; }
 
   .tut-sheet {
     display: none;

@@ -7,11 +7,11 @@ import gandalfImg2x from './gandalf_90@2x.gif'
 import './mume.css'
 
 const { site, page, frontmatter } = useData()
-const vpRoute = useRoute()
+const route = useRoute()
 
 const isActive = (path, exact = false) => {
   const target = withBase(path)
-  const current = vpRoute.path
+  const current = route.path
 
   if (exact) {
     return current === target || (target === '/' && (current === '/' || current === '/index.html'))
@@ -31,7 +31,7 @@ const gandalfRef = ref(null)
 
 const lastUpdated = __LAST_UPDATED__
 
-const isTutorialPage = computed(() => vpRoute.path.includes('/play/tutorial'))
+const isTutorialPage = computed(() => route.path ? route.path.includes('/play/tutorial') : false)
 
 let prevScrollpos = 0
 
