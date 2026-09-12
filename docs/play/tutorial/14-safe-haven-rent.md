@@ -1,35 +1,57 @@
 ---
-title: "Safe Haven & Renting at the Inn"
-description: "Check room rental rates and safely save your character and equipment at an inn using offer and rent."
+title: "Safe Haven & Inn Renting"
+description: "Locate the innkeeper in The Foaming Mug, request a storage quote, and safely rent to preserve your equipment."
 teach:
+  - command: "up"
+    desc: "ascend to the Inn's Private Rooms"
+  - command: "examine innkeeper"
+    desc: "inspect the innkeeper at his counter"
   - command: "offer"
-    desc: "check daily inn room rental prices and duration"
+    desc: "ask the innkeeper for your daily storage rate"
   - command: "rent"
-    desc: "safely store equipment and log off at an inn"
+    desc: "safely store your gear and save your character"
 steps:
+  - ask: "up"
+    note: "From the Common Room of The Foaming Mug, climb UP to the Inn's Private Rooms."
+    accept:
+      - "up"
+      - "u"
+    hint: "Type: up (or u)"
+    example: "> up\nInn's Private Rooms\nRows of simple wooden doors leading to guest rooms are accessed behind a small counter."
+  - ask: "examine innkeeper"
+    note: "Examine the innkeeper standing behind the desk."
+    accept:
+      - "examine innkeeper"
+      - "ex innkeeper"
+    hint: "Type: examine innkeeper"
+    example: "> examine innkeeper\nThe old innkeeper was maybe in his youth an adventurer like yourself."
   - ask: "offer"
-    note: "Fuor returns to the Crown of Arnor Inn after a long day of adventuring. Check room costs with OFFER."
+    note: "Request a storage cost quote using OFFER."
     accept:
       - "offer"
     hint: "Type: offer"
-    example: "> offer\nThe innkeeper tells you 'It will cost 62 copper pennies per day.'"
+    example: "> offer\nThe innkeeper tells you 'It will cost you 19 copper pennies per day.'"
   - ask: "rent"
-    note: "Rent a room to safely log off and preserve all your hard-earned equipment!"
+    note: "Safely store your equipment and save Fuor using RENT!"
     accept:
       - "rent"
     hint: "Type: rent"
-    example: "> rent\nThe innkeeper stores your stuff in the safe, and helps you into your chamber."
+    example: "> rent\nThe innkeeper says 'Please bring our esteemed guest to their chamber.'"
 responses:
-  offer: "The innkeeper tells you 'It will cost you 62 copper pennies per day.'\nYou have enough money for 2 months."
-  rent: "The innkeeper tells you 'It will cost you 62 copper pennies per day.'\nYou have enough money for 2 months.\nThe innkeeper stores your stuff in the safe, and helps you into your chamber.\n\n[Session Saved Successfully - Free Rent]"
+  up: "Inn's Private Rooms\nRows of simple wooden doors leading to the guest rooms are accessed from a long\ncorridor behind a small counter. A small brass bell rests on the counter to\nsummon the innkeeper if he is away from his post. Covering the floor is a\nthreadbare rug which, although worn, deadens the noise coming from below.\nThe innkeeper set is here, smiling at would-be customers.\nExits: north, down."
+  u: "Inn's Private Rooms\nThe innkeeper stands behind the desk here.\nExits: north, down."
+  examine innkeeper: "The old innkeeper was maybe in his youth an adventurer like yourself, who\nprospered enough on his travels to buy this inn.\nThe innkeeper is in an excellent condition.\nThe innkeeper is using:\n<worn on body>       a chequered shirt (flawless)\n<worn on legs>       a pair of cotton pants (worn)\n<worn on finger>     a ring"
+  ex innkeeper: "The old innkeeper stands behind the counter, smiling warmly."
+  offer: "The innkeeper tells you 'It will cost you 19 copper pennies per day.'\nYou have enough money for at least two years!"
+  rent: "The innkeeper tells you 'It will cost you 19 copper pennies per day.'\nYou have enough money for at least two years!\nThe innkeeper calls for a servant who hurries from attending guests.\nThe innkeeper says 'Please bring our esteemed guest to their chamber.'\nYou are guided to your private room. Your equipment is safely stored."
 ---
 
 <TutorialPlayer>
 
-# Safe Haven & Renting at the Inn
+# Safe Haven & Inn Renting
 
-Never type `QUIT` when logging off in MUME, or your items will drop to the floor for anyone to take!
+When you need to leave MUME, simply closing your client causes you to drop your equipped items!
 
-Always return to an inn, check room prices with `OFFER`, and use `RENT` to safely store your character and equipment.
+To save your gear permanently, head upstairs in **The Foaming Mug** inn, inspect the innkeeper (`EXAMINE INNKEEPER`), check your daily rate (`OFFER`), and store your character safely (`RENT`).
 
 </TutorialPlayer>
