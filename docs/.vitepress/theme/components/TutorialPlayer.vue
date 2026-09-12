@@ -96,9 +96,24 @@ function navigateToUrl(url) {
 function scrollLog() {
   if (typeof window !== 'undefined') {
     setTimeout(() => {
-      const el = logEl.value
-      if (el) el.scrollTop = el.scrollHeight
-    }, 50)
+      const container = logEl.value
+      if (!container) return
+      const blocks = container.querySelectorAll('.tut-block')
+      if (blocks.length > 0) {
+        const lastBlock = blocks[blocks.length - 1]
+        const containerRect = container.getBoundingClientRect()
+        const blockRect = lastBlock.getBoundingClientRect()
+
+        // If block is taller than the view, bring the start of the block into view
+        if (blockRect.height > containerRect.height - 40) {
+          lastBlock.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        } else {
+          container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' })
+        }
+      } else {
+        container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' })
+      }
+    }, 60)
   }
 }
 
@@ -199,23 +214,10 @@ watch(() => route.path, () => {
   renderStepLog()
 }, { immediate: true })
 
-function handleGlobalKeydown(e) {
-  if (e.key === 'Enter') {
-    submit()
-  }
-}
-
 onMounted(() => {
   renderStepLog()
   if (typeof window !== 'undefined') {
-    window.addEventListener('keydown', handleGlobalKeydown)
     focusInput()
-  }
-})
-
-onUnmounted(() => {
-  if (typeof window !== 'undefined') {
-    window.removeEventListener('keydown', handleGlobalKeydown)
   }
 })
 </script>
@@ -256,7 +258,6 @@ onUnmounted(() => {
           <div class="tut-log" ref="logEl">
             <div v-for="(b, i) in log" :key="i" class="tut-block">
               <template v-if="b.kind === 'lesson'">
-                <hr class="tut-rule" />
                 <div class="tut-eyebrow">Chapter {{ b.chapterNum }} of {{ totalChapters }}</div>
                 <h3 class="tut-h">{{ b.title }}</h3>
 
@@ -265,28 +266,22 @@ onUnmounted(() => {
                   <slot />
                 </div>
 
-                <dl v-if="b.teach && b.teach.length" class="tut-teach">
-                  <template v-for="(t, k) in b.teach" :key="k">
-                    <dt>{{ t.command }}</dt><dd>{{ t.desc }}</dd>
-                  </template>
-                </dl>
-
-                <p v-if="b.note" class="tut-note-line">{{ b.note }}</p>
-                <p class="tut-ask" v-if="b.ask">Type <span class="tut-cmd">{{ b.ask }}</span> to carry on.</p>
+                <div v-if="b.note" class="tut-step-guide">{{ b.note }}</div>
+                <div class="tut-ask" v-if="b.ask">Task: type <span class="tut-cmd">{{ b.ask }}</span></div>
               </template>
 
               <template v-else-if="b.kind === 'prompt_next'">
-                <p v-if="b.note" class="tut-note-line">{{ b.note }}</p>
-                <p class="tut-ask">
-                  Great job! Now type <span class="tut-cmd">{{ b.ask }}</span> to carry on.
-                </p>
+                <div v-if="b.note" class="tut-step-guide">{{ b.note }}</div>
+                <div class="tut-ask">
+                  Task: type <span class="tut-cmd">{{ b.ask }}</span>
+                </div>
               </template>
 
-              <p v-else-if="b.kind === 'echo'" class="tut-echo">&gt; {{ b.text }}</p>
+              <div v-else-if="b.kind === 'echo'" class="tut-echo">&gt; {{ b.text }}</div>
 
               <pre v-else-if="b.kind === 'example'" class="tut-example">{{ b.body }}</pre>
 
-              <p v-else-if="b.kind === 'error'" class="tut-err">{{ b.text }}</p>
+              <div v-else-if="b.kind === 'error'" class="tut-err">{{ b.text }}</div>
 
               <template v-else-if="b.kind === 'end'">
                 <hr class="tut-rule" />
@@ -369,21 +364,17 @@ onUnmounted(() => {
 @media (max-width: 720px) { .tut-body { grid-template-columns: 1fr; } }
 
 .tut-term { display: flex; flex-direction: column; min-width: 0; }
-.tut-log { height: 460px; overflow-y: auto; padding: 6px 18px 14px; scroll-behavior: smooth; }
-.tut-rule { border: 0; border-top: 1px solid #23262e; margin: 20px 0 14px; }
+.tut-log { min-height: 440px; max-height: 520px; overflow-y: auto; padding: 12px 18px 16px; scroll-behavior: smooth; }
 .tut-eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 11px; color: #b8860b; margin-bottom: 4px; }
-.tut-h { font-family: 'Kelt', serif; color: #e6d79a; font-size: 26px; margin: 0 0 .4em; border: 0; padding: 0; }
-.tut-line { color: #cdc7b8; font-size: 15px; line-height: 1.6; margin: 0 0 12px; }
-.tut-teach { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 4px 0 14px; padding: 12px 14px; background: #101216; border: 1px solid #23262e; border-radius: 8px; }
-.tut-teach dt { color: #d8b04a; font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 13px; }
-.tut-teach dd { color: #9a9a9a; margin: 0; font-size: 13.5px; }
+.tut-h { font-family: 'Kelt', serif; color: #e6d79a; font-size: 24px; margin: 0 0 .4em; border: 0; padding: 0; }
+.tut-line { color: #cdc7b8; font-size: 14.5px; line-height: 1.6; margin: 0 0 12px; }
 
-.tut-note-line { color: #c4ba9d; font-size: 14px; line-height: 1.5; margin: 10px 0 4px; font-style: italic; background: rgba(215,166,63,.06); padding: 8px 12px; border-left: 3px solid darkgoldenrod; border-radius: 0 6px 6px 0; }
-.tut-ask { color: #7fb0c8; font-size: 14px; margin: 8px 0 4px; }
-.tut-cmd { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #f4dd94; background: rgba(184,134,11,.12); padding: 1px 6px; border-radius: 4px; }
-.tut-echo { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #cfcfcf; margin: 10px 0 2px; }
-.tut-example { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 12.5px; color: #b9d3c2; white-space: pre-wrap; background: #06120c; border: 1px solid #17301f; border-radius: 8px; padding: 12px 14px; margin: 6px 0 8px; }
-.tut-err { color: #d98a7f; font-size: 14px; margin: 8px 0; }
+.tut-step-guide { color: #d2c8ae; font-size: 13.5px; line-height: 1.55; margin: 12px 0 6px; padding: 8px 12px; background: rgba(215,166,63,.05); border-left: 3px solid #b8860b; border-radius: 0 6px 6px 0; }
+.tut-ask { color: #8abed6; font-size: 13.5px; margin: 6px 0 10px; font-weight: 500; }
+.tut-cmd { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #f4dd94; background: rgba(184,134,11,.15); padding: 2px 7px; border-radius: 4px; border: 1px solid rgba(215,166,63,.3); }
+.tut-echo { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #dcdcdc; margin: 12px 0 4px; font-weight: bold; }
+.tut-example { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 13px; line-height: 1.45; color: #b9d3c2; white-space: pre-wrap; background: #05100a; border: 1px solid #142b1c; border-radius: 6px; padding: 10px 14px; margin: 6px 0 10px; }
+.tut-err { color: #e5988e; font-size: 13.5px; margin: 6px 0; }
 
 .tut-end-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 16px 0 16px; }
 .tut-enter { display: inline-block; font-family: 'Kelt', serif; font-size: 1.15rem; background: darkgoldenrod; color: white !important; padding: 0.5em 2em; border-radius: 3.75rem; box-shadow: 1px 5px 10px 0px rgba(184, 134, 11, 0.5); text-decoration: none !important; transition: color .2s; }
