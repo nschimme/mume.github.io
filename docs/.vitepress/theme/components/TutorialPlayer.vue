@@ -1,14 +1,16 @@
 <script setup>
 /*
   Interactive new-player tutorial component driven dynamically by chapter Markdown files.
-  Non-technical friendly: supports multi-step command practice per chapter defined in YAML frontmatter!
+  Streamlined terminal output: immediate MUD output execution without extra "Press Enter to carry on" pauses.
+  Clear end-of-tutorial handover options to Play Hub, Browser Client, or Newcomers Guide.
 */
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useData, useRoute, useRouter, withBase } from 'vitepress'
 import { data as allChapters } from '../../../play/tutorial/chapters.data.js'
 import logoImg from '../../../assets/images/mume_logo.jpg'
 
-const PLAY_URL = '/play/browser'
+const PLAY_HUB_URL = '/play/'
+const BROWSER_PLAY_URL = '/play/browser'
 const NEWCOMERS_URL = '/resources/newcomers'
 
 const BANNER =
@@ -87,7 +89,6 @@ const mumeResponses = computed(() => frontmatter.value?.responses || currentChap
 
 const log = ref([])
 const finished = ref(false)
-const awaitingExample = ref(false)
 const entry = ref('')
 const isSheetOpen = ref(false)
 
@@ -127,8 +128,7 @@ function scrollLog() {
 
 function renderStepLog() {
   subStepIdx.value = 0
-  awaitingExample.value = false
-  finished.value = !nextChapterUrl.value
+  finished.value = false
 
   const newLog = [{ kind: 'banner', text: BANNER }]
   newLog.push({
@@ -149,6 +149,7 @@ function advanceNext() {
     navigateToUrl(nextChapterUrl.value)
   } else {
     finished.value = true
+    log.value.push({ kind: 'end' })
     scrollLog()
   }
 }
@@ -176,13 +177,6 @@ function submit() {
   if (cmd === 'skip') { advanceNext(); focusInput(); return }
   if (cmd === 'tutorial') { navigateToUrl(allChapters[0]?.url || '/play/tutorial/1-orientation'); focusInput(); return }
 
-  if (awaitingExample.value) {
-    awaitingExample.value = false
-    advanceSubStep()
-    focusInput()
-    return
-  }
-
   const curStep = currentSubStep.value
 
   if (!curStep) {
@@ -207,14 +201,11 @@ function submit() {
   const ok = accept.some(a => a.toLowerCase() === cmd)
 
   if (ok) {
-    if (curStep.example) {
-      const body = curStep.example.replace(/^>[^\n]*\n?/, '')
+    const body = curStep.example ? curStep.example.replace(/^>[^\n]*\n?/, '') : (mumeResponses.value[cmd] || '')
+    if (body) {
       log.value.push({ kind: 'example', body })
-      awaitingExample.value = true
-      scrollLog()
-    } else {
-      advanceSubStep()
     }
+    advanceSubStep()
   } else if (mumeResponses.value[cmd]) {
     log.value.push({ kind: 'example', body: mumeResponses.value[cmd] })
     log.value.push({ kind: 'error', text: 'Good try! To proceed in this step, ' + (curStep.hint || (`try: ${curStep.ask}`)) })
@@ -232,10 +223,6 @@ watch(() => route.path, () => {
 
 function handleGlobalKeydown(e) {
   if (e.key === 'Enter') {
-    const active = typeof document !== 'undefined' ? document.activeElement : null
-    if (active && active !== document.body && active !== document.documentElement) {
-      return
-    }
     submit()
   }
 }
@@ -310,7 +297,6 @@ onUnmounted(() => {
                 </dl>
 
                 <p class="tut-ask" v-if="b.ask">Type <span class="tut-cmd">{{ b.ask }}</span> to carry on.</p>
-                <p class="tut-ask" v-else>Press Enter to carry on.</p>
               </template>
 
               <p v-else-if="b.kind === 'prompt_next'" class="tut-ask">
@@ -319,24 +305,22 @@ onUnmounted(() => {
 
               <p v-else-if="b.kind === 'echo'" class="tut-echo">&gt; {{ b.text }}</p>
 
-              <template v-else-if="b.kind === 'example'">
-                <p class="tut-exlead">Here's an example of what you'll see:</p>
-                <pre class="tut-example">{{ b.body }}</pre>
-                <p class="tut-ask">Press Enter to carry on.</p>
-              </template>
+              <pre v-else-if="b.kind === 'example'" class="tut-example">{{ b.body }}</pre>
 
               <p v-else-if="b.kind === 'error'" class="tut-err">{{ b.text }}</p>
 
-              <template v-else-if="b.kind === 'end' || !nextChapterUrl">
+              <template v-else-if="b.kind === 'end'">
                 <hr class="tut-rule" />
-                <div class="tut-eyebrow">Ready</div>
-                <h3 class="tut-h">Create your character</h3>
-                <p class="tut-line">That is everything you need for your first hour in Middle-earth!</p>
+                <div class="tut-eyebrow">Congratulations!</div>
+                <h3 class="tut-h">You have completed the tutorial!</h3>
+                <p class="tut-line">You have mastered movement, equipment, stats, combat, scouting, skills, and resting in Middle-earth.</p>
+
                 <div class="tut-end-actions">
-                  <a class="tut-enter" :href="withBase(PLAY_URL)">Play MUME Now</a>
+                  <a class="tut-enter" :href="withBase(BROWSER_PLAY_URL)">Play MUME Now (Web Client) &rarr;</a>
                   <a class="tut-secondary-link" :href="withBase(NEWCOMERS_URL)">Explore Newcomers Guide</a>
+                  <a class="tut-secondary-link" :href="withBase(PLAY_HUB_URL)">Back to Play Hub</a>
                 </div>
-                <p class="tut-note">Opens the web client. You can retake this tutorial at any time.</p>
+                <p class="tut-note">You can retake any chapter at any time from the top progress bar or the Newcomers Hub.</p>
               </template>
             </div>
           </div>
@@ -416,17 +400,16 @@ onUnmounted(() => {
 .tut-teach dt { color: #d8b04a; font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 13px; }
 .tut-teach dd { color: #9a9a9a; margin: 0; font-size: 13.5px; }
 
-.tut-ask { color: #7fb0c8; font-size: 14px; margin: 4px 0 2px; }
+.tut-ask { color: #7fb0c8; font-size: 14px; margin: 8px 0 4px; }
 .tut-cmd { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #f4dd94; background: rgba(184,134,11,.12); padding: 1px 6px; border-radius: 4px; }
 .tut-echo { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #cfcfcf; margin: 10px 0 2px; }
-.tut-exlead { color: #9a927f; font-size: 13px; margin: 8px 0 4px; }
-.tut-example { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 12.5px; color: #b9d3c2; white-space: pre-wrap; background: #06120c; border: 1px solid #17301f; border-radius: 8px; padding: 12px 14px; margin: 0 0 8px; }
+.tut-example { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 12.5px; color: #b9d3c2; white-space: pre-wrap; background: #06120c; border: 1px solid #17301f; border-radius: 8px; padding: 12px 14px; margin: 6px 0 8px; }
 .tut-err { color: #d98a7f; font-size: 14px; margin: 8px 0; }
 
-.tut-end-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 8px 0 12px; }
+.tut-end-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 16px 0 16px; }
 .tut-enter { display: inline-block; font-family: 'Kelt', serif; font-size: 1.15rem; background: darkgoldenrod; color: white !important; padding: 0.5em 2em; border-radius: 3.75rem; box-shadow: 1px 5px 10px 0px rgba(184, 134, 11, 0.5); text-decoration: none !important; transition: color .2s; }
 .tut-enter:hover, .tut-enter:focus-visible { color: #3a3a3a !important; text-decoration: none !important; }
-.tut-secondary-link { display: inline-block; font-family: 'Kelt', serif; font-size: 1.15rem; background: rgba(10, 13, 21, 0.75); color: white !important; border: 2px solid darkgoldenrod; padding: 0.5em 2em; border-radius: 3.75rem; box-shadow: 1px 5px 10px 0px rgba(184, 134, 11, 0.5); text-decoration: none !important; transition: background-color .2s, color .2s; }
+.tut-secondary-link { display: inline-block; font-family: 'Kelt', serif; font-size: 1.05rem; background: rgba(10, 13, 21, 0.75); color: white !important; border: 2px solid darkgoldenrod; padding: 0.5em 1.5em; border-radius: 3.75rem; box-shadow: 1px 5px 10px 0px rgba(184, 134, 11, 0.5); text-decoration: none !important; transition: background-color .2s, color .2s; }
 .tut-secondary-link:hover, .tut-secondary-link:focus-visible { background: darkgoldenrod; color: #3a3a3a !important; text-decoration: none !important; }
 .tut-note { color: #8f8a7d; font-size: 12.5px; margin: 4px 0 6px; }
 
