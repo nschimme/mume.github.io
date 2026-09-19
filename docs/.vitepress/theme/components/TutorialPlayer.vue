@@ -85,6 +85,15 @@ const finished = ref(false)
 const entry = ref('')
 const isSheetOpen = ref(false)
 const isExpanded = ref(false)
+const isModalOpen = ref(false)
+
+function openModal() {
+  isModalOpen.value = true
+}
+
+function closeModal() {
+  isModalOpen.value = false
+}
 
 function toggleExpand() {
   if (typeof document === 'undefined') return
@@ -197,6 +206,10 @@ function completeChapter() {
     nextUrl: nextChapterUrl.value
   })
   scrollLog()
+  // Only open modal automatically at the end of the entire tutorial (final chapter)
+  if (!nextChapterUrl.value) {
+    openModal()
+  }
 }
 
 function advanceNext() {
@@ -248,7 +261,7 @@ function submit() {
     if (nextChapterUrl.value) {
       navigateToUrl(nextChapterUrl.value)
     } else {
-      navigateToUrl(BROWSER_PLAY_URL)
+      openModal()
     }
     focusInput()
     return
@@ -401,10 +414,9 @@ onUnmounted(() => {
                     <button v-if="b.nextUrl && nextChapterObj" type="button" class="tut-enter" @click="navigateToUrl(b.nextUrl)">
                       Continue to Chapter {{ nextChapterObj.chapterNum }}: {{ nextChapterObj.title }} &rarr;
                     </button>
-                    <button v-else-if="b.nextUrl" type="button" class="tut-enter" @click="navigateToUrl(b.nextUrl)">
-                      Continue to Next Chapter &rarr;
+                    <button v-else type="button" class="tut-enter" @click="openModal">
+                      Tutorial Complete &mdash; What's Next? &rarr;
                     </button>
-                    <a v-else class="tut-enter" :href="withBase(BROWSER_PLAY_URL)">Play MUME Now (Web Client) &rarr;</a>
                   </div>
                 </div>
               </template>
@@ -429,10 +441,10 @@ onUnmounted(() => {
             <span class="tut-caret">&gt;</span>
             <input ref="inputEl" v-model="entry" @keydown.enter.prevent="submit"
                    autocomplete="off" spellcheck="false"
-                   :placeholder="finished ? (nextChapterUrl ? 'Press Enter to continue to next chapter...' : 'Press Enter to play MUME...') : 'type here, then press Enter'"
+                   :placeholder="finished ? (nextChapterUrl ? 'Press Enter to continue to next chapter...' : 'Tutorial complete — press Enter for options') : 'type here, then press Enter'"
                    aria-label="Type a command" />
             <button type="button" class="tut-send-btn" @click="submit" aria-label="Send Command">
-              Send
+              {{ finished ? (nextChapterUrl ? 'Next' : 'Options') : 'Send' }}
             </button>
           </div>
         </div>
@@ -458,6 +470,32 @@ onUnmounted(() => {
       </div>
 
       <div class="tut-sheet-backdrop" v-if="isSheetOpen" @click="isSheetOpen = false"></div>
+
+      <!-- Modal Overlay for End of Tutorial Options -->
+      <div v-if="isModalOpen" class="tut-modal-overlay" @click.self="closeModal">
+        <div class="tut-modal-card">
+          <button type="button" class="tut-modal-close" @click="closeModal" aria-label="Close modal">&times;</button>
+          <div class="tut-eyebrow">Tutorial Complete</div>
+          <h3 class="tut-modal-title">Congratulations! What would you like to do next?</h3>
+          <p class="tut-modal-desc">
+            You have completed all 15 chapters of the MUME interactive tutorial. You're ready to step into Middle-earth!
+          </p>
+
+          <div class="tut-modal-buttons">
+            <a class="tut-modal-btn tut-btn-primary" :href="withBase(BROWSER_PLAY_URL)">
+              <i class="fa fa-gamepad" aria-hidden="true"></i> Play MUME Now (Web Client) &rarr;
+            </a>
+
+            <a class="tut-modal-btn tut-btn-secondary" :href="withBase(NEWCOMERS_URL)">
+              <i class="fa fa-compass" aria-hidden="true"></i> Return to Newcomers Hub
+            </a>
+
+            <button type="button" class="tut-modal-btn tut-btn-ghost" @click="closeModal">
+              Stay on this Chapter
+            </button>
+          </div>
+        </div>
+      </div>
 
       <div class="tut-controls">
         <div class="tut-combined-nav">
@@ -649,6 +687,123 @@ onUnmounted(() => {
 
 .tut-sheet-close { display: block; background: none; border: none; color: #9a927f; font-size: 20px; cursor: pointer; padding: 0 4px; }
 .tut-sheet-close:hover { color: #f4dd94; }
+
+/* Choice Modal Overlay */
+.tut-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(4, 5, 8, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: tutStreamIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.tut-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  background: linear-gradient(180deg, #161410, #0c0d10);
+  border: 1px solid rgba(215, 166, 63, 0.5);
+  border-radius: 16px;
+  padding: 28px 24px 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(215, 166, 63, 0.15);
+  color: #ede2cd;
+  text-align: center;
+}
+
+.tut-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #8c826e;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.tut-modal-close:hover {
+  color: #f4dd94;
+}
+
+.tut-modal-title {
+  font-family: 'Kelt', serif;
+  font-size: 24px;
+  color: #f4dd94;
+  margin: 6px 0 10px;
+}
+
+.tut-modal-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #b3a998;
+  margin-bottom: 20px;
+}
+
+.tut-modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tut-modal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border-radius: 30px;
+  font-family: 'Kelt', serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s, background 0.2s, color 0.2s;
+}
+.tut-modal-btn:hover {
+  transform: translateY(-1px);
+}
+
+.tut-btn-primary {
+  background: darkgoldenrod;
+  color: #ffffff !important;
+  border: 1px solid gold;
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4);
+}
+.tut-btn-primary:hover {
+  background: #d49b13;
+  color: #1a1a1a !important;
+}
+
+.tut-btn-secondary {
+  background: rgba(184, 134, 11, 0.12);
+  color: #f4dd94 !important;
+  border: 1px solid rgba(215, 166, 63, 0.4);
+}
+.tut-btn-secondary:hover {
+  background: rgba(184, 134, 11, 0.3);
+  color: #ffffff !important;
+}
+
+.tut-btn-ghost {
+  background: transparent;
+  color: #8c826e !important;
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-size: 13px;
+  padding: 6px;
+}
+.tut-btn-ghost:hover {
+  color: #c7bc0a !important;
+}
 
 .tut-controls { border-top: 1px solid #23262e; padding: 10px 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; background: #0b0b0d; }
 
