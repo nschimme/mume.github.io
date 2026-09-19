@@ -1,55 +1,53 @@
 ---
-title: "Hero's Graduation & Community Help"
-description: "Locate online player Rangers with WHO RANGER and prepare to enter Middle-earth."
+title: "Hero's Graduation & Web Client"
+description: "Familiarize yourself with the MUME Web Client, live mapper, and community Rangers."
 teach:
+  - command: "look"
+    desc: "inspect your surroundings and client layout"
+  - command: "map"
+    desc: "view live map orientation"
   - command: "who ranger"
     desc: "find online Rangers dedicated to assisting new players"
 steps:
-  - story: "As dawn rises over the Black Hills, Fuor prepares to embark on his grand journey across Middle-earth!"
+  - story: "As dawn rises over the Black Hills, Fuor prepares to step into Middle-earth!"
+  - ask: "look"
+    note: "Type `look` to orient yourself in the Web Client interface."
+    accept:
+      - "look"
+      - "l"
+    hint: "Type: look"
+  - ask: "map"
+    note: "Type `map` to examine the live MMapper radar view."
+    accept:
+      - "map"
+      - "m"
+    hint: "Type: map"
   - ask: "who ranger"
-    note: "MUME Rangers exist specifically to help newcomers! Find active Rangers using `who ranger`."
+    note: "MUME Rangers exist specifically to assist new players! Check active Rangers with `who ranger`."
     accept:
       - "who ranger"
       - "who rangers"
       - "who"
     hint: "Type: who ranger"
 responses:
-  who ranger: |
-    Rangers
-    -------
-
-    0 such allies or visible Ainur on.
-
-    *+->
-  who rangers: |
-    Rangers
-    -------
-
-    0 such allies or visible Ainur on.
-
-    *+->
-  who: |
-    Players Online: Fuor, Martyrson, Elrond, Glorfindel.
-
-    *+->
+  look: "The Foaming Mug's Beer Garden\nA quiet courtyard paved with cobblestones lies behind the tavern.\nExits: north, east.\nRanger Ermin smiles warmly at you.\n\n*+->"
+  map: "    #   .   .\n    |   |   |\n  .-*---*---*-.\n    |   |   |\n    #   .   .\n\n*+->"
+  who ranger: "Rangers\n-------\n\n0 such allies or visible Ainur on.\n\n*+->"
+  who rangers: "Rangers\n-------\n\n0 such allies or visible Ainur on.\n\n*+->"
+  who: "Players Online: Fuor, Martyrson, Elrond, Glorfindel.\n\n*+->"
 ---
 
 # Chapter 15: Hero's Graduation
 
-Congratulations! You have guided Fuor through his awakening in the Black Hills, mastered navigation, prepared combat safety reflexes, equipped armor and weapons, journeyed with Ermin the Ranger, and secured your character at the inn.
+Congratulations on guiding Fuor through the Black Hills walkthrough! You have mastered navigation, combat reflexes, equipment, trading, and resting.
 
-### Familiarizing with the MUME Web Client & Live Map
+### Web Client & MMapper Preview
 
-When you launch into MUME using the Web Client, you will have access to an integrated live mapper (**MMapper**) and character stats panel alongside the terminal window:
+When you launch into MUME using the Web Client, you'll see an integrated live mapper (**MMapper**) and character stats panel:
 
-![MUME Web Client Interface](../../assets/images/tutorial-desc.png)
+<div style="display: flex; gap: 12px; margin: 12px 0; flex-wrap: wrap;">
+  <img src="../../assets/images/tutorial-desc.png" alt="Web Client Interface" style="max-width: 48%; border-radius: 6px; border: 1px solid rgba(215,166,63,0.3);" />
+  <img src="../../assets/images/tutorial-map.png" alt="MMapper Live Map" style="max-width: 48%; border-radius: 6px; border: 1px solid rgba(215,166,63,0.3);" />
+</div>
 
-The live map tracks your real-time position in Middle-earth, showing nearby rooms, exits, terrain types, and key landmarks:
-
-![MMapper Live Map View](../../assets/images/tutorial-map.png)
-
-### Community Guidance & Rangers
-
-If you ever need advice in-game, type `who ranger` to find friendly player Rangers dedicated to assisting new adventurers!
-
-Type `who ranger` below to graduate Fuor into Middle-earth!
+Follow the interactive quest prompts below to complete your graduation!

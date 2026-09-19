@@ -8,7 +8,6 @@
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useData, useRoute, useRouter, withBase } from 'vitepress'
 import { data as allChapters } from '../../../play/tutorial/chapters.data.js'
-import logoImg from '../../../assets/images/mume_logo.jpg'
 
 const PLAY_HUB_URL = '/play/'
 const BROWSER_PLAY_URL = '/play/browser'
@@ -229,9 +228,6 @@ function completeChapter() {
     nextUrl: nextChapterUrl.value
   })
   scrollLog()
-  if (!nextChapterUrl.value) {
-    openModal()
-  }
 }
 
 function advanceNext() {
@@ -376,7 +372,6 @@ onUnmounted(() => {
   <div class="tut" :class="{ 'tut-fullscreen': isExpanded }">
     <div class="tut-frame">
       <div class="tut-head">
-        <img class="tut-logo" :src="logoImg" alt="MUME" />
         <div class="tut-heading">
           <span class="tut-title">Chapter {{ chapterNum }}: {{ chapterTitle }}</span>
           <span class="tut-sub">Your first hour in Middle-earth</span>
@@ -410,9 +405,9 @@ onUnmounted(() => {
             </span>
           </button>
 
-          <button type="button" class="tut-action-btn" @click="toggleExpand" :title="isExpanded ? 'Shrink player (Esc)' : 'Expand to full screen'" aria-label="Toggle Fullscreen">
+          <button type="button" class="tut-action-btn tut-fullscreen-btn" @click="toggleExpand" :title="isExpanded ? 'Exit Fullscreen (Esc)' : 'Fullscreen View'" aria-label="Toggle Fullscreen">
             <i class="fa" :class="isExpanded ? 'fa-compress' : 'fa-expand'" aria-hidden="true"></i>
-            <span>{{ isExpanded ? 'Shrink' : 'Fullscreen' }}</span>
+            <span class="tut-btn-text">{{ isExpanded ? 'Exit' : 'Full' }}</span>
           </button>
         </div>
       </div>
@@ -422,9 +417,8 @@ onUnmounted(() => {
           <div class="tut-log" ref="logEl">
             <div v-for="(b, i) in log" :key="i" class="tut-block">
               <template v-if="b.kind === 'lesson'">
-                <!-- Unified Narrative Lore Card for Chapter Intros -->
+                <!-- Chapter Intro Card -->
                 <div class="tut-narrative-card">
-                  <div class="tut-card-badge"><i class="fa fa-scroll" aria-hidden="true"></i> NARRATIVE</div>
                   <div class="tut-eyebrow">CHAPTER {{ b.chapterNum }} OF {{ totalChapters }}</div>
                   <h3 class="tut-h">{{ b.title }}</h3>
 
@@ -1101,13 +1095,18 @@ onUnmounted(() => {
 .tut-step-pill.active { background: #f4dd94; width: 20px; box-shadow: 0 0 6px rgba(244,221,148,.5); }
 
 @media (max-width: 720px) {
-  .tut-head { flex-wrap: wrap; gap: 8px 10px; padding: 10px 12px; }
-  .tut-progress { width: 100%; justify-content: space-between; margin-top: 2px; flex-wrap: wrap; gap: 6px; }
+  .tut { margin: 0.5rem 0 1rem; }
+  .tut-head { flex-wrap: wrap; gap: 6px 8px; padding: 8px 10px; }
+  .tut-title { font-size: 18px; }
+  .tut-sub { font-size: 11px; }
+  .tut-progress { width: 100%; justify-content: space-between; margin-top: 2px; flex-wrap: wrap; gap: 4px; }
   .tut-ticks { gap: 3px; }
   .tut-tick { width: 8px; height: 8px; }
-  .tut-log { height: 340px; padding: 6px 12px 10px; }
-  .tut-prompt { padding: 8px 12px; }
-  .tut-controls { padding: 8px 12px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+  .tut-narrative-card { padding: 12px 14px 10px; margin: 4px 0 10px; }
+  .tut-h { font-size: 20px; }
+  .tut-log { min-height: 55vh; max-height: 70vh; padding: 8px 10px 12px; }
+  .tut-prompt { padding: 8px 10px; }
+  .tut-controls { padding: 6px 10px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; }
 
   .tut-sheet {
     display: none;
