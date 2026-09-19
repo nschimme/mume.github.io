@@ -55,7 +55,7 @@ const stepsList = computed(() => {
   if (rawSteps && rawSteps.length) {
     return rawSteps.map(s => ({
       ask: s.ask || null,
-      text: s.text || s.narrative || null,
+      text: s.story || s.beat || s.event || s.text || s.narrative || null,
       note: s.note || null,
       accept: s.accept || (s.ask ? [s.ask] : []),
       hint: s.hint || (s.ask ? `Type: ${s.ask}` : null),
@@ -199,7 +199,7 @@ function renderStepLog() {
 
   if (currentSubStep.value && !currentSubStep.value.ask && (currentSubStep.value.text || currentSubStep.value.response)) {
     log.value.push({
-      kind: 'narrative',
+      kind: 'story',
       body: currentSubStep.value.text || currentSubStep.value.response
     })
     scrollLog()
@@ -251,7 +251,7 @@ function advanceSubStep() {
       focusInput()
     } else if (nextSub.text || nextSub.response) {
       log.value.push({
-        kind: 'narrative',
+        kind: 'story',
         body: nextSub.text || nextSub.response
       })
       scrollLog()
@@ -428,7 +428,7 @@ onUnmounted(() => {
 
               <pre v-else-if="b.kind === 'example'" class="tut-example">{{ b.body }}</pre>
 
-              <div v-else-if="b.kind === 'narrative'" class="tut-narrative-beat">{{ b.body }}</div>
+              <div v-else-if="b.kind === 'story'" class="tut-story-beat">{{ b.body }}</div>
 
               <div v-else-if="b.kind === 'error'" class="tut-err">{{ b.text }}</div>
 
@@ -636,7 +636,7 @@ onUnmounted(() => {
 .tut-cmd { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #f4dd94; background: rgba(184,134,11,.15); padding: 2px 7px; border-radius: 4px; border: 1px solid rgba(215,166,63,.3); }
 .tut-echo { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; color: #dcdcdc; margin: 12px 0 4px; font-weight: bold; }
 .tut-example { font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 13px; line-height: 1.45; color: #b9d3c2; white-space: pre-wrap; background: #05100a; border: 1px solid #142b1c; border-radius: 6px; padding: 10px 14px; margin: 6px 0 10px; }
-.tut-narrative-beat { color: #c8bd9b; font-style: italic; font-size: 13.5px; line-height: 1.5; margin: 8px 0 10px; padding: 6px 12px; border-left: 2px solid #b8860b; background: rgba(184, 134, 11, 0.05); border-radius: 0 6px 6px 0; }
+.tut-story-beat { color: #c8bd9b; font-style: italic; font-size: 13.5px; line-height: 1.5; margin: 8px 0 10px; padding: 6px 12px; border-left: 2px solid #b8860b; background: rgba(184, 134, 11, 0.05); border-radius: 0 6px 6px 0; }
 .tut-err { color: #e5988e; font-size: 13.5px; margin: 6px 0; }
 
 .tut-end-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 16px 0 16px; }

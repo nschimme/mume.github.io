@@ -58,8 +58,8 @@ Write your lesson introduction here using standard Markdown. Explain the concept
 | `description` | String | A concise summary displayed on the chapter selection cards in the Newcomers Hub. |
 | `teach` | List | Commands introduced in this chapter. Appears in the "Command Sheet" sidebar/drawer. Each item has `command` and `desc`. |
 | `steps` | List | Interactive practice steps executed sequentially in the terminal emulator. |
-| `steps[].ask` | String | (Optional) The target command prompt (e.g., `look`). If omitted, step is a narrative beat. |
-| `steps[].text` | String | (Optional) Narrative story beat that streams automatically into the terminal without requiring typing. |
+| `steps[].ask` | String | (Optional) The target command prompt (e.g., `look`). If omitted, step is an automatic story beat. |
+| `steps[].story` | String | (Optional) Story beat that streams automatically into the terminal without requiring typing (can also use `beat:` or `text:`). |
 | `steps[].note` | String | Highlighting note giving context and guidance for the task. |
 | `steps[].accept` | List | Accepted command variations (e.g., `["look", "l"]`). Case-insensitive. |
 | `steps[].hint` | String | (Optional) Hint displayed if the user types an unaccepted command. Defaults to `Type: <ask>`. |
@@ -80,7 +80,7 @@ steps:
     response: |
       36/36 hits, 76/76 mana, and 126/126 moves.
       !.*>
-  - text: "Ermin the Ranger steps out from the shadow of the inn, adjusting his grey cloak."
+  - story: "Ermin the Ranger steps out from the shadow of the inn, adjusting his grey cloak."
   - ask: "stat"
     note: "View combat parameters and experience needed to level with STAT."
     accept:

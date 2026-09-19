@@ -16,7 +16,7 @@ steps:
       - "say y"
     hint: "Type: say yes"
     example: "> say yes\nYou say 'yes'\nMaelton says 'Thank you, Fuor! Please visit the local grocer in the southern shop.'"
-  - text: "Ermin the Ranger steps out from the shadow of the tavern, adjusting his weathered dark grey cloak."
+  - story: "Ermin the Ranger steps out from the shadow of the tavern, adjusting his weathered dark grey cloak."
   - ask: "tell ermin hello"
     note: "Unlike automated NPCs, living players and Rangers engage in rich, freeform communication! Reply to Ermin using TELL ERMIN HELLO."
     accept:
@@ -25,7 +25,7 @@ steps:
       - "tell"
     hint: "Type: tell ermin hello"
     example: "> tell ermin hello\nYou tell Ermin 'hello'\nErmin tells you 'Follow me, young Fuor! I shall guide you through the hills.'"
-  - text: "Ermin smiles warmly and unslings his longbow, beckoning Fuor to fall into line."
+  - story: "Ermin smiles warmly and unslings his longbow, beckoning Fuor to fall into line."
   - ask: "follow ermin"
     note: "Ermin invites you to join his party. Type FOLLOW ERMIN to travel alongside the ranger."
     accept:
