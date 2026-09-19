@@ -43,7 +43,7 @@ MUME is a rich, immersive text-based multiplayer RPG set in Tolkien's Middle-ear
 
   <div style="text-align: center; margin: 1.5rem 0;">
     <a href="./browser">
-      <img src="/assets/images/playmume.png" srcset="/assets/images/playmume.png 1x, /assets/images/playmume@2x.png 2x, /assets/images/mmapper-wasm@2x.webp 2x" alt="Play MUME for free using the web client" style="width: 100%; max-width: 924px; height: auto; border-radius: 6px;" />
+      <img src="/assets/images/mmapper-wasm@2x.webp" alt="Play MUME for free using MMapper Web client" style="width: 100%; max-width: 924px; height: auto; border-radius: 6px; border: 1px solid rgba(215, 166, 63, 0.3);" />
     </a>
   </div>
 
