@@ -5,7 +5,7 @@ teach:
   - command: "new"
     desc: "begin account creation process"
   - command: "Fuor"
-    desc: "enter your hero name to create Fuor the Man Warrior"
+    desc: "enter sample tutorial hero name (Fuor) for this walkthrough"
 steps:
   - ask: "new"
     note: "In MUME, each player manages all their characters under a SINGLE ACCOUNT. Type NEW to begin registration."
@@ -14,7 +14,7 @@ steps:
     hint: "Type: new"
     example: "> new\nWelcome to MUME!\nYour first step here is to create an ACCOUNT."
   - ask: "Fuor"
-    note: "Type your hero name: Fuor (the heroic Man Warrior of Eriador)."
+    note: "Type Fuor to continue this tutorial walkthrough. (When playing MUME live, you will choose your own unique hero name!)."
     accept:
       - "Fuor"
       - "fuor"
@@ -28,6 +28,6 @@ responses:
 
 # Account Registration & Hero Definition
 
-In MUME, every player has a single **account** that holds all their characters.
+In MUME, every player manages all their characters under a single **account**.
 
-Type `new` to initiate account registration, followed by your hero name **Fuor** to awaken as a Man Warrior in **Black Hill Village**.
+Type `new` to initiate account registration, followed by **Fuor** (our tutorial sample hero name—when playing MUME live, you will choose your own unique character name!) to awaken as a Man Warrior in **Black Hill Village**.

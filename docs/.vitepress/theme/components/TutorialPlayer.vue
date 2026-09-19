@@ -34,9 +34,13 @@ const prevChapterUrl = computed(() => {
   return idx > 0 ? allChapters[idx - 1].url : null
 })
 
-const nextChapterUrl = computed(() => {
+const nextChapterObj = computed(() => {
   const idx = currentIndex.value
-  return idx >= 0 && idx < allChapters.length - 1 ? allChapters[idx + 1].url : null
+  return idx >= 0 && idx < allChapters.length - 1 ? allChapters[idx + 1] : null
+})
+
+const nextChapterUrl = computed(() => {
+  return nextChapterObj.value ? nextChapterObj.value.url : null
 })
 
 const teachList = computed(() => frontmatter.value?.teach || currentChapterObj.value?.teach || [])
@@ -370,7 +374,10 @@ onUnmounted(() => {
                   <p class="tut-line" v-else>You have completed all chapters in the interactive tutorial!</p>
 
                   <div class="tut-end-actions">
-                    <button v-if="b.nextUrl" type="button" class="tut-enter" @click="navigateToUrl(b.nextUrl)">
+                    <button v-if="b.nextUrl && nextChapterObj" type="button" class="tut-enter" @click="navigateToUrl(b.nextUrl)">
+                      Continue to Chapter {{ nextChapterObj.chapterNum }}: {{ nextChapterObj.title }} &rarr;
+                    </button>
+                    <button v-else-if="b.nextUrl" type="button" class="tut-enter" @click="navigateToUrl(b.nextUrl)">
                       Continue to Next Chapter &rarr;
                     </button>
                     <a v-else class="tut-enter" :href="withBase(BROWSER_PLAY_URL)">Play MUME Now (Web Client) &rarr;</a>
