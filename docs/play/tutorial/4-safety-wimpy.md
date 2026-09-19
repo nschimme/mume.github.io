@@ -44,7 +44,7 @@ responses:
     *+->
 ---
 
-# Chapter 4: SteelIing Combat Reflexes
+# Chapter 4: Steeling Combat Reflexes
 
 Fuor knows that the hills beyond the village gates harbor dangerous beasts and outlaw bands. Before venturing forth, he must configure his survival instincts—setting `change wimpy 15` ensures Fuor automatically flees if injured below 15 HP, while `change spam all` clarifies fast-moving combat text.
 

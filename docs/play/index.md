@@ -59,7 +59,7 @@ MUME is a rich, immersive text-based multiplayer RPG set in Tolkien's Middle-ear
   <p>MMapper Desktop is the full-featured desktop software used by most regular players. It provides powerful real-time automapping, custom triggers, and smooth local performance.</p>
 
   <div class="playnow">
-    <a href="https://mume.github.io/MMapper/" target="_blank" rel="noopener">Download MMapper Desktop</a>
+    <a href="https://docs.mume.org/MMapper/" target="_blank" rel="noopener">Download MMapper Desktop</a>
   </div>
 </section>
 
