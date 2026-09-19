@@ -33,7 +33,11 @@ const lastUpdated = __LAST_UPDATED__
 
 const isTutorialPage = computed(() => {
   if (!route.path) return false
-  const path = route.path.replace(/\.html$/, '')
+  let path = route.path.replace(/\.html$/, '')
+  const base = site.value?.base || '/'
+  if (base !== '/' && path.startsWith(base)) {
+    path = '/' + path.slice(base.length)
+  }
   return path.startsWith('/play/tutorial/') && path !== '/play/tutorial/' && path !== '/play/tutorial/index'
 })
 

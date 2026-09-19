@@ -20,7 +20,7 @@ defineProps({
   },
   newHref: {
     type: String,
-    default: '/play/tutorial'
+    default: '/play/tutorial/'
   },
   expTitle: {
     type: String,

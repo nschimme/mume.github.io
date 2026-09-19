@@ -16,10 +16,14 @@ const NEWCOMERS_URL = '/resources/newcomers'
 
 const router = useRouter()
 const route = useRoute()
-const { frontmatter } = useData()
+const { site, frontmatter } = useData()
 
 const currentChapterObj = computed(() => {
-  const currentPath = route.path.replace(/\.html$/, '').replace(/\/$/, '')
+  let currentPath = route.path.replace(/\.html$/, '').replace(/\/$/, '')
+  const base = site.value?.base || '/'
+  if (base !== '/' && currentPath.startsWith(base.replace(/\/$/, ''))) {
+    currentPath = '/' + currentPath.slice(base.replace(/\/$/, '').length).replace(/^\//, '')
+  }
   return allChapters.find(c => c.url === currentPath || currentPath.endsWith(c.filename)) || allChapters[0]
 })
 
