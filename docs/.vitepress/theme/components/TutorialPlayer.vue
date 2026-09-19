@@ -87,19 +87,36 @@ const isSheetOpen = ref(false)
 const isExpanded = ref(false)
 
 function toggleExpand() {
-  isExpanded.value = !isExpanded.value
-  if (typeof document !== 'undefined') {
-    if (isExpanded.value) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
+  if (typeof document === 'undefined') return
+
+  if (!isExpanded.value) {
+    isExpanded.value = true
+    document.body.style.overflow = 'hidden'
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen().catch(() => {})
     }
+  } else {
+    isExpanded.value = false
+    document.body.style.overflow = ''
+    if (document.fullscreenElement && document.exitFullscreen) {
+      document.exitFullscreen().catch(() => {})
+    }
+  }
+}
+
+function handleFullscreenChange() {
+  if (typeof document === 'undefined') return
+  if (!document.fullscreenElement && isExpanded.value) {
+    isExpanded.value = false
+    document.body.style.overflow = ''
   }
 }
 
 function handleKeydown(e) {
   if (e.key === 'Escape' && isExpanded.value) {
-    toggleExpand()
+    if (!document.fullscreenElement) {
+      toggleExpand()
+    }
   }
 }
 
@@ -292,12 +309,14 @@ onMounted(() => {
   if (typeof window !== 'undefined') {
     focusInput()
     window.addEventListener('keydown', handleKeydown)
+    document.addEventListener('fullscreenchange', handleFullscreenChange)
   }
 })
 
 onUnmounted(() => {
   if (typeof window !== 'undefined') {
     window.removeEventListener('keydown', handleKeydown)
+    document.removeEventListener('fullscreenchange', handleFullscreenChange)
     if (isExpanded.value && typeof document !== 'undefined') {
       document.body.style.overflow = ''
     }
@@ -311,16 +330,7 @@ onUnmounted(() => {
       <div class="tut-head">
         <img class="tut-logo" :src="logoImg" alt="MUME" />
         <div class="tut-heading">
-          <div class="tut-title-row">
-            <span class="tut-title">Chapter {{ chapterNum }}: {{ chapterTitle }}</span>
-            <button type="button" class="tut-sheet-toggle-btn" @click="isSheetOpen = !isSheetOpen" aria-label="Toggle Command Sheet">
-              Commands
-            </button>
-            <button type="button" class="tut-expand-btn" @click="toggleExpand" :title="isExpanded ? 'Shrink player (Esc)' : 'Expand to full screen'" aria-label="Toggle Fullscreen">
-              <i class="fa" :class="isExpanded ? 'fa-compress' : 'fa-expand'" aria-hidden="true"></i>
-              <span>{{ isExpanded ? 'Shrink' : 'Expand' }}</span>
-            </button>
-          </div>
+          <span class="tut-title">Chapter {{ chapterNum }}: {{ chapterTitle }}</span>
           <span class="tut-sub">Your first hour in Middle-earth</span>
         </div>
         <div class="tut-progress">
@@ -338,9 +348,19 @@ onUnmounted(() => {
           </span>
           <span class="tut-step">{{ stepLabel }}</span>
         </div>
+        <div class="tut-actions">
+          <button type="button" class="tut-action-btn" :class="{ active: isSheetOpen }" @click="isSheetOpen = !isSheetOpen" aria-label="Toggle Command Sheet">
+            <i class="fa fa-book" aria-hidden="true"></i>
+            <span>Commands</span>
+          </button>
+          <button type="button" class="tut-action-btn" @click="toggleExpand" :title="isExpanded ? 'Shrink player (Esc)' : 'Expand to full screen'" aria-label="Toggle Fullscreen">
+            <i class="fa" :class="isExpanded ? 'fa-compress' : 'fa-expand'" aria-hidden="true"></i>
+            <span>{{ isExpanded ? 'Shrink' : 'Fullscreen' }}</span>
+          </button>
+        </div>
       </div>
 
-      <div class="tut-body">
+      <div class="tut-body" :class="{ 'has-sheet': isSheetOpen }">
         <div class="tut-term">
           <div class="tut-log" ref="logEl">
             <div v-for="(b, i) in log" :key="i" class="tut-block">
@@ -385,8 +405,6 @@ onUnmounted(() => {
                       Continue to Next Chapter &rarr;
                     </button>
                     <a v-else class="tut-enter" :href="withBase(BROWSER_PLAY_URL)">Play MUME Now (Web Client) &rarr;</a>
-                    <a class="tut-secondary-link" :href="withBase(NEWCOMERS_URL)">Newcomers Hub</a>
-                    <a class="tut-secondary-link" :href="withBase(PLAY_HUB_URL)">Play Hub</a>
                   </div>
                 </div>
               </template>
@@ -472,8 +490,6 @@ onUnmounted(() => {
             &raquo;
           </button>
         </div>
-
-        <a class="tut-hub-ghost" :href="withBase('/resources/newcomers')">Newcomers Hub</a>
       </div>
     </div>
   </div>
@@ -483,7 +499,27 @@ onUnmounted(() => {
 .tut { margin: 1.5rem 0 2rem; }
 .tut-frame { border: 1px solid rgba(215,166,63,.35); border-radius: 12px; background: #0b0b0d; overflow: hidden; box-shadow: 0 18px 50px rgba(0,0,0,.45); }
 
-.tut-head { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-bottom: 1px solid rgba(215,166,63,.25); background: linear-gradient(180deg,#15130c,#0b0b0d); }
+/* Custom Dark Theme Scrollbars */
+.tut-log::-webkit-scrollbar,
+.tut-sheet-body::-webkit-scrollbar {
+  width: 8px;
+}
+.tut-log::-webkit-scrollbar-track,
+.tut-sheet-body::-webkit-scrollbar-track {
+  background: #08080a;
+  border-left: 1px solid #1a1b20;
+}
+.tut-log::-webkit-scrollbar-thumb,
+.tut-sheet-body::-webkit-scrollbar-thumb {
+  background: rgba(215, 166, 63, 0.3);
+  border-radius: 4px;
+}
+.tut-log::-webkit-scrollbar-thumb:hover,
+.tut-sheet-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(215, 166, 63, 0.6);
+}
+
+.tut-head { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-bottom: 1px solid rgba(215,166,63,.25); background: linear-gradient(180deg,#15130c,#0b0b0d); flex-wrap: wrap; }
 .tut-logo { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex: none; }
 .tut-heading { display: flex; flex-direction: column; line-height: 1.15; margin-right: auto; }
 .tut-title { font-family: 'Kelt', serif; color: #f4dd94; font-size: 22px; }
@@ -497,8 +533,13 @@ onUnmounted(() => {
 .tut-tick.clickable:hover { background: #ffd966; transform: scale(1.25); }
 .tut-step { color: #9a927f; font-size: 12.5px; white-space: nowrap; }
 
-.tut-body { display: grid; grid-template-columns: 1fr 260px; gap: 0; }
-@media (max-width: 720px) { .tut-body { grid-template-columns: 1fr; } }
+.tut-actions { display: flex; align-items: center; gap: 8px; margin-left: 8px; }
+.tut-action-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(184,134,11,.15); border: 1px solid rgba(215,166,63,.35); color: #f4dd94; font-size: 12px; padding: 4px 12px; border-radius: 16px; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+.tut-action-btn:hover, .tut-action-btn.active { background: darkgoldenrod; color: #fff; border-color: gold; }
+
+.tut-body { display: grid; grid-template-columns: 1fr; gap: 0; transition: grid-template-columns .3s ease; }
+.tut-body.has-sheet { grid-template-columns: 1fr 280px; }
+@media (max-width: 720px) { .tut-body.has-sheet { grid-template-columns: 1fr; } }
 
 @keyframes tutStreamIn {
   0% { opacity: 0; transform: translateY(8px); }
@@ -542,9 +583,10 @@ onUnmounted(() => {
 .tut-prompt input { flex: 1; background: transparent; border: none; outline: none; color: #eaeaea; font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace; font-size: 14px; }
 .tut-prompt input::placeholder { color: #5f5f5f; }
 
-.tut-sheet { border-left: 1px solid #23262e; background: #08090c; display: flex; flex-direction: column; }
+.tut-sheet { border-left: 1px solid #23262e; background: #08090c; display: none; flex-direction: column; }
+.tut-body.has-sheet .tut-sheet { display: flex; }
 @media (max-width: 720px) { .tut-sheet { border-left: 0; border-top: 1px solid #23262e; } }
-.tut-sheet-bar { color: #d8b04a; font-family: 'Kelt', serif; font-size: 18px; padding: 12px 14px 8px; border-bottom: 1px solid #1c1e24; }
+.tut-sheet-bar { color: #d8b04a; font-family: 'Kelt', serif; font-size: 18px; padding: 12px 14px 8px; border-bottom: 1px solid #1c1e24; display: flex; justify-content: space-between; align-items: center; }
 .tut-sheet-body { padding: 10px 14px 14px; overflow-y: auto; max-height: 472px; }
 .tut-empty { color: #7d7d7d; font-size: 13px; }
 .tut-grp { color: #7d7d7d; border-bottom: 1px solid #242424; padding-bottom: 3px; margin: 12px 0 8px; font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; }
@@ -605,7 +647,8 @@ onUnmounted(() => {
 
 .tut-send-btn { background: darkgoldenrod; border: none; color: #fff; font-family: 'Kelt', serif; font-size: 13px; padding: 4px 12px; border-radius: 14px; cursor: pointer; font-weight: bold; }
 
-.tut-sheet-close { display: none; background: none; border: none; color: #9a927f; font-size: 20px; cursor: pointer; padding: 0 4px; }
+.tut-sheet-close { display: block; background: none; border: none; color: #9a927f; font-size: 20px; cursor: pointer; padding: 0 4px; }
+.tut-sheet-close:hover { color: #f4dd94; }
 
 .tut-controls { border-top: 1px solid #23262e; padding: 10px 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; background: #0b0b0d; }
 
