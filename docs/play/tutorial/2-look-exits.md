@@ -58,5 +58,3 @@ responses:
 # Chapter 2: Taking in the Surroundings
 
 Awakening under the morning sun in **Black Hill Village**, Fuor pauses to take his bearings. In MUME, your eyes are your most critical asset—`look` describes your immediate room, while `exits` lists all available paths out.
-
-Help Fuor inspect his surroundings by typing `look` followed by `exits` below!

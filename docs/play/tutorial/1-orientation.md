@@ -62,5 +62,3 @@ Our story begins in **the Black Hills**, a rugged country of rolling slopes, anc
 
 ### Understanding MUME Accounts
 When you connect to MUME for the first time, you register a single **Account**. All your characters—whether human warriors, elven scouts, or hobbit thieves—are organized safely under this one account with a single password.
-
-Type `new` to begin account registration, then type `Fuor` (our tutorial walkthrough hero name—when playing MUME live, you'll pick your own unique hero name!) to step into Middle-earth!

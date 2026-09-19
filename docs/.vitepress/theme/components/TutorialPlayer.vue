@@ -409,6 +409,11 @@ onUnmounted(() => {
             <i class="fa" :class="isExpanded ? 'fa-compress' : 'fa-expand'" aria-hidden="true"></i>
             <span class="tut-btn-text">{{ isExpanded ? 'Exit' : 'Full' }}</span>
           </button>
+
+          <a :href="withBase(NEWCOMERS_URL)" class="tut-action-btn tut-exit-btn" title="Exit Tutorial to Newcomers Hub" aria-label="Exit Tutorial">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            <span class="tut-btn-text">Exit</span>
+          </a>
         </div>
       </div>
 
@@ -701,8 +706,10 @@ onUnmounted(() => {
   box-shadow: 0 0 4px rgba(255,255,255,0.8);
 }
 
-.tut-action-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(184,134,11,.15); border: 1px solid rgba(215,166,63,.35); color: #f4dd94; font-size: 12px; padding: 4px 12px; border-radius: 16px; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
-.tut-action-btn:hover, .tut-action-btn.active { background: darkgoldenrod; color: #fff; border-color: gold; }
+.tut-action-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(184,134,11,.15); border: 1px solid rgba(215,166,63,.35); color: #f4dd94; font-size: 12px; padding: 4px 12px; border-radius: 16px; cursor: pointer; text-decoration: none !important; transition: background .2s, color .2s, border-color .2s; }
+.tut-action-btn:hover, .tut-action-btn.active { background: darkgoldenrod; color: #fff !important; border-color: gold; }
+.tut-exit-btn { background: rgba(220,53,69,.15); border-color: rgba(220,53,69,.4); color: #f88; }
+.tut-exit-btn:hover { background: #dc3545; color: #fff !important; border-color: #ff6b6b; }
 
 .tut-body { display: grid; grid-template-columns: 1fr; gap: 0; transition: grid-template-columns .3s ease; }
 .tut-body.has-sheet { grid-template-columns: 1fr 280px; }
