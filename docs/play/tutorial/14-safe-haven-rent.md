@@ -12,25 +12,25 @@ teach:
     desc: "safely store your gear and save your character"
 steps:
   - ask: "up"
-    note: "From the Common Room of The Foaming Mug, climb UP to the Inn's Private Rooms."
+    note: "From the Common Room of The Foaming Mug, climb `up` to the Inn's Private Rooms."
     accept:
       - "up"
       - "u"
     hint: "Type: up (or u)"
   - story: "The old innkeeper looks up from his ledger and greets Fuor with a warm nod."
   - ask: "examine innkeeper"
-    note: "Examine the innkeeper standing behind the desk."
+    note: "Examine the innkeeper standing behind the desk using `examine innkeeper`."
     accept:
       - "examine innkeeper"
       - "ex innkeeper"
     hint: "Type: examine innkeeper"
   - ask: "offer"
-    note: "Request a storage cost quote using OFFER."
+    note: "Request a storage cost quote using `offer`."
     accept:
       - "offer"
     hint: "Type: offer"
   - ask: "rent"
-    note: "Safely store your equipment and save Fuor using RENT!"
+    note: "Safely store your equipment and save Fuor using `rent`!"
     accept:
       - "rent"
     hint: "Type: rent"

@@ -8,13 +8,13 @@ teach:
     desc: "enter sample tutorial hero name (Fuor) for this walkthrough"
 steps:
   - ask: "new"
-    note: "In MUME, each player manages all their characters under a SINGLE ACCOUNT. Type NEW to begin registration."
+    note: "In MUME, each player manages all their characters under a SINGLE ACCOUNT. Type `new` to begin registration."
     accept:
       - "new"
     hint: "Type: new"
   - story: "A quiet morning breaks over Eriador. In the courtyard of The Foaming Mug, Fuor takes his first breath of adventuring air."
   - ask: "Fuor"
-    note: "Type Fuor to continue this tutorial walkthrough. (When playing MUME live, you will choose your own unique hero name!)."
+    note: "Type `Fuor` to continue this tutorial walkthrough. (When playing MUME live, you will choose your own unique hero name!)."
     accept:
       - "Fuor"
       - "fuor"

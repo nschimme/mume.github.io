@@ -9,13 +9,13 @@ teach:
 steps:
   - story: "With his stamina restored, Ermin escorts Fuor to the local Warrior Guildmaster to refine his swordcraft."
   - ask: "prac"
-    note: "Check your available practice points using PRAC."
+    note: "Check your available practice points using `prac`."
     accept:
       - "prac"
       - "practice"
     hint: "Type: prac"
   - ask: "prac slash"
-    note: "Train your slash weapon skill with PRAC SLASH."
+    note: "Train your slash weapon skill with `prac slash`."
     accept:
       - "prac slash"
       - "practice slash"

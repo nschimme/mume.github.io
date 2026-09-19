@@ -7,7 +7,7 @@ teach:
 steps:
   - story: "As dawn rises over the Black Hills, Fuor prepares to embark on his grand journey across Middle-earth!"
   - ask: "who ranger"
-    note: "MUME Rangers exist specifically to help newcomers! Find active Rangers using WHO RANGER."
+    note: "MUME Rangers exist specifically to help newcomers! Find active Rangers using `who ranger`."
     accept:
       - "who ranger"
       - "who rangers"

@@ -7,7 +7,7 @@ teach:
 steps:
   - story: "The timber wolf growls fiercely, snapping its jaws near Fuor's arm! Ermin shouts, 'Disengage! Flee back to the path!'"
   - ask: "flee"
-    note: "When a fight turns deadly, type FLEE (or F) to break combat immediately!"
+    note: "When a fight turns deadly, type `flee` (or `f`) to break combat immediately!"
     accept:
       - "flee"
       - "f"

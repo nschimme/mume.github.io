@@ -10,7 +10,7 @@ teach:
     desc: "store an item inside a bag or container"
 steps:
   - ask: "examine table"
-    note: "Use EXAMINE (or EXA) to inspect the small oaken table in detail."
+    note: "Use `examine` (or `exa`) to inspect the small oaken table in detail."
     accept:
       - "examine table"
       - "exa table"
@@ -18,13 +18,13 @@ steps:
     hint: "Type: examine table"
   - story: "Fuor unclasps his leather pack to double-check his travelling provisions."
   - ask: "get cheese sack"
-    note: "Retrieve rations from inside your sack using GET <item> <container>."
+    note: "Retrieve rations from inside your sack using `get <item> <container>`."
     accept:
       - "get cheese sack"
       - "get cheese from sack"
     hint: "Type: get cheese sack"
   - ask: "put cheese sack"
-    note: "Store items back in your bag using PUT <item> <container>."
+    note: "Store items back in your bag using `put <item> <container>`."
     accept:
       - "put cheese sack"
       - "put cheese in sack"

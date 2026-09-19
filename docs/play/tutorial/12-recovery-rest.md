@@ -13,25 +13,25 @@ teach:
 steps:
   - story: "Breathless, Fuor and Ermin arrive back at the warm peat hearth inside The Foaming Mug."
   - ask: "rest"
-    note: "Sit down to rest and regenerate health faster using REST."
+    note: "Sit down to rest and regenerate health faster using `rest`."
     accept:
       - "rest"
     hint: "Type: rest"
   - ask: "wake"
-    note: "Stand up and prepare to move again using WAKE (or STAND)."
+    note: "Stand up and prepare to move again using `wake` (or `stand`)."
     accept:
       - "wake"
       - "stand"
       - "st"
     hint: "Type: wake"
   - ask: "drink water"
-    note: "Quench thirst at the village well with DRINK WATER."
+    note: "Quench thirst at the village well with `drink water`."
     accept:
       - "drink water"
       - "drink"
     hint: "Type: drink water"
   - ask: "eat biscuit"
-    note: "Satisfy hunger with EAT BISCUIT."
+    note: "Satisfy hunger with `eat biscuit`."
     accept:
       - "eat biscuit"
     hint: "Type: eat biscuit"

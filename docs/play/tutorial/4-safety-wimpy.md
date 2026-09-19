@@ -8,7 +8,7 @@ teach:
     desc: "enable NoSpam mode to filter unnecessary text velocity"
 steps:
   - ask: "change wimpy 15"
-    note: "Set your automatic auto-flee safety threshold to 15 HP using CHANGE WIMPY 15."
+    note: "Set your automatic auto-flee safety threshold to 15 HP using `change wimpy 15`."
     accept:
       - "change wimpy 15"
       - "cha wimpy 15"
@@ -16,7 +16,7 @@ steps:
     hint: "Type: change wimpy 15"
   - story: "With his combat instincts sharpened, Fuor cleans his vision so no threat escapes his notice."
   - ask: "change spam all"
-    note: "Reduce text velocity and spam by enabling CHANGE SPAM ALL."
+    note: "Reduce text velocity and spam by enabling `change spam all`."
     accept:
       - "change spam all"
       - "cha spam all"

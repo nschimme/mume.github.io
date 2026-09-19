@@ -10,14 +10,14 @@ teach:
     desc: "follow an experienced player or ranger and join their adventuring party"
 steps:
   - ask: "say yes"
-    note: "Maelton the village elder asks for help. NPCs respond to simple keyword triggers spoken aloud. Type SAY YES to accept."
+    note: "Maelton the village elder asks for help. NPCs respond to simple keyword triggers spoken aloud. Type `say yes` to accept."
     accept:
       - "say yes"
       - "say y"
     hint: "Type: say yes"
   - story: "Ermin the Ranger steps out from the shadow of the tavern, adjusting his weathered dark grey cloak."
   - ask: "tell ermin hello"
-    note: "Unlike automated NPCs, living players and Rangers engage in rich, freeform communication! Reply to Ermin using TELL ERMIN HELLO."
+    note: "Unlike automated NPCs, living players and Rangers engage in rich, freeform communication! Reply to Ermin using `tell ermin hello`."
     accept:
       - "tell ermin hello"
       - "tell ermin"
@@ -25,7 +25,7 @@ steps:
     hint: "Type: tell ermin hello"
   - story: "Ermin smiles warmly and unslings his longbow, beckoning Fuor to fall into line."
   - ask: "follow ermin"
-    note: "Ermin invites you to join his party. Type FOLLOW ERMIN to travel alongside the ranger."
+    note: "Ermin invites you to join his party. Type `follow ermin` to travel alongside the ranger."
     accept:
       - "follow ermin"
       - "fol ermin"

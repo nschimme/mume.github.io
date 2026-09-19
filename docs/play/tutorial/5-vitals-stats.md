@@ -10,20 +10,20 @@ teach:
     desc: "display full character sheet attributes and travel points"
 steps:
   - ask: "score"
-    note: "Check your core vitals with SCORE (or SC)."
+    note: "Check your core vitals with `score` (or `sc`)."
     accept:
       - "score"
       - "sc"
     hint: "Type: score (or sc)"
   - story: "Feeling healthy and rested, Fuor reviews his martial attributes and adventurer record."
   - ask: "stat"
-    note: "Check combat attributes (OB/DB/PB), armor rating, and experience needed with STAT."
+    note: "Check combat attributes (OB/DB/PB), armor rating, and experience needed with `stat`."
     accept:
       - "stat"
       - "st"
     hint: "Type: stat"
   - ask: "info"
-    note: "Display your full character overview sheet with INFO."
+    note: "Display your full character overview sheet with `info`."
     accept:
       - "info"
       - "inf"

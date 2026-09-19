@@ -14,13 +14,13 @@ teach:
     desc: "fasten small wooden shield on your off-arm"
 steps:
   - ask: "equipment"
-    note: "Check currently equipped items with EQUIPMENT (or EQ)."
+    note: "Check currently equipped items with `equipment` (or `eq`)."
     accept:
       - "equipment"
       - "eq"
     hint: "Type: equipment (or eq)"
   - ask: "inventory"
-    note: "Check unequipped items carried in your hands and pack with INVENTORY (or I)."
+    note: "Check unequipped items carried in your hands and pack with `inventory` (or `i`)."
     accept:
       - "inventory"
       - "inv"

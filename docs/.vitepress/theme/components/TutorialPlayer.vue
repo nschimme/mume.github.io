@@ -3,7 +3,7 @@
   Interactive new-player tutorial component driven dynamically by chapter Markdown files.
   Streamlined terminal output: immediate MUD output execution without extra "Press Enter to carry on" pauses.
   Clear end-of-tutorial handover options to Play Hub, Browser Client, or Newcomers Guide.
-  Features visual toggle pill indicator for Commands and unified Narrative vs Quest Action Card UX.
+  Features visual toggle pill indicator for Commands, unified Narrative vs Quest Action Card UX, and inline markdown formatting for commands in quest descriptions.
 */
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useData, useRoute, useRouter, withBase } from 'vitepress'
@@ -17,6 +17,15 @@ const NEWCOMERS_URL = '/resources/newcomers'
 const router = useRouter()
 const route = useRoute()
 const { site, frontmatter } = useData()
+
+function formatInlineMarkdown(text) {
+  if (!text) return ''
+  const safe = text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+  return safe.replace(/`([^`]+)`/g, '<code class="tut-cmd-inline">$1</code>')
+}
 
 const currentChapterObj = computed(() => {
   let currentPath = route.path.replace(/\.html$/, '').replace(/\/$/, '')
@@ -431,7 +440,7 @@ onUnmounted(() => {
                     <span class="tut-quest-badge"><i class="fa fa-compass" aria-hidden="true"></i> QUEST</span>
                     <span class="tut-quest-sub">ACTION REQUIRED</span>
                   </div>
-                  <div v-if="b.note" class="tut-quest-desc">{{ b.note }}</div>
+                  <div v-if="b.note" class="tut-quest-desc" v-html="formatInlineMarkdown(b.note)"></div>
                   <div class="tut-quest-target">
                     Type command: <span class="tut-cmd-chip">{{ b.ask }}</span>
                   </div>
@@ -445,7 +454,7 @@ onUnmounted(() => {
                     <span class="tut-quest-badge"><i class="fa fa-compass" aria-hidden="true"></i> QUEST</span>
                     <span class="tut-quest-sub">ACTION REQUIRED</span>
                   </div>
-                  <div v-if="b.note" class="tut-quest-desc">{{ b.note }}</div>
+                  <div v-if="b.note" class="tut-quest-desc" v-html="formatInlineMarkdown(b.note)"></div>
                   <div class="tut-quest-target">
                     Type command: <span class="tut-cmd-chip">{{ b.ask }}</span>
                   </div>
@@ -459,7 +468,7 @@ onUnmounted(() => {
               <!-- Unified Story Beat Card -->
               <div v-else-if="b.kind === 'story'" class="tut-story-beat-card">
                 <i class="fa fa-quote-left tut-beat-icon" aria-hidden="true"></i>
-                <div class="tut-beat-body">{{ b.body }}</div>
+                <div class="tut-beat-body" v-html="formatInlineMarkdown(b.body)"></div>
               </div>
 
               <div v-else-if="b.kind === 'error'" class="tut-err">{{ b.text }}</div>
@@ -521,7 +530,7 @@ onUnmounted(() => {
             <div v-if="currentSubStep && currentSubStep.ask" class="tut-sheet-quest-spotlight">
               <div class="tut-spotlight-badge"><i class="fa fa-compass" aria-hidden="true"></i> ACTIVE QUEST</div>
               <div class="tut-spotlight-cmd">Target Command: <code>{{ currentSubStep.ask }}</code></div>
-              <div v-if="currentSubStep.note" class="tut-spotlight-note">{{ currentSubStep.note }}</div>
+              <div v-if="currentSubStep.note" class="tut-spotlight-note" v-html="formatInlineMarkdown(currentSubStep.note)"></div>
             </div>
 
             <p v-if="!teachList.length" class="tut-empty">No special commands listed for this chapter.</p>
@@ -783,7 +792,6 @@ onUnmounted(() => {
 .tut-quest-target {
   color: #9a927f;
   font-size: 13px;
-
 }
 
 .tut-cmd-chip {
@@ -795,6 +803,16 @@ onUnmounted(() => {
   border-radius: 4px;
   font-weight: bold;
   box-shadow: 0 0 8px rgba(255, 215, 0, 0.25);
+}
+
+.tut-cmd-inline {
+  font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+  color: #f4dd94;
+  background: rgba(184, 134, 11, 0.2);
+  border: 1px solid rgba(215, 166, 63, 0.4);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 0.92em;
 }
 
 /* Inline Story Beat Card */

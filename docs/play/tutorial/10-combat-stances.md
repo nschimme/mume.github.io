@@ -13,28 +13,28 @@ teach:
 steps:
   - story: "Ermin leads Fuor up a narrow trail into the rocky Black Hills. Grass rustles sharply in the thicket ahead!"
   - ask: "consider wolf"
-    note: "Gauge a hungry timber wolf's strength using CONSIDER WOLF."
+    note: "Gauge a hungry timber wolf's strength using `consider wolf`."
     accept:
       - "consider wolf"
       - "con wolf"
     hint: "Type: consider wolf"
   - story: "The wolf crouches to spring! Ermin signals Fuor to shift his weight into an aggressive stance."
   - ask: "change mood aggressive"
-    note: "Switch to aggressive stance (CHANGE MOOD AGGRESSIVE) to maximize your attack bonus."
+    note: "Switch to aggressive stance (`change mood aggressive`) to maximize your attack bonus."
     accept:
       - "change mood aggressive"
       - "cha mood aggressive"
       - "cha m aggressive"
     hint: "Type: change mood aggressive"
   - ask: "hit wolf"
-    note: "Attack the wolf with HIT WOLF."
+    note: "Attack the wolf with `hit wolf`."
     accept:
       - "hit wolf"
       - "kill wolf"
       - "k wolf"
     hint: "Type: hit wolf"
   - ask: "change mood wimpy"
-    note: "Switch back to defensive stance (CHANGE MOOD WIMPY) to restore your defense."
+    note: "Switch back to defensive stance (`change mood wimpy`) to restore your defense."
     accept:
       - "change mood wimpy"
       - "cha mood wimpy"

@@ -12,24 +12,24 @@ teach:
     desc: "give an item to another character (item name comes first)"
 steps:
   - ask: "south"
-    note: "Head SOUTH from Market Square into the Cluttered Traveller's Shop."
+    note: "Head `south` from Market Square into the Cluttered Traveller's Shop."
     accept:
       - "south"
       - "s"
     hint: "Type: south (or s)"
   - story: "Bells jingle as Ermin and Fuor enter the shop, surrounded by dusty boxes of dried fruit and fresh baked bread."
   - ask: "list"
-    note: "Type LIST to browse the grocer's wares and prices."
+    note: "Type `list` to browse the grocer's wares and prices."
     accept:
       - "list"
     hint: "Type: list"
   - ask: "buy bread"
-    note: "Purchase a loaf of travel bread using BUY BREAD."
+    note: "Purchase a loaf of travel bread using `buy bread`."
     accept:
       - "buy bread"
     hint: "Type: buy bread"
   - ask: "give bread maelton"
-    note: "Give your bread to Maelton. Remember MUME syntax: GIVE <item> <person>!"
+    note: "Give your bread to Maelton. Remember MUME syntax: `give <item> <person>`!"
     accept:
       - "give bread maelton"
       - "give bread to maelton"

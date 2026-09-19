@@ -8,14 +8,14 @@ teach:
     desc: "list all obvious exit directions"
 steps:
   - ask: "look"
-    note: "Type LOOK (or L) to inspect your room in The Foaming Mug's Beer Garden."
+    note: "Type `look` (or `l`) to inspect your room in The Foaming Mug's Beer Garden."
     accept:
       - "look"
       - "l"
     hint: "Type: look (or l)"
   - story: "The sun glistens on the stone well, and the distant neighing of horses echoes from the stables."
   - ask: "exits"
-    note: "Type EXITS to display obvious cardinal exit directions."
+    note: "Type `exits` to display obvious cardinal exit directions."
     accept:
       - "exits"
       - "ex"

@@ -12,27 +12,27 @@ teach:
     desc: "move north into Common Room"
 steps:
   - ask: "south"
-    note: "Move SOUTH (or S) into Black Hill Stables."
+    note: "Move `south` (or `s`) into Black Hill Stables."
     accept:
       - "south"
       - "s"
     hint: "Type: south (or s)"
   - story: "Stable hands wave as Fuor walks past the tethered horses into the morning village square."
   - ask: "west"
-    note: "Move WEST (or W) into Black Hill Market Square."
+    note: "Move `west` (or `w`) into Black Hill Market Square."
     accept:
       - "west"
       - "w"
     hint: "Type: west (or w)"
   - ask: "open door"
-    note: "Open closed doors or gates before moving through them using OPEN DOOR."
+    note: "Open closed doors or gates before moving through them using `open door`."
     accept:
       - "open door"
       - "open gate"
       - "open north"
     hint: "Type: open door"
   - ask: "north"
-    note: "Move NORTH (or N) into the Common Room of The Foaming Mug."
+    note: "Move `north` (or `n`) into the Common Room of The Foaming Mug."
     accept:
       - "north"
       - "n"
