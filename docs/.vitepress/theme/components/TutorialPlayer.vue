@@ -76,6 +76,24 @@ const log = ref([])
 const finished = ref(false)
 const entry = ref('')
 const isSheetOpen = ref(false)
+const isExpanded = ref(false)
+
+function toggleExpand() {
+  isExpanded.value = !isExpanded.value
+  if (typeof document !== 'undefined') {
+    if (isExpanded.value) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+  }
+}
+
+function handleKeydown(e) {
+  if (e.key === 'Escape' && isExpanded.value) {
+    toggleExpand()
+  }
+}
 
 const logEl = ref(null)
 const inputEl = ref(null)
@@ -265,12 +283,22 @@ onMounted(() => {
   renderStepLog()
   if (typeof window !== 'undefined') {
     focusInput()
+    window.addEventListener('keydown', handleKeydown)
+  }
+})
+
+onUnmounted(() => {
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('keydown', handleKeydown)
+    if (isExpanded.value && typeof document !== 'undefined') {
+      document.body.style.overflow = ''
+    }
   }
 })
 </script>
 
 <template>
-  <div class="tut">
+  <div class="tut" :class="{ 'tut-fullscreen': isExpanded }">
     <div class="tut-frame">
       <div class="tut-head">
         <img class="tut-logo" :src="logoImg" alt="MUME" />
@@ -279,6 +307,10 @@ onMounted(() => {
             <span class="tut-title">Chapter {{ chapterNum }}: {{ chapterTitle }}</span>
             <button type="button" class="tut-sheet-toggle-btn" @click="isSheetOpen = !isSheetOpen" aria-label="Toggle Command Sheet">
               Commands
+            </button>
+            <button type="button" class="tut-expand-btn" @click="toggleExpand" :title="isExpanded ? 'Shrink player (Esc)' : 'Expand to full screen'" aria-label="Toggle Fullscreen">
+              <i class="fa" :class="isExpanded ? 'fa-compress' : 'fa-expand'" aria-hidden="true"></i>
+              <span>{{ isExpanded ? 'Shrink' : 'Expand' }}</span>
             </button>
           </div>
           <span class="tut-sub">Your first hour in Middle-earth</span>
@@ -511,6 +543,52 @@ onMounted(() => {
 
 .tut-title-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .tut-sheet-toggle-btn { display: none; background: rgba(184,134,11,.18); border: 1px solid rgba(215,166,63,.4); color: #f4dd94; font-size: 11px; padding: 2px 8px; border-radius: 12px; cursor: pointer; }
+.tut-expand-btn { display: inline-flex; align-items: center; gap: 5px; background: rgba(184,134,11,.18); border: 1px solid rgba(215,166,63,.4); color: #f4dd94; font-size: 11px; padding: 2px 10px; border-radius: 12px; cursor: pointer; transition: background .2s, color .2s; }
+.tut-expand-btn:hover { background: darkgoldenrod; color: #fff; }
+
+/* Fullscreen Expand Mode */
+.tut.tut-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  margin: 0;
+  background: #0b0b0d;
+  display: flex;
+  flex-direction: column;
+}
+
+.tut.tut-fullscreen .tut-frame {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.tut.tut-fullscreen .tut-body {
+  flex: 1;
+  min-height: 0;
+}
+
+.tut.tut-fullscreen .tut-term {
+  flex: 1;
+  min-height: 0;
+}
+
+.tut.tut-fullscreen .tut-log {
+  max-height: none;
+  flex: 1;
+}
+
+.tut.tut-fullscreen .tut-sheet-body {
+  max-height: calc(100vh - 120px);
+}
 .tut-hub-ghost { display: inline-block; background: none; border: 1px solid rgba(215,166,63,.4); color: #9a927f !important; border-radius: 30px; padding: 7px 16px; font-size: 13px; text-decoration: none !important; margin-right: 12px; font-family: 'Merriweather', serif; transition: background .2s, color .2s; }
 .tut-hub-ghost:hover { background: rgba(184,134,11,.12); color: #f4dd94 !important; }
 

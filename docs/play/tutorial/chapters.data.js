@@ -3,7 +3,10 @@ import { createContentLoader } from 'vitepress'
 export default createContentLoader('play/tutorial/*.md', {
   transform(raw) {
     return raw
-      .filter(page => page.url !== '/play/tutorial/' && page.url !== '/play/tutorial/index' && page.url !== '/play/tutorial')
+      .filter(page => {
+        const filename = page.url.split('/').pop().replace(/\.html$/, '')
+        return /^\d+-/.test(filename)
+      })
       .map(page => {
         const filename = page.url.split('/').pop().replace(/\.html$/, '')
         const numMatch = filename.match(/^(\d+)-/)
