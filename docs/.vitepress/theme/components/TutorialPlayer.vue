@@ -404,8 +404,9 @@ onUnmounted(() => {
           <button type="button"
                   class="tut-toggle-pill-btn"
                   :class="{ active: isSheetOpen }"
+                  :aria-expanded="isSheetOpen"
                   @click="isSheetOpen = !isSheetOpen"
-                  aria-label="Toggle Command Sheet">
+                  aria-label="Toggle Command Reference Sheet">
             <i class="fa fa-book" aria-hidden="true"></i>
             <span>Commands</span>
             <span class="tut-toggle-switch">
@@ -413,7 +414,7 @@ onUnmounted(() => {
             </span>
           </button>
 
-          <button type="button" class="tut-action-btn tut-fullscreen-btn" @click="toggleExpand" :title="isExpanded ? 'Exit Fullscreen (Esc)' : 'Fullscreen View'" aria-label="Toggle Fullscreen">
+          <button type="button" class="tut-action-btn tut-fullscreen-btn" @click="toggleExpand" :title="isExpanded ? 'Exit Fullscreen (Esc)' : 'Fullscreen View'" :aria-expanded="isExpanded" aria-label="Toggle Fullscreen Mode">
             <i class="fa" :class="isExpanded ? 'fa-compress' : 'fa-expand'" aria-hidden="true"></i>
             <span class="tut-btn-text">{{ isExpanded ? 'Shrink' : 'Full' }}</span>
           </button>
@@ -427,7 +428,7 @@ onUnmounted(() => {
 
       <div class="tut-body" :class="{ 'has-sheet': isSheetOpen }">
         <div class="tut-term">
-          <div class="tut-log" ref="logEl">
+          <div class="tut-log" ref="logEl" aria-live="polite" aria-atomic="false">
             <div v-for="(b, i) in log" :key="i" class="tut-block">
               <template v-if="b.kind === 'lesson'">
                 <!-- Chapter Intro Card -->
@@ -556,11 +557,11 @@ onUnmounted(() => {
       <div class="tut-sheet-backdrop" v-if="isSheetOpen" @click="isSheetOpen = false"></div>
 
       <!-- Modal Overlay for End of Tutorial Options -->
-      <div v-if="isModalOpen" class="tut-modal-overlay" @click.self="closeModal">
+      <div v-if="isModalOpen" class="tut-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="tut-modal-title-id" @click.self="closeModal">
         <div class="tut-modal-card">
           <button type="button" class="tut-modal-close" @click="closeModal" aria-label="Close modal">&times;</button>
           <div class="tut-eyebrow">Tutorial Complete</div>
-          <h3 class="tut-modal-title">Congratulations! What would you like to do next?</h3>
+          <h3 id="tut-modal-title-id" class="tut-modal-title">Congratulations! What would you like to do next?</h3>
           <p class="tut-modal-desc">
             You have completed all 15 chapters of the MUME interactive tutorial. You're ready to step into Middle-earth!
           </p>
