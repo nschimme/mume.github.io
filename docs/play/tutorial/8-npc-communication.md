@@ -16,6 +16,7 @@ steps:
       - "say y"
     hint: "Type: say yes"
     example: "> say yes\nYou say 'yes'\nMaelton says 'Thank you, Fuor! Please visit the local grocer in the southern shop.'"
+  - text: "Ermin the Ranger steps out from the shadow of the tavern, adjusting his weathered dark grey cloak."
   - ask: "tell ermin hello"
     note: "Unlike automated NPCs, living players and Rangers engage in rich, freeform communication! Reply to Ermin using TELL ERMIN HELLO."
     accept:
@@ -24,6 +25,7 @@ steps:
       - "tell"
     hint: "Type: tell ermin hello"
     example: "> tell ermin hello\nYou tell Ermin 'hello'\nErmin tells you 'Follow me, young Fuor! I shall guide you through the hills.'"
+  - text: "Ermin smiles warmly and unslings his longbow, beckoning Fuor to fall into line."
   - ask: "follow ermin"
     note: "Ermin invites you to join his party. Type FOLLOW ERMIN to travel alongside the ranger."
     accept:
@@ -41,14 +43,14 @@ responses:
   fol ermin: "You now follow Ermin.\nYou are now a member of Ermin's group.\n\n!+*>"
 ---
 
-# NPC Triggers vs. Player Communication & Ranger Allies
+# Chapter 8: Meeting Ermin the Ranger
 
-Communication in MUME falls into two distinct categories:
+In Black Hill Market Square, Fuor encounters two very different kinds of characters:
 
 ### 1. Automated NPCs (Non-Player Characters)
-NPCs like merchants, guildmasters, and village elders are computer-controlled. They react predictably to specific action keywords or spoken phrases using `say` (e.g. `say yes`, `list`, `buy`). They serve essential world roles, but their conversation is scripted.
+NPCs like Elder Maelton, shopkeepers, and guildmasters are computer-controlled triggers. They react to specific keyword phrases spoken aloud using `say` (e.g. `say yes`).
 
 ### 2. Living Human Players & MUME Rangers
-In contrast, fellow players and **MUME Rangers** are real human beings. They provide rich, dynamic conversations, mentorship, tactical advice, and group adventuring! You can communicate directly across any zone using `tell <player> <message>`, and travel together as a team using `follow <player>`.
+In contrast, **Ermin the Ranger** is a living player and veteran guardian of the Dúnedain. Living players engage in rich, freeform communication (`tell ermin hello`) and group adventuring (`follow ermin`)!
 
-Practice both NPC triggers and player interaction with `say yes`, `tell ermin hello`, and `follow ermin` below!
+Help Fuor accept Maelton's quest, greet Ermin, and join the Ranger's party by typing `say yes`, `tell ermin hello`, and `follow ermin` below!

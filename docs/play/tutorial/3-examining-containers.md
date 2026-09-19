@@ -40,8 +40,8 @@ responses:
   put cheese in sack: "You put a piece of cheese in a large sack.\n\n!.*>"
 ---
 
-# Examining & Containers
+# Chapter 3: Unpacking the Travel Sack
 
-`examine` gives detailed descriptions of items, people, and room features. Container commands follow the pattern `get <item> <container>` and `put <item> <container>`.
+Sitting at a simple oaken table in the beer garden, Fuor prepares his supplies for the road ahead. Detailed inspection uses `examine`, while pack organization follows `get <item> <container>` and `put <item> <container>`.
 
-Practice `examine table`, `get cheese sack`, and `put cheese sack` below!
+Help Fuor examine the table, unpack his travel cheese, and stow it securely by typing `examine table`, `get cheese sack`, and `put cheese sack` below!

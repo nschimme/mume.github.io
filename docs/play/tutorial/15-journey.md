@@ -19,9 +19,9 @@ responses:
   who: "Players Online: Fuor, Martyrson, Elrond, Glorfindel.\n\n*+->"
 ---
 
-# Hero's Graduation & Community Help
+# Chapter 15: Hero's Graduation
 
-Congratulations! You have mastered the core mechanics of MUME: navigation, wimpy safety setup, equipment, communication, combat postures, and inn renting.
+Congratulations! You have guided Fuor through his awakening in the Black Hills, mastered navigation, prepared combat safety reflexes, equipped armor and weapons, journeyed with Ermin the Ranger, and secured your character at the inn.
 
 ### Familiarizing with the MUME Web Client & Live Map
 
@@ -35,6 +35,6 @@ The live map tracks your real-time position in Middle-earth, showing nearby room
 
 ### Community Guidance & Rangers
 
-If you ever get lost or need advice in-game, type `who ranger` to find friendly player Rangers dedicated to helping newcomers!
+If you ever need advice in-game, type `who ranger` to find friendly player Rangers dedicated to assisting new adventurers!
 
-Type `who ranger` below to graduate!
+Type `who ranger` below to graduate Fuor into Middle-earth!

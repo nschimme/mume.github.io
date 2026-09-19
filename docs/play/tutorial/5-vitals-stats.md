@@ -39,8 +39,8 @@ responses:
   inf: "Fuor the Man Adventurer (level 1). Hit: 36/36, Mana: 76/76, Moves: 126/126.\n\n*+->"
 ---
 
-# Checking Vitals & Stats
+# Chapter 5: Checking Vitals & Physical Readiness
 
-Always monitor your health (`score`), combat offensive/defensive statistics (`stat`), and character progress (`info`).
+Standing tall in the morning breeze, Fuor takes stock of his physical stamina and martial capabilities. `score` reveals health and movement points, `stat` measures offensive and defensive bonuses, and `info` presents Fuor's complete hero record.
 
-Practice `score`, `stat`, and `info` below!
+Check Fuor's readiness by typing `score`, `stat`, and `info` below!

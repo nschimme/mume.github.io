@@ -17,10 +17,8 @@ responses:
   f: "You flee head over heels.\nYou flee north.\n\nBend in the Path\nExits: =south=, =west=.\n\n*+->"
 ---
 
-# Emergency Fleeing
+# Chapter 11: Tactical Retreat
 
-Dying is a natural part of learning MUME, but running away is often the smartest tactical decision!
+The wolf snaps viciously, grazing Fuor's arm! Ermin shouts that knowing when to retreat is a true warrior's wisdom—`flee` instantly breaks engagement and escapes through an available exit.
 
-Typing `flee` immediately breaks combat and escapes through a random exit.
-
-Type `flee` below to practice your emergency retreat!
+Help Fuor execute a swift emergency retreat back toward the village by typing `flee` below!

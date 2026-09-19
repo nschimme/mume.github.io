@@ -30,10 +30,8 @@ responses:
   cha spam all: "All spam settings enabled.\n\n*+->"
 ---
 
-# Combat Safety Setup & Wimpy
+# Chapter 4: SteelIing Combat Reflexes
 
-According to the MUME Quick Start guide, the #1 mistake new players make is forgetting to set auto-flee!
+Fuor knows that the hills beyond the village gates harbor dangerous beasts and outlaw bands. Before venturing forth, he must configure his survival instincts—setting `change wimpy 15` ensures Fuor automatically flees if injured below 15 HP, while `change spam all` clarifies fast-moving combat text.
 
-Setting `change wimpy 15` ensures your character automatically flees combat if HP drops below 15. Setting `change spam all` keeps fast-moving text clean and readable.
-
-Type `change wimpy 15` followed by `change spam all` below!
+Steel Fuor's reflexes by typing `change wimpy 15` followed by `change spam all` below!

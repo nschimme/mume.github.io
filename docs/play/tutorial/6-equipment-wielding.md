@@ -61,8 +61,8 @@ responses:
   wield sword: "You wield a backsword in your right hand.\n\n*+->"
 ---
 
-# Equipment & Wielding
+# Chapter 6: Arming for the Road
 
-Having gear in your inventory is not enough—you must wear armor and wield weapons to use them!
+Carrying armor and weapons in a pack offers no protection—Fuor must don his jerkin (`wear jerkin`), grip his backsword (`wield backsword`), and fasten his wooden shield (`wear shield`).
 
-Practice `equipment`, `inventory`, `wear jerkin`, `wield backsword`, and `wear shield` below!
+Arm Fuor for the road ahead by inspecting his `equipment` and `inventory`, then donning his gear below!

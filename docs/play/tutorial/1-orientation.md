@@ -28,7 +28,7 @@ responses:
 
 # Chapter 1: The Awakening of Fuor
 
-Our story begins in **the Black Hills**, a rugged country of rolling slopes, quiet taverns, and rustic hamlets in Eriador. You step into the boots of **Fuor**, an eager Young Warrior awakening at The Foaming Mug's Beer Garden in **Black Hill Village**.
+Our story begins in **the Black Hills**, a rugged country of rolling slopes, ancient tracks, and quiet hamlets in Eriador. You step into the boots of **Fuor**, an eager Young Warrior awakening at The Foaming Mug's Beer Garden in **Black Hill Village**.
 
 ### Understanding MUME Accounts
 When you connect to MUME for the first time, you register a single **Account**. All your characters—whether human warriors, elven scouts, or hobbit thieves—are organized safely under this one account with a single password.

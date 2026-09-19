@@ -46,8 +46,8 @@ responses:
   rent: "The innkeeper tells you 'It will cost you 19 copper pennies per day.'\nYou have enough money for at least two years!\nThe innkeeper calls for a servant who hurries from attending guests.\nThe innkeeper says 'Please bring our esteemed guest to their chamber.'\nYou are guided to your private room. Your equipment is safely stored.\n\n![>"
 ---
 
-# Safe Haven & Inn Renting
+# Chapter 14: Securing the Night at the Inn
 
-When you need to leave MUME, simply closing your client causes you to drop your equipped items!
+As twilight falls over the Black Hills, Ermin commends Fuor on a successful first expedition. Simply disconnecting in the wild causes adventurers to drop their equipment! To save your gear and character permanently, head upstairs in **The Foaming Mug**, inspect the innkeeper (`examine innkeeper`), check room rates (`offer`), and rent a private chamber (`rent`).
 
-To save your gear permanently, head upstairs in **The Foaming Mug** inn, inspect the innkeeper (`EXAMINE INNKEEPER`), check your daily rate (`OFFER`), and store your character safely (`RENT`).
+Help Fuor secure his room by typing `up`, `examine innkeeper`, `offer`, and `rent` below!

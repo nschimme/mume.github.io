@@ -46,10 +46,8 @@ responses:
   give bread to maelton: "You give a loaf of bread to Maelton the village elder.\n\n!+*>"
 ---
 
-# Shopping & Trading
+# Chapter 9: Provisioning the Expedition
 
-To trade with merchants, inspect stock using `list` and purchase items with `buy <item>`.
+Guided by Ermin, Fuor visits the Cluttered Traveller's Shop to buy food for their journey into the hills. Merchant interaction uses `list` to inspect stock and `buy <item>` to make purchases. To share items, MUME syntax uses `give <item> <person>`.
 
-When giving items to NPCs or players, MUME syntax strictly expects **`give <item> <person>`** (item name before person)!
-
-Practice `south`, `list`, `buy bread`, and `give bread maelton` below!
+Help Fuor enter the shop (`south`), inspect the grocer's wares (`list`), buy travel rations (`buy bread`), and offer a loaf to Elder Maelton (`give bread maelton`) below!

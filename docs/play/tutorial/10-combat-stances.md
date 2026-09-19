@@ -56,10 +56,8 @@ responses:
   cha m wimpy: "Ok.\n\n*+->"
 ---
 
-# Combat Safety & Stances
+# Chapter 10: Encounter in the Black Hills
 
-Before fighting, use `consider` to assess your enemy.
+Ermin and Fuor march out into the rocky slopes of the Black Hills. Suddenly, a wild timber wolf bounds onto the trail! Ermin urges Fuor to gauge the wolf's strength (`consider wolf`), switch to an offensive stance (`change mood aggressive`), strike (`hit wolf`), and balance his defense (`change mood wimpy`).
 
-In MUME, combat is real-time! Adjust your posture using `change mood aggressive` to strike harder, or `change mood wimpy` to raise your defense (`DB`).
-
-Practice `consider wolf`, `change mood aggressive`, `hit wolf`, and `change mood wimpy` below!
+Guide Fuor through his first real-time combat engagement below!

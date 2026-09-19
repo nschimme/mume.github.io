@@ -28,10 +28,8 @@ responses:
   practice slash: "You practice slash.\nYour skill in slash is now 45%!\n\n*+->"
 ---
 
-# Guilds & Practicing Skills
+# Chapter 13: Training at the Warrior Guild
 
-When Fuor levels up by earning experience (killing foes) and travel points (exploring Eriador), he gains practice points!
+Refreshed from his rest, Fuor visits the local Warrior Guildmaster in Black Hill Village. As heroes gain experience and travel points across Middle-earth, they earn practice sessions to train weapon proficiencies and skills.
 
-Guilds across Middle-earth allow you to spend practice points on weapon proficiencies, stealth, or spells.
-
-Practice `prac` and `prac slash` below!
+Help Fuor inspect his training sessions (`prac`) and hone his blade skill (`prac slash`) below!

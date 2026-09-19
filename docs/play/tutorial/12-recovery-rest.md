@@ -48,8 +48,8 @@ responses:
   eat biscuit: "You eat a large biscuit.\nYou are full.\n\n*+->"
 ---
 
-# Recovery & Rest
+# Chapter 12: Recovery by the Fire
 
-After combat or long journeys across Eriador, sit down (`rest`) to accelerate HP and movement recovery. Don't forget to drink (`drink water`) and eat (`eat biscuit`) to keep recovery rates high!
+Safely back inside **The Foaming Mug**, Fuor and Ermin sit by the peat fire. Sitting down (`rest`) accelerates health recovery, while drinking fresh well water (`drink water`) and eating biscuits (`eat biscuit`) maintain rapid health regeneration.
 
-Practice `rest`, `wake`, `drink water`, and `eat biscuit` below!
+Help Fuor rest (`rest`), stand (`wake`), quench his thirst (`drink water`), and eat (`eat biscuit`) below!

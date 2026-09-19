@@ -28,8 +28,8 @@ responses:
   ex: "  South   - Black Hill Stables\n  West    - Common Room of The Foaming Mug\n\n!.*>"
 ---
 
-# Look & Exits
+# Chapter 2: Taking in the Surroundings
 
-In MUME, your eyes are your most important tool. Typing `look` brings back your surroundings at any time, while `exits` highlights valid paths out of your room.
+Awakening under the morning sun in **Black Hill Village**, Fuor pauses to take his bearings. In MUME, your eyes are your most critical asset—`look` describes your immediate room, while `exits` lists all available paths out.
 
-Type `look` followed by `exits` below!
+Help Fuor inspect his surroundings by typing `look` followed by `exits` below!

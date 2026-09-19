@@ -52,8 +52,8 @@ responses:
   n: "Common Room of The Foaming Mug\nExits: north, east, south, up.\n\n![>"
 ---
 
-# Movement & Doors
+# Chapter 7: Stepping into Black Hill Village
 
-Move between rooms using cardinal directions (`south`, `west`, `north`). If an exit is blocked by a closed door or gate, use `open door` first!
+Fully armed, Fuor leaves the beer garden and steps out into the wider village. He navigates south through the stables (`south`), west into Market Square (`west`), opens the inn's heavy wooden doors (`open door`), and steps inside (`north`).
 
-Practice `south`, `west`, `open door`, and `north` below!
+Guide Fuor through the village paths by typing `south`, `west`, `open door`, and `north` below!
