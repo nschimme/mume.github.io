@@ -114,6 +114,10 @@ function toggleExpand() {
     if (document.documentElement.requestFullscreen) {
       document.documentElement.requestFullscreen().catch(() => {})
     }
+    // Auto-expand Command Sheet in Fullscreen on Desktop
+    if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
+      isSheetOpen.value = true
+    }
   } else {
     isExpanded.value = false
     document.body.style.overflow = ''
@@ -351,6 +355,10 @@ watch(() => route.path, () => {
 onMounted(() => {
   renderStepLog()
   if (typeof window !== 'undefined') {
+    // Auto-open Command Sheet on desktop viewports by default
+    if (window.innerWidth >= 1024) {
+      isSheetOpen.value = true
+    }
     focusInput()
     window.addEventListener('keydown', handleKeydown)
     document.addEventListener('fullscreenchange', handleFullscreenChange)
@@ -649,6 +657,12 @@ onUnmounted(() => {
 
 .tut-actions { display: flex; align-items: center; gap: 8px; margin-left: 8px; }
 
+@keyframes tutPulseHint {
+  0% { box-shadow: 0 0 0 0 rgba(215, 166, 63, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(215, 166, 63, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(215, 166, 63, 0); }
+}
+
 /* Visual Toggle Pill Switch Button for Commands */
 .tut-toggle-pill-btn {
   display: inline-flex;
@@ -663,6 +677,9 @@ onUnmounted(() => {
   cursor: pointer;
   transition: all 0.25s ease;
   user-select: none;
+}
+.tut-toggle-pill-btn:not(.active) {
+  animation: tutPulseHint 2.5s infinite;
 }
 .tut-toggle-pill-btn:hover {
   background: rgba(184,134,11,.25);
