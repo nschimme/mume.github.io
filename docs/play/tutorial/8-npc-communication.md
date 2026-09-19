@@ -1,57 +1,52 @@
 ---
-title: "NPC Interaction & Communication"
-description: "Inspect townspeople, listen to quest givers, speak aloud, and send private tells."
+title: "Communication & Meeting a Ranger Ally"
+description: "Meet Ermin the Ranger in Black Hill Village, reply with TELL, and join his party with FOLLOW."
 teach:
-  - command: "examine maelton"
-    desc: "inspect Maelton the village elder in detail"
-  - command: "say yes"
-    desc: "speak aloud to accept a quest or answer an NPC"
-  - command: "nod"
-    desc: "nod solemnly to confirm agreement"
-  - command: "tell Fuor hello"
+  - command: "examine ermin"
+    desc: "inspect Ermin the Ranger in detail"
+  - command: "tell ermin hello"
     desc: "send a private message to a player anywhere in Middle-earth"
+  - command: "say yes"
+    desc: "speak aloud to the room"
+  - command: "follow ermin"
+    desc: "follow an experienced player and join their adventuring party"
 steps:
-  - ask: "examine maelton"
-    note: "Inspect Maelton the village elder in Market Square using EXAMINE MAELTON."
+  - ask: "examine ermin"
+    note: "As you wander through Market Square, Ermin the Ranger steps out from the shadows! Inspect him using EXAMINE ERMIN."
     accept:
-      - "examine maelton"
-      - "exa maelton"
-    hint: "Type: examine maelton"
-    example: "> examine maelton\nMaelton the village elder has a long, thin jaw and immaculate white beard."
-  - ask: "say yes"
-    note: "Speak aloud to accept Maelton's quest with SAY YES."
+      - "examine ermin"
+      - "exa ermin"
+    hint: "Type: examine ermin"
+    example: "> examine ermin\nErmin the Ranger is a weathered veteran of the North."
+  - ask: "tell ermin hello"
+    note: "Ermin tells you 'Greetings, young Fuor! Are you ready for the wild?' Reply using TELL ERMIN HELLO."
     accept:
-      - "say yes"
-      - "say y"
-    hint: "Type: say yes"
-    example: "> say yes\nYou say 'yes'\nMaelton says 'Wonderful! Please visit the local grocer in the southern shop.'"
-  - ask: "nod"
-    note: "Confirm your agreement with NOD."
-    accept:
-      - "nod"
-    hint: "Type: nod"
-    example: "> nod\nYou nod solemnly."
-  - ask: "tell Fuor hello"
-    note: "Send a private direct message across Middle-earth using TELL <person> <message>."
-    accept:
-      - "tell Fuor hello"
-      - "tell fuor hello"
+      - "tell ermin hello"
+      - "tell ermin"
       - "tell"
-    hint: "Type: tell Fuor hello"
-    example: "> tell Fuor hello\nYou tell Fuor 'hello'"
+    hint: "Type: tell ermin hello"
+    example: "> tell ermin hello\nYou tell Ermin 'hello'\nErmin tells you 'Follow me, and I shall guide you through the hills!'"
+  - ask: "follow ermin"
+    note: "Ermin invites you to join his party! Type FOLLOW ERMIN to follow the ranger."
+    accept:
+      - "follow ermin"
+      - "fol ermin"
+    hint: "Type: follow ermin"
+    example: "> follow ermin\nYou now follow Ermin.\nYou are now a member of Ermin's group."
 responses:
-  examine maelton: "Frail wisps of white hair have been combed over rather ineffectively to rest on\na balding head of a village elder. He has a long, thin jaw and prominent chin\nthat ends with a long and white immaculately-trimmed beard. The elder is quite\ntanned with thick calluses on his hands, remnants of his past hard work.\nMaelton the village elder is in an excellent condition.\nMaelton the village elder is using:\n<worn on head>       a brown hood (flawless)\n<worn on body>       a brown shirt (satisfactory)\n<worn about body>    a blue cloak (satisfactory)\n<worn on arms>       a brown pair of sleeves (flawless)\n<worn on legs>       a brown pair of pants (used)\n<worn on feet>       a pair of heavy shoes (satisfactory)\n<worn on finger>     a ring\n<worn as belt>       a black leather belt\n<worn on belt>       a lit lantern\n\n!+*>"
-  exa maelton: "Maelton the village elder stands here watching the goings-on.\n\n!+*>"
-  say yes: "You say 'yes'\nMaelton the village elder says 'Wonderful, Fuor! Please visit the local grocer in the southern shop.'\n\n!+*>"
-  say y: "You say 'yes'\n\n!+*>"
-  nod: "You nod solemnly.\n\n!+*>"
-  tell Fuor hello: "You tell Fuor 'hello'\n\n!+*>"
-  tell fuor hello: "You tell Fuor 'hello'\n\n!+*>"
-  tell: "You tell Fuor 'hello'\n\n!+*>"
+  examine ermin: "A tall, weathered Dúnadan ranger wearing a dark grey cloak and travel-worn leather armor.\nKeen grey eyes scan the surroundings vigilantly, and a longbow is slung over his shoulder.\nErmin the Ranger is in excellent condition.\n\nErmin tells you 'Greetings, young Fuor! Are you ready for the wild?'\n\n!+*>"
+  exa ermin: "Ermin the Ranger stands here, watching the village roads carefully.\n\n!+*>"
+  tell ermin hello: "You tell Ermin 'hello'\n\nErmin tells you 'Follow me, and I shall guide you through the hills!'\n\n!+*>"
+  tell ermin: "You tell Ermin 'hello'\n\nErmin tells you 'Follow me, and I shall guide you through the hills!'\n\n!+*>"
+  tell: "You tell Ermin 'hello'\n\nErmin tells you 'Follow me, and I shall guide you through the hills!'\n\n!+*>"
+  follow ermin: "You now follow Ermin.\nYou are now a member of Ermin's group.\n\nErmin says 'Excellent! Together we shall explore the eastern countryside.'\n\n!+*>"
+  fol ermin: "You now follow Ermin.\nYou are now a member of Ermin's group.\n\n!+*>"
 ---
 
-# NPC Interaction & Communication
+# Communication & Meeting a Ranger Ally
 
-Interacting with characters is key to unlocking quests and getting help. `say` speaks to everyone in the room, while `tell` sends a private message to anyone online.
+Interacting with fellow players and NPCs is central to surviving in Middle-earth. `say` speaks aloud to everyone in your current room, `tell` sends a private message across the realm, and `follow` links your movement with an ally!
 
-Practice `examine maelton`, `say yes`, `nod`, and `tell Fuor hello` below!
+As Fuor travels through Black Hill Village, he meets **Ermin the Ranger**, a veteran guardian of Arnor who offers to guide the young hero.
+
+Practice `examine ermin`, `tell ermin hello`, and `follow ermin` below!

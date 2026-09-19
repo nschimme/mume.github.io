@@ -65,6 +65,7 @@ Never hesitate to ask for assistance. MUME has dedicated **Rangers** whose purpo
 
 - Type <code>who ranger</code> in-game to see active Rangers online.
 - Use <code>tell &lt;ranger_name&gt; hello, I am new!</code> to send them a private message.
+- Use <code>follow &lt;ranger_name&gt;</code> to travel alongside them safely in their party.
 - Join the community on <a href="https://discord.gg/XkZN55am9a" target="_blank" rel="noopener">Discord</a> to ask questions and meet fellow adventurers.
 
 <MumeCallout

@@ -42,6 +42,7 @@ const commands = [
 
   // Social & Rent
   { category: 'Social & Rent', command: 'say / tell', syntax: 'say <text> / tell <name> <text>', desc: 'Speak aloud locally or send private direct messages.', chapter: '8-npc-communication', chNum: 8 },
+  { category: 'Social & Rent', command: 'follow / fol', syntax: 'follow <player>', desc: 'Follow an experienced player or ranger and join their party.', chapter: '8-npc-communication', chNum: 8 },
   { category: 'Social & Rent', command: 'give', syntax: 'give <item> <person>', desc: 'Give an item to an NPC or player.', chapter: '9-shopping-trading', chNum: 9 },
   { category: 'Social & Rent', command: 'list / buy', syntax: 'list / buy <item>', desc: 'Browse merchant wares and buy provisions.', chapter: '9-shopping-trading', chNum: 9 },
   { category: 'Social & Rent', command: 'offer / rent', syntax: 'offer / rent', desc: 'Check inn room rates and safely save character equipment.', chapter: '14-safe-haven-rent', chNum: 14 }

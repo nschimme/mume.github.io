@@ -26,8 +26,11 @@ responses:
   fuor: "            ~~~\n           ~~         _----|        _ _ __ _ _\n                       ----|_----|  ]-I-II-I-[\n   _ _ _/\\_ _ _ _---|      | ----|   \\ `  ' /\n   ]-I-I--I-I-[  ---|      |     |    |. ` |\n\nWelcome to MUME! Fuor the Man Warrior has awakened in Middle-earth.\n\nYour journey begins at The Foaming Mug's Beer Garden in Black Hill Village!\n\n!.*>"
 ---
 
-# Account Registration & Hero Definition
+# Chapter 1: The Awakening of Fuor
 
-In MUME, every player manages all their characters under a single **account**.
+Our story begins in **Bree-land**, a gentle realm of rolling hills, ancient highways, and quiet villages. You step into the boots of **Fuor**, an eager Young Warrior setting out on his first grand adventure in Middle-earth.
 
-Type `new` to initiate account registration, followed by **Fuor** (our tutorial sample hero name—when playing MUME live, you will choose your own unique character name!) to awaken as a Man Warrior in **Black Hill Village**.
+### Understanding MUME Accounts
+When you connect to MUME for the first time, you register a single **Account**. All your characters—whether human warriors, elven scouts, or hobbit thieves—are organized safely under this one account with a single password.
+
+Type `new` to begin account registration, then type `Fuor` (our tutorial walkthrough hero name—when playing MUME live, you'll pick your own unique hero name!) to step into Middle-earth!
