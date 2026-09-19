@@ -15,7 +15,6 @@ steps:
       - "say yes"
       - "say y"
     hint: "Type: say yes"
-    example: "> say yes\nYou say 'yes'\nMaelton says 'Thank you, Fuor! Please visit the local grocer in the southern shop.'"
   - story: "Ermin the Ranger steps out from the shadow of the tavern, adjusting his weathered dark grey cloak."
   - ask: "tell ermin hello"
     note: "Unlike automated NPCs, living players and Rangers engage in rich, freeform communication! Reply to Ermin using TELL ERMIN HELLO."
@@ -24,7 +23,6 @@ steps:
       - "tell ermin"
       - "tell"
     hint: "Type: tell ermin hello"
-    example: "> tell ermin hello\nYou tell Ermin 'hello'\nErmin tells you 'Follow me, young Fuor! I shall guide you through the hills.'"
   - story: "Ermin smiles warmly and unslings his longbow, beckoning Fuor to fall into line."
   - ask: "follow ermin"
     note: "Ermin invites you to join his party. Type FOLLOW ERMIN to travel alongside the ranger."
@@ -32,15 +30,53 @@ steps:
       - "follow ermin"
       - "fol ermin"
     hint: "Type: follow ermin"
-    example: "> follow ermin\nYou now follow Ermin.\nYou are now a member of Ermin's group."
 responses:
-  say yes: "You say 'yes'\nMaelton the village elder says 'Thank you, Fuor! Please visit the local grocer in the southern shop.'\n\nErmin the Ranger steps out from the shadow of the inn, smiling warmly.\nErmin tells you 'Greetings, young Fuor! Are you ready for the wild?'\n\n!+*>"
-  say y: "You say 'yes'\n\nMaelton the village elder says 'Thank you, Fuor!'\n\nErmin tells you 'Greetings, young Fuor! Are you ready for the wild?'\n\n!+*>"
-  tell ermin hello: "You tell Ermin 'hello'\n\nErmin tells you 'Follow me, young Fuor! I shall guide you through the hills.'\n\n!+*>"
-  tell ermin: "You tell Ermin 'hello'\n\nErmin tells you 'Follow me, young Fuor! I shall guide you through the hills.'\n\n!+*>"
-  tell: "You tell Ermin 'hello'\n\nErmin tells you 'Follow me, young Fuor! I shall guide you through the hills.'\n\n!+*>"
-  follow ermin: "You now follow Ermin.\nYou are now a member of Ermin's group.\n\nErmin says 'Excellent! Together we shall explore the eastern countryside.'\n\n!+*>"
-  fol ermin: "You now follow Ermin.\nYou are now a member of Ermin's group.\n\n!+*>"
+  say yes: |
+    You say 'yes'
+    Maelton the village elder says 'Thank you, Fuor! Please visit the local grocer in the southern shop.'
+
+    Ermin the Ranger steps out from the shadow of the inn, smiling warmly.
+    Ermin tells you 'Greetings, young Fuor! Are you ready for the wild?'
+
+    !+*>
+  say y: |
+    You say 'yes'
+
+    Maelton the village elder says 'Thank you, Fuor!'
+
+    Ermin tells you 'Greetings, young Fuor! Are you ready for the wild?'
+
+    !+*>
+  tell ermin hello: |
+    You tell Ermin 'hello'
+
+    Ermin tells you 'Follow me, young Fuor! I shall guide you through the hills.'
+
+    !+*>
+  tell ermin: |
+    You tell Ermin 'hello'
+
+    Ermin tells you 'Follow me, young Fuor! I shall guide you through the hills.'
+
+    !+*>
+  tell: |
+    You tell Ermin 'hello'
+
+    Ermin tells you 'Follow me, young Fuor! I shall guide you through the hills.'
+
+    !+*>
+  follow ermin: |
+    You now follow Ermin.
+    You are now a member of Ermin's group.
+
+    Ermin says 'Excellent! Together we shall explore the eastern countryside.'
+
+    !+*>
+  fol ermin: |
+    You now follow Ermin.
+    You are now a member of Ermin's group.
+
+    !+*>
 ---
 
 # Chapter 8: Meeting Ermin the Ranger

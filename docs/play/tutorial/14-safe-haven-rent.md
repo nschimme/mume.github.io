@@ -17,33 +17,68 @@ steps:
       - "up"
       - "u"
     hint: "Type: up (or u)"
-    example: "> up\nInn's Private Rooms\nRows of simple wooden doors leading to guest rooms are accessed behind a small counter."
+  - story: "The old innkeeper looks up from his ledger and greets Fuor with a warm nod."
   - ask: "examine innkeeper"
     note: "Examine the innkeeper standing behind the desk."
     accept:
       - "examine innkeeper"
       - "ex innkeeper"
     hint: "Type: examine innkeeper"
-    example: "> examine innkeeper\nThe old innkeeper was maybe in his youth an adventurer like yourself."
   - ask: "offer"
     note: "Request a storage cost quote using OFFER."
     accept:
       - "offer"
     hint: "Type: offer"
-    example: "> offer\nThe innkeeper tells you 'It will cost you 19 copper pennies per day.'"
   - ask: "rent"
     note: "Safely store your equipment and save Fuor using RENT!"
     accept:
       - "rent"
     hint: "Type: rent"
-    example: "> rent\nThe innkeeper says 'Please bring our esteemed guest to their chamber.'"
 responses:
-  up: "Inn's Private Rooms\nRows of simple wooden doors leading to the guest rooms are accessed from a long\ncorridor behind a small counter. A small brass bell rests on the counter to\nsummon the innkeeper if he is away from his post. Covering the floor is a\nthreadbare rug which, although worn, deadens the noise coming from below.\nThe innkeeper set is here, smiling at would-be customers.\nExits: north, down.\nThe innkeeper says 'Welcome to the largest inn in Black Hill village! I have never run out of rooms.'\n\n![>"
-  u: "Inn's Private Rooms\nThe innkeeper stands behind the desk here.\nExits: north, down.\n\n![>"
-  examine innkeeper: "The old innkeeper was maybe in his youth an adventurer like yourself, who\nprospered enough on his travels to buy this inn.\nThe innkeeper is in an excellent condition.\nThe innkeeper is using:\n<worn on body>       a chequered shirt (flawless)\n<worn on legs>       a pair of cotton pants (worn)\n<worn on finger>     a ring\n\n![>"
-  ex innkeeper: "The old innkeeper stands behind the counter, smiling warmly.\n\n![>"
-  offer: "The innkeeper tells you 'It will cost you 19 copper pennies per day.'\nYou have enough money for at least two years!\n\n![>"
-  rent: "The innkeeper tells you 'It will cost you 19 copper pennies per day.'\nYou have enough money for at least two years!\nThe innkeeper calls for a servant who hurries from attending guests.\nThe innkeeper says 'Please bring our esteemed guest to their chamber.'\nYou are guided to your private room. Your equipment is safely stored.\n\n![>"
+  up: |
+    Inn's Private Rooms
+    Rows of simple wooden doors leading to the guest rooms are accessed from a long
+    corridor behind a small counter. A small brass bell rests on the counter to
+    summon the innkeeper if he is away from his post. Covering the floor is a
+    threadbare rug which, although worn, deadens the noise coming from below.
+    The innkeeper set is here, smiling at would-be customers.
+    Exits: north, down.
+    The innkeeper says 'Welcome to the largest inn in Black Hill village! I have never run out of rooms.'
+
+    ![>
+  u: |
+    Inn's Private Rooms
+    The innkeeper stands behind the desk here.
+    Exits: north, down.
+
+    ![>
+  examine innkeeper: |
+    The old innkeeper was maybe in his youth an adventurer like yourself, who
+    prospered enough on his travels to buy this inn.
+    The innkeeper is in an excellent condition.
+    The innkeeper is using:
+    <worn on body>       a chequered shirt (flawless)
+    <worn on legs>       a pair of cotton pants (worn)
+    <worn on finger>     a ring
+
+    ![>
+  ex innkeeper: |
+    The old innkeeper stands behind the counter, smiling warmly.
+
+    ![>
+  offer: |
+    The innkeeper tells you 'It will cost you 19 copper pennies per day.'
+    You have enough money for at least two years!
+
+    ![>
+  rent: |
+    The innkeeper tells you 'It will cost you 19 copper pennies per day.'
+    You have enough money for at least two years!
+    The innkeeper calls for a servant who hurries from attending guests.
+    The innkeeper says 'Please bring our esteemed guest to their chamber.'
+    You are guided to your private room. Your equipment is safely stored.
+
+    ![>
 ---
 
 # Chapter 14: Securing the Night at the Inn

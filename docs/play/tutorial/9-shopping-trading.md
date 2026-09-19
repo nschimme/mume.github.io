@@ -17,33 +17,59 @@ steps:
       - "south"
       - "s"
     hint: "Type: south (or s)"
-    example: "> south\nCluttered Traveller's Shop\nWhile the shop may be small it is packed from floor to ceiling."
+  - story: "Bells jingle as Ermin and Fuor enter the shop, surrounded by dusty boxes of dried fruit and fresh baked bread."
   - ask: "list"
     note: "Type LIST to browse the grocer's wares and prices."
     accept:
       - "list"
     hint: "Type: list"
-    example: "> list\nYou can buy: 71. ten loaves of bread up to 13 copper."
   - ask: "buy bread"
     note: "Purchase a loaf of travel bread using BUY BREAD."
     accept:
       - "buy bread"
     hint: "Type: buy bread"
-    example: "> buy bread\nYou buy a loaf of bread for 13 copper pennies."
   - ask: "give bread maelton"
     note: "Give your bread to Maelton. Remember MUME syntax: GIVE <item> <person>!"
     accept:
       - "give bread maelton"
       - "give bread to maelton"
     hint: "Type: give bread maelton"
-    example: "> give bread maelton\nYou give a loaf of bread to Maelton the village elder."
 responses:
-  south: "Cluttered Traveller's Shop\nWhile the shop may be small it is packed from floor to ceiling with all manner\nof items, most of them stored in dusty boxes upon wooden shelves. It certainly\nseems as if few people have bought much of the shopkeeper's stock recently.\nA large grocer is here, waiting to buy or sell some goods.\nExits: north.\n\n*[>"
-  s: "Cluttered Traveller's Shop\nExits: north.\n\n*[>"
-  list: "You can buy:\n   1. five large yellow apples up to thirteen copper.\n   7. five large biscuits up to seven copper.\n  71. ten loaves of bread up to thirteen copper.\n 124. ten pieces of cheese up to seven copper.\n\n*[>"
-  buy bread: "You buy a loaf of bread for thirteen copper pennies.\n\n*[>"
-  give bread maelton: "You give a loaf of bread to Maelton the village elder.\nMaelton says 'Thank you, Fuor! You are truly a friend of Black Hill Village!'\n\n!+*>"
-  give bread to maelton: "You give a loaf of bread to Maelton the village elder.\n\n!+*>"
+  south: |
+    Cluttered Traveller's Shop
+    While the shop may be small it is packed from floor to ceiling with all manner
+    of items, most of them stored in dusty boxes upon wooden shelves. It certainly
+    seems as if few people have bought much of the shopkeeper's stock recently.
+    A large grocer is here, waiting to buy or sell some goods.
+    Exits: north.
+
+    *[>
+  s: |
+    Cluttered Traveller's Shop
+    Exits: north.
+
+    *[>
+  list: |
+    You can buy:
+       1. five large yellow apples up to thirteen copper.
+       7. five large biscuits up to seven copper.
+      71. ten loaves of bread up to thirteen copper.
+     124. ten pieces of cheese up to seven copper.
+
+    *[>
+  buy bread: |
+    You buy a loaf of bread for thirteen copper pennies.
+
+    *[>
+  give bread maelton: |
+    You give a loaf of bread to Maelton the village elder.
+    Maelton says 'Thank you, Fuor! You are truly a friend of Black Hill Village!'
+
+    !+*>
+  give bread to maelton: |
+    You give a loaf of bread to Maelton the village elder.
+
+    !+*>
 ---
 
 # Chapter 9: Provisioning the Expedition

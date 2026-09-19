@@ -13,19 +13,46 @@ steps:
       - "look"
       - "l"
     hint: "Type: look (or l)"
-    example: "> look\nThe Foaming Mug's Beer Garden\nWooden tables have been set on the grass in this garden."
+  - story: "The sun glistens on the stone well, and the distant neighing of horses echoes from the stables."
   - ask: "exits"
     note: "Type EXITS to display obvious cardinal exit directions."
     accept:
       - "exits"
       - "ex"
     hint: "Type: exits"
-    example: "> exits\n  South   - Black Hill Stables\n  West    - Common Room of The Foaming Mug"
 responses:
-  look: "The Foaming Mug's Beer Garden\nWooden tables have been set on the grass in this garden allowing those staying\nat the inn to eat and drink outdoors when the weather permits. A simple stone\nwall running around the edge of the grass keeps this area private. Faint sounds\nof horses neighing and whinnying can be heard from mounts tethered in the\nstables to the south.\nA large lamp stands on the wall here, locked into an iron fixture.\nA small oaken table has been set here.\nOn the table, there is a piece of cheese.\nA circular stone well has been built here.\nExits: south, west.\n\n!.*>"
-  l: "The Foaming Mug's Beer Garden\nWooden tables have been set on the grass in this garden allowing those staying\nat the inn to eat and drink outdoors when the weather permits.\nA small oaken table has been set here.\nExits: south, west.\n\n!.*>"
-  exits: "  South   - Black Hill Stables\n  West    - Common Room of The Foaming Mug\n\n!.*>"
-  ex: "  South   - Black Hill Stables\n  West    - Common Room of The Foaming Mug\n\n!.*>"
+  look: |
+    The Foaming Mug's Beer Garden
+    Wooden tables have been set on the grass in this garden allowing those staying
+    at the inn to eat and drink outdoors when the weather permits. A simple stone
+    wall running around the edge of the grass keeps this area private. Faint sounds
+    of horses neighing and whinnying can be heard from mounts tethered in the
+    stables to the south.
+    A large lamp stands on the wall here, locked into an iron fixture.
+    A small oaken table has been set here.
+    On the table, there is a piece of cheese.
+    A circular stone well has been built here.
+    Exits: south, west.
+
+    !.*>
+  l: |
+    The Foaming Mug's Beer Garden
+    Wooden tables have been set on the grass in this garden allowing those staying
+    at the inn to eat and drink outdoors when the weather permits.
+    A small oaken table has been set here.
+    Exits: south, west.
+
+    !.*>
+  exits: |
+    South   - Black Hill Stables
+    West    - Common Room of The Foaming Mug
+
+    !.*>
+  ex: |
+    South   - Black Hill Stables
+    West    - Common Room of The Foaming Mug
+
+    !.*>
 ---
 
 # Chapter 2: Taking in the Surroundings

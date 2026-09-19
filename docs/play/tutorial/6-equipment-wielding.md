@@ -19,7 +19,6 @@ steps:
       - "equipment"
       - "eq"
     hint: "Type: equipment (or eq)"
-    example: "> equipment\nYou are using: backsword, small wooden shield, soft leather jerkin..."
   - ask: "inventory"
     note: "Check unequipped items carried in your hands and pack with INVENTORY (or I)."
     accept:
@@ -27,38 +26,105 @@ steps:
       - "inv"
       - "i"
     hint: "Type: inventory (or i)"
-    example: "> inventory\nYou are carrying: a loaf of bread, a large biscuit, a large sack..."
+  - story: "Fuor pulls his soft leather jerkin over his shoulders and buckles his belt tight."
   - ask: "wear jerkin"
     note: "Put on your soft leather jerkin body armor."
     accept:
       - "wear jerkin"
       - "wear soft leather jerkin"
     hint: "Type: wear jerkin"
-    example: "> wear jerkin\nYou wear a soft leather jerkin on your body."
   - ask: "wield backsword"
     note: "Wield your main backsword into your primary weapon hand."
     accept:
       - "wield backsword"
       - "wield sword"
     hint: "Type: wield backsword"
-    example: "> wield backsword\nYou wield a backsword in your right hand."
   - ask: "wear shield"
     note: "Fasten your small wooden shield on your off-arm."
     accept:
       - "wear shield"
     hint: "Type: wear shield"
-    example: "> wear shield\nYou fasten a small wooden shield on your arm."
 responses:
-  equipment: "You are using:\n<wielded>            a backsword (flawless)\n<worn as shield>     a small wooden shield (flawless)\n<worn on body>       a soft leather jerkin (flawless)\n<worn on legs>       a pair of plain trousers (flawless)\n<worn on feet>       a pair of rigid leather boots (flawless)\n<worn across back>   a shortbow\n<worn as belt>       a plain leather belt\n<worn on belt>       a hunting knife (flawless)\n<worn on belt>       a lit lantern\n<worn on belt>       a dark coloured flask\n<worn on belt>       a quiver\n\n*+->"
-  eq: "You are using:\n<wielded>            a backsword (flawless)\n<worn as shield>     a small wooden shield (flawless)\n<worn on body>       a soft leather jerkin (flawless)\n<worn on legs>       a pair of plain trousers (flawless)\n<worn on feet>       a pair of rigid leather boots (flawless)\n<worn across back>   a shortbow\n<worn as belt>       a plain leather belt\n<worn on belt>       a hunting knife (flawless)\n<worn on belt>       a lit lantern\n<worn on belt>       a dark coloured flask\n<worn on belt>       a quiver\n\n*+->"
-  inventory: "You are carrying:\na loaf of bread\na large biscuit\na small piece of meat\na loaf of bread\na cup\na large sack\n\n*+->"
-  inv: "You are carrying:\na loaf of bread\na large biscuit\na small piece of meat\na loaf of bread\na cup\na large sack\n\n*+->"
-  i: "You are carrying:\na loaf of bread\na large biscuit\na small piece of meat\na loaf of bread\na cup\na large sack\n\n*+->"
-  wear jerkin: "You wear a soft leather jerkin on your body.\n\n*+->"
-  wear soft leather jerkin: "You wear a soft leather jerkin on your body.\n\n*+->"
-  wear shield: "You fasten a small wooden shield on your arm.\n\n*+->"
-  wield backsword: "You wield a backsword in your right hand.\n\n*+->"
-  wield sword: "You wield a backsword in your right hand.\n\n*+->"
+  equipment: |
+    You are using:
+    <wielded>            a backsword (flawless)
+    <worn as shield>     a small wooden shield (flawless)
+    <worn on body>       a soft leather jerkin (flawless)
+    <worn on legs>       a pair of plain trousers (flawless)
+    <worn on feet>       a pair of rigid leather boots (flawless)
+    <worn across back>   a shortbow
+    <worn as belt>       a plain leather belt
+    <worn on belt>       a hunting knife (flawless)
+    <worn on belt>       a lit lantern
+    <worn on belt>       a dark coloured flask
+    <worn on belt>       a quiver
+
+    *+->
+  eq: |
+    You are using:
+    <wielded>            a backsword (flawless)
+    <worn as shield>     a small wooden shield (flawless)
+    <worn on body>       a soft leather jerkin (flawless)
+    <worn on legs>       a pair of plain trousers (flawless)
+    <worn on feet>       a pair of rigid leather boots (flawless)
+    <worn across back>   a shortbow
+    <worn as belt>       a plain leather belt
+    <worn on belt>       a hunting knife (flawless)
+    <worn on belt>       a lit lantern
+    <worn on belt>       a dark coloured flask
+    <worn on belt>       a quiver
+
+    *+->
+  inventory: |
+    You are carrying:
+    a loaf of bread
+    a large biscuit
+    a small piece of meat
+    a loaf of bread
+    a cup
+    a large sack
+
+    *+->
+  inv: |
+    You are carrying:
+    a loaf of bread
+    a large biscuit
+    a small piece of meat
+    a loaf of bread
+    a cup
+    a large sack
+
+    *+->
+  i: |
+    You are carrying:
+    a loaf of bread
+    a large biscuit
+    a small piece of meat
+    a loaf of bread
+    a cup
+    a large sack
+
+    *+->
+  wear jerkin: |
+    You wear a soft leather jerkin on your body.
+
+    *+->
+  wear soft leather jerkin: |
+    You wear a soft leather jerkin on your body.
+
+    *+->
+  wear shield: |
+    You fasten a small wooden shield on your arm.
+
+    *+->
+  wield backsword: |
+    You wield a backsword in your right hand.
+
+    *+->
+  wield sword: |
+    You wield a backsword in your right hand.
+
+    *+->
 ---
 
 # Chapter 6: Arming for the Road

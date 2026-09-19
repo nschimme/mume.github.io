@@ -14,20 +14,34 @@ steps:
       - "cha wimpy 15"
       - "cha w 15"
     hint: "Type: change wimpy 15"
-    example: "> change wimpy 15\nWimpy set to: 15"
+  - story: "With his combat instincts sharpened, Fuor cleans his vision so no threat escapes his notice."
   - ask: "change spam all"
     note: "Reduce text velocity and spam by enabling CHANGE SPAM ALL."
     accept:
       - "change spam all"
       - "cha spam all"
     hint: "Type: change spam all"
-    example: "> change spam all\nAll spam settings enabled."
 responses:
-  change wimpy 15: "Wimpy set to: 15\n\n*+->"
-  cha wimpy 15: "Wimpy set to: 15\n\n*+->"
-  cha w 15: "Wimpy set to: 15\n\n*+->"
-  change spam all: "All spam settings enabled.\n\n*+->"
-  cha spam all: "All spam settings enabled.\n\n*+->"
+  change wimpy 15: |
+    Wimpy set to: 15
+
+    *+->
+  cha wimpy 15: |
+    Wimpy set to: 15
+
+    *+->
+  cha w 15: |
+    Wimpy set to: 15
+
+    *+->
+  change spam all: |
+    All spam settings enabled.
+
+    *+->
+  cha spam all: |
+    All spam settings enabled.
+
+    *+->
 ---
 
 # Chapter 4: SteelIing Combat Reflexes

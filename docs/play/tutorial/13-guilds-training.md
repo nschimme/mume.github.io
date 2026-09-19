@@ -7,25 +7,44 @@ teach:
   - command: "prac slash"
     desc: "train weapon proficiencies or skills at a guildmaster"
 steps:
+  - story: "With his stamina restored, Ermin escorts Fuor to the local Warrior Guildmaster to refine his swordcraft."
   - ask: "prac"
     note: "Check your available practice points using PRAC."
     accept:
       - "prac"
       - "practice"
     hint: "Type: prac"
-    example: "> prac\nYou have 10 practice sessions left."
   - ask: "prac slash"
     note: "Train your slash weapon skill with PRAC SLASH."
     accept:
       - "prac slash"
       - "practice slash"
     hint: "Type: prac slash"
-    example: "> prac slash\nYou practice slash. Your skill in slash is now 45%."
 responses:
-  prac: "You have 10 practice sessions left.\n\nSkill       Knowledge  Difficulty  Class\n------------------------------------------\nBandage     Bad        Easy        None\nWilderness  Bad        Normal      None\nDodge       Bad        Hard        Thief\nSearch      Bad        Normal      Thief\nParry       Bad        Normal      Warrior\n\n*+->"
-  practice: "You have 10 practice sessions left."
-  prac slash: "You practice slash.\nYour skill in slash is now 45%!\n\n*+->"
-  practice slash: "You practice slash.\nYour skill in slash is now 45%!\n\n*+->"
+  prac: |
+    You have 10 practice sessions left.
+
+    Skill       Knowledge  Difficulty  Class
+    ------------------------------------------
+    Bandage     Bad        Easy        None
+    Wilderness  Bad        Normal      None
+    Dodge       Bad        Hard        Thief
+    Search      Bad        Normal      Thief
+    Parry       Bad        Normal      Warrior
+
+    *+->
+  practice: |
+    You have 10 practice sessions left.
+  prac slash: |
+    You practice slash.
+    Your skill in slash is now 45%!
+
+    *+->
+  practice slash: |
+    You practice slash.
+    Your skill in slash is now 45%!
+
+    *+->
 ---
 
 # Chapter 13: Training at the Warrior Guild

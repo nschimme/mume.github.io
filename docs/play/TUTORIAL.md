@@ -50,6 +50,20 @@ Write your lesson introduction here using standard Markdown. Explain the concept
 
 ---
 
+## Easy Multiline Text Formatting
+
+Instead of typing `\n` for line breaks, use the YAML multiline literal pipe character `|` so you can write natural, formatted MUD terminal responses across multiple lines:
+
+```yaml
+responses:
+  score: |
+    36/36 hits, 76/76 mana, and 126/126 moves.
+
+    *+->
+```
+
+---
+
 ## Frontmatter Reference
 
 | Field | Type | Description |

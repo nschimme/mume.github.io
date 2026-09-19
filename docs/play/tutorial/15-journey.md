@@ -5,6 +5,7 @@ teach:
   - command: "who ranger"
     desc: "find online Rangers dedicated to assisting new players"
 steps:
+  - story: "As dawn rises over the Black Hills, Fuor prepares to embark on his grand journey across Middle-earth!"
   - ask: "who ranger"
     note: "MUME Rangers exist specifically to help newcomers! Find active Rangers using WHO RANGER."
     accept:
@@ -12,11 +13,25 @@ steps:
       - "who rangers"
       - "who"
     hint: "Type: who ranger"
-    example: "> who ranger\nRangers\n-------\n\n0 such allies or visible Ainur on."
 responses:
-  who ranger: "Rangers\n-------\n\n0 such allies or visible Ainur on.\n\n*+->"
-  who rangers: "Rangers\n-------\n\n0 such allies or visible Ainur on.\n\n*+->"
-  who: "Players Online: Fuor, Martyrson, Elrond, Glorfindel.\n\n*+->"
+  who ranger: |
+    Rangers
+    -------
+
+    0 such allies or visible Ainur on.
+
+    *+->
+  who rangers: |
+    Rangers
+    -------
+
+    0 such allies or visible Ainur on.
+
+    *+->
+  who: |
+    Players Online: Fuor, Martyrson, Elrond, Glorfindel.
+
+    *+->
 ---
 
 # Chapter 15: Hero's Graduation

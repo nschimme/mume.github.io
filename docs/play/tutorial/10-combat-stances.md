@@ -11,13 +11,14 @@ teach:
   - command: "change mood wimpy"
     desc: "restore defensive Dodging Bonus (DB) to protect your health"
 steps:
+  - story: "Ermin leads Fuor up a narrow trail into the rocky Black Hills. Grass rustles sharply in the thicket ahead!"
   - ask: "consider wolf"
     note: "Gauge a hungry timber wolf's strength using CONSIDER WOLF."
     accept:
       - "consider wolf"
       - "con wolf"
     hint: "Type: consider wolf"
-    example: "> consider wolf\nThe timber wolf looks like an easy target for you."
+  - story: "The wolf crouches to spring! Ermin signals Fuor to shift his weight into an aggressive stance."
   - ask: "change mood aggressive"
     note: "Switch to aggressive stance (CHANGE MOOD AGGRESSIVE) to maximize your attack bonus."
     accept:
@@ -25,7 +26,6 @@ steps:
       - "cha mood aggressive"
       - "cha m aggressive"
     hint: "Type: change mood aggressive"
-    example: "> change mood aggressive\nOk."
   - ask: "hit wolf"
     note: "Attack the wolf with HIT WOLF."
     accept:
@@ -33,7 +33,6 @@ steps:
       - "kill wolf"
       - "k wolf"
     hint: "Type: hit wolf"
-    example: "> hit wolf\nYou slash a hungry timber wolf with your backsword!"
   - ask: "change mood wimpy"
     note: "Switch back to defensive stance (CHANGE MOOD WIMPY) to restore your defense."
     accept:
@@ -41,19 +40,54 @@ steps:
       - "cha mood wimpy"
       - "cha m wimpy"
     hint: "Type: change mood wimpy"
-    example: "> change mood wimpy\nOk."
 responses:
-  consider wolf: "A hungry timber wolf looks like an easy target for you.\n\n*+->"
-  con wolf: "A hungry timber wolf looks like an easy target for you.\n\n*+->"
-  change mood aggressive: "Ok.\nYour Offensive Bonus (OB) increases while your Dodging Bonus (DB) decreases.\n\n*+->"
-  cha mood aggressive: "Ok.\n\n*+->"
-  cha m aggressive: "Ok.\n\n*+->"
-  hit wolf: "You slash a hungry timber wolf's side with your backsword!\nA hungry timber wolf growls and snaps at you!\n\n*+->"
-  kill wolf: "You slash a hungry timber wolf's side with your backsword!\n\n*+->"
-  k wolf: "You slash a hungry timber wolf's side with your backsword!\n\n*+->"
-  change mood wimpy: "Ok.\nYour Dodging Bonus (DB) increases to protect your health.\n\n*+->"
-  cha mood wimpy: "Ok.\n\n*+->"
-  cha m wimpy: "Ok.\n\n*+->"
+  consider wolf: |
+    A hungry timber wolf looks like an easy target for you.
+
+    *+->
+  con wolf: |
+    A hungry timber wolf looks like an easy target for you.
+
+    *+->
+  change mood aggressive: |
+    Ok.
+    Your Offensive Bonus (OB) increases while your Dodging Bonus (DB) decreases.
+
+    *+->
+  cha mood aggressive: |
+    Ok.
+
+    *+->
+  cha m aggressive: |
+    Ok.
+
+    *+->
+  hit wolf: |
+    You slash a hungry timber wolf's side with your backsword!
+    A hungry timber wolf growls and snaps at you!
+
+    *+->
+  kill wolf: |
+    You slash a hungry timber wolf's side with your backsword!
+
+    *+->
+  k wolf: |
+    You slash a hungry timber wolf's side with your backsword!
+
+    *+->
+  change mood wimpy: |
+    Ok.
+    Your Dodging Bonus (DB) increases to protect your health.
+
+    *+->
+  cha mood wimpy: |
+    Ok.
+
+    *+->
+  cha m wimpy: |
+    Ok.
+
+    *+->
 ---
 
 # Chapter 10: Encounter in the Black Hills
