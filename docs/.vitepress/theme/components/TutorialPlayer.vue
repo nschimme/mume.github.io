@@ -415,7 +415,7 @@ onUnmounted(() => {
 
           <button type="button" class="tut-action-btn tut-fullscreen-btn" @click="toggleExpand" :title="isExpanded ? 'Exit Fullscreen (Esc)' : 'Fullscreen View'" aria-label="Toggle Fullscreen">
             <i class="fa" :class="isExpanded ? 'fa-compress' : 'fa-expand'" aria-hidden="true"></i>
-            <span class="tut-btn-text">{{ isExpanded ? 'Exit' : 'Full' }}</span>
+            <span class="tut-btn-text">{{ isExpanded ? 'Shrink' : 'Full' }}</span>
           </button>
 
           <a :href="withBase(NEWCOMERS_URL)" class="tut-action-btn tut-exit-btn" title="Exit Tutorial to Newcomers Hub" aria-label="Exit Tutorial">
