@@ -19,13 +19,46 @@ This track maps directly to national learning standards including **AP Computer 
 
 Educators can deliver these modules as standalone 45-minute lab sessions or combine them into a comprehensive 5-day unit project:
 
-```
-[ MUME Terminal Stream ] ➔ [ RegEx Engine: ^(\d+)H (\d+)M ] ➔ [ Capture Variables: hp, mana ] ➔ [ FSM Evaluator: State Transition ]
-```
+<div style="margin: 2rem 0; border: 1px solid rgba(215, 166, 63, 0.25); background: rgba(0,0,0,0.25); border-radius: 10px; padding: 1.5rem;">
+  <div style="text-align: center; font-weight: bold; color: var(--vp-c-brand-1); margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">
+    💻 CS Data Pipeline: Stream Parsing to State Machine Action
+  </div>
 
-```
-[Day 1: CLI & Aliases] ➔ [Day 2: RegEx Captures] ➔ [Day 3: Triggers & Actions] ➔ [Day 4: State Automata] ➔ [Day 5: Capstone Script]
-```
+  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.8rem;">
+    <div style="border: 1px solid rgba(215, 166, 63, 0.3); background: rgba(0,0,0,0.2); padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.88rem;">
+      🖥️ MUME Stream
+    </div>
+    <div style="color: var(--vp-c-brand-1); font-weight: bold;">►</div>
+    <div style="border: 1px solid rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.08); padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.88rem; color: #60a5fa;">
+      🔍 RegEx Pattern Engine
+    </div>
+    <div style="color: #60a5fa; font-weight: bold;">►</div>
+    <div style="border: 1px solid rgba(234, 179, 8, 0.4); background: rgba(234, 179, 8, 0.08); padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.88rem; color: #facc15;">
+      📊 Variable Capture
+    </div>
+    <div style="color: #34d399; font-weight: bold;">►</div>
+    <div style="border: 1px solid rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.08); padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.88rem; color: #34d399;">
+      ⚙️ FSM State Evaluator
+    </div>
+  </div>
+</div>
+
+<div style="margin: 1.5rem 0; border: 1px solid rgba(215, 166, 63, 0.25); background: rgba(0,0,0,0.15); border-radius: 10px; padding: 1.25rem;">
+  <div style="text-align: center; font-weight: bold; color: var(--vp-c-brand-1); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem;">
+    📅 5-Day CS Unit Sequence Progression
+  </div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
+    <span style="background: rgba(215, 166, 63, 0.15); border: 1px solid rgba(215, 166, 63, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px;">Day 1: CLI & Aliases</span>
+    <span style="color: var(--vp-c-brand-1);">➔</span>
+    <span style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px; color: #60a5fa;">Day 2: RegEx Captures</span>
+    <span style="color: #60a5fa;">➔</span>
+    <span style="background: rgba(234, 179, 8, 0.15); border: 1px solid rgba(234, 179, 8, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px; color: #facc15;">Day 3: Triggers & Actions</span>
+    <span style="color: #facc15;">➔</span>
+    <span style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px; color: #34d399;">Day 4: State Automata</span>
+    <span style="color: #34d399;">➔</span>
+    <span style="background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px; color: #c084fc;">Day 5: Capstone Project</span>
+  </div>
+</div>
 
 ### Option A: Express 45-Minute Single Period Labs
 * **Lab 1 (45 min):** [Command-Line Interfaces & Variable Parameter Aliases](/community/educators/cs/lab-1-aliases)
