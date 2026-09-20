@@ -34,9 +34,53 @@ By the end of this lab, students will be able to:
 
 ## 💡 2. Historical Timeline: Over 3 Decades of MUME
 
-```text
-[1992: MUME Created at EPFL] ➔ [1995: First Global Player Survey] ➔ [2000s: Open Source & Mapping Tools] ➔ [Present: Web Client Era]
-```
+<div style="margin: 2rem 0; border: 1px solid rgba(215, 166, 63, 0.25); background: rgba(0,0,0,0.25); border-radius: 10px; padding: 1.5rem;">
+  <div style="text-align: center; font-weight: bold; color: var(--vp-c-brand-1); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">
+    🏛️ MUME Evolutionary Timeline (1992 – Present)
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+    <!-- Phase 1 -->
+    <div style="border: 1px solid rgba(215, 166, 63, 0.3); background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px;">
+      <div style="font-weight: bold; color: var(--vp-c-brand-1); font-size: 1.05rem; margin-bottom: 0.25rem;">
+        1992: EPFL Genesis
+      </div>
+      <p style="font-size: 0.85rem; margin: 0; color: var(--vp-c-text-2); line-height: 1.4;">
+        Created by KTA at EPFL in Lausanne, Switzerland as a DikuMUD derivative in Middle-earth.
+      </p>
+    </div>
+
+    <!-- Phase 2 -->
+    <div style="border: 1px solid rgba(215, 166, 63, 0.3); background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px;">
+      <div style="font-weight: bold; color: var(--vp-c-brand-1); font-size: 1.05rem; margin-bottom: 0.25rem;">
+        1995–2000: Global Community
+      </div>
+      <p style="font-size: 0.85rem; margin: 0; color: var(--vp-c-text-2); line-height: 1.4;">
+        Rapid global growth; first player surveys and early international MUD player gatherings.
+      </p>
+    </div>
+
+    <!-- Phase 3 -->
+    <div style="border: 1px solid rgba(215, 166, 63, 0.3); background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px;">
+      <div style="font-weight: bold; color: var(--vp-c-brand-1); font-size: 1.05rem; margin-bottom: 0.25rem;">
+        2000s–2010s: Open Source
+      </div>
+      <p style="font-size: 0.85rem; margin: 0; color: var(--vp-c-text-2); line-height: 1.4;">
+        Development of open-source C++/Qt MMapper automapper and Mudlet scripting frameworks.
+      </p>
+    </div>
+
+    <!-- Phase 4 -->
+    <div style="border: 1px solid rgba(215, 166, 63, 0.3); background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px;">
+      <div style="font-weight: bold; color: var(--vp-c-brand-1); font-size: 1.05rem; margin-bottom: 0.25rem;">
+        Present: Web Client Era
+      </div>
+      <p style="font-size: 0.85rem; margin: 0; color: var(--vp-c-text-2); line-height: 1.4;">
+        Zero-install WebSocket browser client bringing MUME into modern classroom environments.
+      </p>
+    </div>
+  </div>
+</div>
 
 * **1992:** Created by KTA (Pier Donini) and a small team of student developers in Switzerland as a DikuMUD derivative set in Middle-earth.
 * **1995–2000:** Rapid growth into a global player community, documented by historical survey results ([/resources/questionnaires/](../../../resources/questionnaires/)).
