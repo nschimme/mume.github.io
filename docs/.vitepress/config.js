@@ -31,6 +31,7 @@ export default defineConfig({
         text: 'Community',
         items: [
           { text: 'Community Hub', link: '/' },
+          { text: 'Educator & Classroom Portal 🎓', link: '/community/educators/' },
           { text: 'Discord', link: '/community/discord' },
           { text: 'Elvenrunes', link: 'https://elvenrunes.com' },
           { text: 'Open Source', link: '/opensource' },
@@ -60,7 +61,44 @@ export default defineConfig({
           { text: 'Restricted', link: 'https://mume.org/restricted/' }
         ]
       }
-    ]
+    ],
+    sidebar: {
+      '/community/': [
+        {
+          text: '🤝 Community Hub',
+          items: [
+            { text: 'Community Home', link: '/' },
+            { text: 'Open Source Projects', link: '/opensource' },
+            { text: 'Community Interviews', link: '/community/interviews/' }
+          ]
+        },
+        {
+          text: '🎓 Educators & Classrooms',
+          items: [
+            { text: 'Overview & Portal', link: '/community/educators/' },
+            { text: 'Classroom & IT Setup', link: '/community/educators/classroom-setup' },
+            { text: 'Student Quickstart', link: '/community/educators/student' }
+          ]
+        },
+        {
+          text: '💻 STEM & CS Curriculum',
+          items: [
+            { text: 'CS Track Overview', link: '/community/educators/cs/' },
+            { text: 'Lab 1: CLI & Aliases', link: '/community/educators/cs/lab-1-aliases' },
+            { text: 'Lab 2: RegEx Captures', link: '/community/educators/cs/lab-2-regex' },
+            { text: 'Lab 3: Triggers & FSM', link: '/community/educators/cs/lab-3-parsing' }
+          ]
+        },
+        {
+          text: '📚 Humanities Curriculum',
+          items: [
+            { text: 'Humanities Overview', link: '/community/educators/literature/' },
+            { text: 'Lab 1: Spatial Narrative', link: '/community/educators/literature/lab-1-worldbuilding' },
+            { text: 'Lab 2: MUD Digital History', link: '/community/educators/literature/lab-2-game-history' }
+          ]
+        }
+      ]
+    }
   },
   vite: {
     define: {
