@@ -25,9 +25,14 @@ files.forEach(file => {
   const content = fs.readFileSync(file, 'utf8');
   const lines = content.split('\n');
   lines.forEach((line, index) => {
-    // Check for hardcoded docs.mume.org internal links (excluding external mume.org/help, mume.org/play, etc.)
+    // Check for hardcoded docs.mume.org internal links
     if (line.includes('docs.mume.org/community/educators')) {
       console.error(`[ERROR] ${file}:${index + 1}: Found hardcoded docs.mume.org link in Educator Portal: "${line.trim()}"`);
+      errors++;
+    }
+    // Check for raw HTML href="/..." links which break under subpath deployments
+    if (line.match(/href="\/[a-zA-Z0-9_-]/)) {
+      console.error(`[ERROR] ${file}:${index + 1}: Found raw HTML root-relative link (href="/..."): "${line.trim()}". Use relative "./" or standard Markdown link syntax instead.`);
       errors++;
     }
   });

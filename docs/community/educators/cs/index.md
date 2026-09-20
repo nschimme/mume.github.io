@@ -53,19 +53,19 @@ Educators can deliver these modules as standalone 45-minute lab sessions or comb
 <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
   <h3>Lab 1: CLI & Parameter Aliases</h3>
   <p>Teach command-line interface fundamentals, procedural abstraction, and positional wildcard parameters using native MUME aliases.</p>
-  <a href="/community/educators/cs/lab-1-aliases" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 1 →</a>
+  <a href="./lab-1-aliases" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 1 →</a>
 </div>
 
 <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
   <h3>Lab 2: RegEx & Pattern Matching</h3>
   <p>Master regular expressions, anchors, wildcards, and numerical capture groups by parsing dynamic MUME prompt streams.</p>
-  <a href="/community/educators/cs/lab-2-regex" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 2 →</a>
+  <a href="./lab-2-regex" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 2 →</a>
 </div>
 
 <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
   <h3>Lab 3: Triggers & State Machines</h3>
   <p>Build event-driven scripts and Finite State Machine (FSM) automata to model automated gameplay state transitions.</p>
-  <a href="/community/educators/cs/lab-3-parsing" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 3 →</a>
+  <a href="./lab-3-parsing" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 3 →</a>
 </div>
 
 </div>

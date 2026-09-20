@@ -52,13 +52,13 @@ This track is designed for:
 <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
   <h3>Lab 1: From Tabletop to Digital - Adding Dimensions</h3>
   <p>Examine how software mechanics automate real-time simultaneous combat, enforce spatial fog-of-war, and execute complex state math in ways pen-and-paper cannot.</p>
-  <a href="/community/educators/rpg-dynamics/lab-1-ttrpg-evolution" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 1 →</a>
+  <a href="./lab-1-ttrpg-evolution" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 1 →</a>
 </div>
 
 <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
   <h3>Lab 2: RPG Dynamics & Bartle Taxonomy Critique</h3>
   <p>Apply Richard Bartle's foundational 1996 player taxonomy (Achievers, Explorers, Socializers, Killers) to critique MUD/VTT systems and propose targeted UX redesigns.</p>
-  <a href="/community/educators/rpg-dynamics/lab-2-system-critique" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 2 →</a>
+  <a href="./lab-2-system-critique" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 2 →</a>
 </div>
 
 </div>

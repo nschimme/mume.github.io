@@ -46,31 +46,31 @@ features:
 <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
   <h3>⚙️ Setup & IT Guide</h3>
   <p>Learn how MUME's web client bypasses school network restrictions, maintains FERPA privacy, and prepares student Chromebooks in under 15 minutes.</p>
-  <a href="/community/educators/classroom-setup" class="vp-button alt" style="display: inline-block; margin-top: 0.5rem;">Read IT Setup Guide →</a>
+  <a href="./classroom-setup" class="vp-button alt" style="display: inline-block; margin-top: 0.5rem;">Read IT Setup Guide →</a>
 </div>
 
 <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
   <h3>📄 Student Quickstart</h3>
   <p>A printable 1-page student cheat sheet covering web client navigation, movement keys, essential commands, and lab submission steps.</p>
-  <a href="/community/educators/student" class="vp-button alt" style="display: inline-block; margin-top: 0.5rem;">Open Student Cheatsheet →</a>
+  <a href="./student" class="vp-button alt" style="display: inline-block; margin-top: 0.5rem;">Open Student Cheatsheet →</a>
 </div>
 
 <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
   <h3>💻 Computer Science Track</h3>
   <p>Explore hands-on labs for AP CS Principles and CS101 covering Command Line Aliases, Regular Expression pattern matching, and Finite State Machines.</p>
-  <a href="/community/educators/cs/" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Explore CS Track →</a>
+  <a href="./cs/" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Explore CS Track →</a>
 </div>
 
 <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
   <h3>📚 Humanities Track</h3>
   <p>Discover interactive literature and game design labs examining Middle-earth spatial narrative, canonical geography adaptation, and MUD digital history.</p>
-  <a href="/community/educators/literature/" class="vp-button alt" style="display: inline-block; margin-top: 0.5rem;">Explore Humanities Track →</a>
+  <a href="./literature/" class="vp-button alt" style="display: inline-block; margin-top: 0.5rem;">Explore Humanities Track →</a>
 </div>
 
 <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
   <h3>🎲 Game Design & RPG Dynamics</h3>
   <p>Examine the evolution from tabletop RPGs (D&D) to digital virtual tabletops (VTTs) and apply Richard Bartle's 1996 player taxonomy to critique game mechanics.</p>
-  <a href="/community/educators/rpg-dynamics/" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Explore Game Design Track →</a>
+  <a href="./rpg-dynamics/" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Explore Game Design Track →</a>
 </div>
 
 </div>

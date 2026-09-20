@@ -52,13 +52,13 @@ This track aligns with curriculum standards for:
 <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
   <h3>Lab 1: Spatial Narrative & Worldbuilding</h3>
   <p>Examine how Tolkien's rich textual descriptions are translated into spatial room grids, environmental narratives, and interactive geographical zones.</p>
-  <a href="/community/educators/literature/lab-1-worldbuilding" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 1 →</a>
+  <a href="./lab-1-worldbuilding" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 1 →</a>
 </div>
 
 <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
   <h3>Lab 2: MUD History & Digital Archaeology</h3>
   <p>Analyze MUME (operating continuously since 1992) as a living digital artifact, exploring the evolution of virtual communities and MMORPG architecture.</p>
-  <a href="/community/educators/literature/lab-2-game-history" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 2 →</a>
+  <a href="./lab-2-game-history" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 2 →</a>
 </div>
 
 </div>
