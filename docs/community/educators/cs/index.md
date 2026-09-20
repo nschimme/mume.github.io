@@ -3,6 +3,10 @@ title: STEM & Computer Science Curriculum Track | Educator Portal
 description: Computer Science curriculum modules for high school AP CS Principles and college CS101/CS201 using MUME text environment for CLI aliases, RegEx capture groups, and Finite State Machines.
 ---
 
+<div class="page-banner">
+  <img class="banner-img" src="/assets/images/mudlet@2x.png" alt="CS Scripting Environment" />
+</div>
+
 # 💻 STEM & Computer Science Curriculum Track
 
 Welcome to the **MUME Computer Science Curriculum Track**. Text-based MUDs are ideal active-learning sandboxes for teaching fundamental computing concepts—from command-line parameter parsing to regular expression pattern matching and finite state automata.
@@ -14,6 +18,10 @@ This track maps directly to national learning standards including **AP Computer 
 ## 📅 Curriculum Options: 45-Min Labs vs. 1-Week Unit Block
 
 Educators can deliver these modules as standalone 45-minute lab sessions or combine them into a comprehensive 5-day unit project:
+
+```
+[ MUME Terminal Stream ] ➔ [ RegEx Engine: ^(\d+)H (\d+)M ] ➔ [ Capture Variables: hp, mana ] ➔ [ FSM Evaluator: State Transition ]
+```
 
 ```
 [Day 1: CLI & Aliases] ➔ [Day 2: RegEx Captures] ➔ [Day 3: Triggers & Actions] ➔ [Day 4: State Automata] ➔ [Day 5: Capstone Script]

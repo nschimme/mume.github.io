@@ -3,6 +3,10 @@ title: "CS Lab 3: Event Triggers & Finite State Machines | Educator Portal"
 description: Complete 45-minute CS lab teaching event-driven trigger actions, state variables, and Finite State Machine (FSM) automata using MUME client scripts.
 ---
 
+<div class="page-banner">
+  <img class="banner-img" src="/assets/images/mmapper-wasm@2x.webp" alt="MUME State Automata & Mapping Interface" />
+</div>
+
 # 💻 CS Lab 3: Event Triggers & Finite State Machines
 
 | Attribute | Details |

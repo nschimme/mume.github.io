@@ -3,6 +3,10 @@ title: Game Design & RPG Dynamics Curriculum Track | Educator Portal
 description: Game Design, Interactive Media, and Game Studies curriculum modules using MUME as a vehicle to study the evolution from tabletop RPGs (D&D) to digital virtual tabletops (VTTs) and MMORPGs.
 ---
 
+<div class="page-banner">
+  <img class="banner-img" src="/assets/images/mume-classes@2x.png" alt="MUME Class & Race Archetypes" />
+</div>
+
 # 🎲 Game Design & RPG Dynamics Curriculum Track
 
 Welcome to the **MUME Game Design & RPG Dynamics Curriculum Track**. This track serves higher education and high school courses in **Game Design**, **Interactive Media**, **Ludology**, and **Game Studies**.
@@ -14,6 +18,14 @@ By using **Multi-Users in Middle-earth (MUME)** as a living digital laboratory, 
 ## 📅 Curriculum Options: 45-Min Labs vs. 1-Week Unit Block
 
 Educators can deliver these modules as standalone 45-minute lab sessions or combine them into a 5-day game design unit:
+
+```
+             [ PLAYERS ]
+         Achievers | Socializers
+  -----------------+-----------------
+          Killers  | Explorers
+             [ WORLD ]
+```
 
 ```
 [Day 1: Tabletop Foundations] ➔ [Day 2: Digital Dimensions] ➔ [Day 3: Bartle Taxonomy] ➔ [Day 4: System Critique] ➔ [Day 5: Redesign Proposal]

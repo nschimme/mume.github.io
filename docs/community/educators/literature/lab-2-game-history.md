@@ -3,6 +3,10 @@ title: "Humanities Lab 2: MUD History & Digital Preservation | Educator Portal"
 description: Complete 45-minute Digital Humanities lab examining MUME's 30+ year history, text-based community culture, and digital media preservation.
 ---
 
+<div class="page-banner">
+  <img class="banner-img" src="/assets/images/ermume2006.jpg" alt="Historical MUME Player Gathering 2006" />
+</div>
+
 # 📚 Humanities Lab 2: MUD History & Digital Preservation
 
 | Attribute | Details |

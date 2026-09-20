@@ -3,6 +3,10 @@ title: "Humanities Lab 1: Spatial Narrative & Tolkien Worldbuilding | Educator P
 description: Complete 45-minute Literature and Game Design lab exploring Tolkien's spatial geography, narrative environment design, and text room descriptions.
 ---
 
+<div class="page-banner">
+  <img class="banner-img" src="/assets/images/map_public_small.jpg" alt="MUME Middle-earth Map Topography" />
+</div>
+
 # 📚 Humanities Lab 1: Spatial Narrative & Tolkien Worldbuilding
 
 | Attribute | Details |

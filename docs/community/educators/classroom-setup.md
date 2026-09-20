@@ -3,6 +3,10 @@ title: Classroom & IT Setup Guide | Educator Portal
 description: Technical setup guide for IT administrators and teachers to run MUME in high school and college classrooms while ensuring FERPA compliance, PII-free account setup, and network compatibility.
 ---
 
+<div class="page-banner">
+  <img class="banner-img" src="/assets/images/playmume@2x.png" alt="MUME Browser Web Client in Action" />
+</div>
+
 # ⚙️ Classroom & IT Setup Guide
 
 This guide assists IT network administrators and educators in deploying **MUME (Multi-Users in Middle-earth)** for classroom instruction. Designed specifically to eliminate technical friction, MUME requires no local software installation, no administrative rights on student devices, and zero student email or personal data collection.
@@ -38,11 +42,33 @@ To maximize classroom teaching time during tight 45-minute lab periods, use this
 ### ⏩ Fast Tutorial Skip for CS / Advanced Labs:
 When a new character awakens in Mandos, type `pray` (or `pray to the tower hills`) **twice** to skip the introductory story sequence and warp immediately to **Black Hill Village** (`The Foaming Mug's Beer Garden`), where students can instantly begin active CLI, RegEx, or State Machine lab exercises.
 
+<MumeSession>
+<pre class="session" v-pre>
+<span class="narrate">You feel a strange presence as your spirit enters Middle-earth...</span>
+<span class="look">Mandos [N, S, E, W]</span>
+<span class="look">You are in a quiet, grey realm before birth.</span>
+
+> <span class="command">pray</span>
+<span class="narrate">You offer a prayer to Mandos asking for permission to enter Arda...</span>
+<span class="say">Mandos nods solemnly. Type 'pray' once more to begin your journey immediately.</span>
+
+> <span class="command">pray</span>
+<span class="narrate">A sudden gust of wind sweeps you away across the Misty Mountains...</span>
+<span class="look">Beer Garden - The Foaming Mug [E, W]</span>
+<span class="look">You stand in the lively outdoor courtyard of Black Hill Village.</span>
+</pre>
+</MumeSession>
+
 ---
 
 ## 🌐 3. Network & Firewall Configuration
 
 Traditional MUDs operate over Telnet or custom TCP sockets on non-standard ports (such as `mume.org:4242`), which are blocked by default on school networks and modern Chromebook firewalls.
+
+```
+[ Student Chromebook ] ---> ( Standard Port 443 / HTTPS & WSS ) ---> [ School Content Filter ] ---> [ MUME Web Server (mume.org) ]
+                                                                       ( Securly / GoGuardian: PASSED )
+```
 
 MUME provides a native web client operating entirely over standard web protocols:
 

@@ -3,6 +3,10 @@ title: Humanities & Literature Curriculum Track | Educator Portal
 description: Literature, Game Design, and Creative Writing curriculum modules examining Tolkien spatial narrative, Middle-earth lore adaptation, and MUD digital history.
 ---
 
+<div class="page-banner">
+  <img class="banner-img" src="/assets/images/doors-of-durin@2x.png" alt="Doors of Durin - Tolkien Lore & Worldbuilding" />
+</div>
+
 # 📚 Humanities & Literature Curriculum Track
 
 Welcome to the **MUME Humanities & Literature Curriculum Track**. Text-based MUDs offer a unique interdisciplinary bridge between classic literature, spatial narrative theory, game design, and digital archaeology.
@@ -14,6 +18,16 @@ As a multi-decade adaptation of J.R.R. Tolkien's legendarium, **Multi-Users in M
 ## 📅 Curriculum Options: 45-Min Labs vs. 1-Week Unit Block
 
 Educators can deliver these modules as standalone 45-minute lab sessions or combine them into a 5-day unit block:
+
+```
+           [ North: Westron Road ]
+                      ▲
+                      │
+[ West: Tavern ] <── [ Beer Garden ] ──> [ East: Market Square ]
+                      │
+                      ▼
+           [ South: Village Gates ]
+```
 
 ```
 [Day 1: Spatial Narrative] ➔ [Day 2: Room Topography] ➔ [Day 3: Game History] ➔ [Day 4: Community Lore] ➔ [Day 5: Capstone Room Design]

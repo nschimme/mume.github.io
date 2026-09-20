@@ -3,6 +3,10 @@ title: Student Quickstart Cheatsheet | Educator Portal
 description: Printable student quickstart guide for MUME classroom labs, covering web client connection, PII-free account creation, 3-minute preset, movement, essential commands, and lab submission steps.
 ---
 
+<div class="page-banner">
+  <img class="banner-img" src="/assets/images/mmapper-wasm@2x.webp" alt="MMapper Web Interface" />
+</div>
+
 # 📄 Student Quickstart Cheatsheet
 
 Welcome to **MUME (Multi-Users in Middle-earth)**! You are about to enter a rich, text-based interactive world set in Tolkien's Middle-earth. Use this quick reference guide to connect, create your character, navigate, and record your lab answers.
@@ -27,6 +31,25 @@ Welcome to **MUME (Multi-Users in Middle-earth)**! You are about to enter a rich
 ::: tip ⏩ Fast Lab Shortcut (Skip Tutorial)
 If your class is starting directly with CS or Game Design labs, type `pray` **twice** after awakening in Mandos to skip the introductory tutorial and warp straight to **Black Hill Village** (`The Foaming Mug`).
 :::
+
+<MumeSession>
+<pre class="session" v-pre>
+> <span class="command">look</span>
+<span class="look">Beer Garden - The Foaming Mug [E, W]</span>
+<span class="look">Wooden tables and benches dot this pleasant cobblestone beer garden under large oak trees.</span>
+Exits: East -> Main Street, West -> Tavern Common Room.
+A sturdy wooden backpack rests on a bench.
+
+> <span class="command">examine backpack</span>
+<span class="look">It is a thick leather backpack bound with brass buckles. It looks sturdy enough for travel.</span>
+It contains:
+  a loaf of cram
+  a wooden torch
+
+> <span class="command">score</span>
+<span class="stat">Level 1 Warrior - Health: 100/100 HP, Mana: 50/50, Movement: 120/120</span>
+</pre>
+</MumeSession>
 
 ---
 

@@ -3,6 +3,10 @@ title: "CS Lab 2: Regular Expressions & Pattern Capture Groups | Educator Portal
 description: Complete 45-minute CS lab teaching regular expressions, pattern matching, anchors, wildcards, and numerical capture groups using MUME prompt streams.
 ---
 
+<div class="page-banner">
+  <img class="banner-img" src="/assets/images/mudlet@2x.png" alt="Mudlet RegEx Pattern Engine" />
+</div>
+
 # 💻 CS Lab 2: Regular Expressions & Pattern Capture Groups
 
 | Attribute | Details |

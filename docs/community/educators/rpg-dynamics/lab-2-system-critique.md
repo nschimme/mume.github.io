@@ -3,6 +3,10 @@ title: "RPG Dynamics Lab 2: RPG Dynamics & Bartle Player Taxonomy Critique | Edu
 description: Complete 45-minute Game Design lab applying Richard Bartle's 1996 Player Taxonomy (Achievers, Explorers, Socializers, Killers) to critique MUD/VTT systems and propose targeted UX redesigns.
 ---
 
+<div class="page-banner">
+  <img class="banner-img" src="/assets/images/mudlet@2x.png" alt="Mudlet & MUME Scripting Interface" />
+</div>
+
 # 🎲 RPG Dynamics Lab 2: RPG Dynamics & Bartle Player Taxonomy Critique
 
 | Attribute | Details |

@@ -3,6 +3,10 @@ title: "CS Lab 1: Command-Line Interfaces & Parameter Aliases | Educator Portal"
 description: Complete 45-minute CS lab teaching command-line interface fundamentals, procedural abstraction, and variable parameter passing using native MUME aliases.
 ---
 
+<div class="page-banner">
+  <img class="banner-img" src="/assets/images/playmume@2x.png" alt="MUME CLI Terminal Interface" />
+</div>
+
 # 💻 CS Lab 1: Command-Line Interfaces & Parameter Aliases
 
 | Attribute | Details |
@@ -49,6 +53,17 @@ alias x examine *
 ```
 
 Executing `x sword` is expanded by MUME's pre-processor into `examine sword`.
+
+<MumeSession>
+<pre class="session" v-pre>
+> <span class="command">alias x examine *</span>
+<span class="say">Alias 'x' defined as 'examine *'.</span>
+
+> <span class="command">x leather-backpack</span>
+<span class="look">You examine the leather-backpack carefully...</span>
+<span class="look">It is a thick leather backpack bound with brass buckles.</span>
+</pre>
+</MumeSession>
 
 ---
 

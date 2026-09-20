@@ -3,6 +3,10 @@ title: "RPG Dynamics Lab 1: From Tabletop to Digital - Adding Dimensions | Educa
 description: Complete 45-minute Game Design lab analyzing how computer code adds real-time combat, spatial fog-of-war, and automated state math that human Dungeon Masters cannot execute manually.
 ---
 
+<div class="page-banner">
+  <img class="banner-img" src="/assets/images/doors-of-durin@2x.png" alt="Doors of Durin - MUME Spatial Lore" />
+</div>
+
 # 🎲 RPG Dynamics Lab 1: From Tabletop to Digital - Adding Dimensions
 
 | Attribute | Details |
@@ -53,6 +57,22 @@ Calculating equipment weight down to ounces, tracking coin weight, monitoring hu
 ### Observation 2: Real-Time Speed & Tick Test
 * Type `score` and observe your Hit Points, Mana, and Movement points.
 * Initiate movement across multiple rooms (`n`, `e`, `s`, `w`). Notice how Movement points deplete dynamically in real time and regenerate when sitting or resting (`rest`).
+
+<MumeSession>
+<pre class="session" v-pre>
+> <span class="command">look</span>
+<span class="look">Dark Forest Path [N, S, E]</span>
+<span class="narrate">The sun sets behind the Misty Mountains. Shadows engulf the forest path.</span>
+<span class="look">It is pitch dark...</span>
+
+> <span class="command">score</span>
+<span class="stat">HP: 110/110, Mana: 45/45, Movement: 32/120 (Exhausted from heavy marching)</span>
+
+> <span class="command">rest</span>
+<span class="narrate">You sit down and rest your tired feet.</span>
+<span class="stat">[ Tick ] You feel your energy returning... Movement: 72/120</span>
+</pre>
+</MumeSession>
 
 ---
 
