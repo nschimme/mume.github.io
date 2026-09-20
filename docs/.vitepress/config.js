@@ -32,9 +32,6 @@ export default defineConfig({
         items: [
           { text: 'Community Hub', link: '/' },
           { text: 'Educator & Classroom Portal 🎓', link: '/community/educators/' },
-          { text: '└ CS & STEM Track 💻', link: '/community/educators/cs/' },
-          { text: '└ Humanities Track 📚', link: '/community/educators/literature/' },
-          { text: '└ Game Design Track 🎲', link: '/community/educators/rpg-dynamics/' },
           { text: 'Discord', link: '/community/discord' },
           { text: 'Elvenrunes', link: 'https://elvenrunes.com' },
           { text: 'Open Source', link: '/opensource' },
