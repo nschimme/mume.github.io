@@ -1,9 +1,10 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
 const base = (process.env.VITE_BASE || '/').replace(/\/+$/, '/')
 const normalizedBase = base.startsWith('/') ? base : `/${base}`
 
-export default defineConfig({
+export default withMermaid(defineConfig({
   title: "MUME Community",
   description: "Explore the MUME community: official Discord, Elvenrunes, open-source mapping tools like MMapper, and player-developed clients for Multi-Users in Middle-earth.",
   cleanUrls: true,
@@ -31,6 +32,7 @@ export default defineConfig({
         text: 'Community',
         items: [
           { text: 'Community Hub', link: '/' },
+          { text: 'Education & Classroom Portal 🎓', link: '/community/education/' },
           { text: 'Discord', link: '/community/discord' },
           { text: 'Elvenrunes', link: 'https://elvenrunes.com' },
           { text: 'Open Source', link: '/opensource' },
@@ -60,11 +62,64 @@ export default defineConfig({
           { text: 'Restricted', link: 'https://mume.org/restricted/' }
         ]
       }
-    ]
+    ],
+    sidebar: {
+      '/community/': [
+        {
+          text: '🤝 Community Hub',
+          items: [
+            { text: 'Community Home', link: '/' },
+            { text: 'Open Source Projects', link: '/opensource' },
+            { text: 'Community Interviews', link: '/community/interviews/' }
+          ]
+        },
+        {
+          text: '🎓 Education & Classrooms',
+          items: [
+            { text: 'Overview & Portal', link: '/community/education/' },
+            { text: 'Classroom & IT Setup', link: '/community/education/classroom-setup' },
+            { text: 'Student Quickstart', link: '/community/education/student' }
+          ]
+        },
+        {
+          text: '🎲 Game Design & RPG Dynamics',
+          items: [
+            { text: 'RPG Track Overview', link: '/community/education/rpg-dynamics/' },
+            { text: 'Lab 1: TTRPG Evolution', link: '/community/education/rpg-dynamics/lab-1-ttrpg-evolution' },
+            { text: 'Lab 2: System & Bartle Critique', link: '/community/education/rpg-dynamics/lab-2-system-critique' },
+            { text: 'Lab 3: Scarcity & Competition', link: '/community/education/rpg-dynamics/lab-3-scarcity' },
+            { text: 'Lab 4: Faction Friction', link: '/community/education/rpg-dynamics/lab-4-asymmetric-factions' }
+          ]
+        },
+        {
+          text: '💻 STEM & CS Curriculum',
+          items: [
+            { text: 'CS Track Overview', link: '/community/education/cs/' },
+            { text: 'Lab 1: CLI & Aliases', link: '/community/education/cs/lab-1-aliases' },
+            { text: 'Lab 2: RegEx Captures', link: '/community/education/cs/lab-2-regex' },
+            { text: 'Lab 3: Triggers & FSM', link: '/community/education/cs/lab-3-parsing' },
+            { text: 'Lab 4: Graph Pathfinding', link: '/community/education/cs/lab-4-graph-pathfinding' }
+          ]
+        },
+        {
+          text: '📚 Humanities Curriculum',
+          items: [
+            { text: 'Humanities Overview', link: '/community/education/literature/' },
+            { text: 'Lab 1: Spatial Narrative', link: '/community/education/literature/lab-1-worldbuilding' },
+            { text: 'Lab 2: MUD Digital History', link: '/community/education/literature/lab-2-game-history' },
+            { text: 'Lab 3: Adaptation Studies', link: '/community/education/literature/lab-3-adaptation' },
+            { text: 'Lab 4: Collaborative Storytelling', link: '/community/education/literature/lab-4-storytelling' }
+          ]
+        }
+      ]
+    }
   },
   vite: {
     define: {
       __LAST_UPDATED__: JSON.stringify(process.env.VITE_LAST_UPDATED || 'May 2024')
     }
+  },
+  mermaid: {
+    theme: 'dark'
   }
-})
+}))
