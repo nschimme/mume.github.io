@@ -74,27 +74,27 @@ description: "Zero-install, browser-based, zero-cost active learning inside Tolk
   </span>
 </div>
 
-## 📦 Turnkey Teacher Resources
+## 📦 Web-Native Educator Tools
 
 <div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.5rem 0;">
   <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(0,0,0,0.15);">
-    <h3 style="margin-top: 0;">📊 Turnkey Slide Decks</h3>
+    <h3 style="margin-top: 0;">📖 Complete On-Site Lesson Plans</h3>
     <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--vp-c-text-2);">
-      Ready-to-present lecture slides introducing CLI parameter parsing, RegEx syntax, Tolkien spatial narrative, and asymmetric game balance.
+      Every lab is hosted directly on this portal as interactive Markdown—complete with concept walkthroughs, in-browser activities, and student challenges.
     </p>
   </div>
 
   <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(0,0,0,0.15);">
-    <h3 style="margin-top: 0;">🛠️ Client Validation Tools</h3>
+    <h3 style="margin-top: 0;">🖥️ In-Browser Interactive Client</h3>
     <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--vp-c-text-2);">
-      Automated Mudlet and browser script evaluators that inspect student trigger outputs and verify solution accuracy in real-time.
+      No software downloads or zip files required. Students connect to MUME over standard HTTPS/WebSockets on Chromebooks or school PCs.
     </p>
   </div>
 
   <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(0,0,0,0.15);">
-    <h3 style="margin-top: 0;">📋 Tiered Assessment Rubrics</h3>
+    <h3 style="margin-top: 0;">📋 Expandable Teacher Rubrics</h3>
     <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--vp-c-text-2);">
-      Expandable 10-point grading rubrics with explicit criteria for novice, intermediate, and advanced high school and college submissions.
+      Answer keys and 10-point assessment rubrics are built into every lab page inside collapsible details containers to prevent student spoilers.
     </p>
   </div>
 </div>

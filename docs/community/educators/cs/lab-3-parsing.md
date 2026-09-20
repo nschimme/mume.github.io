@@ -123,17 +123,6 @@ Submit your completed Lua script and State Transition Table:
 | `FLEEING` | Flee successful | `RESTING` | `send("rest")` |
 | `RESTING` | `HP > 90%` | `IDLE` | `send("stand")` |
 
----
-
-## 📥 Teacher Resource Download
-
-<div style="border: 1px solid rgba(215, 166, 63, 0.35); border-radius: 8px; padding: 1.25rem; background: rgba(215, 166, 63, 0.05); margin: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-  <div>
-    <h3 style="margin: 0; font-size: 1.1rem; color: var(--vp-c-brand-1);">📄 CS Lab 3 Teacher Resource Pack</h3>
-    <p style="margin: 0.25rem 0 0 0; font-size: 0.88rem; color: var(--vp-c-text-2);">Includes printable FSM transition diagrams, Lua code templates, automated script test suites, and complete solution keys.</p>
-  </div>
-  <a href="../student" class="vp-button brand" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; text-decoration: none;">Download Teacher Pack 📥</a>
-</div>
 
 ---
 

@@ -106,17 +106,6 @@ Submit your completed 3-part Game Design Critique (300–500 words).
 * **Proposed Redesign:** Introduce an integrated mentor broadcast button and roleplay greeting prompts in the web client header to immediately connect new players with active community guides upon spawning in Black Hill Village.
 :::
 
----
-
-## 📥 Teacher Resource Download
-
-<div style="border: 1px solid rgba(215, 166, 63, 0.35); border-radius: 8px; padding: 1.25rem; background: rgba(215, 166, 63, 0.05); margin: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-  <div>
-    <h3 style="margin: 0; font-size: 1.1rem; color: var(--vp-c-brand-1);">📄 RPG Lab 2 Teacher Resource Pack</h3>
-    <p style="margin: 0.25rem 0 0 0; font-size: 0.88rem; color: var(--vp-c-text-2);">Includes printable Bartle Taxonomy 2D quadrant worksheets, system critique templates, slide decks, and grading rubrics.</p>
-  </div>
-  <a href="../student" class="vp-button brand" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; text-decoration: none;">Download Teacher Pack 📥</a>
-</div>
 
 ---
 
