@@ -16,7 +16,7 @@ function getFiles(dir, fileList = []) {
   return fileList;
 }
 
-const docsDir = path.join(__dirname, '../docs/community/educators');
+const docsDir = path.join(__dirname, '../docs/community/education');
 const files = getFiles(docsDir);
 
 let errors = 0;
@@ -26,8 +26,8 @@ files.forEach(file => {
   const lines = content.split('\n');
   lines.forEach((line, index) => {
     // Check for hardcoded docs.mume.org internal links
-    if (line.includes('docs.mume.org/community/educators')) {
-      console.error(`[ERROR] ${file}:${index + 1}: Found hardcoded docs.mume.org link in Educator Portal: "${line.trim()}"`);
+    if (line.includes('docs.mume.org/community/education')) {
+      console.error(`[ERROR] ${file}:${index + 1}: Found hardcoded docs.mume.org link in Education Portal: "${line.trim()}"`);
       errors++;
     }
     // Check for raw HTML href="/..." links which break under subpath deployments

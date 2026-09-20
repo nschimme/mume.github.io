@@ -9,7 +9,7 @@ description: Technical setup guide for IT administrators and teachers to run MUM
 
 # ⚙️ Classroom & IT Setup Guide
 
-This guide assists IT network administrators and educators in deploying **MUME (Multi-Users in Middle-earth)** for classroom instruction. Designed specifically to eliminate technical friction, MUME requires no local software installation, no administrative rights on student devices, and zero student email or personal data collection.
+This guide assists IT network administrators and education in deploying **MUME (Multi-Users in Middle-earth)** for classroom instruction. Designed specifically to eliminate technical friction, MUME requires no local software installation, no administrative rights on student devices, and zero student email or personal data collection.
 
 ---
 
@@ -112,5 +112,5 @@ Because the web client communicates via Secure WebSockets (`wss://`) over standa
 
 ## 📍 Next Steps
 
-* Share the [Student Quickstart Cheatsheet](/community/educators/student) with your class.
-* Explore the [STEM & CS Curriculum Track](/community/educators/cs/), [Humanities Curriculum Track](/community/educators/literature/), or [Game Design Track](/community/educators/rpg-dynamics/).
+* Share the [Student Quickstart Cheatsheet](/community/education/student) with your class.
+* Explore the [STEM & CS Curriculum Track](/community/education/cs/), [Humanities Curriculum Track](/community/education/literature/), or [Game Design Track](/community/education/rpg-dynamics/).

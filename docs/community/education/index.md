@@ -53,7 +53,7 @@ description: "Zero-install, browser-based, zero-cost active learning inside Tolk
   <p class="custom-block-title">Welcome Educators!</p>
   <p>
     <strong>Multi-Users in Middle-earth (MUME)</strong> has been running continuously since 1992 as a living text-based virtual world.
-    By leveraging MUME's rich text environment and browser-based client, educators can teach fundamental Computer Science concepts (CLI syntax, RegEx, State Machines, Graph Pathfinding), Humanities topics (Spatial Narrative, Tolkien Studies, Digital Archaeology, Collaborative Storytelling), and Game Design principles (TTRPG evolution, Bartle player taxonomy, Zero-Sum Scarcity, Asymmetric Factions) with zero financial cost and minimal technical friction.
+    By leveraging MUME's rich text environment and browser-based client, education can teach fundamental Computer Science concepts (CLI syntax, RegEx, State Machines, Graph Pathfinding), Humanities topics (Spatial Narrative, Tolkien Studies, Digital Archaeology, Collaborative Storytelling), and Game Design principles (TTRPG evolution, Bartle player taxonomy, Zero-Sum Scarcity, Asymmetric Factions) with zero financial cost and minimal technical friction.
   </p>
 </div>
 

@@ -32,7 +32,7 @@ export default withMermaid(defineConfig({
         text: 'Community',
         items: [
           { text: 'Community Hub', link: '/' },
-          { text: 'Educator & Classroom Portal 🎓', link: '/community/educators/' },
+          { text: 'Education & Classroom Portal 🎓', link: '/community/education/' },
           { text: 'Discord', link: '/community/discord' },
           { text: 'Elvenrunes', link: 'https://elvenrunes.com' },
           { text: 'Open Source', link: '/opensource' },
@@ -74,41 +74,41 @@ export default withMermaid(defineConfig({
           ]
         },
         {
-          text: '🎓 Educators & Classrooms',
+          text: '🎓 Education & Classrooms',
           items: [
-            { text: 'Overview & Portal', link: '/community/educators/' },
-            { text: 'Classroom & IT Setup', link: '/community/educators/classroom-setup' },
-            { text: 'Student Quickstart', link: '/community/educators/student' }
+            { text: 'Overview & Portal', link: '/community/education/' },
+            { text: 'Classroom & IT Setup', link: '/community/education/classroom-setup' },
+            { text: 'Student Quickstart', link: '/community/education/student' }
           ]
         },
         {
           text: '🎲 Game Design & RPG Dynamics',
           items: [
-            { text: 'RPG Track Overview', link: '/community/educators/rpg-dynamics/' },
-            { text: 'Lab 1: TTRPG Evolution', link: '/community/educators/rpg-dynamics/lab-1-ttrpg-evolution' },
-            { text: 'Lab 2: System & Bartle Critique', link: '/community/educators/rpg-dynamics/lab-2-system-critique' },
-            { text: 'Lab 3: Scarcity & Competition', link: '/community/educators/rpg-dynamics/lab-3-scarcity' },
-            { text: 'Lab 4: Faction Friction', link: '/community/educators/rpg-dynamics/lab-4-asymmetric-factions' }
+            { text: 'RPG Track Overview', link: '/community/education/rpg-dynamics/' },
+            { text: 'Lab 1: TTRPG Evolution', link: '/community/education/rpg-dynamics/lab-1-ttrpg-evolution' },
+            { text: 'Lab 2: System & Bartle Critique', link: '/community/education/rpg-dynamics/lab-2-system-critique' },
+            { text: 'Lab 3: Scarcity & Competition', link: '/community/education/rpg-dynamics/lab-3-scarcity' },
+            { text: 'Lab 4: Faction Friction', link: '/community/education/rpg-dynamics/lab-4-asymmetric-factions' }
           ]
         },
         {
           text: '💻 STEM & CS Curriculum',
           items: [
-            { text: 'CS Track Overview', link: '/community/educators/cs/' },
-            { text: 'Lab 1: CLI & Aliases', link: '/community/educators/cs/lab-1-aliases' },
-            { text: 'Lab 2: RegEx Captures', link: '/community/educators/cs/lab-2-regex' },
-            { text: 'Lab 3: Triggers & FSM', link: '/community/educators/cs/lab-3-parsing' },
-            { text: 'Lab 4: Graph Pathfinding', link: '/community/educators/cs/lab-4-graph-pathfinding' }
+            { text: 'CS Track Overview', link: '/community/education/cs/' },
+            { text: 'Lab 1: CLI & Aliases', link: '/community/education/cs/lab-1-aliases' },
+            { text: 'Lab 2: RegEx Captures', link: '/community/education/cs/lab-2-regex' },
+            { text: 'Lab 3: Triggers & FSM', link: '/community/education/cs/lab-3-parsing' },
+            { text: 'Lab 4: Graph Pathfinding', link: '/community/education/cs/lab-4-graph-pathfinding' }
           ]
         },
         {
           text: '📚 Humanities Curriculum',
           items: [
-            { text: 'Humanities Overview', link: '/community/educators/literature/' },
-            { text: 'Lab 1: Spatial Narrative', link: '/community/educators/literature/lab-1-worldbuilding' },
-            { text: 'Lab 2: MUD Digital History', link: '/community/educators/literature/lab-2-game-history' },
-            { text: 'Lab 3: Adaptation Studies', link: '/community/educators/literature/lab-3-adaptation' },
-            { text: 'Lab 4: Collaborative Storytelling', link: '/community/educators/literature/lab-4-storytelling' }
+            { text: 'Humanities Overview', link: '/community/education/literature/' },
+            { text: 'Lab 1: Spatial Narrative', link: '/community/education/literature/lab-1-worldbuilding' },
+            { text: 'Lab 2: MUD Digital History', link: '/community/education/literature/lab-2-game-history' },
+            { text: 'Lab 3: Adaptation Studies', link: '/community/education/literature/lab-3-adaptation' },
+            { text: 'Lab 4: Collaborative Storytelling', link: '/community/education/literature/lab-4-storytelling' }
           ]
         }
       ]
