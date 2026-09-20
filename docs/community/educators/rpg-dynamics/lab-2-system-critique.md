@@ -9,6 +9,15 @@ description: Complete 45-minute Game Design lab applying Richard Bartle's 1996 P
 
 # 🎲 RPG Dynamics Lab 2: RPG Dynamics & Bartle Player Taxonomy Critique
 
+<div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0;">
+  <span style="border: 1px solid rgba(215, 166, 63, 0.4); background: rgba(215, 166, 63, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: var(--vp-c-brand-1);">
+    🏷️ College Game Design: Player Psychology & Bartle Taxonomy
+  </span>
+  <span style="border: 1px solid rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: #60a5fa;">
+    🏷️ UX / Game Studies: System Auditing & Redesign Proposals
+  </span>
+</div>
+
 | Attribute | Details |
 | :--- | :--- |
 | **Target Audience** | Game Design, Game Psychology, UX/UI Research, Ludology |
@@ -56,6 +65,10 @@ quadrantChart
 
 ## 🧪 3. Guided Analysis Activity (20 Minutes)
 
+::: info 🏰 Classroom Sandbox Note
+Students audit player interaction channels in **Bree Inn** or inspect MUME feature documentation online to evaluate how MUD systems balance different Bartle archetypes.
+:::
+
 ### Task 1: MUME Mechanics Audit
 Log into MUME or review its feature set and identify which Bartle archetype its core mechanics primarily serve:
 
@@ -92,6 +105,18 @@ Submit your completed 3-part Game Design Critique (300–500 words).
 * **Neglected Archetype:** *Socializer*.
 * **Proposed Redesign:** Introduce an integrated mentor broadcast button and roleplay greeting prompts in the web client header to immediately connect new players with active community guides upon spawning in Black Hill Village.
 :::
+
+---
+
+## 📥 Teacher Resource Download
+
+<div style="border: 1px solid rgba(215, 166, 63, 0.35); border-radius: 8px; padding: 1.25rem; background: rgba(215, 166, 63, 0.05); margin: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+  <div>
+    <h3 style="margin: 0; font-size: 1.1rem; color: var(--vp-c-brand-1);">📄 RPG Lab 2 Teacher Resource Pack</h3>
+    <p style="margin: 0.25rem 0 0 0; font-size: 0.88rem; color: var(--vp-c-text-2);">Includes printable Bartle Taxonomy 2D quadrant worksheets, system critique templates, slide decks, and grading rubrics.</p>
+  </div>
+  <a href="../student" class="vp-button brand" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; text-decoration: none;">Download Teacher Pack 📥</a>
+</div>
 
 ---
 

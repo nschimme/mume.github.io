@@ -9,6 +9,18 @@ description: Complete 45-minute CS lab teaching command-line interface fundament
 
 # 💻 CS Lab 1: Command-Line Interfaces & Parameter Aliases
 
+<div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0;">
+  <span style="border: 1px solid rgba(215, 166, 63, 0.4); background: rgba(215, 166, 63, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: var(--vp-c-brand-1);">
+    🏷️ AP CSP: AAP-1 (Variables), AAP-2 (Procedural Abstraction)
+  </span>
+  <span style="border: 1px solid rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: #60a5fa;">
+    🏷️ CSTA: 3A-AP-16, 3A-AP-17
+  </span>
+  <span style="border: 1px solid rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: #34d399;">
+    🏷️ College CS: CS101 / Intro to Programming
+  </span>
+</div>
+
 | Attribute | Details |
 | :--- | :--- |
 | **Target Audience** | AP CS Principles, High School CS, Intro College Programming (CS101) |
@@ -69,6 +81,10 @@ Executing `x sword` is expanded by MUME's pre-processor into `examine sword`.
 
 ## 🧪 3. Guided Hands-On Activity (15 Minutes)
 
+::: info 🏰 Classroom Sandbox Note
+Advise students to remain inside **Black Hill Village** or **Bree** (safe starter towns) while practicing aliases. This ensures a safe, non-combat sandbox environment free from aggressive mobs.
+:::
+
 ### Task 1: Your First Alias
 1. Connect to the <a href="https://mume.org/play" target="_self" rel="external">MUME Web Client</a>.
 2. In the command prompt, type the following alias definition:
@@ -113,6 +129,18 @@ To receive full credit for this lab, copy your terminal session showing:
 1. The creation of your `alias x examine *` and `alias loot ...` definitions.
 2. The output from typing `alias` (which lists all currently configured aliases).
 3. The successful execution of your `loot` command on a target object.
+
+---
+
+## 📥 Teacher Resource Download
+
+<div style="border: 1px solid rgba(215, 166, 63, 0.35); border-radius: 8px; padding: 1.25rem; background: rgba(215, 166, 63, 0.05); margin: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+  <div>
+    <h3 style="margin: 0; font-size: 1.1rem; color: var(--vp-c-brand-1);">📄 CS Lab 1 Teacher Resource Pack</h3>
+    <p style="margin: 0.25rem 0 0 0; font-size: 0.88rem; color: var(--vp-c-text-2);">Includes printable PDF student worksheets, slide decks, automated alias test scripts, and complete solution keys.</p>
+  </div>
+  <a href="../student" class="vp-button brand" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; text-decoration: none;">Download Teacher Pack 📥</a>
+</div>
 
 ---
 

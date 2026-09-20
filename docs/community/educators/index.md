@@ -53,8 +53,64 @@ description: "Zero-install, browser-based, zero-cost active learning inside Tolk
   <p class="custom-block-title">Welcome Educators!</p>
   <p>
     <strong>Multi-Users in Middle-earth (MUME)</strong> has been running continuously since 1992 as a living text-based virtual world.
-    By leveraging MUME's rich text environment and browser-based client, educators can teach fundamental Computer Science concepts (CLI syntax, RegEx, State Machines), Humanities topics (Spatial Narrative, Tolkien Studies, Digital Archaeology), and Game Design principles (TTRPG evolution, Bartle player taxonomy) with zero financial cost and minimal technical friction.
+    By leveraging MUME's rich text environment and browser-based client, educators can teach fundamental Computer Science concepts (CLI syntax, RegEx, State Machines, Graph Pathfinding), Humanities topics (Spatial Narrative, Tolkien Studies, Digital Archaeology, Collaborative Storytelling), and Game Design principles (TTRPG evolution, Bartle player taxonomy, Zero-Sum Scarcity, Asymmetric Factions) with zero financial cost and minimal technical friction.
   </p>
+</div>
+
+## 🏷️ Educational Standards Mapping
+
+<div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1.5rem 0;">
+  <span style="border: 1px solid rgba(215, 166, 63, 0.4); background: rgba(215, 166, 63, 0.1); padding: 0.4rem 0.8rem; border-radius: 6px; font-weight: 600; font-size: 0.88rem; color: var(--vp-c-brand-1);">
+    🏷️ CSTA K-12 Computer Science Standards (3A-AP-16, 3B-AP-14, 3B-AP-15)
+  </span>
+  <span style="border: 1px solid rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.1); padding: 0.4rem 0.8rem; border-radius: 6px; font-weight: 600; font-size: 0.88rem; color: #60a5fa;">
+    🏷️ AP Computer Science Principles (AAP-1, AAP-2, AAP-3, CRD-2)
+  </span>
+  <span style="border: 1px solid rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1); padding: 0.4rem 0.8rem; border-radius: 6px; font-weight: 600; font-size: 0.88rem; color: #34d399;">
+    🏷️ Common Core ELA / Literary Analysis (CCSS.ELA-LITERACY.RL.11-12.7)
+  </span>
+  <span style="border: 1px solid rgba(168, 85, 247, 0.4); background: rgba(168, 85, 247, 0.1); padding: 0.4rem 0.8rem; border-radius: 6px; font-weight: 600; font-size: 0.88rem; color: #c084fc;">
+    🏷️ College Game Design & Ludology (Bartle 1996, System Dynamics)
+  </span>
+</div>
+
+## 📦 Turnkey Teacher Resources
+
+<div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.5rem 0;">
+  <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(0,0,0,0.15);">
+    <h3 style="margin-top: 0;">📊 Turnkey Slide Decks</h3>
+    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--vp-c-text-2);">
+      Ready-to-present lecture slides introducing CLI parameter parsing, RegEx syntax, Tolkien spatial narrative, and asymmetric game balance.
+    </p>
+  </div>
+
+  <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(0,0,0,0.15);">
+    <h3 style="margin-top: 0;">🛠️ Client Validation Tools</h3>
+    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--vp-c-text-2);">
+      Automated Mudlet and browser script evaluators that inspect student trigger outputs and verify solution accuracy in real-time.
+    </p>
+  </div>
+
+  <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(0,0,0,0.15);">
+    <h3 style="margin-top: 0;">📋 Tiered Assessment Rubrics</h3>
+    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--vp-c-text-2);">
+      Expandable 10-point grading rubrics with explicit criteria for novice, intermediate, and advanced high school and college submissions.
+    </p>
+  </div>
+</div>
+
+## 🌐 Interdisciplinary Capstone Project
+
+<div style="border: 1px solid rgba(215, 166, 63, 0.35); border-radius: 10px; padding: 1.5rem; background: rgba(215, 166, 63, 0.05); margin: 1.5rem 0;">
+  <h3 style="margin-top: 0; color: var(--vp-c-brand-1);">🏛️ Collaborative Capstone: "The Bree-land Expansion"</h3>
+  <p style="font-size: 0.95rem; line-height: 1.5; color: var(--vp-c-text-1);">
+    Bring Computer Science, Literature, and Game Design students together in a final cross-disciplinary project! Student teams collaborate to design, author, and program a new virtual Middle-earth zone:
+  </p>
+  <ul style="font-size: 0.9rem; line-height: 1.6; margin-top: 0.5rem;">
+    <li><strong>Literature Students:</strong> Write immersive, canonical room descriptions, atmospheric sensory details, and NPC dialogue scripts.</li>
+    <li><strong>Game Design Students:</strong> Balance asymmetric monster encounters, item scarcity caps, and risk/reward exit topology.</li>
+    <li><strong>Computer Science Students:</strong> Program state-machine NPC behaviors, automapper navigation graphs, and RegEx trigger scripts.</li>
+  </ul>
 </div>
 
 ## 🎓 Quick Navigation for Teachers

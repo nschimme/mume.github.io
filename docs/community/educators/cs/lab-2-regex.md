@@ -9,6 +9,18 @@ description: Complete 45-minute CS lab teaching regular expressions, pattern mat
 
 # 💻 CS Lab 2: Regular Expressions & Pattern Capture Groups
 
+<div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0;">
+  <span style="border: 1px solid rgba(215, 166, 63, 0.4); background: rgba(215, 166, 63, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: var(--vp-c-brand-1);">
+    🏷️ AP CSP: AAP-3 (String Manipulation), DAT-1 (Data Representation)
+  </span>
+  <span style="border: 1px solid rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: #60a5fa;">
+    🏷️ CSTA: 3B-AP-14, 3B-AP-21
+  </span>
+  <span style="border: 1px solid rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: #34d399;">
+    🏷️ College CS: CS101 / CS201 / Data Mining
+  </span>
+</div>
+
 | Attribute | Details |
 | :--- | :--- |
 | **Target Audience** | AP CS Principles, High School CS, Intro College Programming (CS101/CS201) |
@@ -67,6 +79,10 @@ Because HP, Mana, and MV fluctuate constantly during gameplay, fixed-string matc
 
 ## 🧪 3. Guided Hands-On Activity (15 Minutes)
 
+::: info 🏰 Classroom Sandbox Note
+Students can test their RegEx patterns using dynamic terminal output in **Bree Market Square** or **Black Hill Village**, or paste sample text strings into a browser-based RegEx tester (such as [regex101.com](https://regex101.com)).
+:::
+
 ### Task 1: Testing RegEx Patterns
 1. Open a regex testing environment (or Mudlet / MUSHclient trigger editor).
 2. Input the sample prompt text string:
@@ -113,6 +129,18 @@ Submit your answers to the following worksheet:
    `You steal 450 gold coins from a sleeping smuggler.`
 2. **Question 2:** Explain the difference between `\d+` and `\d*` in regular expressions.
 3. **Question 3:** Provide screenshot or text output proof showing your combat condition RegEx successfully capturing both group 1 and group 2.
+
+---
+
+## 📥 Teacher Resource Download
+
+<div style="border: 1px solid rgba(215, 166, 63, 0.35); border-radius: 8px; padding: 1.25rem; background: rgba(215, 166, 63, 0.05); margin: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+  <div>
+    <h3 style="margin: 0; font-size: 1.1rem; color: var(--vp-c-brand-1);">📄 CS Lab 2 Teacher Resource Pack</h3>
+    <p style="margin: 0.25rem 0 0 0; font-size: 0.88rem; color: var(--vp-c-text-2);">Includes printable RegEx cheatsheets, slide decks, automated trigger test files, and complete solution keys.</p>
+  </div>
+  <a href="../student" class="vp-button brand" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; text-decoration: none;">Download Teacher Pack 📥</a>
+</div>
 
 ---
 

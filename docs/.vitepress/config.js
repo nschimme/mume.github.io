@@ -86,7 +86,9 @@ export default withMermaid(defineConfig({
           items: [
             { text: 'RPG Track Overview', link: '/community/educators/rpg-dynamics/' },
             { text: 'Lab 1: TTRPG Evolution', link: '/community/educators/rpg-dynamics/lab-1-ttrpg-evolution' },
-            { text: 'Lab 2: System & Bartle Critique', link: '/community/educators/rpg-dynamics/lab-2-system-critique' }
+            { text: 'Lab 2: System & Bartle Critique', link: '/community/educators/rpg-dynamics/lab-2-system-critique' },
+            { text: 'Lab 3: Scarcity & Competition', link: '/community/educators/rpg-dynamics/lab-3-scarcity' },
+            { text: 'Lab 4: Faction Friction', link: '/community/educators/rpg-dynamics/lab-4-asymmetric-factions' }
           ]
         },
         {
@@ -95,7 +97,8 @@ export default withMermaid(defineConfig({
             { text: 'CS Track Overview', link: '/community/educators/cs/' },
             { text: 'Lab 1: CLI & Aliases', link: '/community/educators/cs/lab-1-aliases' },
             { text: 'Lab 2: RegEx Captures', link: '/community/educators/cs/lab-2-regex' },
-            { text: 'Lab 3: Triggers & FSM', link: '/community/educators/cs/lab-3-parsing' }
+            { text: 'Lab 3: Triggers & FSM', link: '/community/educators/cs/lab-3-parsing' },
+            { text: 'Lab 4: Graph Pathfinding', link: '/community/educators/cs/lab-4-graph-pathfinding' }
           ]
         },
         {
@@ -103,7 +106,9 @@ export default withMermaid(defineConfig({
           items: [
             { text: 'Humanities Overview', link: '/community/educators/literature/' },
             { text: 'Lab 1: Spatial Narrative', link: '/community/educators/literature/lab-1-worldbuilding' },
-            { text: 'Lab 2: MUD Digital History', link: '/community/educators/literature/lab-2-game-history' }
+            { text: 'Lab 2: MUD Digital History', link: '/community/educators/literature/lab-2-game-history' },
+            { text: 'Lab 3: Adaptation Studies', link: '/community/educators/literature/lab-3-adaptation' },
+            { text: 'Lab 4: Collaborative Storytelling', link: '/community/educators/literature/lab-4-storytelling' }
           ]
         }
       ]

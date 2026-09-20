@@ -9,6 +9,15 @@ description: Complete 45-minute Digital Humanities lab examining MUME's 30+ year
 
 # 📚 Humanities Lab 2: MUD History & Digital Preservation
 
+<div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0;">
+  <span style="border: 1px solid rgba(215, 166, 63, 0.4); background: rgba(215, 166, 63, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: var(--vp-c-brand-1);">
+    🏷️ Digital Humanities: Primary Source Analysis & Media History
+  </span>
+  <span style="border: 1px solid rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: #60a5fa;">
+    🏷️ Common Core ELA: CCSS.ELA-LITERACY.RH.11-12.1 (Primary Source Evidence)
+  </span>
+</div>
+
 | Attribute | Details |
 | :--- | :--- |
 | **Target Audience** | High School History, Media Studies, Digital Humanities, Game Design |
@@ -91,6 +100,10 @@ By the end of this lab, students will be able to:
 
 ## 🧪 3. Guided Primary Source Exploration (15 Minutes)
 
+::: info 🏰 Classroom Sandbox Note
+Students can explore primary historical questionnaires and survey archives online without needing live MUME client connections, making this lab ideal for offline classroom discussion days.
+:::
+
 ### Task 1: Historical Artifact Analysis
 1. Visit the [MUME History Chronicles](../../../about/history) and review foundational historical accounts, such as [MUME IV as described in Estonia](../../../about/m8).
 2. Read MUME's entry on [Tolkien Gateway](https://tolkiengateway.net/wiki/MUME:_Multi_Users_in_Middle_Earth) to examine how independent Tolkien scholars document text-based digital adaptations.
@@ -120,6 +133,18 @@ Submit your completed essay and primary source worksheet:
 1. **Primary Source Citation:** Cite one specific statistic or quote from the MUME historical survey archives ([/resources/questionnaires/](../../../resources/questionnaires/)).
 2. **Comparative Analysis:** Compare how player interaction in a text MUD differs from modern social media platforms.
 3. **Submitted Essay:** (250+ words).
+
+---
+
+## 📥 Teacher Resource Download
+
+<div style="border: 1px solid rgba(215, 166, 63, 0.35); border-radius: 8px; padding: 1.25rem; background: rgba(215, 166, 63, 0.05); margin: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+  <div>
+    <h3 style="margin: 0; font-size: 1.1rem; color: var(--vp-c-brand-1);">📄 Humanities Lab 2 Teacher Resource Pack</h3>
+    <p style="margin: 0.25rem 0 0 0; font-size: 0.88rem; color: var(--vp-c-text-2);">Includes printable primary source worksheets, digital archaeology discussion prompts, slide decks, and grading rubrics.</p>
+  </div>
+  <a href="../student" class="vp-button brand" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; text-decoration: none;">Download Teacher Pack 📥</a>
+</div>
 
 ---
 

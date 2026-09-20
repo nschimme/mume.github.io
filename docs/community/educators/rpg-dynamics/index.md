@@ -9,9 +9,21 @@ description: Game Design, Interactive Media, and Game Studies curriculum modules
 
 # 🎲 Game Design & RPG Dynamics Curriculum Track
 
+<div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0;">
+  <span style="border: 1px solid rgba(215, 166, 63, 0.4); background: rgba(215, 166, 63, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: var(--vp-c-brand-1);">
+    🏷️ College Game Design: Ludology & System Dynamics
+  </span>
+  <span style="border: 1px solid rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: #60a5fa;">
+    🏷️ Game Studies: Zero-Sum Scarcity & Asymmetric Factions
+  </span>
+  <span style="border: 1px solid rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: #34d399;">
+    🏷️ Player Psychology: Bartle Taxonomy (1996)
+  </span>
+</div>
+
 Welcome to the **MUME Game Design & RPG Dynamics Curriculum Track**. This track serves higher education and high school courses in **Game Design**, **Interactive Media**, **Ludology**, and **Game Studies**.
 
-By using **Multi-Users in Middle-earth (MUME)** as a living digital laboratory, students explore how early computer games ported physical tabletop RPG rulesets (like *Dungeons & Dragons*) into digital networks—laying the architectural groundwork for modern MMORPGs and Virtual Tabletops (VTTs) like Roll20 and Foundry VTT.
+Rather than relying on inflated commercial virtual economies, **Multi-Users in Middle-earth (MUME)** is built around **finite zero-sum resource scarcity** and **asymmetric player conflict**. Students examine how non-renewable item caps, permanent equipment degradation, light/dark vision mechanics, and opposing faction alignment (Free Peoples vs. Sauron's forces) drive organic player conflict and strategic risk management.
 
 ---
 
@@ -39,18 +51,20 @@ graph LR
 ```
 
 ### Option A: Express 45-Minute Single Period Labs
-* **Lab 1 (45 min):** [From Tabletop to Digital - Adding Dimensions](/community/educators/rpg-dynamics/lab-1-ttrpg-evolution)
-* **Lab 2 (45 min):** [RPG Dynamics & Bartle Player Taxonomy Critique](/community/educators/rpg-dynamics/lab-2-system-critique)
+* **Lab 1 (45 min):** [From Tabletop to Digital - Adding Dimensions](./lab-1-ttrpg-evolution)
+* **Lab 2 (45 min):** [RPG Dynamics & Bartle Player Taxonomy Critique](./lab-2-system-critique)
+* **Lab 3 (45 min):** [Zero-Sum Scarcity & Item Competition](./lab-3-scarcity)
+* **Lab 4 (45 min):** [Faction Friction & Asymmetric World Design](./lab-4-asymmetric-factions)
 
 ### Option B: 1-Week Integrated Game Design Blueprint
 
 | Day | Topic & Activity | Student Output |
 | :--- | :--- | :--- |
 | **Day 1** | **Tabletop Roots (D&D Mechanics):** Trace how hit points, armor class, stats, and dice rolls were translated from paper to software. | TTRPG vs. MUD mechanics comparison table. |
-| **Day 2** | **Technological Dimensions:** Play MUME live to observe automated features impossible in pen-and-paper (real-time combat, dynamic line-of-sight, state math). | Live observation log. |
-| **Day 3** | **Bartle Taxonomy Breakdown:** Analyze Richard Bartle's 1996 player types (Achievers, Explorers, Socializers, Killers) born directly in MUD ecosystems. | Bartle player profile evaluation. |
-| **Day 4** | **System & UX Deconstruction:** Critique a specific design dimension (UI, mapping, combat, onboarding) in MUME, an MMORPG, or a VTT. | System critique draft. |
-| **Day 5** | **Capstone Redesign Proposal:** Propose concrete mechanics/UI modifications designed to cater to a target Bartle player archetype. | Submitted redesign proposal & presentation. |
+| **Day 2** | **Bartle Player Taxonomy:** Apply Richard Bartle's 1996 player types (Achievers, Explorers, Socializers, Killers) to analyze player motivations. | Bartle player profile evaluation. |
+| **Day 3** | **Zero-Sum Scarcity & Competition:** Analyze how global item caps, equipment loss, and finite trophy pools force organic risk-vs-reward decisions. | Resource scarcity audit worksheet. |
+| **Day 4** | **Asymmetric Factions & Environmental Friction:** Evaluate how light/dark vision, opposing alignments, and geography drive open-world PvP conflict. | Asymmetric balance critique report. |
+| **Day 5** | **Capstone System Redesign Proposal:** Propose concrete mechanics modifications to balance scarcity or faction friction for a target player archetype. | Submitted redesign proposal & presentation. |
 
 ---
 
@@ -78,6 +92,18 @@ This track is designed for:
   <h3>Lab 2: RPG Dynamics & Bartle Taxonomy Critique</h3>
   <p>Apply Richard Bartle's foundational 1996 player taxonomy (Achievers, Explorers, Socializers, Killers) to critique MUD/VTT systems and propose targeted UX redesigns.</p>
   <a href="./lab-2-system-critique" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 2 →</a>
+</div>
+
+<div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
+  <h3>Lab 3: Zero-Sum Scarcity & Competition</h3>
+  <p>Analyze how strict global item caps, non-renewable gear states, and finite trophy pools drive organic player competition and high-stakes risk management.</p>
+  <a href="./lab-3-scarcity" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 3 →</a>
+</div>
+
+<div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
+  <h3>Lab 4: Faction Friction & Asymmetric Design</h3>
+  <p>Examine how mechanical asymmetry (Free Peoples vs. Sauron's forces, dark vision vs. light, safe haven sanctuaries) generates persistent world tension and team dynamics.</p>
+  <a href="./lab-4-asymmetric-factions" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Launch Lab 4 →</a>
 </div>
 
 </div>

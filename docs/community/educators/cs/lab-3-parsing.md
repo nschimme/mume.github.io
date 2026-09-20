@@ -9,6 +9,18 @@ description: Complete 45-minute CS lab teaching event-driven trigger actions, st
 
 # 💻 CS Lab 3: Event Triggers & Finite State Machines
 
+<div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0;">
+  <span style="border: 1px solid rgba(215, 166, 63, 0.4); background: rgba(215, 166, 63, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: var(--vp-c-brand-1);">
+    🏷️ AP CSP: CRD-2 (Event-Driven Programming), AAP-4 (State Control)
+  </span>
+  <span style="border: 1px solid rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: #60a5fa;">
+    🏷️ CSTA: 3B-AP-15, 3B-AP-19
+  </span>
+  <span style="border: 1px solid rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: #34d399;">
+    🏷️ College CS: CS201 / Automata Theory
+  </span>
+</div>
+
 | Attribute | Details |
 | :--- | :--- |
 | **Target Audience** | AP CS Principles, CS101, CS201 (Data Structures / Automata) |
@@ -53,6 +65,10 @@ stateDiagram-v2
 ---
 
 ## 🧪 3. Guided Hands-On Activity: Building the Lua FSM Trigger (20 Minutes)
+
+::: info 🏰 Classroom Sandbox Note
+Students can test their FSM Lua code in Mudlet or MUSHclient connected to MUME test servers, or evaluate their state transition logic using local mock prompt streams in a safe starter area like **Black Hill Village**.
+:::
 
 Using the Mudlet Lua client scripting engine (referencing `/wiki/pages/Script`), students implement the state machine using a global state variable `currentState`.
 
@@ -106,6 +122,18 @@ Submit your completed Lua script and State Transition Table:
 | `COMBAT` | `HP < 30` | `FLEEING` | `send("flee")` |
 | `FLEEING` | Flee successful | `RESTING` | `send("rest")` |
 | `RESTING` | `HP > 90%` | `IDLE` | `send("stand")` |
+
+---
+
+## 📥 Teacher Resource Download
+
+<div style="border: 1px solid rgba(215, 166, 63, 0.35); border-radius: 8px; padding: 1.25rem; background: rgba(215, 166, 63, 0.05); margin: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+  <div>
+    <h3 style="margin: 0; font-size: 1.1rem; color: var(--vp-c-brand-1);">📄 CS Lab 3 Teacher Resource Pack</h3>
+    <p style="margin: 0.25rem 0 0 0; font-size: 0.88rem; color: var(--vp-c-text-2);">Includes printable FSM transition diagrams, Lua code templates, automated script test suites, and complete solution keys.</p>
+  </div>
+  <a href="../student" class="vp-button brand" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; text-decoration: none;">Download Teacher Pack 📥</a>
+</div>
 
 ---
 

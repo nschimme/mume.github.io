@@ -9,6 +9,15 @@ description: Complete 45-minute Literature and Game Design lab exploring Tolkien
 
 # 📚 Humanities Lab 1: Spatial Narrative & Tolkien Worldbuilding
 
+<div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0;">
+  <span style="border: 1px solid rgba(215, 166, 63, 0.4); background: rgba(215, 166, 63, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: var(--vp-c-brand-1);">
+    🏷️ Common Core ELA: CCSS.ELA-LITERACY.RL.11-12.7
+  </span>
+  <span style="border: 1px solid rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: #60a5fa;">
+    🏷️ AP Literature: Spatial Prose & Worldbuilding
+  </span>
+</div>
+
 | Attribute | Details |
 | :--- | :--- |
 | **Target Audience** | High School English, College Literature, Creative Writing, Game Design |
@@ -54,6 +63,10 @@ Exits: [South], East.
 
 ## 🧪 3. Guided Hands-On Activity (15 Minutes)
 
+::: info 🏰 Classroom Sandbox Note
+Have students explore the safe town streets of **Bree** or **Black Hill Village** to inspect room descriptions, weather changes, and time-of-day prompts without combat distraction.
+:::
+
 ### Task 1: Environment Inspection in MUME
 1. Connect to the <a href="https://mume.org/play" target="_self" rel="external">MUME Web Client</a>.
 2. Move through 3 adjacent rooms using direction commands (`n`, `s`, `e`, `w`).
@@ -64,13 +77,12 @@ Exits: [South], East.
 
 ## 🚀 4. Independent Student Challenge ("The Quest")
 
-**Challenge Requirement: Draft an Original Middle-Earth Room Description**
-Write an original 3-5 sentence text room description set in a canonical Middle-earth location (e.g., *The Bree Land*, *Rivendell*, *Mirkwood*, *The Old Forest*, or *Barrow-downs*).
+**Challenge Requirement: Draft an Original Middle-Earth Room Description & Peer Blind-Mapping**
 
-Your room description MUST include:
-* **Setting Title:** (e.g., `A Shaded Hollow in the Chetwood`)
-* **Sensory Details:** At least two distinct senses (visual, auditory, tactile, or olfactory).
-* **Clear Directional Exits:** Textually describe paths leading out in at least two compass directions.
+1. Write an original 3-5 sentence text room description set in a canonical Middle-earth location (e.g., *The Bree Land*, *Rivendell*, *Mirkwood*, *The Old Forest*, or *Barrow-downs*).
+2. **Peer Blind-Mapping Activity:** Exchange your written room description with a classmate *without showing them a map*.
+3. The classmate reads your prose description and attempts to draw an accurate floorplan map showing room boundaries, cardinal exit directions, and key spatial landmarks.
+4. Compare the classmate's drawn map against your intended room design to evaluate clarity and spatial prose precision.
 
 ---
 
@@ -81,6 +93,18 @@ Submit your written room description along with answers to these reflection ques
 1. How does navigating a room grid in a text MUD differ from reading a passage in a novel?
 2. How do room exits create suspense or influence a player's emotional state?
 3. Paste your student-authored room description.
+
+---
+
+## 📥 Teacher Resource Download
+
+<div style="border: 1px solid rgba(215, 166, 63, 0.35); border-radius: 8px; padding: 1.25rem; background: rgba(215, 166, 63, 0.05); margin: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+  <div>
+    <h3 style="margin: 0; font-size: 1.1rem; color: var(--vp-c-brand-1);">📄 Humanities Lab 1 Teacher Resource Pack</h3>
+    <p style="margin: 0.25rem 0 0 0; font-size: 0.88rem; color: var(--vp-c-text-2);">Includes printable Peer Blind-Mapping grid sheets, room description writing templates, slide decks, and grading rubrics.</p>
+  </div>
+  <a href="../student" class="vp-button brand" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; text-decoration: none;">Download Teacher Pack 📥</a>
+</div>
 
 ---
 
