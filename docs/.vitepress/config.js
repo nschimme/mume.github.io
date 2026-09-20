@@ -96,6 +96,14 @@ export default defineConfig({
             { text: 'Lab 1: Spatial Narrative', link: '/community/educators/literature/lab-1-worldbuilding' },
             { text: 'Lab 2: MUD Digital History', link: '/community/educators/literature/lab-2-game-history' }
           ]
+        },
+        {
+          text: '🎲 Game Design & RPG Dynamics',
+          items: [
+            { text: 'RPG Track Overview', link: '/community/educators/rpg-dynamics/' },
+            { text: 'Lab 1: TTRPG Evolution', link: '/community/educators/rpg-dynamics/lab-1-ttrpg-evolution' },
+            { text: 'Lab 2: System & Bartle Critique', link: '/community/educators/rpg-dynamics/lab-2-system-critique' }
+          ]
         }
       ]
     }

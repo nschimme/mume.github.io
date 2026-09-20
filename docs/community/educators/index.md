@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "MUME in the Classroom"
   text: "Zero-install, browser-based, zero-cost active learning inside Tolkien's Middle-earth."
-  tagline: "Engage students with 45-minute plug-and-play labs and week-long unit modules for CS and Literature."
+  tagline: "Engage students with 45-minute plug-and-play labs and week-long unit modules for CS, Literature, and Game Design."
   actions:
     - theme: brand
       text: Explore CS Labs 💻
@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: Humanities Track 📚
       link: /community/educators/literature/
+    - theme: alt
+      text: Game Design Track 🎲
+      link: /community/educators/rpg-dynamics/
 
 features:
   - title: "Chromebook & Web-Ready"
@@ -24,7 +27,7 @@ features:
     details: "Guest logins require zero Personally Identifiable Information (PII). Students can jump straight into active learning labs without creating accounts or exposing emails."
     icon: 🔒
   - title: "Timed 45-Minute Labs & 1-Week Units"
-    details: "Flexible curriculum modules fit single class periods or expand into full 5-day unit projects for Computer Science (AP CS Principles, CS101) and Literature."
+    details: "Flexible curriculum modules fit single class periods or expand into full 5-day unit projects for Computer Science, Literature, and Game Design."
     icon: ⏱️
 ---
 
@@ -32,7 +35,7 @@ features:
   <p class="custom-block-title">Welcome Educators!</p>
   <p>
     <strong>Multi-Users in Middle-earth (MUME)</strong> has been running continuously since 1992 as a living text-based virtual world.
-    By leveraging MUME's rich text environment and browser-based client, educators can teach fundamental Computer Science concepts (CLI syntax, RegEx, State Machines) and Humanities topics (Spatial Narrative, Tolkien Studies, Digital Archaeology) with zero financial cost and minimal technical friction.
+    By leveraging MUME's rich text environment and browser-based client, educators can teach fundamental Computer Science concepts (CLI syntax, RegEx, State Machines), Humanities topics (Spatial Narrative, Tolkien Studies, Digital Archaeology), and Game Design principles (TTRPG evolution, Bartle player taxonomy) with zero financial cost and minimal technical friction.
   </p>
 </div>
 
@@ -62,6 +65,12 @@ features:
   <h3>📚 Humanities Track</h3>
   <p>Discover interactive literature and game design labs examining Middle-earth spatial narrative, canonical geography adaptation, and MUD digital history.</p>
   <a href="/community/educators/literature/" class="vp-button alt" style="display: inline-block; margin-top: 0.5rem;">Explore Humanities Track →</a>
+</div>
+
+<div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
+  <h3>🎲 Game Design & RPG Dynamics</h3>
+  <p>Examine the evolution from tabletop RPGs (D&D) to digital virtual tabletops (VTTs) and apply Richard Bartle's 1996 player taxonomy to critique game mechanics.</p>
+  <a href="/community/educators/rpg-dynamics/" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Explore Game Design Track →</a>
 </div>
 
 </div>
