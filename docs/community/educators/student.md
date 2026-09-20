@@ -11,6 +11,10 @@ description: Printable student quickstart guide for MUME classroom labs, coverin
 
 Welcome to **MUME (Multi-Users in Middle-earth)**! You are about to enter a rich, text-based interactive world set in Tolkien's Middle-earth. Use this quick reference guide to connect, create your character, navigate, and record your lab answers.
 
+::: tip 🌟 Exploring Beyond the Classroom?
+For complete game guides, class builds, lore, and the full step-by-step interactive walkthrough, visit the [**Newcomers Hub**](../../resources/newcomers) or play the [**Interactive Web Tutorial**](../../play/tutorial/1-orientation).
+:::
+
 ---
 
 ## 🚀 1. How to Launch & Create Your Account (Zero PII Required)
