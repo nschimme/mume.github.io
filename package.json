@@ -9,7 +9,8 @@
     "preview": "vitepress preview docs",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "verify-links": "node scripts/verify-relative-links.cjs"
   },
   "dependencies": {
     "vue": "^3.5.42"
