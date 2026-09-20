@@ -1,22 +1,32 @@
 ---
 title: Student Quickstart Cheatsheet | Educator Portal
-description: Printable student quickstart guide for MUME classroom labs, covering web client connection, basic movement, essential commands, and lab submission steps.
+description: Printable student quickstart guide for MUME classroom labs, covering web client connection, PII-free account creation, 3-minute preset, movement, essential commands, and lab submission steps.
 ---
 
 # 📄 Student Quickstart Cheatsheet
 
-Welcome to **MUME (Multi-Users in Middle-earth)**! You are about to enter a rich, text-based interactive world set in Tolkien's Middle-earth. Use this quick reference guide to connect, navigate, and record your lab answers.
+Welcome to **MUME (Multi-Users in Middle-earth)**! You are about to enter a rich, text-based interactive world set in Tolkien's Middle-earth. Use this quick reference guide to connect, create your character, navigate, and record your lab answers.
 
 ---
 
-## 🚀 1. How to Launch the Web Client
+## 🚀 1. How to Launch & Create Your Account (Zero PII Required)
 
-1. Open your web browser (Chrome, Firefox, Edge, Safari).
-2. Click the link or type the URL:
+1. Click the button or type the URL:
    <div style="text-align: center; margin: 1.5rem 0;">
      <a href="https://mume.org/play" target="_self" rel="external" class="vp-button brand" style="font-size: 1.2rem; padding: 0.8rem 2rem;">Launch MUME Web Client 🚀</a>
    </div>
-3. When the screen loads, choose **Guest Login** or enter your assigned character name.
+2. When prompted in the terminal:
+   * Type `NEW` to register a new account.
+   * Enter an **Account Name** (e.g. `cs101_student01`) and a **Passphrase**. *(No email address or personal name is ever requested!)*
+3. Create your character when prompted:
+   * **Race:** `Man` (or your choice)
+   * **Subrace:** `Eriadorian`
+   * **Starting Location:** `Black Hill Village`
+   * **Archetype:** `Warrior`
+
+::: tip ⏩ Fast Lab Shortcut (Skip Tutorial)
+If your class is starting directly with CS or Game Design labs, type `pray` **twice** after awakening in Mandos to skip the introductory tutorial and warp straight to **Black Hill Village** (`The Foaming Mug`).
+:::
 
 ---
 
@@ -52,7 +62,7 @@ Movement in MUME uses compass directions. You can type the full word or just the
 
 When completing lab assignments:
 
-1. Use your mouse cursor to highlight the relevant text in the MUME terminal window.
+1. Use your mouse cursor to highlight the relevant text lines in the MUME terminal window.
 2. Press `Ctrl + C` (Windows/Chromebook) or `Cmd + C` (Mac) to copy the highlighted text.
 3. Switch to your assignment Google Doc, Canvas entry, or submission form and press `Ctrl + V` or `Cmd + V` to paste your output.
 

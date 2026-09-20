@@ -39,6 +39,23 @@ You can trust us to stick to you through thick and thin&mdash;to the bitter end.
 <h1>Join the Community</h1>
 
 <div class="community-grid">
+
+<section class="community-section">
+<h2><i class="fa fa-graduation-cap" aria-hidden="true"></i> Educator & Classroom Portal</h2>
+<div class="card">
+<img src="/assets/images/doors-of-durin.png" srcset="/assets/images/doors-of-durin.png 1x, /assets/images/doors-of-durin@2x.png 2x" alt="Educator Portal">
+<div>
+<h3>MUME in the Classroom</h3>
+<p>
+Zero-install, browser-based 45-minute active learning labs for Computer Science (CLI, RegEx, State Machines), Literature (Spatial Narrative), and Game Design (TTRPG Evolution, Bartle Taxonomy).
+</p>
+<a href="./community/educators/" class="read-more">Explore Educator Portal <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+</div>
+</div>
+</section>
+
+<div class="separator"></div>
+
 <section class="community-section">
 <h2><i class="fa fa-comments" aria-hidden="true"></i> Real-time Chat</h2>
 <p>Our Discord server is the most active place for players to chat, find help, and coordinate adventures.</p>

@@ -1,31 +1,46 @@
 ---
 title: Classroom & IT Setup Guide | Educator Portal
-description: Technical setup guide for IT administrators and teachers to run MUME in high school and college classrooms while ensuring FERPA compliance and network compatibility.
+description: Technical setup guide for IT administrators and teachers to run MUME in high school and college classrooms while ensuring FERPA compliance, PII-free account setup, and network compatibility.
 ---
 
 # ⚙️ Classroom & IT Setup Guide
 
-This guide assists IT network administrators and educators in deploying **MUME (Multi-Users in Middle-earth)** for classroom instruction. Designed specifically to eliminate technical friction, MUME requires no local software installation, no administrative rights on student devices, and no student email registrations.
+This guide assists IT network administrators and educators in deploying **MUME (Multi-Users in Middle-earth)** for classroom instruction. Designed specifically to eliminate technical friction, MUME requires no local software installation, no administrative rights on student devices, and zero student email or personal data collection.
 
 ---
 
-## 🔒 1. Student Privacy & FERPA Compliance
+## 🔒 1. Student Privacy & FERPA Compliance (PII-Free Account Creation)
 
 Student privacy laws (such as the Family Educational Rights and Privacy Act - **FERPA** in the US and **GDPR-K**) strictly regulate student Personally Identifiable Information (PII) on third-party platforms.
 
-MUME supports full FERPA compliance through its **Guest Login Workflow**:
+MUME natively satisfies full FERPA compliance because account creation requires **Zero Personally Identifiable Information (PII)**:
 
-* **Zero PII Collection:** Guest logins do not request names, email addresses, phone numbers, or passwords.
-* **Anonymous Identifiers:** Students connect using temporary guest accounts or custom classroom pseudonyms (e.g., `student_cs101_01`).
+* **Zero PII Required:** MUME account creation requires **no real names, no email addresses, no phone numbers, and no birthdates**.
+* **Anonymous Account Identifiers:** Students register using an account name and passphrase of their choice or classroom pseudonyms assigned by the teacher (e.g., Account: `cs101_student01`, Character: `Eldar_CS`).
 * **Clean Log Exporting:** Students capture local terminal logs directly in their browser and submit answers locally through your school's LMS (Canvas, Google Classroom, Blackboard, Schoology).
 
 ::: tip Teacher Recommendation
-For multi-day labs, have students record their character name and passphrase in their physical lab notebook. No student personal email or institution account is ever linked to MUME servers.
+For multi-day labs, have students record their account name, character name, and passphrase in their physical lab notebook or password manager. No institution or personal email is ever linked to MUME servers.
 :::
 
 ---
 
-## 🌐 2. Network & Firewall Configuration
+## ⏱️ 2. 3-Minute Express Character Creation & Tutorial Skip
+
+To maximize classroom teaching time during tight 45-minute lab periods, use this streamlined onboarding sequence:
+
+### ⚡ Step-by-Step 3-Minute Express Preset:
+1. Open <a href="https://mume.org/play" target="_self" rel="external">https://mume.org/play</a> (or [/play/browser](/play/browser)).
+2. At the prompt, type `NEW` and press `Enter`.
+3. Enter your **Account Name** (e.g., `cs101_student01`) and a secure **Passphrase**.
+4. Create your character (e.g., Race: `Man`, Subrace: `Eriadorian`, Starting Location: `Black Hill Village`, Archetype: `Warrior`).
+
+### ⏩ Fast Tutorial Skip for CS / Advanced Labs:
+When a new character awakens in Mandos, type `pray` (or `pray to the tower hills`) **twice** to skip the introductory story sequence and warp immediately to **Black Hill Village** (`The Foaming Mug's Beer Garden`), where students can instantly begin active CLI, RegEx, or State Machine lab exercises.
+
+---
+
+## 🌐 3. Network & Firewall Configuration
 
 Traditional MUDs operate over Telnet or custom TCP sockets on non-standard ports (such as `mume.org:4242`), which are blocked by default on school networks and modern Chromebook firewalls.
 
@@ -44,27 +59,12 @@ Because the web client communicates via Secure WebSockets (`wss://`) over standa
 
 ---
 
-## ⏱️ 3. 15-Minute Classroom Onboarding Checklist
-
-Follow this simple checklist before launching your first lab session:
-
-### Step 1: Pre-Lab Verification (5 Minutes)
-1. Open a browser window on a student Chromebook or device.
-2. Navigate to <a href="https://mume.org/play" target="_self" rel="external">https://mume.org/play</a> or our [Browser Client](/play/browser).
-3. Confirm that the terminal window initializes and displays the MUME welcome prompt.
-
-### Step 2: Classroom Orientation (5 Minutes)
-1. Provide students with the [Student Quickstart Cheatsheet](/community/educators/student).
-2. Instruct students to select **Guest Mode** or create a designated classroom character name.
-3. Review basic command execution (`look`, `exits`, `inventory`).
-
-### Step 3: Verification & Log Submission (5 Minutes)
-1. Demonstrate how to select and copy text from the MUME web client terminal.
-2. Show students where to paste terminal output into their lab assignment document or Google Docs/Canvas submission portal.
-
----
-
 ## 💬 Frequently Asked Questions (FAQ)
+
+<details>
+<summary><strong>Do students need to provide an email address?</strong></summary>
+<p>No. MUME account creation requires no email address or real name. Students simply choose an account name and passphrase.</p>
+</details>
 
 <details>
 <summary><strong>Do students need to install software or browser extensions?</strong></summary>
@@ -86,4 +86,4 @@ Follow this simple checklist before launching your first lab session:
 ## 📍 Next Steps
 
 * Share the [Student Quickstart Cheatsheet](/community/educators/student) with your class.
-* Explore the [STEM & CS Curriculum Track](/community/educators/cs/) or [Humanities Curriculum Track](/community/educators/literature/).
+* Explore the [STEM & CS Curriculum Track](/community/educators/cs/), [Humanities Curriculum Track](/community/educators/literature/), or [Game Design Track](/community/educators/rpg-dynamics/).
