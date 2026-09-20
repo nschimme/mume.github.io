@@ -112,7 +112,7 @@ Submit your answers to the following worksheet:
 
 ---
 
-## 📊 6. Teacher Answer Key & Assessment Rubric
+::: details 🔑 Teacher Answer Key & Assessment Rubric (Click to Expand)
 
 ### Answer Key
 * **Challenge RegEx:** `^(.+)\s+is\s+(.+)\.$`

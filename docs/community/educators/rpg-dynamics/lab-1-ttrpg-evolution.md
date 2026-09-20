@@ -74,7 +74,7 @@ Submit your comparative analysis along with:
 
 ---
 
-## 📊 6. Teacher Answer Key & Assessment Rubric
+::: details 🔑 Teacher Assessment Rubric (Click to Expand)
 
 ### 10-Point Grading Rubric
 

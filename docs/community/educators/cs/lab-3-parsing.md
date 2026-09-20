@@ -105,7 +105,7 @@ Submit your completed Lua script and State Transition Table:
 
 ---
 
-## 📊 6. Teacher Answer Key & Assessment Rubric
+::: details 🔑 Teacher Answer Key & Assessment Rubric (Click to Expand)
 
 ### Complete Capstone FSM Script (Lua)
 ```lua
@@ -133,3 +133,5 @@ end
 | **State Machine Table** | 3 pts | Complete transition table covering all 4 states and events. |
 | **Lua FSM Logic** | 4 pts | Correct state variables, guard conditions, and transition assignments. |
 | **Challenge Extension** | 3 pts | Successful implementation of `RESTING -> IDLE` recovery logic. |
+
+:::

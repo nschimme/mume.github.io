@@ -94,7 +94,7 @@ Submit your completed 3-part Game Design Critique (300–500 words).
 
 ---
 
-## 📊 6. Teacher Answer Key & Assessment Rubric
+::: details 🔑 Teacher Assessment Rubric (Click to Expand)
 
 ### 10-Point Grading Rubric
 

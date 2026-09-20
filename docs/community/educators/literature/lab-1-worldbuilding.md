@@ -80,7 +80,7 @@ Submit your written room description along with answers to these reflection ques
 
 ---
 
-## 📊 6. Teacher Answer Key & Assessment Rubric
+::: details 🔑 Teacher Answer Key & Assessment Rubric (Click to Expand)
 
 ### 10-Point Grading Rubric
 
@@ -89,3 +89,5 @@ Submit your written room description along with answers to these reflection ques
 | **Sensory Immersion** | 4 pts | Room description incorporates vivid sensory details (visuals, sounds, atmosphere). |
 | **Geographical Logic** | 3 pts | Exits and spatial boundaries are clearly articulated and logically coherent. |
 | **Literary Reflection** | 3 pts | Thoughtful analysis comparing textual MUD movement to narrative literature. |
+
+:::

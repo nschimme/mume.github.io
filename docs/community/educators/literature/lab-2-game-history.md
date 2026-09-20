@@ -74,7 +74,7 @@ Submit your completed essay and primary source worksheet:
 
 ---
 
-## 📊 6. Teacher Answer Key & Assessment Rubric
+::: details 🔑 Teacher Answer Key & Assessment Rubric (Click to Expand)
 
 ### 10-Point Grading Rubric
 
@@ -83,3 +83,5 @@ Submit your completed essay and primary source worksheet:
 | **Primary Source Citation** | 3 pts | Accurate citation and analysis of historical MUME survey/news data. |
 | **Digital Archaeology Analysis** | 4 pts | Well-reasoned essay addressing MUD preservation and community longevity. |
 | **Comparative Reflection** | 3 pts | Insightful comparison between text-based MUD environments and modern gaming/social platforms. |
+
+:::

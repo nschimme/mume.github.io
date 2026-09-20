@@ -101,7 +101,7 @@ To receive full credit for this lab, copy your terminal session showing:
 
 ---
 
-## 📊 6. Teacher Answer Key & Assessment Rubric
+::: details 🔑 Teacher Answer Key & Assessment Rubric (Click to Expand)
 
 ### Answer Key
 * **Task 1 Alias:** `alias x examine *`
@@ -114,3 +114,5 @@ To receive full credit for this lab, copy your terminal session showing:
 | **Syntax Correctness** | 4 pts | Correct use of `alias` keywords and parameter wildcards (`*`). |
 | **Multi-Command Chaining** | 3 pts | Proper semicolon `;` separation of sequential actions. |
 | **Verification Log** | 3 pts | Complete terminal output captured and submitted cleanly. |
+
+:::
