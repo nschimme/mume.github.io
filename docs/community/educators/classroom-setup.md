@@ -67,8 +67,8 @@ Traditional MUDs operate over Telnet or custom TCP sockets on non-standard ports
 
 ```mermaid
 graph LR
-    A[💻 Student Chromebook] -->|Port 443 / HTTPS & WSS| B[🛡️ School Content Filter<br>Securly / GoGuardian]
-    B -->|PASSED| C[🏰 MUME Web Server<br>mume.org / docs.mume.org]
+    A["💻 Student Chromebook"] -->|"Port 443 / HTTPS & WSS"| B["🛡️ School Content Filter<br>Securly / GoGuardian"]
+    B -->|"PASSED"| C["🏰 MUME Web Server<br>mume.org / docs.mume.org"]
 ```
 
 MUME provides a native web client operating entirely over standard web protocols:

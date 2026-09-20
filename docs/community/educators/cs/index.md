@@ -21,17 +21,17 @@ Educators can deliver these modules as standalone 45-minute lab sessions or comb
 
 ```mermaid
 graph LR
-    A[🖥️ MUME Stream] --> B[🔍 RegEx Engine<br>^\\d+H \\d+M]
-    B --> C[📊 Capture Variables<br>hp, mana]
-    C --> D[⚙️ FSM Evaluator<br>State Transition]
+    A["🖥️ MUME Stream"] --> B["🔍 RegEx Engine<br>^\d+H \d+M"]
+    B --> C["📊 Capture Variables<br>hp, mana"]
+    C --> D["⚙️ FSM Evaluator<br>State Transition"]
 ```
 
 ```mermaid
 graph LR
-    D1[Day 1: CLI & Aliases] --> D2[Day 2: RegEx Captures]
-    D2 --> D3[Day 3: Triggers & Actions]
-    D3 --> D4[Day 4: State Automata]
-    D4 --> D5[Day 5: Capstone Script]
+    D1["Day 1: CLI & Aliases"] --> D2["Day 2: RegEx Captures"]
+    D2 --> D3["Day 3: Triggers & Actions"]
+    D3 --> D4["Day 4: State Automata"]
+    D4 --> D5["Day 5: Capstone Script"]
 ```
 
 ### Option A: Express 45-Minute Single Period Labs

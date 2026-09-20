@@ -21,18 +21,18 @@ Educators can deliver these modules as standalone 45-minute lab sessions or comb
 
 ```mermaid
 graph TD
-    N[⬆️ North: Westron Road] <--> BG[📍 Beer Garden]
-    S[⬇️ South: Village Gates] <--> BG
-    W[⬅️ West: Taproom] <--> BG
-    E[➡️ East: Market Square] <--> BG
+    N["⬆️ North: Westron Road"] <--> BG["📍 Beer Garden"]
+    S["⬇️ South: Village Gates"] <--> BG
+    W["⬅️ West: Taproom"] <--> BG
+    E["➡️ East: Market Square"] <--> BG
 ```
 
 ```mermaid
 graph LR
-    D1[Day 1: Spatial Narrative] --> D2[Day 2: Room Topography]
-    D2 --> D3[Day 3: Game History]
-    D3 --> D4[Day 4: Community Lore]
-    D4 --> D5[Day 5: Room Design Project]
+    D1["Day 1: Spatial Narrative"] --> D2["Day 2: Room Topography"]
+    D2 --> D3["Day 3: Game History"]
+    D3 --> D4["Day 4: Community Lore"]
+    D4 --> D5["Day 5: Room Design Project"]
 ```
 
 ### Option A: Express 45-Minute Single Period Labs

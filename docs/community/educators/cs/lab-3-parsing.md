@@ -39,9 +39,9 @@ A player character in MUME transitions between distinct operational states based
 stateDiagram-v2
     [*] --> IDLE
     IDLE --> COMBAT : Engaged in Combat
-    COMBAT --> FLEEING : HP < 25% Threshold
+    COMBAT --> FLEEING : HP under 25% Threshold
     FLEEING --> RESTING : Disengagement Successful
-    RESTING --> IDLE : HP Recovered > 90% (send "stand")
+    RESTING --> IDLE : HP Recovered above 90%
 ```
 
 ### The 4 States:

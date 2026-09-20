@@ -40,10 +40,10 @@ quadrantChart
     title Bartle Player Taxonomy Quadrants (1996)
     x-axis Interacting with World --> Acting on World
     y-axis Interacting with Players --> Acting on Players
-    quadrant-1 Achievers (Diamonds - Leveling & Gear)
-    quadrant-2 Killers (Clubs - PvP & War)
-    quadrant-3 Socializers (Hearts - Roleplay & Guilds)
-    quadrant-4 Explorers (Spades - Mapping & Secrets)
+    quadrant-1 Achievers
+    quadrant-2 Killers
+    quadrant-3 Socializers
+    quadrant-4 Explorers
 ```
 
 ### The 4 Archetypes:

@@ -24,18 +24,18 @@ quadrantChart
     title Bartle Player Taxonomy (1996)
     x-axis Interacting with World --> Acting on World
     y-axis Interacting with Players --> Acting on Players
-    quadrant-1 Achievers (Diamonds)
-    quadrant-2 Killers (Clubs)
-    quadrant-3 Socializers (Hearts)
-    quadrant-4 Explorers (Spades)
+    quadrant-1 Achievers
+    quadrant-2 Killers
+    quadrant-3 Socializers
+    quadrant-4 Explorers
 ```
 
 ```mermaid
 graph LR
-    D1[Day 1: Tabletop Roots] --> D2[Day 2: Digital Dimensions]
-    D2 --> D3[Day 3: Bartle Taxonomy]
-    D3 --> D4[Day 4: System Critique]
-    D4 --> D5[Day 5: Redesign Proposal]
+    D1["Day 1: Tabletop Roots"] --> D2["Day 2: Digital Dimensions"]
+    D2 --> D3["Day 3: Bartle Taxonomy"]
+    D3 --> D4["Day 4: System Critique"]
+    D4 --> D5["Day 5: Redesign Proposal"]
 ```
 
 ### Option A: Express 45-Minute Single Period Labs
