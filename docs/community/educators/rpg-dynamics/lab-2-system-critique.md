@@ -4,7 +4,7 @@ description: Complete 45-minute Game Design lab applying Richard Bartle's 1996 P
 ---
 
 <div class="page-banner">
-  <img class="banner-img" src="/assets/images/mudlet@2x.png" alt="Mudlet & MUME Scripting Interface" />
+  <img class="banner-img" src="/assets/images/mume-classes@2x.png" alt="MUME Character Classes & Mechanics" />
 </div>
 
 # 🎲 RPG Dynamics Lab 2: RPG Dynamics & Bartle Player Taxonomy Critique

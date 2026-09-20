@@ -4,7 +4,7 @@ description: Complete 45-minute Game Design lab analyzing how computer code adds
 ---
 
 <div class="page-banner">
-  <img class="banner-img" src="/assets/images/doors-of-durin@2x.png" alt="Doors of Durin - MUME Spatial Lore" />
+  <img class="banner-img" src="/assets/images/boromir-horn@2x.png" alt="Boromir Horn - TTRPG Heroic Archetypes" />
 </div>
 
 # 🎲 RPG Dynamics Lab 1: From Tabletop to Digital - Adding Dimensions

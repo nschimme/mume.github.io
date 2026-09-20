@@ -4,7 +4,7 @@ description: Printable student quickstart guide for MUME classroom labs, coverin
 ---
 
 <div class="page-banner">
-  <img class="banner-img" src="/assets/images/mmapper-wasm@2x.webp" alt="MMapper Web Interface" />
+  <img class="banner-img" src="/assets/images/play-now-banner.jpg" srcset="/assets/images/play-now-banner.jpg 1x, /assets/images/play-now-banner@2x.jpg 2x" alt="MUME Web Client Onboarding" />
 </div>
 
 # 📄 Student Quickstart Cheatsheet

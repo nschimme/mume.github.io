@@ -4,7 +4,7 @@ description: Complete 45-minute CS lab teaching event-driven trigger actions, st
 ---
 
 <div class="page-banner">
-  <img class="banner-img" src="/assets/images/mmapper-wasm@2x.webp" alt="MUME State Automata & Mapping Interface" />
+  <img class="banner-img" src="/assets/images/doors-of-durin@2x.png" alt="Doors of Durin - MUME Parser Inscriptions" />
 </div>
 
 # 💻 CS Lab 3: Event Triggers & Finite State Machines
