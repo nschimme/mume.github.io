@@ -65,41 +65,11 @@ When a new character awakens in Mandos, type `pray` (or `pray to the tower hills
 
 Traditional MUDs operate over Telnet or custom TCP sockets on non-standard ports (such as `mume.org:4242`), which are blocked by default on school networks and modern Chromebook firewalls.
 
-<div style="margin: 2rem 0; border: 1px solid rgba(215, 166, 63, 0.25); background: rgba(0,0,0,0.25); border-radius: 10px; padding: 1.5rem;">
-  <div style="text-align: center; font-weight: bold; color: var(--vp-c-brand-1); margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">
-    🌐 Firewall-Friendly HTTPS & Secure WebSocket Architecture
-  </div>
-
-  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.8rem;">
-    <!-- Node 1 -->
-    <div style="border: 1px solid rgba(215, 166, 63, 0.3); background: rgba(0,0,0,0.2); padding: 0.8rem 1.2rem; border-radius: 8px; text-align: center;">
-      <div style="font-size: 1.2rem;">💻</div>
-      <strong style="font-size: 0.9rem; color: var(--vp-c-text-1);">Student Chromebook</strong>
-    </div>
-
-    <div style="color: var(--vp-c-brand-1); font-weight: bold; font-size: 0.85rem;">
-      ──(Port 443 / HTTPS & WSS)──►
-    </div>
-
-    <!-- Node 2 -->
-    <div style="border: 1px solid rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.08); padding: 0.8rem 1.2rem; border-radius: 8px; text-align: center;">
-      <div style="font-size: 1.2rem;">🛡️</div>
-      <strong style="font-size: 0.9rem; color: #60a5fa;">School Content Filter</strong>
-      <div style="font-size: 0.75rem; color: #34d399; margin-top: 0.2rem;">(Securly / GoGuardian: PASSED)</div>
-    </div>
-
-    <div style="color: #34d399; font-weight: bold; font-size: 0.85rem;">
-      ──►
-    </div>
-
-    <!-- Node 3 -->
-    <div style="border: 1px solid rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.08); padding: 0.8rem 1.2rem; border-radius: 8px; text-align: center;">
-      <div style="font-size: 1.2rem;">🏰</div>
-      <strong style="font-size: 0.9rem; color: #34d399;">MUME Web Server</strong>
-      <div style="font-size: 0.75rem; color: var(--vp-c-text-2); margin-top: 0.2rem;">(mume.org / docs.mume.org)</div>
-    </div>
-  </div>
-</div>
+```mermaid
+graph LR
+    A[💻 Student Chromebook] -->|Port 443 / HTTPS & WSS| B[🛡️ School Content Filter<br>Securly / GoGuardian]
+    B -->|PASSED| C[🏰 MUME Web Server<br>mume.org / docs.mume.org]
+```
 
 MUME provides a native web client operating entirely over standard web protocols:
 

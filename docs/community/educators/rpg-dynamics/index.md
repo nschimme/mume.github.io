@@ -19,43 +19,24 @@ By using **Multi-Users in Middle-earth (MUME)** as a living digital laboratory, 
 
 Educators can deliver these modules as standalone 45-minute lab sessions or combine them into a 5-day game design unit:
 
-<div style="margin: 2rem 0; border: 1px solid rgba(215, 166, 63, 0.25); background: rgba(0,0,0,0.25); border-radius: 10px; padding: 1.5rem;">
-  <div style="text-align: center; font-weight: bold; color: var(--vp-c-brand-1); margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">
-    🎲 Richard Bartle's 1996 Player Type Axes
-  </div>
+```mermaid
+quadrantChart
+    title Bartle Player Taxonomy (1996)
+    x-axis Interacting with World --> Acting on World
+    y-axis Interacting with Players --> Acting on Players
+    quadrant-1 Achievers (Diamonds)
+    quadrant-2 Killers (Clubs)
+    quadrant-3 Socializers (Hearts)
+    quadrant-4 Explorers (Spades)
+```
 
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem; text-align: center;">
-    <div style="border: 1px solid rgba(234, 179, 8, 0.4); background: rgba(234, 179, 8, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.88rem; color: #facc15;">
-      🏆 <strong>Achievers:</strong> Acting on World
-    </div>
-    <div style="border: 1px solid rgba(239, 68, 68, 0.4); background: rgba(239, 68, 68, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.88rem; color: #f87171;">
-      ⚔️ <strong>Killers:</strong> Acting on Players
-    </div>
-    <div style="border: 1px solid rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.88rem; color: #34d399;">
-      🗺️ <strong>Explorers:</strong> Interacting with World
-    </div>
-    <div style="border: 1px solid rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.08); padding: 0.75rem; border-radius: 6px; font-size: 0.88rem; color: #60a5fa;">
-      💬 <strong>Socializers:</strong> Interacting with Players
-    </div>
-  </div>
-</div>
-
-<div style="margin: 1.5rem 0; border: 1px solid rgba(215, 166, 63, 0.25); background: rgba(0,0,0,0.15); border-radius: 10px; padding: 1.25rem;">
-  <div style="text-align: center; font-weight: bold; color: var(--vp-c-brand-1); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem;">
-    📅 5-Day Game Design & RPG Dynamics Unit Sequence
-  </div>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
-    <span style="background: rgba(215, 166, 63, 0.15); border: 1px solid rgba(215, 166, 63, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px;">Day 1: Tabletop Roots</span>
-    <span style="color: var(--vp-c-brand-1);">➔</span>
-    <span style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px; color: #60a5fa;">Day 2: Digital Dimensions</span>
-    <span style="color: #60a5fa;">➔</span>
-    <span style="background: rgba(234, 179, 8, 0.15); border: 1px solid rgba(234, 179, 8, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px; color: #facc15;">Day 3: Bartle Taxonomy</span>
-    <span style="color: #facc15;">➔</span>
-    <span style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px; color: #34d399;">Day 4: System Critique</span>
-    <span style="color: #34d399;">➔</span>
-    <span style="background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px; color: #c084fc;">Day 5: Redesign Proposal</span>
-  </div>
-</div>
+```mermaid
+graph LR
+    D1[Day 1: Tabletop Roots] --> D2[Day 2: Digital Dimensions]
+    D2 --> D3[Day 3: Bartle Taxonomy]
+    D3 --> D4[Day 4: System Critique]
+    D4 --> D5[Day 5: Redesign Proposal]
+```
 
 ### Option A: Express 45-Minute Single Period Labs
 * **Lab 1 (45 min):** [From Tabletop to Digital - Adding Dimensions](/community/educators/rpg-dynamics/lab-1-ttrpg-evolution)

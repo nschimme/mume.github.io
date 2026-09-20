@@ -1,9 +1,10 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
 const base = (process.env.VITE_BASE || '/').replace(/\/+$/, '/')
 const normalizedBase = base.startsWith('/') ? base : `/${base}`
 
-export default defineConfig({
+export default withMermaid(defineConfig({
   title: "MUME Community",
   description: "Explore the MUME community: official Discord, Elvenrunes, open-source mapping tools like MMapper, and player-developed clients for Multi-Users in Middle-earth.",
   cleanUrls: true,
@@ -112,5 +113,8 @@ export default defineConfig({
     define: {
       __LAST_UPDATED__: JSON.stringify(process.env.VITE_LAST_UPDATED || 'May 2024')
     }
+  },
+  mermaid: {
+    theme: 'dark'
   }
-})
+}))

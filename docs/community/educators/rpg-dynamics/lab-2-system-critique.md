@@ -35,57 +35,16 @@ In this lab, students evaluate MUME through the lens of the **Bartle Taxonomy of
 
 Bartle divides players along two axes: **Action vs. Interaction** and **Players vs. World**:
 
-<div style="margin: 2rem 0; border: 1px solid rgba(215, 166, 63, 0.25); background: rgba(0,0,0,0.25); border-radius: 10px; padding: 1.5rem;">
-  <div style="text-align: center; font-weight: bold; color: var(--vp-c-brand-1); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">
-    ▲ ACTING ON
-  </div>
-
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
-    <!-- Killers -->
-    <div style="border: 1px solid rgba(239, 68, 68, 0.4); background: rgba(239, 68, 68, 0.08); padding: 1.25rem; border-radius: 8px;">
-      <div style="font-size: 1.1rem; font-weight: bold; color: #f87171; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-        <span>⚔️</span> KILLERS <span style="font-size: 0.8rem; opacity: 0.8; margin-left: auto;">(Clubs)</span>
-      </div>
-      <p style="font-size: 0.88rem; margin: 0; line-height: 1.4; color: var(--vp-c-text-2);">
-        <strong>Acting on Players:</strong> Motivated by competition, defeating rivals, PvP dominance, and faction warfare.
-      </p>
-    </div>
-
-    <!-- Achievers -->
-    <div style="border: 1px solid rgba(234, 179, 8, 0.4); background: rgba(234, 179, 8, 0.08); padding: 1.25rem; border-radius: 8px;">
-      <div style="font-size: 1.1rem; font-weight: bold; color: #facc15; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-        <span>🏆</span> ACHIEVERS <span style="font-size: 0.8rem; opacity: 0.8; margin-left: auto;">(Diamonds)</span>
-      </div>
-      <p style="font-size: 0.88rem; margin: 0; line-height: 1.4; color: var(--vp-c-text-2);">
-        <strong>Acting on World:</strong> Motivated by gaining levels, accumulating wealth, rare gear, and topping leaderboards.
-      </p>
-    </div>
-
-    <!-- Socializers -->
-    <div style="border: 1px solid rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.08); padding: 1.25rem; border-radius: 8px;">
-      <div style="font-size: 1.1rem; font-weight: bold; color: #60a5fa; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-        <span>💬</span> SOCIALIZERS <span style="font-size: 0.8rem; opacity: 0.8; margin-left: auto;">(Hearts)</span>
-      </div>
-      <p style="font-size: 0.88rem; margin: 0; line-height: 1.4; color: var(--vp-c-text-2);">
-        <strong>Interacting with Players:</strong> Motivated by roleplay, forming guilds, chatter, and community relationships.
-      </p>
-    </div>
-
-    <!-- Explorers -->
-    <div style="border: 1px solid rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.08); padding: 1.25rem; border-radius: 8px;">
-      <div style="font-size: 1.1rem; font-weight: bold; color: #34d399; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-        <span>🗺️</span> EXPLORERS <span style="font-size: 0.8rem; opacity: 0.8; margin-left: auto;">(Spades)</span>
-      </div>
-      <p style="font-size: 0.88rem; margin: 0; line-height: 1.4; color: var(--vp-c-text-2);">
-        <strong>Interacting with World:</strong> Motivated by mapping secret areas, uncovering lore, and reverse-engineering mechanics.
-      </p>
-    </div>
-  </div>
-
-  <div style="text-align: center; font-weight: bold; color: var(--vp-c-brand-1); margin-top: 1rem; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">
-    ▼ INTERACTING WITH
-  </div>
-</div>
+```mermaid
+quadrantChart
+    title Bartle Player Taxonomy Quadrants (1996)
+    x-axis Interacting with World --> Acting on World
+    y-axis Interacting with Players --> Acting on Players
+    quadrant-1 Achievers (Diamonds - Leveling & Gear)
+    quadrant-2 Killers (Clubs - PvP & War)
+    quadrant-3 Socializers (Hearts - Roleplay & Guilds)
+    quadrant-4 Explorers (Spades - Mapping & Secrets)
+```
 
 ### The 4 Archetypes:
 1. **Achievers (Diamonds):** Motivated by gaining levels, acquiring rare equipment, accumulating gold, and topping leaderboards.

@@ -35,53 +35,14 @@ In this lab, students combine RegEx pattern capture groups (from Lab 2) with con
 
 A player character in MUME transitions between distinct operational states based on incoming game events:
 
-<div style="margin: 2rem 0; border: 1px solid rgba(215, 166, 63, 0.25); background: rgba(0,0,0,0.25); border-radius: 10px; padding: 1.5rem;">
-  <div style="text-align: center; font-weight: bold; color: var(--vp-c-brand-1); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">
-    ⚙️ Finite State Machine (FSM) Data Flow & State Transitions
-  </div>
-
-  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem;">
-    <!-- IDLE -->
-    <div style="border: 2px solid var(--vp-c-brand-1); background: rgba(215, 166, 63, 0.1); padding: 1rem 1.5rem; border-radius: 8px; text-align: center; min-width: 110px;">
-      <div style="font-size: 1.2rem;">😴</div>
-      <strong style="color: var(--vp-c-brand-1);">IDLE</strong>
-    </div>
-
-    <div style="color: var(--vp-c-brand-1); font-weight: bold; font-size: 0.9rem;">
-      ──(In Combat)──►
-    </div>
-
-    <!-- COMBAT -->
-    <div style="border: 2px solid #f87171; background: rgba(239, 68, 68, 0.1); padding: 1rem 1.5rem; border-radius: 8px; text-align: center; min-width: 110px;">
-      <div style="font-size: 1.2rem;">⚔️</div>
-      <strong style="color: #f87171;">COMBAT</strong>
-    </div>
-
-    <div style="color: #f87171; font-weight: bold; font-size: 0.9rem;">
-      ──(HP &lt; 25% / Flee)──►
-    </div>
-
-    <!-- FLEEING -->
-    <div style="border: 2px solid #facc15; background: rgba(234, 179, 8, 0.1); padding: 1rem 1.5rem; border-radius: 8px; text-align: center; min-width: 110px;">
-      <div style="font-size: 1.2rem;">🏃</div>
-      <strong style="color: #facc15;">FLEEING</strong>
-    </div>
-
-    <div style="color: #34d399; font-weight: bold; font-size: 0.9rem;">
-      ──(Flee Success)──►
-    </div>
-
-    <!-- RESTING -->
-    <div style="border: 2px solid #34d399; background: rgba(16, 185, 129, 0.1); padding: 1rem 1.5rem; border-radius: 8px; text-align: center; min-width: 110px;">
-      <div style="font-size: 1.2rem;">🧘</div>
-      <strong style="color: #34d399;">RESTING</strong>
-    </div>
-  </div>
-
-  <div style="margin-top: 1.5rem; text-align: center; font-size: 0.88rem; color: var(--vp-c-text-2); border-top: 1px dashed rgba(215, 166, 63, 0.2); padding-top: 1rem;">
-    ↺ <strong>Loop Closure:</strong> When HP recovers above 90%, transition <code>RESTING ──► IDLE</code> and execute <code>send("stand")</code>.
-  </div>
-</div>
+```mermaid
+stateDiagram-v2
+    [*] --> IDLE
+    IDLE --> COMBAT : Engaged in Combat
+    COMBAT --> FLEEING : HP < 25% Threshold
+    FLEEING --> RESTING : Disengagement Successful
+    RESTING --> IDLE : HP Recovered > 90% (send "stand")
+```
 
 ### The 4 States:
 1. **`IDLE`**: Exploring or standing in a safe room.

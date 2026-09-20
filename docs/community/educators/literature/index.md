@@ -19,55 +19,21 @@ As a multi-decade adaptation of J.R.R. Tolkien's legendarium, **Multi-Users in M
 
 Educators can deliver these modules as standalone 45-minute lab sessions or combine them into a 5-day unit block:
 
-<div style="margin: 2rem 0; border: 1px solid rgba(215, 166, 63, 0.25); background: rgba(0,0,0,0.25); border-radius: 10px; padding: 1.5rem;">
-  <div style="text-align: center; font-weight: bold; color: var(--vp-c-brand-1); margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">
-    🗺️ Spatial Room Topography & Compass Exits Matrix
-  </div>
+```mermaid
+graph TD
+    N[⬆️ North: Westron Road] <--> BG[📍 Beer Garden]
+    S[⬇️ South: Village Gates] <--> BG
+    W[⬅️ West: Taproom] <--> BG
+    E[➡️ East: Market Square] <--> BG
+```
 
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
-    <!-- North -->
-    <div style="border: 1px solid rgba(215, 166, 63, 0.3); background: rgba(0,0,0,0.2); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem;">
-      ⬆️ North: Westron Road
-    </div>
-
-    <!-- Center row -->
-    <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; width: 100%; max-width: 500px;">
-      <div style="border: 1px solid rgba(215, 166, 63, 0.3); background: rgba(0,0,0,0.2); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; flex: 1; text-align: center;">
-        ⬅️ West: Taproom
-      </div>
-
-      <div style="border: 2px solid var(--vp-c-brand-1); background: rgba(215, 166, 63, 0.15); padding: 0.75rem 1.2rem; border-radius: 8px; font-weight: bold; color: var(--vp-c-brand-1); text-align: center; min-width: 140px;">
-        📍 Beer Garden
-      </div>
-
-      <div style="border: 1px solid rgba(215, 166, 63, 0.3); background: rgba(0,0,0,0.2); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; flex: 1; text-align: center;">
-        ➡️ East: Market
-      </div>
-    </div>
-
-    <!-- South -->
-    <div style="border: 1px solid rgba(215, 166, 63, 0.3); background: rgba(0,0,0,0.2); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem;">
-      ⬇️ South: Village Gates
-    </div>
-  </div>
-</div>
-
-<div style="margin: 1.5rem 0; border: 1px solid rgba(215, 166, 63, 0.25); background: rgba(0,0,0,0.15); border-radius: 10px; padding: 1.25rem;">
-  <div style="text-align: center; font-weight: bold; color: var(--vp-c-brand-1); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem;">
-    📅 5-Day Literature & Humanities Unit Progression
-  </div>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
-    <span style="background: rgba(215, 166, 63, 0.15); border: 1px solid rgba(215, 166, 63, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px;">Day 1: Spatial Narrative</span>
-    <span style="color: var(--vp-c-brand-1);">➔</span>
-    <span style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px; color: #60a5fa;">Day 2: Room Topography</span>
-    <span style="color: #60a5fa;">➔</span>
-    <span style="background: rgba(234, 179, 8, 0.15); border: 1px solid rgba(234, 179, 8, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px; color: #facc15;">Day 3: Game History</span>
-    <span style="color: #facc15;">➔</span>
-    <span style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px; color: #34d399;">Day 4: Community Lore</span>
-    <span style="color: #34d399;">➔</span>
-    <span style="background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px; color: #c084fc;">Day 5: Room Design Project</span>
-  </div>
-</div>
+```mermaid
+graph LR
+    D1[Day 1: Spatial Narrative] --> D2[Day 2: Room Topography]
+    D2 --> D3[Day 3: Game History]
+    D3 --> D4[Day 4: Community Lore]
+    D4 --> D5[Day 5: Room Design Project]
+```
 
 ### Option A: Express 45-Minute Single Period Labs
 * **Lab 1 (45 min):** [Spatial Narrative & Tolkien Worldbuilding in Text](/community/educators/literature/lab-1-worldbuilding)
