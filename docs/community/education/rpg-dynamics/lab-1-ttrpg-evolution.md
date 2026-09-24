@@ -1,89 +1,92 @@
 ---
-title: "RPG Dynamics Lab 1: From Tabletop to Digital - Adding Dimensions | Educator Portal"
-description: Complete 45-minute Game Design lab analyzing how computer code adds real-time combat, spatial fog-of-war, and automated state math that human Dungeon Masters cannot execute manually.
+title: "RPG Dynamics Lab 1: From Tabletop to Digital - Armor, Realism & IT Evolution | Educator Portal"
+description: Complete 45-minute Game Design lab analyzing the evolution from Fighting Fantasy gamebooks and classic D&D (BECMI/AD&D) to text MUDs and VTTs, focusing on Armor Class Evasion vs Damage Absorption.
 ---
 
 <div class="page-banner">
   <img class="banner-img" src="/assets/images/boromir-horn@2x.png" alt="Boromir Horn - TTRPG Heroic Archetypes" />
 </div>
 
-# 🎲 RPG Dynamics Lab 1: From Tabletop to Digital - Adding Dimensions
+# 🎲 RPG Dynamics Lab 1: From Tabletop to Digital - Armor, Realism & IT Evolution
 
 <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0;">
   <span style="border: 1px solid rgba(215, 166, 63, 0.4); background: rgba(215, 166, 63, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: var(--vp-c-brand-1);">
-    🏷️ College Game Design: Ludology & Technological Dimensions
+    🏷️ Interdisciplinary RPG Design (e.g., JINS350 Framework)
   </span>
   <span style="border: 1px solid rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem; color: #60a5fa;">
-    🏷️ TTRPG Studies: D&D Evolution to Real-Time Networks
+    🏷️ TTRPG History: Fighting Fantasy, BECMI, AD&D, MUDs & VTTs
   </span>
 </div>
 
 | Attribute | Details |
 | :--- | :--- |
-| **Target Audience** | Game Design, Game Studies, Interactive Media, TTRPG History |
-| **Duration** | 45-Minute Single Period (or Days 1-2 of 1-Week Unit) |
+| **Target Audience** | Game Design, Interdisciplinary Ludology, Interactive Media, TTRPG History |
+| **Duration** | 45-Minute Single Period (or Week 1 Exploration of Term Paper Unit) |
 | **Prerequisites** | None |
-| **Primary References** | MUME Game Mechanics, D&D / TTRPG Rulesets |
+| **Primary References** | MUME Game Engine, Old-School D&D Rulesets (BECMI, AD&D 1e/2e), Puffin Fighting Fantasy Books, VTT Systems (FoundryVTT, QuestlineVTT) |
 
 ---
 
 ## 🎯 1. Lab Overview & Objectives
 
-Early digital roleplaying games were created by tabletop enthusiasts (*Dungeons & Dragons* players) attempting to digitize pen-and-paper mechanics. However, moving from paper to computer networks allowed developers to unlock **technological dimensions** that a human Dungeon Master (DM) cannot manage manually.
+Roleplaying games evolved through distinct media formats—from single-player **Choose-Your-Own-Adventure** and **Puffin Fighting Fantasy** gamebooks, to tabletop systems (**Old-School D&D BECMI, AD&D 1e/2e**), real-time text-based MUDs (**MUME**), and modern **Virtual Tabletops (VTTs like QuestlineVTT, FoundryVTT, D&D Beyond Maps)**.
 
-In this lab, students log into MUME to observe three technological dimensions where server software surpasses physical tabletop constraints:
-1. **Real-time simultaneous action execution** (replacing turn-based initiative queues).
-2. **Enforced spatial fog-of-war and hidden information** (impartial line-of-sight, dynamic lighting, and weather).
-3. **Automated encumbrance and multi-variable state math** (stamina, weight capacity, and spell tick calculations).
+A central design friction in RPG history is **Realism vs. Playability**: balancing realistic real-world physics and military history against the cognitive burden placed on players and human Dungeon Masters (DMs).
 
----
-
-## 💡 2. The 3 Technological Dimensions
-
-### Dimension A: Real-Time Simultaneous Action
-In a physical TTRPG, combat requires a human DM to pause the game, collect initiative rolls, and process player turns sequentially. In MUME, time flows continuously in fractions of a second (pulse ticks). Attacks, movement, spell casting, and fleeing happen concurrently for dozens of players and NPCs simultaneously.
-
-### Dimension B: Enforced Hidden Information & Line-of-Sight
-A human DM struggles to maintain complete secrecy when displaying a physical grid map. In MUME, line-of-sight and visibility are strictly enforced by code:
-* If a room is dark and a player carries no light source, description text is obscured (`It is pitch dark...`).
-* Weather conditions (fog, rain, nightfall) dynamically modify movement costs and visibility radius without human memory bias.
-
-### Dimension C: Automated State Math & Encumbrance
-Calculating equipment weight down to ounces, tracking coin weight, monitoring hunger/thirst degradation, and adjusting movement speed based on terrain difficulty require thousands of calculations per minute—tasks handled invisibly in real-time by MUME's C++ server loop.
+In this lab, students evaluate the mechanical shift from **Armor Class Evasion** (D&D's abstract "harder to hit" model) to **Armor Damage Absorption** (MUME's material physics model where plate armor absorbs damage upon contact), examining how IT software automates complex physical formulas that human DMs cannot calculate in real time.
 
 ---
 
-## 🧪 3. Guided Gameplay Observation (20 Minutes)
+## 💡 2. The Evolution of RPG Systems & IT Automation
+
+### A. Media Timeline: Gamebooks to VTTs
+1. **Interactive Gamebooks (1980s):** Steve Jackson & Ian Livingstone's *Puffin Fighting Fantasy* books used dice, stat sheets, and branched paragraph choices for single-player automation.
+2. **Tabletop RPGs (BECMI / AD&D 1e/2e):** Human DMs managed rulesets using paper, polyhedral dice, and spreadsheets to calculate THAC0, initiative, and encumbrance.
+3. **Text MUDs (1990s–Present):** Servers like **MUME** introduced real-time multi-threaded game loops, managing thousands of simultaneous variable states (stamina decay, line-of-sight fog-of-war, weight, and armor mitigation).
+4. **Modern VTTs (2020s):** Platforms like FoundryVTT and QuestlineVTT re-apply MUD-style automated line-of-sight lighting and database math back onto 2D/3D graphical tabletop grids.
+
+```mermaid
+graph LR
+    A["📖 Puffin Fighting Fantasy<br/>Single-Player Branching Prose"] --> B["🎲 Old-School D&D (BECMI / AD&D)<br/>Human DM Turn-Based Tables"]
+    B --> C["🏰 Real-Time Text MUDs (MUME)<br/>Automated Server C++ Loop"]
+    C --> D["🖥️ Virtual Tabletops (FoundryVTT)<br/>Graphical Dynamic Lighting & Math"]
+```
+
+### B. Mechanics Focus: Armor as Evasion vs. Damage Absorption
+
+| RPG System | Armor Model | Mechanics Math | Realism vs. Playability Trade-off |
+| :--- | :--- | :--- | :--- |
+| **Classic D&D (AD&D / 5e)** | **Evasion (Armor Class)** | Armor makes you "harder to hit" ($D20 \ge AC$). | **High Playability / Low Realism:** Fast tabletop resolution, but unscientific (heavy plate does not make a target invisible to weapon contact; it absorbs kinetic impact). |
+| **MUME (Text MUD Engine)** | **Damage Absorption (%)** | Weapon hits contact body; armor reduces damage based on material type (Chain vs. Plate vs. Leather). | **High Realism / Automated Playability:** Server calculates kinetic mitigation per strike instantly, eliminating DM table calculation burden. |
+
+---
+
+## 🧪 3. Guided Gameplay & Spreadsheet Data Logging (20 Minutes)
 
 ::: info 🏰 Classroom Sandbox Note
-Students can execute these observation tests in the peaceful streets of **Black Hill Village** or **Bree Town**, adjusting torches and resting on tavern benches without combat risk.
+Students do not need complex combat setups. You can log armor mitigation statistics by examining equipment stats and conducting peaceful practice combat or dummy sparring in **Black Hill Village** or **Bree**.
 :::
 
 1. Launch the <a href="https://mume.org/play" target="_self" rel="external">MUME Web Client</a>.
-2. Execute the following observation sequence in-game:
+2. Open a spreadsheet application (Google Sheets / Excel) to log data.
+3. Execute the following inspection commands in-game:
 
-### Observation 1: Spatial & Lighting Test
-* Inspect your inventory (`inventory`) and room (`look`).
-* Extinguish or drop your light source (or walk into an unlit dark room).
-* Observe how the server dynamically alters environmental feedback.
-
-### Observation 2: Real-Time Speed & Tick Test
-* Type `score` and observe your Hit Points, Mana, and Movement points.
-* Initiate movement across multiple rooms (`n`, `e`, `s`, `w`). Notice how Movement points deplete dynamically in real time and regenerate when sitting or resting (`rest`).
+### Task 1: Inspect Armor Mitigation Values
+* Type `equipment` and `examine armor` (or examine specific gear like a steel breastplate, leather jacket, or chainmail).
+* Note the weight, material type, and protective absorption stats in your spreadsheet.
 
 <MumeSession>
 <pre class="session" v-pre>
-> <span class="command">look</span>
-<span class="look">Dark Forest Path [N, S, E]</span>
-<span class="narrate">The sun sets behind the Misty Mountains. Shadows engulf the forest path.</span>
-<span class="look">It is pitch dark...</span>
+> <span class="command">equipment</span>
+<span class="stat">You are wearing:
+  &lt;worn on body&gt;       a sturdy metal breastplate
+  &lt;worn on arms&gt;       a pair of chainmail sleeves
+  &lt;worn on legs&gt;       a pair of heavy leather greaves</span>
 
-> <span class="command">score</span>
-<span class="stat">HP: 110/110, Mana: 45/45, Movement: 32/120 (Exhausted from heavy marching)</span>
-
-> <span class="command">rest</span>
-<span class="narrate">You sit down and rest your tired feet.</span>
-<span class="stat">[ Tick ] You feel your energy returning... Movement: 72/120</span>
+> <span class="command">examine breastplate</span>
+<span class="look">It is a heavy plate armor forged from tempered steel.
+Material: Metal. Weight: 18 lbs. Condition: Pristine.
+Absorbs heavy slashing and thrusting impact.</span>
 </pre>
 </MumeSession>
 
@@ -91,20 +94,20 @@ Students can execute these observation tests in the peaceful streets of **Black 
 
 ## 🚀 4. Independent Student Challenge ("The Quest")
 
-**Analysis Assignment:**
-Select ONE mechanics interaction you observed during your MUME session that would be impossible or excruciatingly slow to run in a live pen-and-paper *Dungeons & Dragons* session.
+**Analysis & Writing Assignment: Realism vs. Playability Analysis**
+Write a 300-word interdisciplinary analysis comparing D&D's Armor Class Evasion against MUME's Damage Absorption model.
 
-Write a 2-paragraph comparative analysis addressing:
-1. How MUME automates the rule/math on the server side.
-2. Why running this exact rule manually at a tabletop would destroy gameplay pacing or overburden the DM.
+Address the following key points:
+1. **Suspension of Disbelief (Realism):** Why does modeling armor as damage absorption better reflect real-world physics and military history than armor as dodge evasion?
+2. **IT Automation (Playability):** Why would calculating percentage absorption for every body part and weapon material type ruin tabletop pacing without server/spreadsheet automation?
 
 ---
 
 ## 📝 5. Verification & Submission Requirements
 
-Submit your comparative analysis along with:
-* A pasted excerpt of your MUME terminal output demonstrating one of the 3 dimensions (real-time ticks, lighting changes, or stat math).
-
+Submit your completed analysis along with:
+1. **Spreadsheet Log:** A screenshot or table from your spreadsheet showing gear weights and armor material types logged from MUME.
+2. **Comparative Essay:** (300+ words).
 
 ---
 
@@ -114,6 +117,8 @@ Submit your comparative analysis along with:
 
 | Criterion | Points | Description |
 | :--- | :---: | :--- |
-| **Observation Verification** | 3 pts | Terminal log submitted proving active in-game observation of digital mechanics. |
-| **Dimension Analysis** | 4 pts | Clear identification of real-time ticks, hidden information, or state math. |
-| **Tabletop Comparison** | 3 pts | Well-articulated explanation of why pen-and-paper games cannot execute the mechanic in real time. |
+| **Data Logging Verification** | 3 pts | Submitted spreadsheet table accurately capturing gear weight and armor materials from MUME. |
+| **Interdisciplinary Analysis** | 4 pts | Clear evaluation of physics/military history realism vs. tabletop playability. |
+| **IT Automation Reflection** | 3 pts | Insightful explanation of how software (MUDs/VTTs) resolves complex physical calculations seamlessly. |
+
+:::

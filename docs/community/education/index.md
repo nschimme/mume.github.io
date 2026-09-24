@@ -14,7 +14,7 @@ description: "Zero-install, browser-based, zero-cost active learning inside Tolk
 </p>
 
 <p>
-  Engage students with 45-minute plug-and-play labs and week-long unit modules for Computer Science, Literature, and Game Design.
+  Engage students with 45-minute plug-and-play labs and writing-enhanced term project units for Computer Science, Literature, and Game Design.
 </p>
 
 <div class="playnow-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
@@ -41,9 +41,9 @@ description: "Zero-install, browser-based, zero-cost active learning inside Tolk
   </div>
 
   <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.02);">
-    <h3>⏱️ 45-Min Labs & 1-Week Units</h3>
+    <h3>⏱️ 45-Min Labs & Term Papers</h3>
     <p style="font-size: 0.95rem; margin-top: 0.5rem;">
-      Flexible curriculum modules designed to fit single high school or university class periods, or expand into full 5-day unit projects across CS, Literature, and Game Design.
+      Flexible modules designed for single class periods, or scaffolded into writing-enhanced term paper projects (such as JINS350 Realism vs. Playability) across CS, Literature, and Game Design.
     </p>
   </div>
 
@@ -53,7 +53,7 @@ description: "Zero-install, browser-based, zero-cost active learning inside Tolk
   <p class="custom-block-title">Welcome Educators!</p>
   <p>
     <strong>Multi-Users in Middle-earth (MUME)</strong> has been running continuously since 1992 as a living text-based virtual world.
-    By leveraging MUME's rich text environment and browser-based client, education can teach fundamental Computer Science concepts (CLI syntax, RegEx, State Machines, Graph Pathfinding), Humanities topics (Spatial Narrative, Tolkien Studies, Digital Archaeology, Collaborative Storytelling), and Game Design principles (TTRPG evolution, Bartle player taxonomy, Zero-Sum Scarcity, Asymmetric Factions) with zero financial cost and minimal technical friction.
+    By leveraging MUME's rich text environment and browser-based client, education can teach fundamental Computer Science concepts (CLI syntax, RegEx, State Machines, Graph Pathfinding), Humanities topics (Spatial Narrative, Tolkien Studies, Digital Archaeology, Collaborative Storytelling), and Game Design principles (TTRPG evolution, Bartle player taxonomy, Realism vs. Playability, Zero-Sum Scarcity, Asymmetric Factions) with zero financial cost and minimal technical friction.
   </p>
 </div>
 
@@ -70,7 +70,7 @@ description: "Zero-install, browser-based, zero-cost active learning inside Tolk
     🏷️ Common Core ELA / Literary Analysis (CCSS.ELA-LITERACY.RL.11-12.7)
   </span>
   <span style="border: 1px solid rgba(168, 85, 247, 0.4); background: rgba(168, 85, 247, 0.1); padding: 0.4rem 0.8rem; border-radius: 6px; font-weight: 600; font-size: 0.88rem; color: #c084fc;">
-    🏷️ College Game Design & Ludology (Bartle 1996, System Dynamics)
+    🏷️ College Interdisciplinary RPG Studies (e.g., JINS350 Realism vs. Playability)
   </span>
 </div>
 
@@ -99,17 +99,19 @@ description: "Zero-install, browser-based, zero-cost active learning inside Tolk
   </div>
 </div>
 
-## 🌐 Interdisciplinary Capstone Project
+## 🌐 Interdisciplinary Capstone & Writing-Enhanced Projects
 
 <div style="border: 1px solid rgba(215, 166, 63, 0.35); border-radius: 10px; padding: 1.5rem; background: rgba(215, 166, 63, 0.05); margin: 1.5rem 0;">
-  <h3 style="margin-top: 0; color: var(--vp-c-brand-1);">🏛️ Collaborative Capstone: "The Bree-land Expansion"</h3>
+  <h3 style="margin-top: 0; color: var(--vp-c-brand-1);">🏛️ Writing-Enhanced Term Project: "Realism v. Playability" (e.g., JINS350 Framework)</h3>
   <p style="font-size: 0.95rem; line-height: 1.5; color: var(--vp-c-text-1);">
-    Bring Computer Science, Literature, and Game Design students together in a final cross-disciplinary project! Student teams collaborate to design, author, and program a new virtual Middle-earth zone:
+    MUME serves as an ideal primary source for interdisciplinary writing-enhanced university courses. Students select one game dynamic (e.g., Armor Damage Absorption, Encumbrance Physics, Nocturnal Physiology) and evaluate it through non-gaming academic lenses (physics, biology, literature, military history) to balance <strong>playability (ease of play)</strong> against <strong>realism (suspension of disbelief)</strong>:
   </p>
   <ul style="font-size: 0.9rem; line-height: 1.6; margin-top: 0.5rem;">
-    <li><strong>Literature Students:</strong> Write immersive, canonical room descriptions, atmospheric sensory details, and NPC dialogue scripts.</li>
-    <li><strong>Game Design Students:</strong> Balance asymmetric monster encounters, item scarcity caps, and risk/reward exit topology.</li>
-    <li><strong>Computer Science Students:</strong> Program state-machine NPC behaviors, automapper navigation graphs, and RegEx trigger scripts.</li>
+    <li><strong>Part 1 (Exploration):</strong> Review gamebooks, D&D, MUDs (MUME), and VTTs (FoundryVTT), using spreadsheets to manage data.</li>
+    <li><strong>Part 2 (Rules Review):</strong> Conduct a literature review of game parameters and mechanical evolution.</li>
+    <li><strong>Part 3 (Realism & Academic Lenses):</strong> Investigate physical, biological, or historical parameters relating to playability.</li>
+    <li><strong>Part 4 (Analysis & Recommendations):</strong> Produce recommended rule adjustments to maximize realism with minimal impact on playability.</li>
+    <li><strong>Part 5 (Field Playtesting):</strong> Evaluate recommendations in live play sessions with classmates.</li>
   </ul>
 </div>
 
@@ -131,7 +133,7 @@ description: "Zero-install, browser-based, zero-cost active learning inside Tolk
 
 <div style="border: 1px solid rgba(215, 166, 63, 0.3); border-radius: 8px; padding: 1.25rem; background: rgba(255,255,255,0.03);">
   <h3>🎲 Game Design & RPG Dynamics Track</h3>
-  <p>Examine the evolution from tabletop RPGs (D&D) to digital virtual tabletops (VTTs) and apply Richard Bartle's 1996 player taxonomy to critique game mechanics.</p>
+  <p>Examine the evolution from tabletop RPGs (D&D) to digital virtual tabletops (VTTs), analyze Realism vs. Playability frameworks, and apply Bartle's taxonomy.</p>
   <a href="./rpg-dynamics/" class="vp-button brand" style="display: inline-block; margin-top: 0.5rem;">Explore Game Design Track →</a>
 </div>
 
